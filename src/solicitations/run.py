@@ -25,23 +25,25 @@ def main(argv=None):
     ap = argparse.ArgumentParser()
     ap.add_argument("week_csv")
     ap.add_argument("--ids", required=True)
+    ap.add_argument("--profile", required=True, choices=list(fields.PROFILES))
     ap.add_argument("--text", default="work/text")
     ap.add_argument("--out", default="work/answers.jsonl")
     ap.add_argument("--max-usd", type=float, required=True)
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--resume-batch", default=None)
     a = ap.parse_args(argv)
+    version = fields.PROFILES[a.profile]["version"]
     want = Path(a.ids).read_text().split()
     out = Path(a.out)
     done = set()
     if out.exists():
         for line in out.read_text().splitlines():
             r = json.loads(line)
-            if r.get("prompt_version") == fields.PROMPT_VERSION and r.get("answer") is not None:
+            if r.get("prompt_version") == version and r.get("answer") is not None:
                 done.add(r["notice_id"])
     rows = {r["notice_id"]: r for r in prepare.rows(a.week_csv)}
     text = Path(a.text)
-    instr = fields.instructions()
+    instr = fields.instructions(a.profile)
     prompts, facts, missing = {}, {}, []
     for nid in want:
         if nid in done:
@@ -63,19 +65,19 @@ def main(argv=None):
     if est > a.max_usd:
         print(f"refusing: estimate ${est:.2f} is over --max-usd {a.max_usd}")
         return 1
-    res = llm.batch_call(prompts, schema=fields.schema(), tool_name="record_notice", model=MODEL,
+    res = llm.batch_call(prompts, schema=fields.schema(a.profile), tool_name="record_notice", model=MODEL,
                          max_tokens=MAX_TOKENS, effort=EFFORT, resume_id=a.resume_batch)
     spent, failed = 0.0, 0
     with out.open("a") as fh:
         for nid, r in res.items():
             if isinstance(r, Exception):
                 failed += 1
-                fh.write(json.dumps({"notice_id": nid, "prompt_version": fields.PROMPT_VERSION, "model": MODEL,
+                fh.write(json.dumps({"notice_id": nid, "prompt_version": version, "profile": a.profile, "model": MODEL,
                                      "answer": None, "error": str(r)[:300]}) + "\n")
                 continue
             answer, usage = r
             spent += usage.get("cost_usd") or 0
-            fh.write(json.dumps({"notice_id": nid, "prompt_version": fields.PROMPT_VERSION, "model": MODEL,
+            fh.write(json.dumps({"notice_id": nid, "prompt_version": version, "profile": a.profile, "model": MODEL,
                                  "effort": EFFORT, "answer": answer, "usage": usage, "input": facts[nid]}) + "\n")
     print(json.dumps({"answered": len(res) - failed, "failed": failed, "spent_usd": round(spent, 4)}))
     return 0

@@ -91,6 +91,21 @@ FIELDS = {
                               "sentences; empty if nothing. Model-written; reviewed separately."),
 }
 
+# Two narrower tracks (2026-11-11, after the pilot): each gets its own short prompt with only its fields.
+# Chosen for what reporters, Hill staffers and lawyers use; rare or loose fields were dropped.
+PROFILES = {
+    "solicitation": {"version": "2026-11-11.svc1",
+                     "fields": ["requirement_model_written", "evaluation_basis", "evaluation_factors",
+                                "relative_importance", "incumbent", "contract_type", "stated_value"]},
+    "sources_sought": {"version": "2026-11-11.ss1",
+                       "fields": ["requirement_model_written", "planned_strategy", "incumbent", "stated_value"]},
+}
+
+
+def profile_fields(profile: str) -> dict:
+    return {k: FIELDS[k] for k in PROFILES[profile]["fields"]}
+
+
 ENUMS = {
     "notice_kind": ["rfp", "rfq", "rfi_or_sources_sought", "presolicitation", "event", "other"],
     "evaluation_basis": ["lpta", "tradeoff", "highest_technically_rated", "lowest_price", "other"],
@@ -120,9 +135,9 @@ def _quoted(name):
     return {"type": "object", "properties": props, "required": list(props), "additionalProperties": False}
 
 
-def schema() -> dict:
+def schema(profile: str | None = None) -> dict:
     props = {}
-    for name, (kind, _) in FIELDS.items():
+    for name, (kind, _) in (profile_fields(profile) if profile else FIELDS).items():
         if kind == "enum":
             props[name] = {"type": "string", "enum": ENUMS[name]}
         elif kind == "text":
@@ -165,8 +180,9 @@ Fields:
 """
 
 
-def instructions() -> str:
-    return INSTRUCTIONS + "\n".join(f"- {name}: {d}" for name, (_, d) in FIELDS.items())
+def instructions(profile: str | None = None) -> str:
+    f = profile_fields(profile) if profile else FIELDS
+    return INSTRUCTIONS + "\n".join(f"- {name}: {d}" for name, (_, d) in f.items())
 
 
 # ---- rules each value must pass against its own quote -------------------------------------------

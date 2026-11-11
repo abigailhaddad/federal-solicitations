@@ -65,11 +65,14 @@ def main(argv=None):
 
     rng = random.Random(a.seed)
     summary = {}
-    for name, (kind, definition) in fields.FIELDS.items():
+    for profile in fields.PROFILES:
+      for name, (kind, definition) in fields.profile_fields(profile).items():
         if kind in ("enum", "text"):
             continue
+        name_out = f"{profile}__{name}"
+        precs = [r for r in recs if r.get("profile") == profile]
         items = []
-        for r in recs:
+        for r in precs:
             v = r["kept"].get(name)
             for it in (v if isinstance(v, list) else ([v] if v else [])):
                 items.append((r["notice_id"], it))
@@ -82,7 +85,7 @@ def main(argv=None):
             sample.append({"notice_id": nid, "sam_link": f"https://sam.gov/opp/{nid}/view", "title": rows[nid]["title"],
                            "notice_type": rows[nid]["type"], "value": {x: y for x, y in it.items() if x not in ("pages", "match")},
                            "quote_pages": it.get("pages"), "context": window(t, k, k + len(q)) if k >= 0 else t[:5000]})
-        empty = [r["notice_id"] for r in recs if not r["kept"].get(name)]
+        empty = [r["notice_id"] for r in precs if not r["kept"].get(name)]
         rx = re.compile(TOPIC_WORDS[name], re.I)
         cand = [nid for nid in empty if rx.search(text_of(nid))]
         blanks = []
@@ -93,8 +96,9 @@ def main(argv=None):
                            "notice_type": rows[nid]["type"],
                            "context": "\n[...]\n".join(window(t, m.start(), m.end(), 1500) for m in hits)})
         for suffix, data in (("", sample), ("_blanks", blanks)):
-            json.dump({"field": name, "definition": definition, "items": data}, open(out / f"{name}{suffix}.json", "w"), indent=1)
-        summary[name] = {"kept_values": len(items), "notices_with_value": len({n for n, _ in items}),
+            json.dump({"field": name, "track": profile, "definition": definition, "items": data},
+                      open(out / f"{name_out}{suffix}.json", "w"), indent=1)
+        summary[name_out] = {"kept_values": len(items), "notices_with_value": len({n for n, _ in items}),
                          "sampled": len(sample), "empty_with_topic_words": len(cand), "blanks_sampled": len(blanks)}
     json.dump(summary, open(out / "summary.json", "w"), indent=1)
     print(json.dumps(summary, indent=1))

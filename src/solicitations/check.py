@@ -15,10 +15,10 @@ from federal_ja.analysis.text import locate_quote
 from . import fields, prepare
 
 
-def check_answer(doc, answer: dict) -> tuple[dict, list]:
+def check_answer(doc, answer: dict, profile: str | None = None) -> tuple[dict, list]:
     nd = doc.normalized()
     kept, dropped = {}, []
-    for name, (kind, _) in fields.FIELDS.items():
+    for name, (kind, _) in (fields.profile_fields(profile) if profile else fields.FIELDS).items():
         v = answer.get(name)
         if kind in ("enum", "text"):
             kept[name] = v or None
@@ -52,16 +52,17 @@ def main(argv=None):
     latest = {}
     for line in Path(a.answers).read_text().splitlines():
         r = json.loads(line)
-        if r.get("answer") is not None and r.get("prompt_version") == fields.PROMPT_VERSION:
+        prof = r.get("profile")
+        if r.get("answer") is not None and prof and r.get("prompt_version") == fields.PROFILES[prof]["version"]:
             latest[r["notice_id"]] = r
     n_drop = {}
     with open(a.out, "w") as fh:
         for nid, r in latest.items():
             doc = prepare.load(Path(a.text), rows[nid])
-            kept, dropped = check_answer(doc, r["answer"])
+            kept, dropped = check_answer(doc, r["answer"], r["profile"])
             for d in dropped:
                 n_drop[(d["field"], d["why"])] = n_drop.get((d["field"], d["why"]), 0) + 1
-            fh.write(json.dumps({"notice_id": nid, "meta": doc.meta, "input": r.get("input"), "usage": r.get("usage"),
+            fh.write(json.dumps({"notice_id": nid, "profile": r["profile"], "meta": doc.meta, "input": r.get("input"), "usage": r.get("usage"),
                                  "kept": kept, "dropped": dropped}, default=str) + "\n")
     print(json.dumps({"notices": len(latest), "dropped": {f"{k[0]}: {k[1]}": v for k, v in sorted(n_drop.items())}}, indent=1))
     return 0
