@@ -186,11 +186,20 @@ def instructions(profile: str | None = None) -> str:
 
 
 # ---- rules each value must pass against its own quote -------------------------------------------
-_LPTA = re.compile(r"lowest[\s,-]+price(?:d)?[\s,-]+(?:and[\s,-]+)?technically[\s,-]+acceptable|\bLPTA\b", re.I)
-_TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+value|more important than (?:cost or )?price|price and other factors considered|other than (?:the )?lowest[\s-]+price|equally[\s-]+weighted|"
-                       r"(?:significantly|approximately) (?:more|less) important|equal to price", re.I)
+_LPTA = re.compile(r"lowest[\s,/-]+price(?:d)?[\s,/-]+(?:and[\s]+)?technically[\s-]+acceptable|\bLPTA\b|"
+                   r"low[\s-]+priced?[\s,]+technically[\s-]+acceptable|"
+                   r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?price.{0,60}?(?:technical(?:ly)?[\s-]+(?:acceptab|requirement)|technical[\s-]+acceptability)|"
+                   r"technically[\s-]+acceptable.{0,100}?(?:lowest|low[\s-]+price)|"
+                   r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?price.{0,60}?non-?price[\s-]+factors?.{0,40}?acceptable", re.I | re.S)
+_TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+(?:overall[\s-]+)?value|more important than (?:cost or )?price|"
+                       r"price and other factors considered|other than (?:the )?lowest[\s-]+price|equally[\s-]+weighted|"
+                       r"most advantageous.{0,80}?(?:non-?price|price and (?:other|non-?price)|other factors|evaluation factors)|"
+                       r"(?:significantly|approximately) (?:more|less) important|equal to price|weigh(?:ed|ted)? more heavily", re.I | re.S)
 _HTRO = re.compile(r"highest[\s-]+technically[\s-]+rated|highest[\s-]+rated", re.I)
-_LOWEST = re.compile(r"lowest[\s-]+(?:evaluated[\s-]+|total[\s-]+(?:evaluated[\s-]+)?)?price|lowest[\s-]+priced|price[\s-]+only|low(?:est)?[\s-]+bid", re.I)
+_LOWEST = re.compile(r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?(?:responsive|responsible|price|priced|bid|bidder|offer|cost|evaluation total)|"
+                     r"price[\s-]+alone|price[\s-]+only|(?:based|basis)\s+(?:solely\s+|only\s+)?(?:up)?on\s+(?:the\s+)?price|"
+                     r"sealed[\s-]+bid|low(?:est)?[\s-]+bid|low[\s-]+price|only price and price[\s-]+related", re.I)
+_HYPHENS = str.maketrans({c: "-" for c in "‐‑‒–—―−"})
 _CLEAR = {"confidential": r"confidential", "secret": r"\bsecret\b", "top_secret": r"top[\s-]+secret",
           "ts_sci": r"\bSCI\b|sensitive[\s-]+compartmented", "public_trust": r"public[\s-]+trust|background[\s-]+investigation|suitability"}
 _CTYPES = [r"firm[\s-]*fixed[\s-]*price|\bFFP\b", r"fixed[\s-]*price[\s-]*incentive|\bFPI", r"economic price adjustment|\bEPA\b",
@@ -225,7 +234,7 @@ def numbers_in(text: str) -> set[float]:
 
 def rule(name: str, item: dict) -> str | None:
     """None if the value passes its rule against its own quote; else why not."""
-    v, q = item.get("value"), item.get("quote") or ""
+    v, q = item.get("value"), (item.get("quote") or "").translate(_HYPHENS)
     if name == "evaluation_basis":
         rx = {"lpta": _LPTA, "tradeoff": _TRADEOFF, "highest_technically_rated": _HTRO, "lowest_price": _LOWEST}.get(v)
         if rx and not rx.search(q):
