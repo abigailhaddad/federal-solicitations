@@ -53,7 +53,8 @@ FIELDS = {
                               "words. NOT the FAR 52.217-8 six-month extension option by itself, NOT a delivery "
                               "date."),
     "stated_value": ("quoted", "A dollar estimate or ceiling the document states for THIS acquisition, value = "
-                     "the amount exactly as written, including a range ('Between $27M and $33M'), with what it is in "
+                     "the amount exactly as written, including a range ('Between $27M and $33M'), any qualifier ('exceeds', "
+                     "'up to') and a currency other than US dollars ('AUD 400,000'), with what it is in "
                      "`what` ('estimated value', 'ceiling', 'magnitude'). NOT a plug or placeholder amount given only "
                      "for pricing or evaluation, "
                      "NOT a size standard, a bond amount, a wage rate, a past contract's value or a threshold "
@@ -85,6 +86,18 @@ FIELDS = {
                          "being considered. Standard wording that the decision is the contracting officer's "
                          "discretion, or that a set-aside will be considered 'if any' or based on responses, is "
                          "undecided."),
+    "sole_source_intent": ("quoted", "Only when the notice says the agency intends to award, or is considering "
+                           "awarding, THIS requirement to one named firm without competition (a sole source, "
+                           "'only one responsible source', 'intends to negotiate with X'): value = that firm's name "
+                           "as written. NOT a brand-name requirement that any vendor could supply, NOT a firm named "
+                           "only as a manufacturer or a current contractor, NOT a general description of sole-source "
+                           "rules."),
+    "set_aside_considered": ("quoted", "Only when the notice says a set-aside is planned or being considered for THIS "
+                             "requirement: value = the set-aside as written ('total small business set-aside', "
+                             "'SDVOSB set-aside', '8(a)', 'HUBZone', 'WOSB'). NOT the contracting officer's "
+                             "discretion or 'if any' boilerplate, NOT a general policy paragraph (e.g. the Buy Indian "
+                             "Act or VA's Veterans First rule stated as policy), NOT only a request that small "
+                             "businesses respond, NOT the SAM.gov set-aside field."),
     "notable_model_written": ("text", "Usually empty. Only something specific a reporter covering federal contracting would find unusual in "
                               "these documents (a very short response window for the scope, leftover text from "
                               "another acquisition, a requirement only one firm could meet), in one or two "
@@ -94,11 +107,15 @@ FIELDS = {
 # Two narrower tracks (2026-11-11, after the pilot): each gets its own short prompt with only its fields.
 # Chosen for what reporters, Hill staffers and lawyers use; rare or loose fields were dropped.
 PROFILES = {
-    "solicitation": {"version": "2026-11-11.svc1",
+    # svc2: same prompt, new excerpt (evaluation text first). svc1 answers stand for packages that were
+    # never cut, since their input is unchanged.
+    "solicitation": {"version": "2026-11-11.svc2", "accept_uncut": ["2026-11-11.svc1"],
                      "fields": ["requirement_model_written", "evaluation_basis", "evaluation_factors",
                                 "relative_importance", "incumbent", "contract_type", "stated_value"]},
-    "sources_sought": {"version": "2026-11-11.ss1",
-                       "fields": ["requirement_model_written", "planned_strategy", "incumbent", "stated_value"]},
+    # ss2: planned_strategy (22 of 30 in its check) replaced by two narrow statements.
+    "sources_sought": {"version": "2026-11-11.ss2", "accept_uncut": [],
+                       "fields": ["requirement_model_written", "sole_source_intent", "set_aside_considered",
+                                  "incumbent", "stated_value"]},
 }
 
 
@@ -267,7 +284,25 @@ def rule(name: str, item: dict) -> str | None:
     if name == "contract_type":
         if not any(re.search(rx, v or "", re.I) and re.search(rx, q, re.I) for rx in _CTYPES):
             return "not a standard contract type named in the quote"
+    if "[insert" in q.lower():
+        return "unfilled template text"
+    if name == "sole_source_intent":
+        if not re.search(r"sole[\s-]?source|only (?:one|responsible) source|single source|intends? to (?:award|negotiate|issue|procure|contract)|limited (?:competitive|sources?)", q, re.I):
+            return "no sole-source wording"
+        first = re.sub(r"[^a-z0-9 ]", " ", (v or "").lower()).split()
+        if not first or first[0] not in re.sub(r"[^a-z0-9 ]", " ", q.lower()).split():
+            return "firm not in quote"
+    if name == "set_aside_considered":
+        if not re.search(r"set[\s-]?aside|8\(a\)|SDVOSB|SDVOSBC|HUBZone|WOSB|EDWOSB|small business", q, re.I):
+            return "no set-aside wording"
+        if re.search(r"discretion|if any|will be given|based (?:up)?on (?:the )?(?:small business )?responses", q, re.I):
+            return "boilerplate, not a plan"
     if name == "stated_value":
+        if re.search(r"(?:(?<!not to )(?<!not )exceed\w*|in excess of|more than|greater than|\bover)\s+\$", q, re.I) and not re.search(r"exceed|excess|more than|greater|over", v or "", re.I):
+            return "qualifier ('exceeds') left out"
+        cur = re.search(r"(?<![A-Za-z])(AUD|CAD|EUR|GBP|JPY|KRW|MXN|PHP|NZD)\b|€|£", q)
+        if cur and cur.group(0) not in (v or ""):
+            return "non-US currency left out"
         want = [x for x in numbers_in(v or "") if x >= 1000]
         if not want:
             return "no amount in value"

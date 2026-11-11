@@ -59,31 +59,69 @@ def header(doc: Document) -> str:
     return "\n".join(lines)
 
 
+# Evaluation-method wording comes first in an excerpt: on 2026-11-11, 5 of 7 sampled packages whose
+# stated method was missed had it past the cut, because earlier attachments' other topic hits used up
+# the budget before Section M was reached.
+PRIORITY = re.compile(
+    r"lowest[\s,/-]+price[d]?[\s,/-]+(?:and\s+)?technically|\bLPTA\b|trade[\s\-‑]?off|best[\s-]+(?:overall[\s-]+)?value|"
+    r"highest[\s-]+technically|basis\s+for\s+award|basis\s+of\s+award|evaluation\s+factors?|relative\s+importance|"
+    r"more\s+important\s+than|comparative\s+(?:evaluation|analysis)|source\s+selection\s+process|"
+    r"price\s+and\s+other\s+factors\s+considered|type\s+of\s+contract|contemplates\s+award", re.I)
+
+
+def _windows(text: str, rx, half: int) -> list[list[int]]:
+    return [[max(0, m.start() - half), min(len(text), m.end() + half)] for m in rx.finditer(text)]
+
+
+def _merge(spans: list[list[int]]) -> list[list[int]]:
+    out = []
+    for a, b in sorted(spans):
+        if out and a <= out[-1][1]:
+            out[-1][1] = max(b, out[-1][1])
+        else:
+            out.append([a, b])
+    return out
+
+
 def excerpt(doc: Document) -> tuple[str, dict]:
-    """The text the model reads, and facts about the cut."""
+    """The text the model reads, and facts about the cut. Packages over WHOLE_CHARS are cut to, in this
+    order of priority until MAX_CHARS: text around evaluation-method wording in every attachment, then
+    the start of each attachment, then text around the other topics. Kept spans are shown in document
+    order, each attachment under its header, gaps marked [...]."""
     full = doc.model_text()
     if len(full) <= WHOLE_CHARS:
         return full, {"cut": False, "chars_total": len(full), "chars_sent": len(full)}
+    atts = [(fn, "\n\n".join(p.text for p in pages)) for fn, pages in doc.attachments()]
+    keep = [[] for _ in atts]
+    budget = MAX_CHARS
+    tiers = [lambda t: _windows(t, PRIORITY, WINDOW), lambda t: [[0, min(len(t), FILE_HEAD)]],
+             lambda t: _windows(t, TOPICS, WINDOW)]
+    for tier in tiers:
+        for i, (fn, text) in enumerate(atts):
+            for a, b in _merge(tier(text)):
+                if budget <= 0:
+                    break
+                cur = _merge(keep[i])
+                new = b - a - sum(max(0, min(b, y) - max(a, x)) for x, y in cur)
+                if new <= 0:
+                    continue
+                if new > budget:
+                    b = a + budget
+                    new = budget
+                keep[i].append([a, b])
+                budget -= new
     parts = []
-    for fn, pages in doc.attachments():
-        text = "\n\n".join(p.text for p in pages)
-        spans = [(0, min(len(text), FILE_HEAD))]
-        for m in TOPICS.finditer(text):
-            spans.append((max(0, m.start() - WINDOW), min(len(text), m.end() + WINDOW)))
-        spans.sort()
-        merged = []
-        for a, b in spans:
-            if merged and a <= merged[-1][1]:
-                merged[-1][1] = max(b, merged[-1][1])
-            else:
-                merged.append([a, b])
-        body = "\n[...]\n".join(text[a:b] for a, b in merged)
-        if merged and merged[-1][1] < len(text):
+    for (fn, text), spans in zip(atts, keep):
+        spans = _merge(spans)
+        if not spans:
+            continue
+        body = "\n[...]\n".join(text[a:b] for a, b in spans)
+        if spans[0][0] > 0:
+            body = "[...]\n" + body
+        if spans[-1][1] < len(text):
             body += "\n[...]"
         parts.append(f"=== ATTACHMENT: {fn} ===\n{body}")
     sent = "\n\n".join(parts)
-    if len(sent) > MAX_CHARS:
-        sent = sent[:MAX_CHARS] + "\n[... the rest of the package was cut for length ...]"
     return sent, {"cut": True, "chars_total": len(full), "chars_sent": len(sent)}
 
 

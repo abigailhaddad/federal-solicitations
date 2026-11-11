@@ -7,12 +7,36 @@ dropped value with the reason. Quotes are checked against the whole package, not
 """
 import argparse
 import json
+import re
 import sys
 from pathlib import Path
 
 from federal_ja.analysis.text import locate_quote
 
 from . import fields, prepare
+
+
+# The standard type-of-contract provision filled in (FAR 52.216-1): "The Government contemplates award of a
+# Firm-Fixed-Price contract resulting from this solicitation." 3 of 10 sampled blanks were this sentence.
+_CONTEMPLATES = re.compile(r"contemplates\s+(?:the\s+)?award\s+(?:of\s+)?(?:an?\s+)?([A-Za-z][A-Za-z ,/&()-]{2,80}?)\s+(?:type\s+)?contract", re.I)
+
+
+def contract_type_by_rule(doc, nd) -> list[dict]:
+    """Contract types read from the filled-in 52.216-1 sentence, each with that sentence as its quote."""
+    out = []
+    for m in _CONTEMPLATES.finditer(nd):
+        start = nd.rfind(".", 0, m.start()) + 1
+        end = nd.find(".", m.end())
+        quote = nd[start: end + 1 if end > 0 else m.end()].strip()
+        for rx in fields._CTYPES:
+            if re.search(rx, m.group(1), re.I):
+                item = {"value": m.group(1).strip(), "quote": quote}
+                if not fields.rule("contract_type", item):
+                    qm = locate_quote(quote, doc, nd, ignore_case=True)
+                    if qm.verified:
+                        out.append({**item, "pages": qm.pages, "match": qm.match, "source": "rule"})
+                break
+    return out[:3]
 
 
 def check_answer(doc, answer: dict, profile: str | None = None) -> tuple[dict, list]:
@@ -38,6 +62,8 @@ def check_answer(doc, answer: dict, profile: str | None = None) -> tuple[dict, l
                 continue
             good.append({**it, "pages": qm.pages, "match": qm.match})
         kept[name] = good if kind == "list" else (good[0] if good else None)
+    if profile == "solicitation" and not kept.get("contract_type"):
+        kept["contract_type"] = contract_type_by_rule(doc, nd)
     return kept, dropped
 
 
@@ -53,7 +79,13 @@ def main(argv=None):
     for line in Path(a.answers).read_text().splitlines():
         r = json.loads(line)
         prof = r.get("profile")
-        if r.get("answer") is not None and prof and r.get("prompt_version") == fields.PROFILES[prof]["version"]:
+        if r.get("answer") is None or not prof:
+            continue
+        cur = fields.PROFILES[prof]["version"]
+        old_ok = r.get("prompt_version") in fields.PROFILES[prof].get("accept_uncut", []) and not (r.get("input") or {}).get("cut")
+        if r.get("prompt_version") == cur:
+            latest[r["notice_id"]] = r          # the current version always wins
+        elif old_ok and latest.get(r["notice_id"], {}).get("prompt_version") != cur:
             latest[r["notice_id"]] = r
     n_drop = {}
     with open(a.out, "w") as fh:

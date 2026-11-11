@@ -39,7 +39,12 @@ def main(argv=None):
     if out.exists():
         for line in out.read_text().splitlines():
             r = json.loads(line)
-            if r.get("prompt_version") == version and r.get("answer") is not None:
+            if r.get("answer") is None:
+                continue
+            # an earlier version's answer stands when its input was not cut (the excerpt change can't affect it)
+            if r.get("prompt_version") == version or (
+                    r.get("prompt_version") in fields.PROFILES[a.profile].get("accept_uncut", [])
+                    and not (r.get("input") or {}).get("cut")):
                 done.add(r["notice_id"])
     rows = {r["notice_id"]: r for r in prepare.rows(a.week_csv)}
     text = Path(a.text)
