@@ -8,7 +8,7 @@ model infers is not a statement. Each value must also pass a rule in code agains
 """
 import re
 
-PROMPT_VERSION = "2026-11-11.sol1"
+PROMPT_VERSION = "2026-11-11.sol2"
 
 # name -> (kind, definition). kind: "quoted" = {value, quote}; "list" = [{value, quote}]; "text" = model-written.
 FIELDS = {
@@ -33,20 +33,29 @@ FIELDS = {
     "relative_importance": ("quoted", "The sentence stating how the factors compare in importance (e.g. 'all "
                             "non-price factors, when combined, are significantly more important than price'). "
                             "value = that statement in a few words. Empty if no such sentence."),
-    "contract_type": ("list", "Each contract type the document says THIS award will be (firm-fixed-price, "
-                      "time-and-materials, labor-hour, cost-plus-fixed-fee, cost-reimbursement, "
-                      "indefinite-delivery/indefinite-quantity, blanket purchase agreement, ...), as written, each "
-                      "with its sentence. NOT clause titles in a clause list, NOT the type of some other contract."),
+    "contract_type": ("list", "Each contract type the document says THIS award will be, one of: "
+                      "firm-fixed-price, fixed-price-incentive, fixed-price with economic price adjustment, "
+                      "time-and-materials, labor-hour, cost-plus-fixed-fee, cost-plus-incentive-fee, "
+                      "cost-plus-award-fee, cost-reimbursement, indefinite-delivery/indefinite-quantity, requirements, "
+                      "blanket purchase agreement, other transaction agreement. value = that type, written as in this "
+                      "list; the quote must name it. NOT clause titles in a clause list, NOT the type of some other "
+                      "contract, NOT a purchase order, lease or personal services contract (those are not contract "
+                      "types here)."),
     "award_count": ("quoted", "single or multiple: whether the document says one award or more than one will "
                     "be made; add the stated number if given ('up to five awards' -> multiple, 5). NOT a reservation "
                     "of the right to make multiple awards by itself ('the Government reserves the right to make "
-                    "multiple awards' is not a statement that it will)."),
+                    "multiple awards' is not a statement that it will). Standard wording such as 'The Government will award a "
+                    "contract resulting from this solicitation to the responsible offeror ...' is NOT a statement of a "
+                    "single award: use single only for explicit wording ('one award', 'a single award', 'one (1) "
+                    "contract', a sole source to one firm)."),
     "period_of_performance": ("quoted", "The period of performance as written for this award (e.g. 'one 12-month "
                               "base period and four 12-month option periods'), value = that text in a few "
                               "words. NOT the FAR 52.217-8 six-month extension option by itself, NOT a delivery "
                               "date."),
     "stated_value": ("quoted", "A dollar estimate or ceiling the document states for THIS acquisition, value = "
-                     "the amount as a number, with what it is ('estimated value', 'ceiling', 'not to exceed'). "
+                     "the amount exactly as written, including a range ('Between $27M and $33M'), with what it is in "
+                     "`what` ('estimated value', 'ceiling', 'magnitude'). NOT a plug or placeholder amount given only "
+                     "for pricing or evaluation, "
                      "NOT a size standard, a bond amount, a wage rate, a past contract's value or a threshold "
                      "quoted from FAR."),
     "incumbent": ("quoted", "A current or previous contractor for this work, or the current contract's number, "
@@ -62,9 +71,10 @@ FIELDS = {
                    "written. NOT a part number list without a brand requirement."),
     "oral_presentation": ("quoted", "yes, only when the document says offerors will (or may be invited to) give "
                           "oral presentations or interviews as part of evaluation."),
-    "technical_page_limit": ("quoted", "The page limit for the technical proposal or volume, as a number of "
-                             "pages. NOT the limit for another volume (past performance, price) unless the "
-                             "document gives one limit for the whole proposal."),
+    "page_limit": ("quoted", "The page limit on the technical proposal or volume, or on the whole response when one "
+                   "limit covers it (an RFI or sources-sought capability statement counts), as a number of pages, "
+                   "with what it covers in `what` ('technical volume', 'whole proposal', 'capability statement'). "
+                   "NOT the limit for only the past performance or price volume."),
     "set_aside_stated": ("quoted", "The set-aside the documents state for this acquisition, as written (e.g. "
                          "'total small business set-aside', '8(a) sole source', 'SDVOSB', 'full and open "
                          "competition'). NOT a size standard alone."),
@@ -72,8 +82,10 @@ FIELDS = {
                          "notice says the agency plans or is considering: small_business_set_aside, "
                          "full_and_open, sole_source (name the firm in `firm`), or undecided. NOT a generic "
                          "request for small businesses to respond, unless it says a set-aside is planned or "
-                         "being considered."),
-    "notable_model_written": ("text", "Anything a reporter covering federal contracting would find unusual in "
+                         "being considered. Standard wording that the decision is the contracting officer's "
+                         "discretion, or that a set-aside will be considered 'if any' or based on responses, is "
+                         "undecided."),
+    "notable_model_written": ("text", "Usually empty. Only something specific a reporter covering federal contracting would find unusual in "
                               "these documents (a very short response window for the scope, leftover text from "
                               "another acquisition, a requirement only one firm could meet), in one or two "
                               "sentences; empty if nothing. Model-written; reviewed separately."),
@@ -87,7 +99,7 @@ ENUMS = {
     "oral_presentation": ["yes"],
     "planned_strategy": ["small_business_set_aside", "full_and_open", "sole_source", "undecided"],
 }
-NUMERIC = {"stated_value", "cmmc_level", "technical_page_limit"}
+NUMERIC = {"cmmc_level", "page_limit"}
 
 
 def _quoted(name):
@@ -95,7 +107,7 @@ def _quoted(name):
     The API's strict mode allows at most 16 nullable parameters, so nothing here is nullable."""
     v = {"type": "string", "enum": ENUMS[name] + ["not_stated"]} if name in ENUMS else {"type": "string"}
     props = {"value": v, "quote": {"type": "string"}}
-    if name == "stated_value":
+    if name in ("stated_value", "page_limit"):
         props["what"] = {"type": "string"}
     if name == "award_count":
         props["max_awards"] = {"type": "string"}
@@ -139,7 +151,7 @@ Record what the documents STATE about the fields below, using the record tool on
 Rules for every field:
 - Only what the documents state for THIS acquisition. If they don't state it, use null (or an empty list).
   Never infer, estimate, count or guess. A clause title in a list of clauses states nothing by itself.
-- `quote` is copied exactly from the document text: one passage of 1-2 sentences or one line, at least 5
+- `quote` is copied exactly from the text after DOCUMENTS:, never from the SAM.gov lines above it: one passage of 1-2 sentences or one line, at least 5
   words, containing the value. No ellipses, no stitching passages together, no paraphrase, no headers you
   added. If you can't quote it, the value is null.
 - The excerpts may be partial: text marked [...] was left out. Don't assume what it said.
@@ -156,13 +168,18 @@ def instructions() -> str:
 
 
 # ---- rules each value must pass against its own quote -------------------------------------------
-_LPTA = re.compile(r"lowest[\s-]+price[\s-]+technically[\s-]+acceptable|\bLPTA\b", re.I)
-_TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+value|more important than (?:cost or )?price|"
+_LPTA = re.compile(r"lowest[\s,-]+price(?:d)?[\s,-]+(?:and[\s,-]+)?technically[\s,-]+acceptable|\bLPTA\b", re.I)
+_TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+value|more important than (?:cost or )?price|price and other factors considered|"
                        r"(?:significantly|approximately) (?:more|less) important|equal to price", re.I)
 _HTRO = re.compile(r"highest[\s-]+technically[\s-]+rated|highest[\s-]+rated", re.I)
 _LOWEST = re.compile(r"lowest[\s-]+(?:evaluated[\s-]+|total[\s-]+(?:evaluated[\s-]+)?)?price|lowest[\s-]+priced|price[\s-]+only|low(?:est)?[\s-]+bid", re.I)
 _CLEAR = {"confidential": r"confidential", "secret": r"\bsecret\b", "top_secret": r"top[\s-]+secret",
           "ts_sci": r"\bSCI\b|sensitive[\s-]+compartmented", "public_trust": r"public[\s-]+trust|background[\s-]+investigation|suitability"}
+_CTYPES = [r"firm[\s-]*fixed[\s-]*price|\bFFP\b", r"fixed[\s-]*price[\s-]*incentive|\bFPI", r"economic price adjustment|\bEPA\b",
+           r"time[\s-]*(?:and|&)[\s-]*materials?|\bT&M\b", r"labor[\s-]*hours?", r"cost[\s-]*plus[\s-]*fixed[\s-]*fee|\bCPFF\b",
+           r"cost[\s-]*plus[\s-]*incentive|\bCPIF\b", r"cost[\s-]*plus[\s-]*award|\bCPAF\b", r"cost[\s-]*reimburse",
+           r"indefinite[\s-]*delivery|indefinite[\s-]*quantity|\bIDIQ\b|\bID/IQ\b", r"\brequirements\s+(?:type\s+)?contract|^requirements$",
+           r"blanket[\s-]*purchase|\bBPA\b", r"other[\s-]*transaction|\bOTA?\b"]
 _WORDNUM = {w: i for i, w in enumerate("zero one two three four five six seven eight nine ten eleven twelve "
                                        "thirteen fourteen fifteen sixteen seventeen eighteen nineteen twenty "
                                        "twenty-five thirty forty fifty sixty".split())}
@@ -210,8 +227,26 @@ def rule(name: str, item: dict) -> str | None:
             return "number of awards not in quote"
     if name == "oral_presentation" and not re.search(r"oral|interview|presentation", q, re.I):
         return "quote doesn't mention orals"
-    if name == "brand_name" and not re.search(r"brand", q, re.I):
-        return "quote doesn't say brand name"
+    if name == "brand_name" and not re.search(r"brand|or[\s-]+equal", q, re.I):
+        return "quote doesn't say brand name or equal"
+    if name == "award_count":
+        if v == "single" and not re.search(r"\bone\b|\(1\)|single|sole[\s-]?source|only one", q, re.I):
+            return "no single-award wording"
+        if v == "multiple" and not re.search(r"multiple|\btwo\b|\bthree\b|\bseveral\b|\(\d+\)|awards|contracts", q, re.I):
+            return "no multiple-award wording"
+    if name == "planned_strategy" and v in ("small_business_set_aside", "full_and_open", "sole_source"):
+        if re.search(r"discretion|if any|will be given|based (?:up)?on (?:the )?(?:small business )?responses", q, re.I):
+            return "boilerplate, not a plan"
+    if name == "contract_type":
+        if not any(re.search(rx, v or "", re.I) and re.search(rx, q, re.I) for rx in _CTYPES):
+            return "not a standard contract type named in the quote"
+    if name == "stated_value":
+        want = [x for x in numbers_in(v or "") if x >= 1000]
+        if not want:
+            return "no amount in value"
+        got = numbers_in(q)
+        if not all(any(abs(g - w) <= max(0.5, 0.0005 * w) for g in got) for w in want):
+            return "amount not in quote"
     if name == "cmmc_level" and not re.search(r"CMMC|Cybersecurity Maturity", q, re.I):
         return "quote doesn't mention CMMC"
     if name == "relative_importance" and not re.search(r"important|weight|equal|descending order|order of importance", q, re.I):

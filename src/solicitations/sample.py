@@ -32,7 +32,7 @@ TOPIC_WORDS = {
     "cmmc_level": r"\bCMMC\b|Cybersecurity Maturity Model",
     "brand_name": r"brand[- ]name",
     "oral_presentation": r"oral presentation|orals|interviews?",
-    "technical_page_limit": r"page limit|pages? maximum|not (?:to )?exceed \d+ pages|limited to \d+ pages",
+    "page_limit": r"page limit|pages? maximum|not (?:to )?exceed \d+ pages|limited to \d+ pages",
     "set_aside_stated": r"set[- ]aside|8\(a\)|SDVOSB|HUBZone|WOSB|full and open",
     "planned_strategy": r"set[- ]aside|sole source|full and open|intends? to|anticipates?",
 }
