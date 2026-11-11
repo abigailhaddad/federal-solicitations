@@ -28,7 +28,7 @@ def check_answer(doc, answer: dict) -> tuple[dict, list]:
         for it in items:
             if it.get("value") in (None, "", "not_stated"):
                 continue
-            qm = locate_quote(it.get("quote"), doc, nd, ignore_case=True)
+            qm = locate_quote(it.get("quote"), doc, nd, ignore_case=True, min_words=fields.MIN_WORDS.get(name, 5))
             if not qm.verified:
                 dropped.append({"field": name, "value": it.get("value"), "quote": it.get("quote"), "why": "quote not found"})
                 continue

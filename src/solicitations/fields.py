@@ -100,6 +100,8 @@ ENUMS = {
     "planned_strategy": ["small_business_set_aside", "full_and_open", "sole_source", "undecided"],
 }
 NUMERIC = {"cmmc_level", "page_limit"}
+# A factor is often quoted by its heading ("Factor 1: Technical"), shorter than the 5-word default.
+MIN_WORDS = {"evaluation_factors": 3}
 
 
 def _quoted(name):
@@ -169,7 +171,7 @@ def instructions() -> str:
 
 # ---- rules each value must pass against its own quote -------------------------------------------
 _LPTA = re.compile(r"lowest[\s,-]+price(?:d)?[\s,-]+(?:and[\s,-]+)?technically[\s,-]+acceptable|\bLPTA\b", re.I)
-_TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+value|more important than (?:cost or )?price|price and other factors considered|"
+_TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+value|more important than (?:cost or )?price|price and other factors considered|other than (?:the )?lowest[\s-]+price|equally[\s-]+weighted|"
                        r"(?:significantly|approximately) (?:more|less) important|equal to price", re.I)
 _HTRO = re.compile(r"highest[\s-]+technically[\s-]+rated|highest[\s-]+rated", re.I)
 _LOWEST = re.compile(r"lowest[\s-]+(?:evaluated[\s-]+|total[\s-]+(?:evaluated[\s-]+)?)?price|lowest[\s-]+priced|price[\s-]+only|low(?:est)?[\s-]+bid", re.I)
@@ -222,7 +224,7 @@ def rule(name: str, item: dict) -> str | None:
             return "value is not a number"
         if not any(abs(x - n) <= max(0.5, 0.0005 * abs(n)) for x in numbers_in(q)):
             return "number not in quote"
-    if name == "award_count" and to_number(item.get("max_awards")) is not None:
+    if name == "award_count" and v == "multiple" and to_number(item.get("max_awards")) is not None:
         if to_number(item["max_awards"]) not in numbers_in(q):
             return "number of awards not in quote"
     if name == "oral_presentation" and not re.search(r"oral|interview|presentation", q, re.I):
