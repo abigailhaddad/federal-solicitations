@@ -120,16 +120,23 @@ def build(week_csv: str, checked: str, text_dir: str, week_start: str) -> dict[s
     return {t: pd.DataFrame(sorted(v, key=lambda x: (x["posted"], x["notice_id"]))) for t, v in out.items()}
 
 
-def write(tables: dict[str, pd.DataFrame], out: Path) -> None:
-    (out / "data").mkdir(parents=True, exist_ok=True)
+def write(tables: dict[str, pd.DataFrame], out: Path) -> list[Path]:
+    """One file per track per week: data/<track>/<week_start>.parquet and .csv, so weeks accumulate."""
+    written = []
     for track, df in tables.items():
-        stem = out / "data" / TRACKS[track]
+        if df.empty:
+            continue
+        week = df.week_start.iloc[0]
+        stem = out / "data" / TRACKS[track] / week
+        stem.parent.mkdir(parents=True, exist_ok=True)
         df.to_parquet(f"{stem}.parquet", index=False)
         flat = df.copy()
         for c in flat.columns:
             if flat[c].map(lambda x: isinstance(x, list)).any():
                 flat[c] = flat[c].map(lambda x: json.dumps(x, ensure_ascii=False) if isinstance(x, list) else None)
         flat.to_csv(f"{stem}.csv", index=False)   # every column written as text by default; IDs keep their zeros
+        written += [Path(f"{stem}.parquet"), Path(f"{stem}.csv")]
+    return written
 
 
 def main(argv=None):

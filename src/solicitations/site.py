@@ -26,7 +26,7 @@ from pathlib import Path
 from .digest import LABELS, MAX_PICKS, POSTS
 
 TITLE = "RFP Watch"
-TAGLINE = ("Federal services solicitations and sources-sought notices on SAM.gov, each week: how offers will be "
+TAGLINE = ("Federal services and construction solicitations and sources-sought notices on SAM.gov, each week: how offers will be "
            "judged, contract types, stated values, named incumbents and planned sole-source awards, every value "
            "with the sentence it came from")
 SITE_URL = "https://rfp-watch.pages.dev"
@@ -139,7 +139,7 @@ def amount(s: str) -> float:
 def post_content(p: dict) -> str:
     s = p["summary"]
     eb = s["evaluation_basis"]
-    parts = [f'<p class="lede">Every services solicitation and sources-sought notice with a posting on SAM.gov from '
+    parts = [f'<p class="lede">Every services and construction solicitation and sources-sought notice with a posting on SAM.gov from '
              f'{e(week_label(p))}: {s["solicitations"]:,} solicitations and {s["sources_sought"]:,} sources-sought notices. '
              f'Values are read from each notice\'s documents and checked against them; an empty value means it wasn\'t found.</p>',
              f'<p>How offers will be judged, where the solicitation says ({s["evaluation_basis_found"]:,} of {s["solicitations"]:,}): '
@@ -151,9 +151,21 @@ def post_content(p: dict) -> str:
         parts.append("<p>Nothing picked out this week.</p>")
     parts += [pick_html(i, x) for i, x in enumerate(p["picks"], 1)]
     L = p["lists"]
+    as_of = p.get("as_of") or p["built_at"][:10]
+    if L.get("largest_values"):
+        parts.append('<section class="all"><h2>Largest stated values</h2><p class="note">The ten largest dollar values '
+                     'stated this week, as written (sorted by the first dollar figure).</p><ol>'
+                     + "".join(f'<li><strong>{e(n["stated_value"])}</strong>' + (f' ({e(n["stated_value_what"])})' if n.get("stated_value_what") else "")
+                               + f' — {link(n.get("sam_link"), n["title"])} <span class="meta">· {e(n.get("sub_tier") or n.get("agency"))}</span></li>'
+                               for n in L["largest_values"]) + "</ol></section>")
+    def status(n):
+        d = (n.get("response_deadline") or "")[:10]
+        return "" if not d else (" · <strong>responses still open</strong>" if d >= as_of else " · responses closed")
     parts.append(f'<section class="all"><h2>Planned sole-source awards ({len(L["sole_source_intent"])})</h2>'
-                 '<p class="note">Sources-sought notices that say the agency intends to award, or is considering awarding, to one named firm.</p><ul>'
-                 + "".join(item(n, n["sole_source_intent"], n.get("sole_source_intent_quote")) for n in L["sole_source_intent"])
+                 f'<p class="note">Sources-sought notices that say the agency intends to award, or is considering awarding, '
+                 f'to one named firm. Open or closed as of {e(date_label(as_of))}.</p><ul>'
+                 + "".join(item(n, n["sole_source_intent"], n.get("sole_source_intent_quote")).replace("</span>", status(n) + "</span>", 1)
+                           for n in sorted(L["sole_source_intent"], key=lambda n: (n.get("response_deadline") or "")[:10] < as_of))
                  + "</ul></section>")
     parts.append(f'<section class="all"><h2>Named incumbents ({len(L["incumbent"])})</h2>'
                  '<p class="note">Notices that name a current or previous contractor, or contract, for this work.</p><ul>'
@@ -193,8 +205,8 @@ def index_page(posts: list[dict]) -> str:
 def about_page() -> str:
     body = f"""<h1>About {e(TITLE)}</h1>
 <p>{e(TAGLINE)}.</p>
-<p><strong>What's covered.</strong> Each week, every <em>solicitation</em> on SAM.gov for services (product service
-codes that start with a letter) and every <em>sources-sought</em> notice (market research before a solicitation)
+<p><strong>What's covered.</strong> Each week, every <em>solicitation</em> on SAM.gov for services, construction
+included (product service codes that start with a letter) and every <em>sources-sought</em> notice (market research before a solicitation)
 with a posting that week. A solicitation number is one notice, read from its latest posting. Not covered:
 solicitations for goods, presolicitations, special notices, and award notices.</p>
 <p><strong>How values are read.</strong> Claude (Haiku) reads each notice's SAM.gov description and attached
@@ -256,7 +268,7 @@ blockquote{margin:.75rem 0;padding:.5rem 1rem;background:var(--quote);border-lef
 blockquote p{margin:0}
 blockquote footer{color:var(--muted);font-size:.9rem;margin-top:.25rem}
 .pick{border-bottom:1px solid var(--line);padding-bottom:1rem}
-.all ul,.weeks{padding-left:1.1rem}
+.all ul,.all ol,.weeks{padding-left:1.3rem}
 .all li{margin:.7rem 0;font-size:.95rem}
 .weeks li{margin:.6rem 0}
 .date{display:block;font-size:.9rem}

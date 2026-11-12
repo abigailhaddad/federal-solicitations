@@ -19,6 +19,7 @@ from .digest import LABELS
 from .site import DATASET_URL, GITHUB_REPO, HF_REPO_ID, PROJECT_URL, SITE_URL
 
 ROOT = Path(__file__).resolve().parents[2]
+LEGACY = ["data/solicitations.parquet", "data/solicitations.csv", "data/sources_sought.parquet", "data/sources_sought.csv"]
 SCORECARD = ROOT / "docs" / "checks" / "scorecard.json"
 
 DEFS = {
@@ -44,10 +45,12 @@ def tally(row: dict | None, kind: str) -> str:
 
 
 def card(publish: Path) -> str:
-    sol = pd.read_parquet(publish / "data" / "solicitations.parquet")
-    ss = pd.read_parquet(publish / "data" / "sources_sought.parquet")
+    sol = pd.concat([pd.read_parquet(p) for p in sorted((publish / "data" / "solicitations").glob("*.parquet"))], ignore_index=True)
+    ss = pd.concat([pd.read_parquet(p) for p in sorted((publish / "data" / "sources_sought").glob("*.parquet"))], ignore_index=True)
     score = json.loads(SCORECARD.read_text())
-    week = f"{sol.week_start.iloc[0]} to {sol.week_end.iloc[0]}"
+    nweeks = sol.week_start.nunique()
+    week = (f"{sol.week_start.min()} to {sol.week_end.max()}, {nweeks} week{'s' if nweeks != 1 else ''}")
+    by_week = "\n".join(f"| {w} | {(sol.week_start == w).sum():,} | {(ss.week_start == w).sum():,} |" for w in sorted(sol.week_start.unique()))
 
     def filled(df, f):
         col = f if f in df else f"{f}_quote"
@@ -72,10 +75,10 @@ language: [en]
 tags: [government, procurement, federal-contracting, sam-gov]
 configs:
 - config_name: solicitations
-  data_files: data/solicitations.parquet
+  data_files: data/solicitations/*.parquet
   default: true
 - config_name: sources_sought
-  data_files: data/sources_sought.parquet
+  data_files: data/sources_sought/*.parquet
 ---
 
 # Federal solicitations and sources-sought notices, with checked values
@@ -84,13 +87,20 @@ What federal **services solicitations** and **sources-sought notices** on SAM.go
 judged, contract type, stated value, the incumbent, and planned sole-source awards. **Every value comes with the
 document sentence it was read from** (`*_quote`) and where that sentence is (`*_source`: file and page).
 
-**Covers {week}** (one week; posted dates, Eastern): {len(sol):,} solicitations and {len(ss):,} sources-sought
-notices. Weekly posts built from it: {SITE_URL}. Code, rules and proof files: {PROJECT_URL}.
+**Covers {week}** (posted dates, Eastern): {len(sol):,} solicitations and {len(ss):,} sources-sought
+notices. One file per week per track (`data/solicitations/<week start>.parquet`, and `.csv`); a notice posted
+again in a later week appears in that week too, read from its latest posting then.
+
+| Week starting | Solicitations | Sources sought |
+|---|---|---|
+{by_week}
+
+Weekly posts built from it: {SITE_URL}. Code, rules and proof files: {PROJECT_URL}.
 
 ## What's in it
 
 - `solicitations`: every SAM.gov *Solicitation* with a posting that week whose product service code is a
-  service (starts with a letter). One row per solicitation number, read from its latest posting.
+  service, construction included (starts with a letter). One row per solicitation number, read from its latest posting.
 - `sources_sought`: every *Sources Sought* notice with a posting that week (services and goods).
 
 Not included: solicitations for goods, presolicitations, special notices, award notices.
@@ -129,6 +139,9 @@ Check of 2026-11-12, `solicitation stated_value`: of the 3 judged wrong, one is 
 per-award ceiling published as the ceiling) and two lost their formatting ("$" and "between"), which code now
 restores. The blanks sample for `stated_value` was drawn before the per-contract and minimum rules were added.
 
+The checks above were made on the week of 2026-11-02; later weeks are checked by sample as they are added
+(see the Changes section of the repository README).
+
 **Fields asked for and not published** (failed their check): {"; ".join(dropped)}.
 
 ## Coverage gaps
@@ -152,17 +165,27 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="solicitations.hf")
     ap.add_argument("cmd", choices=["card", "publish"])
     ap.add_argument("publish", type=Path)
+    ap.add_argument("--all", action="store_true", help="re-upload every week's files, not only new ones")
+    ap.add_argument("--message", default=None)
     a = ap.parse_args(argv)
     (a.publish / "README.md").write_text(card(a.publish))
     print(f"wrote {a.publish / 'README.md'}", file=sys.stderr)
     if a.cmd == "publish":
-        from huggingface_hub import HfApi
+        from huggingface_hub import CommitOperationAdd, CommitOperationDelete, HfApi
         api = HfApi()
         api.create_repo(HF_REPO_ID, repo_type="dataset", exist_ok=True)
-        info = api.upload_folder(repo_id=HF_REPO_ID, repo_type="dataset", folder_path=str(a.publish),
-                                 allow_patterns=["README.md", "data/*.parquet", "data/*.csv"],
-                                 commit_message="Publish solicitations and sources-sought tables")
-        print(info, file=sys.stderr)
+        have = set(api.list_repo_files(HF_REPO_ID, repo_type="dataset"))
+        ops = [CommitOperationAdd(path_in_repo="README.md", path_or_fileobj=str(a.publish / "README.md"))]
+        for f in sorted((a.publish / "data").rglob("*")):
+            if f.suffix in (".parquet", ".csv"):
+                rel = f.relative_to(a.publish).as_posix()
+                if rel not in have or a.all:
+                    ops.append(CommitOperationAdd(path_in_repo=rel, path_or_fileobj=str(f)))
+        # the first week was published as single files (2026-11-12); they move under data/<track>/
+        ops += [CommitOperationDelete(path_in_repo=p) for p in LEGACY if p in have]
+        info = api.create_commit(HF_REPO_ID, repo_type="dataset", operations=ops,
+                                 commit_message=a.message or "Add week")
+        print(info.commit_url, file=sys.stderr)
     return 0
 
 

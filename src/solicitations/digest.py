@@ -37,15 +37,23 @@ PRICE_PER_MTOK = {"claude-opus-5-5": (5.0, 25.0)}   # input, output (USD per mil
 
 PROMPT = """You help write a weekly page about federal contracting notices posted on SAM.gov. This week has
 {n_sol} solicitations for services and {n_ss} sources-sought notices (market research before a solicitation).
-Below are the {n} that have something a reader might care about, one per line, each starting with its [index].
-Each line has the notice's title, agency, deadline, the SAM.gov set-aside field, the opening of its SAM.gov
-description, and values read from its documents, each followed by the document sentence it came from.
+Today is {today}. Below are the {n} that have something a reader might care about, one per line, each starting
+with its [index]. Each line has the notice's title, agency, response deadline (and whether it has passed), the
+product service code (PSC), the SAM.gov set-aside field, the opening of its SAM.gov description, and values
+read from its documents, each followed by the document sentence it came from.
 
-Pick {lo} to {hi} notices that a reporter covering federal contracting, a congressional staffer or a government
-contracts lawyer would most want to know about this week: for example a plan to sole-source to a named firm,
-a large stated value, a named incumbent losing or keeping work, a contract structure or evaluation method
-that stands out for what is being bought, or an unusual requirement. One notice per pick. If little stands
-out, return fewer picks.
+Readers: reporters covering federal contracting, congressional staff, and government contracts lawyers. The
+largest dollar values are already listed on the page by code, so do not spend picks on size alone. Pick {lo} to
+{hi} notices, in this order of priority:
+1. A plan to award to one named firm without competition, especially while responses are still open (that is
+   when others can respond or object).
+2. An incumbent being extended, bridged, given a follow-on, or replaced.
+3. Lowest price technically acceptable (LPTA) or lowest-price evaluation for professional, IT, research or
+   advisory services (PSC starting with R, D, B or A), where judging on price alone stands out.
+4. Anything else that stands out for what is being bought: an unusual contract type or structure, a very large
+   single award, an odd requirement.
+At most one pick may be chosen mainly for its dollar size. Prefer notices whose deadline has not passed, and
+when it hasn't, give the deadline in `why`. One notice per pick. If little stands out, return fewer picks.
 
 Rules:
 - Use ONLY what the line says. No outside knowledge about companies, programs, laws or people.
@@ -90,9 +98,15 @@ def val(x):
     return x if x != "" and x != [] else None
 
 
-def load(publish: Path) -> tuple[list[dict], list[dict]]:
-    sol = pd.read_parquet(publish / "data" / "solicitations.parquet")
-    ss = pd.read_parquet(publish / "data" / "sources_sought.parquet")
+def weeks(publish: Path) -> list[str]:
+    return sorted(p.stem for p in (publish / "data" / "solicitations").glob("*.parquet"))
+
+
+def load(publish: Path, week: str | None = None) -> tuple[list[dict], list[dict]]:
+    """The week's two tables (default: the latest week in the folder)."""
+    week = week or weeks(publish)[-1]
+    sol = pd.read_parquet(publish / "data" / "solicitations" / f"{week}.parquet")
+    ss = pd.read_parquet(publish / "data" / "sources_sought" / f"{week}.parquet")
     conv = lambda df: [{k: val(v) for k, v in r.items()} for r in df.to_dict("records")]  # noqa: E731
     return conv(sol), conv(ss)
 
@@ -110,13 +124,29 @@ def quotes_of(r: dict) -> list[str]:
 def interesting(r: dict, track: str) -> bool:
     if track == "sources_sought":
         return bool(r.get("sole_source_intent") or r.get("incumbent_quote") or r.get("stated_value"))
-    return bool(r.get("incumbent_quote") or r.get("stated_value") or r.get("evaluation_basis") in ("lpta", "highest_technically_rated"))
+    return bool(r.get("incumbent_quote") or r.get("stated_value") or r.get("evaluation_basis") in ("lpta", "highest_technically_rated")
+                or (r.get("evaluation_basis") == "lowest_price" and skilled(r)))
 
 
-def line(i: int, r: dict, track: str) -> str:
+SKILLED_PSC = ("R", "D", "B", "A")
+
+
+def skilled(r: dict) -> bool:
+    """Professional, IT, special-studies or R&D services, by the first letter of the product service code."""
+    return (r.get("psc") or "")[:1].upper() in SKILLED_PSC
+
+
+def deadline_open(r: dict, today: str) -> bool | None:
+    d = (r.get("response_deadline") or "")[:10]
+    return None if not d else d >= today
+
+
+def line(i: int, r: dict, track: str, today: str) -> str:
     desc = re.sub(r"\s+", " ", r.get("description") or "")[:400]
+    op = deadline_open(r, today)
+    dl = f"deadline {r.get('response_deadline') or '-'}" + ("" if op is None else (" (open)" if op else " (passed)"))
     bits = [f"[{i}] {'SOURCES SOUGHT' if track == 'sources_sought' else 'SOLICITATION'}: {r['title']}",
-            f"{r['agency']} / {r['sub_tier']} / {r['office']}", f"deadline {r.get('response_deadline') or '-'}",
+            f"{r['agency']} / {r['sub_tier']} / {r['office']}", dl, f"PSC {r.get('psc') or '-'}",
             f"set-aside field: {r.get('set_aside_sam') or 'none'}"]
     if r.get("sole_source_intent"):
         bits.append(f'plans sole source to: {r["sole_source_intent"]} ("{r["sole_source_intent_quote"]}")')
@@ -213,7 +243,7 @@ def call_model(prompt: str, client=None) -> tuple[list[dict], dict]:
     return picks, usage
 
 
-def build(sol: list[dict], ss: list[dict], picks: list[dict], usage: dict, cands, week_start: str) -> dict:
+def build(sol: list[dict], ss: list[dict], picks: list[dict], usage: dict, cands, week_start: str, today: str) -> dict:
     kept, dropped = [], []
     for p in picks:
         why_not = check_pick(p, cands)
@@ -226,44 +256,58 @@ def build(sol: list[dict], ss: list[dict], picks: list[dict], usage: dict, cands
         if len(kept) == MAX_PICKS:
             break
     week_end = (dt.date.fromisoformat(week_start) + dt.timedelta(days=6)).isoformat()
+    def amount(r):
+        m = re.search(r"\$\s?([\d,]+(?:\.\d+)?)\s*(billion|million|[BM]\b)?", r.get("stated_value") or "", re.I)
+        if not m:
+            return 0.0
+        return float(m.group(1).replace(",", "")) * {"b": 1e9, "billion": 1e9, "m": 1e6, "million": 1e6}.get((m.group(2) or "").lower(), 1)
+    valued = sorted([(r, "solicitation") for r in sol if r.get("stated_value")] + [(r, "sources_sought") for r in ss if r.get("stated_value")],
+                    key=lambda x: -amount(x[0]))
     lists = {
+        "largest_values": [fact(r, t) for r, t in valued[:10]],
         "sole_source_intent": [fact(r, "sources_sought") for r in ss if r.get("sole_source_intent")],
         "incumbent": [fact(r, "solicitation") for r in sol if r.get("incumbent_quote")]
                      + [fact(r, "sources_sought") for r in ss if r.get("incumbent_quote")],
         "stated_value": [fact(r, "solicitation") for r in sol if r.get("stated_value")]
                         + [fact(r, "sources_sought") for r in ss if r.get("stated_value")],
     }
-    return {"week_start": week_start, "week_end": week_end, "summary": summarize(sol, ss), "picks": kept,
+    return {"week_start": week_start, "week_end": week_end, "as_of": today, "summary": summarize(sol, ss), "picks": kept,
             "dropped": dropped, "lists": lists, "usage": usage,
             "built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
 
 
 def main(argv=None, client=None) -> int:
     ap = argparse.ArgumentParser(prog="solicitations.digest")
-    ap.add_argument("publish", type=Path, help="folder with data/solicitations.parquet and data/sources_sought.parquet")
+    ap.add_argument("publish", type=Path, help="folder with data/solicitations/<week>.parquet and data/sources_sought/<week>.parquet")
+    ap.add_argument("--week", default=None, help="week start (default: the latest in the folder)")
     ap.add_argument("--max-usd", type=float, required=True)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--replace", action="store_true", help="rebuild an existing post (kept as <week>.replaced-<time>.json)")
+    ap.add_argument("--today", default=None, help="as-of date for open/passed deadlines (default: today, UTC)")
     a = ap.parse_args(argv)
-    sol, ss = load(a.publish)
+    today = a.today or dt.datetime.now(dt.timezone.utc).date().isoformat()
+    sol, ss = load(a.publish, a.week)
     week_start = sol[0]["week_start"]
     path = POSTS / f"{week_start}.json"
-    if path.exists() and not a.dry_run:
+    if path.exists() and not a.dry_run and not a.replace:
         print(f"{path} exists; one post a week, nothing built")
         return 0
     cands = [(r, "sources_sought") for r in ss if interesting(r, "sources_sought")] + \
             [(r, "solicitation") for r in sol if interesting(r, "solicitation")]
-    prompt = PROMPT.format(n_sol=len(sol), n_ss=len(ss), n=len(cands), lo=min(3, len(cands)), hi=MAX_PICKS,
-                           lines="\n".join(line(i, r, t) for i, (r, t) in enumerate(cands)))
+    prompt = PROMPT.format(n_sol=len(sol), n_ss=len(ss), n=len(cands), lo=min(3, len(cands)), hi=MAX_PICKS, today=today,
+                           lines="\n".join(line(i, r, t, today) for i, (r, t) in enumerate(cands)))
     est = len(prompt) / 3.5 * 5 / 1e6 + 8000 * 25 / 1e6
     print(json.dumps({"candidates": len(cands), "prompt_chars": len(prompt), "estimated_max_usd": round(est, 3)}), file=sys.stderr)
     if est > a.max_usd:
         print(f"refusing: estimate ${est:.2f} is over --max-usd {a.max_usd}")
         return 1
     picks, usage = call_model(prompt, client) if cands else ([], {})
-    post = build(sol, ss, picks, usage, cands, week_start)
+    post = build(sol, ss, picks, usage, cands, week_start, today)
     print(json.dumps({"week": week_start, "summary": post["summary"], "picks": [p["headline"] for p in post["picks"]],
                       "dropped": [(d["headline"], d["dropped_because"]) for d in post["dropped"]], "usage": usage},
                      indent=1), file=sys.stderr)
+    if path.exists() and a.replace and not a.dry_run:
+        path.rename(path.with_name(f"{week_start}.replaced-{dt.datetime.now(dt.timezone.utc):%Y%m%dT%H%M%S}.json"))
     out = path if not a.dry_run else ROOT / "work" / f"post_dry_{week_start}.json"
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(post, indent=1, ensure_ascii=False, default=str) + "\n")
