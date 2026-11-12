@@ -124,8 +124,10 @@ def quotes_of(r: dict) -> list[str]:
 def interesting(r: dict, track: str) -> bool:
     if track == "sources_sought":
         return bool(r.get("sole_source_intent") or r.get("incumbent_quote") or r.get("stated_value"))
-    return bool(r.get("incumbent_quote") or r.get("stated_value") or r.get("evaluation_basis") in ("lpta", "highest_technically_rated")
-                or (r.get("evaluation_basis") == "lowest_price" and skilled(r)))
+    # LPTA or lowest price counts only for skilled services (priority 3 in the prompt); on janitorial or
+    # supply-like services it is the norm, and listing them doubled the prompt.
+    return bool(r.get("incumbent_quote") or r.get("stated_value") or r.get("evaluation_basis") == "highest_technically_rated"
+                or (r.get("evaluation_basis") in ("lpta", "lowest_price") and skilled(r)))
 
 
 SKILLED_PSC = ("R", "D", "B", "A")
@@ -141,22 +143,29 @@ def deadline_open(r: dict, today: str) -> bool | None:
     return None if not d else d >= today
 
 
+def q(s: str | None, n: int = 220) -> str:
+    """A quoted sentence, cut to n characters for the prompt (a quote taken from the cut text is still in
+    the full sentence, so check_pick still finds it). Keeps the post call to about half the tokens."""
+    s = re.sub(r"\s+", " ", s or "").strip()
+    return s if len(s) <= n else s[:n].rsplit(" ", 1)[0]
+
+
 def line(i: int, r: dict, track: str, today: str) -> str:
-    desc = re.sub(r"\s+", " ", r.get("description") or "")[:400]
+    desc = re.sub(r"\s+", " ", r.get("description") or "")[:250]
     op = deadline_open(r, today)
     dl = f"deadline {r.get('response_deadline') or '-'}" + ("" if op is None else (" (open)" if op else " (passed)"))
     bits = [f"[{i}] {'SOURCES SOUGHT' if track == 'sources_sought' else 'SOLICITATION'}: {r['title']}",
             f"{r['agency']} / {r['sub_tier']} / {r['office']}", dl, f"PSC {r.get('psc') or '-'}",
             f"set-aside field: {r.get('set_aside_sam') or 'none'}"]
     if r.get("sole_source_intent"):
-        bits.append(f'plans sole source to: {r["sole_source_intent"]} ("{r["sole_source_intent_quote"]}")')
+        bits.append(f'plans sole source to: {r["sole_source_intent"]} ("{q(r["sole_source_intent_quote"])}")')
     if r.get("incumbent_quote"):
         who = " / ".join(x for x in (r.get("incumbent_firm"), r.get("incumbent_contract_number")) if x)
-        bits.append(f'incumbent: {who} ("{r["incumbent_quote"]}")')
+        bits.append(f'incumbent: {who} ("{q(r["incumbent_quote"])}")')
     if r.get("stated_value"):
-        bits.append(f'stated value: {r["stated_value"]} {r.get("stated_value_what") or ""} ("{r["stated_value_quote"]}")')
+        bits.append(f'stated value: {r["stated_value"]} {r.get("stated_value_what") or ""} ("{q(r["stated_value_quote"])}")')
     if r.get("evaluation_basis"):
-        bits.append(f'evaluation: {LABELS[r["evaluation_basis"]]} ("{r["evaluation_basis_quote"]}")')
+        bits.append(f'evaluation: {LABELS[r["evaluation_basis"]]} ("{q(r["evaluation_basis_quote"])}")')
     if r.get("contract_type"):
         bits.append("contract type: " + ", ".join(r["contract_type"]))
     bits.append(f"description: {desc}")
