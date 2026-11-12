@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "35fc7a98fd6c4bc4b93acb7a29c71300",
+  "verdict": "correct",
+  "reason": "\"aggregate maximum estimated value of $15,000,000,000 for all task orders\" is the MACC ceiling; $2B-$6B task-order sizes and $1,000,000 minimum guarantee correctly not used."
+ },
+ {
+  "notice_id": "1c591fcbfc444741bd1b9a346039e211",
+  "verdict": "correct",
+  "reason": "\"Estimated total funding under this solicitation is $10,000,000\" is the estimated value of this acquisition (per-award caps $300,000/yr, $1,200,000 not used). Note: value carries a stray trailing comma from the sentence (\"$10,000,000,\")."
+ },
+ {
+  "notice_id": "43d45ac68cd046afb264460b2f88bee2",
+  "verdict": "correct",
+  "reason": "\"PROJECT MAGNITUDE Between $1 million and $5 million\" stated for this project; matches."
+ },
+ {
+  "notice_id": "f13ef7b1271f4c859a885583bf9560b3",
+  "verdict": "correct",
+  "reason": "\"The Estimated Magnitude of construction is between $1,000,000.00 and $5,000,000.00\" for this jetty rehabilitation; matches."
+ },
+ {
+  "notice_id": "dff97cda8b8d4099b0f27a1d25b891ec",
+  "verdict": "correct",
+  "reason": "\"project magnitude $5,000,000 to $10,000,000\" stated for Project 676-22-110; matches."
+ },
+ {
+  "notice_id": "fa5e2e3b1dad4d4598883c9ae25909fa",
+  "verdict": "correct",
+  "reason": "\"The Magnitude of Construction is Between $1,000,000 and $5,000,000.\" for TIMU-335507; matches."
+ },
+ {
+  "notice_id": "73f720aae8f442c2a16e08b250d63c77",
+  "verdict": "correct",
+  "reason": "\"*Magnitude of Construction Price Range: Less than $25,000.\" for this painting/flooring RFQ; qualifier kept."
+ },
+ {
+  "notice_id": "7a9a273a5e614865aa0867cfef3c58a1",
+  "verdict": "wrong",
+  "reason": "Quote: \"not less than a total of $2,500 (minimum) nor more than a total of $90,000,000 (maximum)\". $90M is the right ceiling for this IDIQ, but the qualifier \"nor more than\" in the quote is missing from the value \"$90,000,000\" (definition requires qualifiers such as \"up to\" in value)."
+ },
+ {
+  "notice_id": "c4a631cee4344be0b83582143e840a5d",
+  "verdict": "correct",
+  "reason": "\"The magnitude of this construction project is anticipated to be between $1 million and $5 million.\" for Building 1203; matches."
+ },
+ {
+  "notice_id": "7cf2475364cb4cb5a6c821dcfcce484c",
+  "verdict": "correct",
+  "reason": "\"Magnitude of Construction: Between $5,000,000 and $10,000,000\" stated for this task-order solicitation 36C24126Q0707; matches."
+ },
+ {
+  "notice_id": "abb93f4cdd594efda8cb04b1c21b0872",
+  "verdict": "correct",
+  "reason": "\"The price range of the project work is between $700,000 and $2,000,000.\" for AK FLAP ANCHORAGE 2021(1); matches."
+ },
+ {
+  "notice_id": "860867188b614da38c6bd5df305c79cc",
+  "verdict": "wrong",
+  "reason": "Document: \"The target price range is estimated to be between $10,000,000.00 to $15,000,000.00\". Amounts are right for this project, but value \"10000000 to 15000000\" is not the amount as written (drops \"$\", \"between\" and formatting); format-only error."
+ },
+ {
+  "notice_id": "8a0974d74fe9416ca0002aa476939f3a",
+  "verdict": "correct",
+  "reason": "\"The magnitude of construction is estimated to be between $5,000,000 and $10,000,000.\" for Euclid Creek Fishway; matches."
+ },
+ {
+  "notice_id": "1625839307684d649fbff555a5cde4a9",
+  "verdict": "correct",
+  "reason": "\"The magnitude of this project is between $10,000,000 and $25,000,000.\" for Reach 21 Booster Plant; matches."
+ },
+ {
+  "notice_id": "c25fa0aac4724c5d8a0e593b8ac974ae",
+  "verdict": "correct",
+  "reason": "\"The price range of the project work is between $2,000,000 and $5,000,000.\" for this project; matches."
+ },
+ {
+  "notice_id": "5222fdba0f4d454ca718a65761944620",
+  "verdict": "correct",
+  "reason": "\"Total Delivery/Task Orders may not exceed the IDIQ ceiling amount of $369,000,000.\" The number is the stated IDIQ ceiling amount; matches."
+ },
+ {
+  "notice_id": "193931c0656240478151144abe626ddf",
+  "verdict": "wrong",
+  "reason": "\"The estimated maximum ceiling for the base year is $4 million\" and ANL response \"Estimates are per year and per award\" (two BPA holders, agreement through 2030). $4 million is a per-award, base-year amount presented as the ceiling, not this acquisition's total value; \"base year\" qualifier also missing from value."
+ },
+ {
+  "notice_id": "a7c3450aaea144edb2591ec4ea2fe88c",
+  "verdict": "correct",
+  "reason": "\"Estimate of the construction magnitude for this project is between $500,000.00 to $1,000,000.00.\" matches."
+ },
+ {
+  "notice_id": "0d55ead29de84c778673fcfae388eb28",
+  "verdict": "correct",
+  "reason": "\"Estimated total funding under this solicitation is $4,000,000\" is this BAA's estimated value (individual awards $200,000-$650,000 not used). Note: value carries a stray trailing comma (\"$4,000,000,\")."
+ },
+ {
+  "notice_id": "fe6727b9572b4b8ba81af50670fbc5df",
+  "verdict": "correct",
+  "reason": "\"Magnitude of construction: below $25,000.00\" for Tamarac VC parking seal coat; qualifier kept."
+ },
+ {
+  "notice_id": "a692dda65e5649fd915caa7f3cb9b2b9",
+  "verdict": "correct",
+  "reason": "\"the ceiling is $7,500,000.00 for the entire duration of the contract\" (minimum $10,000.00 not used); matches."
+ },
+ {
+  "notice_id": "15b360d39f4a443b80df5d926a8ca6b2",
+  "verdict": "correct",
+  "reason": "\"the contract's stated maximum or ceiling amount is $34,000,000\" (guaranteed minimum $25,000 not used); matches."
+ },
+ {
+  "notice_id": "d676760d315d4ef8a04218be3668fe40",
+  "verdict": "correct",
+  "reason": "\"the cost of the entire project expected to fall within the price range of $2,000,000 to $3,000,000.\" matches."
+ },
+ {
+  "notice_id": "598c6d59c33944ac8c0a9c0375473782",
+  "verdict": "correct",
+  "reason": "\"The estimated price is expected to fall within the price range of $3,000,000 to $4,000,000.\" for NP NER PMS BMS FY25(2); matches (bid guarantee $3 million correctly not used)."
+ },
+ {
+  "notice_id": "36fa3f05e1a34970a4bbe43a1bd63260",
+  "verdict": "correct",
+  "reason": "\"The price range of the project work is between $5,000,000 and $10,000,000.\" for Dent Bridge Road; matches."
+ },
+ {
+  "notice_id": "083b9ad04fdd4f7aae459778b7b0ed0d",
+  "verdict": "correct",
+  "reason": "\"The price range of the project work is between $2,000,000 and $5,000,000.\" for Burro Creek Road; matches."
+ },
+ {
+  "notice_id": "418f914a9f7a4ecca2a6052f49c03745",
+  "verdict": "correct",
+  "reason": "\"IDIQ Ceiling: $5,000,000.00/year; $27,500,000.00 total\" -- total ceiling taken; minimum guarantee $2,000.00 not used."
+ },
+ {
+  "notice_id": "36fa9bb531c84535b1378cd14cf8712c",
+  "verdict": "correct",
+  "reason": "\"The aggregate maximum value of all contracts and task orders awarded under the MACC will not exceed $3,000,000,000.00\"; \"The $3 billion ceiling applies collectively to all MACC contracts\"; qualifier kept ($800M per-task-order and $1,000 minimum not used)."
+ },
+ {
+  "notice_id": "bfc4c99915e94beab0922e2bd2243f4a",
+  "verdict": "correct",
+  "reason": "\"Pursuant to FAR 36.204 the magnitude of construction is between $500,000.00 and $1,000,000.00.\" for Project 667-27-130; matches."
+ },
+ {
+  "notice_id": "4b71be36458e48d3bb3e8fa1026d56e3",
+  "verdict": "correct",
+  "reason": "\"The VAAR Magnitude of Construction is between $10,000,000 and $20,000,000.\" for 630A4-16-430; matches."
+ }
+]

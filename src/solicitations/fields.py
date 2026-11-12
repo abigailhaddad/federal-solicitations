@@ -251,6 +251,15 @@ def numbers_in(text: str) -> set[float]:
     return out
 
 
+def _amounts_matching(v: str | None, q: str):
+    """The places in the quote where the value's main amount is written."""
+    want = [x for x in numbers_in(v or "") if x >= 1000]
+    for m in re.finditer(r"\d[\d,]*(?:\.\d+)?(?:\s*(?:million|billion|[MB])\b)?", q, re.I):
+        got = numbers_in(m.group(0))
+        if any(abs(g - w) <= max(0.5, 0.0005 * w) for g in got for w in want):
+            yield m
+
+
 def rule(name: str, item: dict) -> str | None:
     """None if the value passes its rule against its own quote; else why not."""
     v, q = item.get("value"), (item.get("quote") or "").translate(_HYPHENS)
@@ -302,7 +311,19 @@ def rule(name: str, item: dict) -> str | None:
     if name == "stated_value":
         if re.search(r"(?:(?<!not to )(?<!not )exceed\w*|in excess of|more than|greater than|\bover)\s+\$", q, re.I) and not re.search(r"exceed|excess|more than|greater|over", v or "", re.I):
             return "qualifier ('exceeds') left out"
-        cur = re.search(r"(?<![A-Za-z])(AUD|CAD|EUR|GBP|JPY|KRW|MXN|PHP|NZD)\b|€|£", q)
+        # From the 2026-11-12 check (docs/checks): a per-contract amount read as the acquisition's value
+        # ("$500,000.00 each" across ten subcontracts; "$25,000,000.00 to any one contractor"), and a
+        # guaranteed minimum read as a ceiling ("a minimum of BZ $787,936.07"). Judged only on the words
+        # right next to the value's own amount, so "minimum $10,000 and ceiling $7,500,000" keeps $7.5M.
+        for m in _amounts_matching(v, q):
+            after, before = q[m.end(): m.end() + 40], q[max(0, m.start() - 40): m.start()]
+            if re.match(r"[\s.,)]*(?:each\b|per\s+(?:contract|award|contractor|order|subcontract)\b|to\s+any\s+one\s+contractor)", after, re.I):
+                return "per-contract amount read as a total"
+            if re.search(r"\bminimum\b(?:\s+(?:of|is|amount|guarantee))*\s*(?:of\s+)?(?:[A-Z]{2,3}\s*)?\$?\s*$", before, re.I) or \
+                    re.match(r"\s*\(?minimum\b", after, re.I):
+                if not re.search(r"minimum|guarantee", v or "", re.I):
+                    return "guaranteed minimum read as a value"
+        cur = re.search(r"(?<![A-Za-z])(AUD|CAD|EUR|GBP|JPY|KRW|MXN|PHP|NZD|BZ|BZD)\b|€|£", q)
         if cur and cur.group(0) not in (v or ""):
             return "non-US currency left out"
         want = [x for x in numbers_in(v or "") if x >= 1000]

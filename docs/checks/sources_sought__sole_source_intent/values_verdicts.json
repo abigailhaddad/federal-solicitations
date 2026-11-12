@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "906d1c357bde48a3af8921cd7078d6ee",
+  "verdict": "correct",
+  "reason": "\"The Government intends to extend the current CPFF contract on a Sole Source basis to TSAY Professional Services, Inc\"; name matches."
+ },
+ {
+  "notice_id": "7dcb8672e50441129d617b4a7c0d1cc1",
+  "verdict": "correct",
+  "reason": "\"NASA/AFRC intends to issue a sole source contract to acquire the LP3333 Batteries from Eagle Picher\"; stated intent to award this buy to Eagle Picher, not only a manufacturer mention."
+ },
+ {
+  "notice_id": "f9e0cb230ab04f88a2e4668bce1ffc8a",
+  "verdict": "correct",
+  "reason": "\"currently intends to award a 6 month bridge ... on a SOLE SOURCE basis\"; \"The proposed sole source Firm Fixed Price contract to Government Acquisitions LLC\"."
+ },
+ {
+  "notice_id": "efbb7b4cf4924c68a5a3474f90951b04",
+  "verdict": "correct",
+  "reason": "\"intends to solicit, negotiate, and make an award on a sole-source basis with D-2 Incorporated (CAGE: 4EKX8)\"."
+ },
+ {
+  "notice_id": "6166360cec4e4d6aba54a07fda2cac13",
+  "verdict": "correct",
+  "reason": "\"NASA/AFRC intends to issue a sole source contract to acquire the services from Crystal Instruments Corporation\"."
+ },
+ {
+  "notice_id": "2a94083b466141a9ab2cdace620c31bf",
+  "verdict": "correct",
+  "reason": "\"currently intends to award a Blanket Purchase Agreement (BPA) to Comcast on a sole source basis\"."
+ },
+ {
+  "notice_id": "f12d2cd76eaa482da0d49ca15ec53fa1",
+  "verdict": "correct",
+  "reason": "\"intends to negotiate on a sole source basis with the Committee on Accreditation of Educational Programs for the EMS Professions (CoEMSP)\"."
+ },
+ {
+  "notice_id": "1dc02b5bc2b4469fbc4e5e6abee0e12d",
+  "verdict": "correct",
+  "reason": "\"intends to solicit, negotiate, and make an award on a sole-source basis with DANIELS MANUFACTURING CORPORATION\"."
+ },
+ {
+  "notice_id": "fb535eba923d46b5a84b7cb0c5b29f14",
+  "verdict": "correct",
+  "reason": "\"intends to negotiate on a sole-source basis with EAA Tools, LLC (EEA), CAGE: 5LNR7\"."
+ },
+ {
+  "notice_id": "2fd941feb30343f680b0c46280f28edd",
+  "verdict": "correct",
+  "reason": "\"intends to negotiate a sole source contract with Unique Communications Solutions\"."
+ }
+]

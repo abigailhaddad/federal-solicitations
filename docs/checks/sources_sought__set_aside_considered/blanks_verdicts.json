@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "3078f5410b214a789c77a875818db0ce",
+  "verdict": "correct_blank",
+  "reason": "Only asks respondents for SDVOSB/VOSB certification; \"SET-ASIDE\" header is blank. No set-aside plan."
+ },
+ {
+  "notice_id": "f90b8e15b4bd4a458200ef9909a0e72d",
+  "verdict": "correct_blank",
+  "reason": "Questionnaire asks eligibility for 8(a)/WOSB/HUBZone/SDVOSB programs; only a request for status."
+ },
+ {
+  "notice_id": "58e73590797942d395ee68e57cd87732",
+  "verdict": "correct_blank",
+  "reason": "\"gain knowledge of potential qualified sources and their size classifications\"; responses used \"to make appropriate acquisition decisions\". No set-aside stated."
+ },
+ {
+  "notice_id": "57a574c1b932402d840cd786d77528db",
+  "verdict": "correct_blank",
+  "reason": "\"All information received ... will be used to determine the appropriateness of set-asides for this requirement\": responses-based boilerplate."
+ },
+ {
+  "notice_id": "15448bdcf4fc4884b1ceeb3281d89e43",
+  "verdict": "correct_blank",
+  "reason": "Vendor data form with socio-economic checkboxes only."
+ },
+ {
+  "notice_id": "6692ed656e1b433783dd553019bfc199",
+  "verdict": "correct_blank",
+  "reason": "\"consideration will be given to defining what part of the acquisition, if any, will be set-aside\": \"if any\"/responses-based boilerplate."
+ },
+ {
+  "notice_id": "8ee3e4c6df8043ffbe1fe57bf521ff36",
+  "verdict": "correct_blank",
+  "reason": "\"competition and set-aside decisions may be based on the results of this market research\": boilerplate."
+ },
+ {
+  "notice_id": "feaab7661bff471cac348e498dc726fe",
+  "verdict": "correct_blank",
+  "reason": "Asks size status and limitations-on-subcontracting questions only."
+ },
+ {
+  "notice_id": "74c258db6d4c42ca9e70300eafb53283",
+  "verdict": "correct_blank",
+  "reason": "Capability survey with business-size yes/no fields only."
+ },
+ {
+  "notice_id": "5e2ad9418bc7474b8cb7a57f1439a998",
+  "verdict": "correct_blank",
+  "reason": "\"will apply to the potential solicitation if set-aside for Veteran Owned Small-Businesses\" / \"if set-aside for Small-Businesses\": conditional clause notes, no plan stated."
+ }
+]

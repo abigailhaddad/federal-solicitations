@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "edb8e5db232f4b9d97cf4c8aaf3b663c",
+  "verdict": "correct",
+  "reason": "Market research 'to determine if this effort can be competitive or a Small Business Set-Aside' and 'to determine the best acquisition strategy'; no decision made."
+ },
+ {
+  "notice_id": "dbe2f83f57cd483b932c93c2800d31c8",
+  "verdict": "correct",
+  "reason": "'responses to this posting will be used to establish the procurement strategy, for example, set-aside, sole source, unrestricted'."
+ },
+ {
+  "notice_id": "46b939f94e9d401188ba0c332e1f6dc4",
+  "verdict": "correct",
+  "reason": "Asks for 'Your company's intent and ability to meet the set aside requirement in accordance with VAAR 852.219-73 ... VA Notice of Total Set-Aside For Certified SDVOSBs' (dataset quote matches text apart from a curly apostrophe); a specific planned SDVOSB set-aside."
+ },
+ {
+  "notice_id": "1dc02b5bc2b4469fbc4e5e6abee0e12d",
+  "verdict": "correct",
+  "reason": "'intends to solicit, negotiate, and make an award on a sole-source basis with DANIELS MANUFACTURING CORPORATION, CAGE Code (CAGE: 11851)'; firm matches."
+ },
+ {
+  "notice_id": "f691a36fb4d149d7915ffdbe1cccaf04",
+  "verdict": "correct",
+  "reason": "Undecided is supported: Industry Day/market survey to inform 'Acquisition strategy' and 'This notice does not restrict the FAA to an acquisition approach'. Note the dataset's quote ('neither qualifies respondents for, nor excludes respondents from, responding to a resulting SIR, if any') is about SIR eligibility, not strategy, so it is weak support."
+ },
+ {
+  "notice_id": "70afa41aad3647b7bd2e2185bc03ce0d",
+  "verdict": "correct",
+  "reason": "'determine the acquisition strategy, specifically whether a small business set-aside is warranted under FAR Part 19 or if full-and-open competition is required'."
+ },
+ {
+  "notice_id": "0012548ec87346bd8bb8223d2d72f2b7",
+  "verdict": "correct",
+  "reason": "RFI to 'assist the agency in making commerciality, NDI, and small business set-aside determinations' and 'inform future acquisition strategies'; nothing decided."
+ },
+ {
+  "notice_id": "a32345c40a6e4338a6254ec98eaeb1b4",
+  "verdict": "wrong",
+  "reason": "Should be small_business_set_aside: 'The U.S. Government desires to procure leased buses without drivers ... on a small business set-aside basis, provided 2 or more qualified small businesses respond'. This is a stated, specific planned set-aside for this requirement (contingent on the rule of two), not boilerplate."
+ },
+ {
+  "notice_id": "5bf1e37c64ff40ca9f656458f85a1d3b",
+  "verdict": "correct",
+  "reason": "'BASED ON THE RESPONSES ... THIS REQUIREMENT MAY BE SET-ASIDE FOR SMALL BUSINESSES OR PROCURED THROUGH FULL AND OPEN COMPETITION.'"
+ },
+ {
+  "notice_id": "dbc68b1b32c5490f967a64aafcc9023c",
+  "verdict": "wrong",
+  "reason": "Notice states a brand-name justification ('The particular brand name, product, or feature is essential', RFO 11.204(a)(2)(ii)) and that 'The purpose of this RFI is to identify qualified small business vendors capable of providing a CPK-5 two stage fire pump'. Brand-name-only is not a sole source to Waterous Company; it seeks other (small business) vendors of the Waterous product. No statement of intent to award to Waterous."
+ },
+ {
+  "notice_id": "e3fe61179b1d48818269f74d9cb02c52",
+  "verdict": "correct",
+  "reason": "'The Government intends to solicit and negotiate with only one source under the authority of Revolutionary FAR Overhaul 6.103-1.' Firm left blank; the context does not name the source, so the blank firm is consistent with this text."
+ },
+ {
+  "notice_id": "baeef90885084b96a6870e39fb273013",
+  "verdict": "unclear",
+  "reason": "'is looking for certified, Service-Disabled Veteran Owned Small Business (SDVOSB)' targets SDVOSBs, but the notice also says 'This is not a request for competitive proposals' and 'Any response must provide clear and convincing evidence demonstrating that competition would be advantageous', which is sole-source-intent wording. The text never says a set-aside is planned or considered, so small_business_set_aside vs sole_source can't be settled from this context."
+ },
+ {
+  "notice_id": "30e1977c187441f8bfa8cc062afe24ad",
+  "verdict": "correct",
+  "reason": "'The Government has not determined that this function will be outsourced' and 'has not ... determined whether a future procurement is appropriate'; responses inform 'acquisition strategy ... small business participation'."
+ },
+ {
+  "notice_id": "74048eb901f14a0aa9248173ccba89a6",
+  "verdict": "correct",
+  "reason": "'THIS IS A NOTICE OF INTENT TO SOLE SOURCE' and 'Notice of Intent to Sole Source' for Omnicell IVX support. Firm left blank; the context names the Omnicell product but never names the intended awardee, so the blank firm is consistent with this text."
+ },
+ {
+  "notice_id": "4c87654ce2cb4aa9b5b2c54ad7729cc9",
+  "verdict": "correct",
+  "reason": "'All contracts will be 100% set-aside for award to small businesses.'"
+ },
+ {
+  "notice_id": "1ff75fac366d432f8a7b5ab8bec88d43",
+  "verdict": "correct",
+  "reason": "Responses used to determine 'the appropriate acquisition strategy, including whether a socioeconomic set-aside is appropriate'."
+ },
+ {
+  "notice_id": "22b4d04dd69441188d70e20b8041fe2f",
+  "verdict": "correct",
+  "reason": "'The AFSC Contracting Office intends to award a Small Business Set-Aside for the manufacture of the Pressure Indicator in support of the C-130 program.'"
+ },
+ {
+  "notice_id": "05ce85025a704849b02b89f87067cc23",
+  "verdict": "correct",
+  "reason": "'to determine if this effort can be competitive or a Small Business Set-Aside' and 'determine the best acquisition strategy'."
+ },
+ {
+  "notice_id": "c3bffd6797674dc49dffaabc8699e0b5",
+  "verdict": "correct",
+  "reason": "'No set aside decision has been made; however, the Government will determine the final strategy after thorough analysis'."
+ },
+ {
+  "notice_id": "fb535eba923d46b5a84b7cb0c5b29f14",
+  "verdict": "correct",
+  "reason": "'intends to negotiate on a sole-source basis with EAA Tools, LLC (EEA), CAGE: 5LNR7'; firm matches (the 'EEA' abbreviation is the notice's own typo)."
+ },
+ {
+  "notice_id": "6d86df2582a24406ae372e0ef5f52c0b",
+  "verdict": "wrong",
+  "reason": "The quote is the IHS Buy Indian Act policy paragraph ('Each acquisition ... subject to commercial items ... or SAP ... must be set-aside exclusively for ISBEEs'), a general rule, not a plan for this acquisition. The notice itself says it is 'MARKET RESEARCH TO DETERMINE COMPLAINCE WITH THE BUY INDIAN ACT AND DETERMINATION OF SET-ASIDE', i.e., undecided."
+ },
+ {
+  "notice_id": "1be06ecaac4541dcb322fd6874c50622",
+  "verdict": "unclear",
+  "reason": "'We are specifically looking for 8(a) certified contractors.' This targets the 8(a) program specifically (not a generic SB request), but it does not say a set-aside is planned; 8(a) interest could equally lead to an 8(a) direct award (sole source). Text doesn't settle it."
+ },
+ {
+  "notice_id": "0b5df7932a5e438eb04661f7f27dbaf5",
+  "verdict": "correct",
+  "reason": "'Responses will be used to determine the appropriate acquisition strategy, including the potential for a small business set-aside.'"
+ },
+ {
+  "notice_id": "48de83e0e84e4995aa6d54ef3d7a81bf",
+  "verdict": "wrong",
+  "reason": "'USASOC intends to pursue a Brand-Name Only acquisition utilizing simplified procedures' if no other capable sources are found. Brand-name-only is a restriction on competition, not full_and_open; nothing in the text says full and open competition is planned."
+ },
+ {
+  "notice_id": "cf7299e5211f4851bcedbbc7a603e864",
+  "verdict": "wrong",
+  "reason": "Should be small_business_set_aside: notice is 'to determine the availability of service disabled veteran owned small business (SDVOSB) firms for a possible small business category type set-aside'. That is a specific SDVOSB set-aside being considered for this project, not generic 'if any' wording."
+ },
+ {
+  "notice_id": "d56982b0e91741e280535997bfdfdc96",
+  "verdict": "correct",
+  "reason": "Market research only: 'Responses to this SSN will be used by the Government to make appropriate determinations about potential sources'; no strategy stated."
+ },
+ {
+  "notice_id": "757d4f987a464793972064f25e16232c",
+  "verdict": "correct",
+  "reason": "'Responses will be used to assist the Government in determining the appropriate acquisition strategy, including whether a small-business set-aside is appropriate.'"
+ },
+ {
+  "notice_id": "49aeb6e8a7434fc0b0cafab94e0345c1",
+  "verdict": "unclear",
+  "reason": "Dataset quote is a conditional sole-source statement: 'If no responses ... from an authorized distributor ... then this action will be sole sourced to the manufacturer' (brand name or equal, Shukla). The notice also says pricing 'will be considered when determining the procurement strategy'. Whether this is undecided or a considered sole source to the manufacturer is not settled; the quote chosen supports sole_source more than undecided."
+ },
+ {
+  "notice_id": "97afb24ceedb4e5bbc8bc96d118ba011",
+  "verdict": "correct",
+  "reason": "'**SOLE SOURCE** Leslie Controls OEM main valve assembly PN N587530059 is proprietary and the only known part that will work for this procurement.' Firm matches. Caveat: it also says market research 'will contribute to determining the method of procurement'."
+ },
+ {
+  "notice_id": "79c4493e71a644f5b386e2961f838d3b",
+  "verdict": "correct",
+  "reason": "VA rule-of-two wording ('If the Government establishes reasonable expectation that two or more small business concerns can fulfill the requirement, the Government will set aside') plus 'solely within the discretion of the Government' is the standard wording the definition calls undecided."
+ }
+]

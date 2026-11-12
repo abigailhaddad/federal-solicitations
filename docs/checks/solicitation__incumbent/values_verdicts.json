@@ -1,0 +1,92 @@
+[
+ {
+  "notice_id": "ee28cbcf39d74a948a844556006fbad5",
+  "verdict": "correct",
+  "reason": "Q&A answer names this acquisition's current contract: 'The current contract number is 1282A722C0014 for a total amount of $372,000.00'."
+ },
+ {
+  "notice_id": "22c583a5b1144745ad8f38afb98cfc75",
+  "verdict": "correct",
+  "reason": "Section A: 'This is a follow-on requirement to N0018924F3006.'"
+ },
+ {
+  "notice_id": "a68cd045811c45448afbe53da58e93ab",
+  "verdict": "correct",
+  "reason": "L.11 Current Incumbent: 'The incumbent contractor performing the work identified in this solicitation is MidAtlantic Children's Services, Inc. dba Mid-Atlantic Psychological Services ... under award number 9594CS21P0044.'"
+ },
+ {
+  "notice_id": "a7c3450aaea144edb2591ec4ea2fe88c",
+  "verdict": "correct",
+  "reason": "Attached prior test report for the same work at Marion VAMC: 'Service for Conducting Triennial (3Yr.) Electrical Inspection and Repairs at the Marion VA Medical Center Contract #36C25523P0165' and 'The Department of Veteran Affairs has retained LND Technical Services to perform testing & maintenance'. Names LND as previous contractor via its own report, not an explicit 'incumbent' statement."
+ },
+ {
+  "notice_id": "b1f786f2fa7648fb9a9934309ec48da1",
+  "verdict": "correct",
+  "reason": "Q&A 42 answer: 'The grounds maintenance, custodial, and pest control services at MCAS Iwakuni are currently performed under contract N4008421D0060.'"
+ },
+ {
+  "notice_id": "180e90abc379434f8f34f75331e96967",
+  "verdict": "correct",
+  "reason": "Section A: 'This requirement is currently being met by SeaPort task order N00244-21-F-3010, awarded to STRACON SERVICES GROUP, LLC.'"
+ },
+ {
+  "notice_id": "e9a93c556b454a18b3f815da27a46fce",
+  "verdict": "correct",
+  "reason": "Synopsis header: 'Previous contract 1305M323ANWWR0001, incumbent O&R SUPPLIES AND SERVICES, LLC.'"
+ },
+ {
+  "notice_id": "edd0fbc7ea2441188554cad4a09db9a6",
+  "verdict": "correct",
+  "reason": "Answer to 'Is there an incumbent commercial Internet and/or television provider currently serving the facility': 'THIS IS A REFRESH CONTRACT ALL SERVICES ARE IN PLACE AND OPERATIONAL BY COMCAST'."
+ },
+ {
+  "notice_id": "fe2375f676d144a9bb1e7ab1d13dfd49",
+  "verdict": "correct",
+  "reason": "Q30 (citing 'Acquisition History: Petersons LLC, H9821021C004' in Attachment 2): 'The incumbent (Petersons LLC, H9821021C004) has operated the current AST platform'."
+ },
+ {
+  "notice_id": "dce555fed4774042adbc77112f2218ce",
+  "verdict": "correct",
+  "reason": "Section L Historical Data: 'Incumbent: Metson Marine Services, Contract number N68836-22-C-0006'."
+ },
+ {
+  "notice_id": "b8bcf829df5d462ea8927aab6e94c2d2",
+  "verdict": "correct",
+  "reason": "Answer to request for 'current Schedule of Benefits': 'The Statement of Work for contract No: 19BH2022D0001 is attached'. Identifies the current contract by implication (not literally called 'current contract'); value string also carries editorial text but the contract number fits the definition."
+ },
+ {
+  "notice_id": "ad43be18d6e044b8a092e42bd2e0302f",
+  "verdict": "correct",
+  "reason": "Section L item 6, 'Information on previously awarded contract': 'Previous contract was awarded to: LEBELL'S LANDWORKS LLC'."
+ },
+ {
+  "notice_id": "59f5083484814169a8d65afb3c3f9948",
+  "verdict": "correct",
+  "reason": "Q&A 5a answer naming 'the incumbent contractor and the associated contract number for NAS Jacksonville fuel operations': 'United Paradyne Corporation, contract number SPE60015C5000.'"
+ },
+ {
+  "notice_id": "0219242e57b54ac1bf223aaa8c9edc6c",
+  "verdict": "correct",
+  "reason": "Attached 2024 report for the same work at Reno VA: 'CIRCUIT BREAKER AND FEEDER TESTING ... Department of Veteran Affairs has retained LND Technical Services to perform Preventive Maintenance Services for Reno VA hospital.' Previous contractor shown by its own report, not an explicit 'incumbent' statement."
+ },
+ {
+  "notice_id": "ea96dae71cbd415c97cc5b191b00ef7d",
+  "verdict": "correct",
+  "reason": "DD Form 254 block 4: 'IS THIS A FOLLOW-ON CONTRACT? ... Yes: 1 ... (Preceding Contract Number) is transferred to this follow-on contract.: W91CRB-21-C-0044'."
+ },
+ {
+  "notice_id": "731762b388c14a12bd09d2435210a61c",
+  "verdict": "correct",
+  "reason": "Q&A: 'Who was awarded the last contract for this and what was winning bid? I-2-I Solutions for $196,556.25'."
+ },
+ {
+  "notice_id": "573f15afcb3e40348d2a46b90e156726",
+  "verdict": "correct",
+  "reason": "Government response: 'This is a recompete. Current contract number is 70CDCR21D00000003. Incumbent is Valor Network, Inc.'"
+ },
+ {
+  "notice_id": "f9a5ed130d254207a94e669812edad0c",
+  "verdict": "correct",
+  "reason": "Section L item 6: 'Previous contract was awarded to: Cooks Farm Orchard'."
+ }
+]

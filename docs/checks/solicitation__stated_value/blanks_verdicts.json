@@ -1,0 +1,52 @@
+[
+  {
+    "notice_id": "b210b85352c642a1a1d91ca2878cbf3b",
+    "verdict": "correct_blank",
+    "reason": "Only dollar amount is the closeout clause \"residual dollar amount of $1,000 or less\" (a clause, not a value for this acquisition)."
+  },
+  {
+    "notice_id": "96b6316db2004decba9dabbf5f32ebb4",
+    "verdict": "correct_blank",
+    "reason": "Specification text (supports, anchors, grout); no dollar estimate or ceiling."
+  },
+  {
+    "notice_id": "c57cf9a0c8d0499fb753b3e551be2f3e",
+    "verdict": "correct_blank",
+    "reason": "Only \"residual dollar amount of $1,000 or less\" in the closeout clause."
+  },
+  {
+    "notice_id": "fa6dfbb73f6c4459b42a428f418e6a75",
+    "verdict": "correct_blank",
+    "reason": "Security/destruction requirements and 52.212-1 text; no dollar estimate or ceiling."
+  },
+  {
+    "notice_id": "a668eba054264fa5a2250b01c4f8a5a3",
+    "verdict": "correct_blank",
+    "reason": "Only \"residual dollar amount of $1,000 or less\" in the closeout clause."
+  },
+  {
+    "notice_id": "99715416f82f4bacb85a18d7a6257f1a",
+    "verdict": "correct_blank",
+    "reason": "Construction general requirements; no dollar estimate or ceiling."
+  },
+  {
+    "notice_id": "0760c2f749304049a752b67c29631b89",
+    "verdict": "correct_blank",
+    "reason": "\"similar scope and magnitude of effort\" refers to past performance relevance, not a dollar value."
+  },
+  {
+    "notice_id": "7a8fe9615a8542bdb9b7b76bb80fc1ce",
+    "verdict": "missed",
+    "reason": "\"Project Magnitude: Under $100,000\" - a stated magnitude for this acquisition (value 'Under $100,000', what 'magnitude'). The $35,000/$150,000/$700,000 amounts nearby are bond/FAR thresholds and do not count."
+  },
+  {
+    "notice_id": "7387226da74d4cd1bb78e490649d5ae0",
+    "verdict": "correct_blank",
+    "reason": "\"Period of Performance/Rough Order of Magnitude: The Period of Performance ... anticipated not to exceed 12 months\" - heading mentions ROM but no dollar amount is given."
+  },
+  {
+    "notice_id": "40b5fd57c9a54671b3a960f46ab402c3",
+    "verdict": "correct_blank",
+    "reason": "\"a singular event could be of such magnitude\" is rating-definition language; no dollar value."
+  }
+]

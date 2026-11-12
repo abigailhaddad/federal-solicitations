@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "4e546581bd9f44c68c6b726bd2507877",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Firm-Fixed-Price contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "a668eba054264fa5a2250b01c4f8a5a3",
+  "verdict": "correct",
+  "reason": "CLIN 0001 for this RFQ: \"Pricing Arrangement: Firm Fixed Price\"."
+ },
+ {
+  "notice_id": "bb647f16ca7f4cf6ad857e7f913be543",
+  "verdict": "correct",
+  "reason": "\"CONTRACT TYPE: ... Indefinite Delivery, Requirements type contract as contemplated at RFO 16.503.\""
+ },
+ {
+  "notice_id": "d24ac9c3b34d4302a6c7a5e31579e491",
+  "verdict": "correct",
+  "reason": "Section M.1: \"The Government intends to award one (1) firm-fixed-priced contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "7a9a273a5e614865aa0867cfef3c58a1",
+  "verdict": "correct",
+  "reason": "\"The Government anticipates awarding a single-award, cost-reimbursement, Indefinite-Delivery/Indefinite-Quantity (IDIQ) contract\"."
+ },
+ {
+  "notice_id": "15b360d39f4a443b80df5d926a8ca6b2",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Fixed-Price Indefinite Delivery, Indefinite Quantity contract\"."
+ },
+ {
+  "notice_id": "3528e82be7cc4925b99071cfbf3d32dd",
+  "verdict": "wrong",
+  "reason": "The IDIQ is the parent MACC, not this award: \"INDEFINITE DELIVERY / INDEFINITE QUANTITY (IDIQ), MULTIPLE AWARD CONSTRUCTION CONTRACT (MACC)\" ... \"PROPOSED TASK ORDER: TBD\" ... \"Only Contractors listed on the NEWPORT/NEW LONDON ML-C00073 MACC are allowed to Bid\". This acquisition is a task order under that contract; the type of some other contract does not count."
+ },
+ {
+  "notice_id": "006d77f604a74dd0a16c99d041e6c032",
+  "verdict": "correct",
+  "reason": "\"The Government intends to award a ... firm fixed-price purchase order by location/region basis\" - FFP is the pricing type stated for this award (value is FFP, not \"purchase order\")."
+ },
+ {
+  "notice_id": "4dae81b8a8cd499e881dfa24739546c2",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a FIRM FIXED PRICE contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "d676760d315d4ef8a04218be3668fe40",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a firm-fixedprice contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "99715416f82f4bacb85a18d7a6257f1a",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Firm-Fixed-Price contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "291c693306e64b3a8e674403d731f8c6",
+  "verdict": "correct",
+  "reason": "\"Award Type It is anticipated that a Firm-Fixed Price contract will be awarded as a result of this synopsis/solicitation.\""
+ },
+ {
+  "notice_id": "9f497a07169c4f4a9ac9788fc48c8641",
+  "verdict": "correct",
+  "reason": "\"The Government anticipates awarding a time-and-materials contract with an anticipated period of performance of five years\"."
+ },
+ {
+  "notice_id": "e249a7c0e52a4d1fa752f24f86a861cc",
+  "verdict": "correct",
+  "reason": "B.2: \"Contract type: Indefinite Delivery Indefinite Quantity (IDIQ).\" with guaranteed minimum/maximum and task orders."
+ },
+ {
+  "notice_id": "31b5a4f8286042ce9653ae61dd1becf3",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Firm-Fixed-Price, Indefinite Quantity contract\" - indefinite-quantity contract = IDIQ."
+ },
+ {
+  "notice_id": "fa5e2e3b1dad4d4598883c9ae25909fa",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Firm-Fixed Price contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "4bad0dde114d49ef8fb7e507fb730801",
+  "verdict": "correct",
+  "reason": "\"13. TYPE OF CONTRACT: Any resultant award will be a Hybrid contract with Firm-Fixed Price (FFP) and Time & Materials (T&M) Contract Line Items (CLINs).\" T&M is one of the stated types."
+ },
+ {
+  "notice_id": "c4a20b7d4c73414dab939cd899eaa8b2",
+  "verdict": "correct",
+  "reason": "\"The resulting contract will be firm-fixed price.\""
+ },
+ {
+  "notice_id": "736ba3408e3b48f598756177f3061d39",
+  "verdict": "correct",
+  "reason": "\"NAVSUP Fleet Logistics Centre Bahrain intends to solicit and award a Firm Fixed Price contract for an MSC Ship Repair effort\"."
+ },
+ {
+  "notice_id": "52c0e19768cb465ba977479fd76932bf",
+  "verdict": "correct",
+  "reason": "\"The VA requires multiple indefinite-delivery, indefinite-quantity (IDIQ) Multiple Award Task Order Contract (MATOC) type contracts\"; this solicitation is for the MATOC itself."
+ },
+ {
+  "notice_id": "12d0c022996942508357674b39814fbf",
+  "verdict": "correct",
+  "reason": "\"3. Price. The Government intends to award a LPTA, single firm-fixed-price contract.\""
+ },
+ {
+  "notice_id": "43d45ac68cd046afb264460b2f88bee2",
+  "verdict": "correct",
+  "reason": "Section M: \"The Government intends to award a single FFP contract to the responsible Offeror\"."
+ },
+ {
+  "notice_id": "180e90abc379434f8f34f75331e96967",
+  "verdict": "correct",
+  "reason": "\"The Government contemplates award of a single SeaPort NxG task order with a combination of Firm-Fixed-Price (FFP) and Cost-Reimbursement (cost only) CLINs.\" Cost-reimbursement CLINs are in this task order itself, not the parent vehicle."
+ },
+ {
+  "notice_id": "7a8fe9615a8542bdb9b7b76bb80fc1ce",
+  "verdict": "correct",
+  "reason": "Section B: \"This requirement is for one (1) Firm Fixed Price Construction contract for a reinforced concrete pad\"."
+ },
+ {
+  "notice_id": "0587c051f1e74c34a416028e9a57fd53",
+  "verdict": "correct",
+  "reason": "\"The U.S. Government intends to award a firm-fixed price type of Purchase Order.\" FFP is the pricing type of this award (value is FFP, not \"purchase order\")."
+ },
+ {
+  "notice_id": "e946fe25b3344f25a5eacbe388593cd5",
+  "verdict": "correct",
+  "reason": "B.1: \"Services shall be delivered under an indefinite-delivery, indefinite-quantity (IDIQ) contract with firmfixed unit prices\"."
+ },
+ {
+  "notice_id": "f14011e030dc4ff2b67287c1a0a65a30",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Firm-Fixed-Price contract resulting from this solicitation.\""
+ },
+ {
+  "notice_id": "33484f3d307e455980ba2aa65bd835a8",
+  "verdict": "correct",
+  "reason": "\"The contract type will be Firm-Fixed-Price and Fixed-Price with Economic Price Adjustment-Cost Index in accordance with FAR 16.203-4(d).\""
+ },
+ {
+  "notice_id": "831c9c10c232443299ec6f70dfedf6ed",
+  "verdict": "correct",
+  "reason": "SF1449 schedule: \"Contract Type: Indefinite-Delivery, Indefinite-Quantity (IDIQ)\" with task orders over five ordering periods."
+ },
+ {
+  "notice_id": "083528adc6d94e6eb98714cff2abb603",
+  "verdict": "correct",
+  "reason": "52.216-1 full text: \"The Government contemplates award of a Firm-Fixed-Price (FFP) contract resulting from this solicitation.\""
+ }
+]

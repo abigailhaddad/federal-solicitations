@@ -1,0 +1,117 @@
+[
+ {
+  "notice_id": "14e64d47a82141a7a29b0e663bbae7a8",
+  "verdict": "correct",
+  "reason": "'This is a follow-on requirement to contract N39430-23-D-4051, previously awarded to CH2M Hill Clark Nexsen Energy Partners JV.'"
+ },
+ {
+  "notice_id": "c458223f8fcb43d4ae0872765cf7aa2b",
+  "verdict": "correct",
+  "reason": "'Incumbent: ROLLS-ROYCE SOLUTIONS AMERICA INC -N6449823G4001' (also the intended sole source, but explicitly labeled incumbent)."
+ },
+ {
+  "notice_id": "c5f09d73d03a4340a267b95f020799b2",
+  "verdict": "correct",
+  "reason": "'The current contract was competitively awarded to Canadian Commercial Corporation.' for the current F138-100 Engine Sustainment contract this follows on."
+ },
+ {
+  "notice_id": "24e3fac6c3b34326a2691aab2f550866",
+  "verdict": "correct",
+  "reason": "'This effort is a follow-on to Contract No. 36C26224P0139'."
+ },
+ {
+  "notice_id": "4333ad19062e4a209adc987cc01b0b7d",
+  "verdict": "unclear",
+  "reason": "Document says only 'The LOAD BANK, ELECTRICA was last purchased on 8/17/2026 through Contract # SPRBL1-20-D-0015 for a quantity of 21.' That is purchase history for one of the three NSNs; it is not named as the current/incumbent contract or as something this buy follows on from."
+ },
+ {
+  "notice_id": "fd49be0ed9194064a6b05b619960ae7e",
+  "verdict": "correct",
+  "reason": "Q&A answer: 'The incumbant contractor currently supporting this requirement is Resolution LLC, and the contract number is 80MSFC24CA012.'"
+ },
+ {
+  "notice_id": "70bdac178b8342939a486e6f4c3f7853",
+  "verdict": "correct",
+  "reason": "'This requirement consolidates services previously performed under contract numbers N0018320P0613 and N0018321P0527.' Predecessor contracts for this work."
+ },
+ {
+  "notice_id": "906d1c357bde48a3af8921cd7078d6ee",
+  "verdict": "correct",
+  "reason": "'The Government intends to extend the current CPFF contract on a Sole Source basis to TSAY Professional Services, Inc' - extending the current contract with TSAY makes TSAY the current contractor."
+ },
+ {
+  "notice_id": "2dfa59f245364253b051cc9910510f5b",
+  "verdict": "correct",
+  "reason": "'Support previously provided under Contract No. W15QKN-18-D-0073, Task Order W15QKN-22-F-0286.'"
+ },
+ {
+  "notice_id": "63caf314f565407ea6194f4a565b098a",
+  "verdict": "correct",
+  "reason": "'This is a follow-on contract for ... contract number N00244-24-P-[page break]0015 and the incumbent contractor is Total Online Protection LLC.'"
+ },
+ {
+  "notice_id": "2fd941feb30343f680b0c46280f28edd",
+  "verdict": "correct",
+  "reason": "'Incumbent and their size and CAGE: Unique Communications Solutions' under 'Contract Number: HC1019-22-C-0004'; also 'the incumbent contractor Unique Communications Solutions'."
+ },
+ {
+  "notice_id": "c75cd733fcc34866a7a7558f661f62fb",
+  "verdict": "correct",
+  "reason": "'Incumbent Contract / Contractor: Contract H9821026CE012, Redwood Strategy Group Inc.'"
+ },
+ {
+  "notice_id": "f39a9cc305694ada9417c983d0ab7701",
+  "verdict": "correct",
+  "reason": "'There is currently no Government contract that these services are being performed under. The previous contract was W9124J-25-P-A057.' Predecessor contract for this work."
+ },
+ {
+  "notice_id": "ed778955667243fd87a3f80f90c23430",
+  "verdict": "unclear",
+  "reason": "'intends to solicit The Boeing Company for a follow-on Cost-Plus-Incentive-Fee (CPIF) contract' names Boeing as the intended sole-source awardee; the text shown never says Boeing holds or held the current/prior contract or names a predecessor contract."
+ },
+ {
+  "notice_id": "c739eca138a24785828599f283e50c52",
+  "verdict": "correct",
+  "reason": "'This is a recompete of 70SBUR22F00000252, not a follow-on requirement.' - the contract being recompeted is the current contract for this work."
+ },
+ {
+  "notice_id": "bbbc53dc016c45e1989a4a01af636c22",
+  "verdict": "correct",
+  "reason": "'2.6.1. Incumbent Contractor. Ad-Tek Inc. ... under Purchase Order No. 69056722P000015.'"
+ },
+ {
+  "notice_id": "2b41168ef50e45f491d76fd4f781cac6",
+  "verdict": "correct",
+  "reason": "'The incumbent contract information is as follows: Incumbent Contractor: Adams Communication & Engineering Technology, Inc. Contract Number: N68520-20-D-0032 / N00421-23-F-0619'."
+ },
+ {
+  "notice_id": "8c6245946ddb456893e82f21c8d3141c",
+  "verdict": "correct",
+  "reason": "'This RDS effort shall begin when the prior SAIC RDS contract ends'; 'The hardware support and sustainment are a continuation from the SAIC RDS contract.'"
+ },
+ {
+  "notice_id": "106113a7496e4d6ebd17e7fad1f01226",
+  "verdict": "correct",
+  "reason": "'509-27-2-549-0015-REPLACES CONTRACT 36C24722F0282 -HERMATOLOGY CPRR-NEW BASE PLUS FOUR'."
+ },
+ {
+  "notice_id": "0329794b35c349f8b6c4a98374211c6c",
+  "verdict": "correct",
+  "reason": "'The Government contract for these services was previously performed under contract W91151-21-D-0012.'"
+ },
+ {
+  "notice_id": "647a66641e9444579f10d5695d112003",
+  "verdict": "correct",
+  "reason": "'WYARNG currently maintains various CenturyLink/Lumen telecom accounts across multiple armories' and the contractor 'shall consolidate all existing WYARNG Lumen/CenturyLink accounts' - Lumen is the current provider of the services being consolidated (no contract number given)."
+ },
+ {
+  "notice_id": "2a0f30ccfe0a4c1bb60e23e481882142",
+  "verdict": "correct",
+  "reason": "'Incumbent History: Follow-on to GSA Delivery Order W9124B-25-F-A049 (under GSA Contract GS-07F-070DA, held by San Luis Butane Distributors, CAGE 073V3)'."
+ },
+ {
+  "notice_id": "1cee6bc14b0d4ddfb11121e3d3112cb2",
+  "verdict": "correct",
+  "reason": "'currently repaired by Levison (57U95) under contract FA8539-26-P-0001.'"
+ }
+]

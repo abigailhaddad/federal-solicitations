@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "10d1a37ff9724d86b1d33244dc274a89",
+  "verdict": "correct",
+  "reason": "\"Quotes will be evaluated based on a best value, trade-off process... may consider award to other than the lowest priced offeror\""
+ },
+ {
+  "notice_id": "418f914a9f7a4ecca2a6052f49c03745",
+  "verdict": "correct",
+  "reason": "Section M: \"competitive best value source selection in which competing offerors past performance history will be considered significantly more important than price\""
+ },
+ {
+  "notice_id": "e9a93c556b454a18b3f815da27a46fce",
+  "verdict": "correct",
+  "reason": "\"using Lowest Price, Technically Acceptable (LPTA) procedures... Award will be made without tradeoffs\"; pass/fail criteria"
+ },
+ {
+  "notice_id": "a5e6930a75bb411186e4300ebd7aef81",
+  "verdict": "correct",
+  "reason": "\"evaluated using a Best-Value Tradeoff (BVTO) source selection process\"; \"All evaluation factors, other than cost or price, are considered approximately equal to cost or price\""
+ },
+ {
+  "notice_id": "fc443f6d93014e4aab6c564cf91f465e",
+  "verdict": "correct",
+  "reason": "\"comparative evaluation method, comparing proposals against one another... best value\"; \"Award will be made based on the most advantageous offer, considering both price and non-price factors\""
+ },
+ {
+  "notice_id": "1993ac15b5e84365a35a46c85f2400c7",
+  "verdict": "correct",
+  "reason": "\"Award will be made based on the most advantageous offer, considering both price and non-price factors. LPTA ... procedures will not be used\"; technical and experience factors evaluated"
+ },
+ {
+  "notice_id": "fa27ec9202d847b5924414841fa828b2",
+  "verdict": "correct",
+  "reason": "\"The Government will make an award to the quoters whose quote provides the lowest price technically acceptable quote\"; lowest price checked for acceptability first"
+ },
+ {
+  "notice_id": "fa5e2e3b1dad4d4598883c9ae25909fa",
+  "verdict": "correct",
+  "reason": "Section M: \"Best Value Continuum Tradeoff Process\"; \"may accept other than the lowest priced proposal when the perceived benefits of a higher priced proposal merit the price differential\""
+ },
+ {
+  "notice_id": "7a9a273a5e614865aa0867cfef3c58a1",
+  "verdict": "correct",
+  "reason": "\"All evaluation factors other than cost or price, when combined, are significantly more important than cost. The Government intends to make an award(s) to that offeror whose proposal provides the best overall value\"; \"best value tradeoff decision\""
+ },
+ {
+  "notice_id": "bc091ed004e048ca98c3e839161955c1",
+  "verdict": "correct",
+  "reason": "\"Award will be made on a Lowest Price Technically Acceptable (LPTA) basis... Among technically acceptable offers, the award will be made to the offeror with the lowest total price\""
+ },
+ {
+  "notice_id": "b62a3f5fc74a4c139b0fa92aa52b429e",
+  "verdict": "correct",
+  "reason": "\"d. The basis for award is price only.\" (the following 'Best Value' sentence names no non-price factor)"
+ },
+ {
+  "notice_id": "4c3f7a70b66945aa8dfb78fb79b675d4",
+  "verdict": "correct",
+  "reason": "\"most advantageous to the Government, price and other factors considered. Evaluation Approach is Comparative Evaluation... reserves the right to consider a proposal other than the lowest price that provides additional benefit(s)\"; technical capability factor"
+ },
+ {
+  "notice_id": "16610186557d416bb03edd6c0a961edf",
+  "verdict": "correct",
+  "reason": "\"Evaluation Method: The Government will evaluate quotations based on the lowest price technically acceptable criteria\"; technical rated acceptable/unacceptable"
+ },
+ {
+  "notice_id": "fe2375f676d144a9bb1e7ab1d13dfd49",
+  "verdict": "correct",
+  "reason": "\"based on a Best Value/Trade Off assessment\"; \"Technical Capability, and Past Performance, when combined, are significantly more important than Price\""
+ },
+ {
+  "notice_id": "082ab86961214505bc043502566486de",
+  "verdict": "correct",
+  "reason": "\"Basis for Award: Lowest Price\" in this task-order project's General Requirements; no technical evaluation stated in context"
+ },
+ {
+  "notice_id": "7fe0f357ea2645efa6800912c40182f5",
+  "verdict": "correct",
+  "reason": "\"award a single fixed-price purchase order... to the responsible contractor whose quote represents the lowest price, technically acceptable offer\""
+ },
+ {
+  "notice_id": "96b6316db2004decba9dabbf5f32ebb4",
+  "verdict": "correct",
+  "reason": "\"This is a lowest price-technically acceptable source selection. An award shall be made to the lowest evaluated proposal that meets or exceeds the acceptability standards for non-cost factors\""
+ },
+ {
+  "notice_id": "05d74e2d0e8f4eceb847346955a5b4fa",
+  "verdict": "correct",
+  "reason": "\"conducted using Lowest Price Technically Acceptable with acceptable past performance... all non-price factors are rated as Acceptable\""
+ },
+ {
+  "notice_id": "1d03605b874b419fb7a1c93f41ede35e",
+  "verdict": "correct",
+  "reason": "MATOC basis: \"competitive procurement using the best value tradeoff source selection process\" (the seed project task order is separately LPTA: \"The SEED project shall be awarded based on the lowest priced, technically acceptable proposal\"; value describes the MATOC award)"
+ },
+ {
+  "notice_id": "ed2ab6ab289941af96e5f7e6cc69d197",
+  "verdict": "correct",
+  "reason": "NASA lease AFP, not a FAR contract: \"NASA will evaluate and rank the remaining proposals in accordance with the evaluation factors\"; higher rent preferred, factors rated by confidence/effectiveness \u2014 fits other"
+ },
+ {
+  "notice_id": "31b5a4f8286042ce9653ae61dd1becf3",
+  "verdict": "correct",
+  "reason": "\"comparative evaluation to determine which vendor provides the best value... in terms of technical submission and past performance while also providing a competitive price\"; offers rated 'comparatively more favorable'"
+ },
+ {
+  "notice_id": "43d45ac68cd046afb264460b2f88bee2",
+  "verdict": "correct",
+  "reason": "\"best value... considering Technical, Past Performance, and Price... When combined, Technical and Past Performance are significantly more important than Price\""
+ },
+ {
+  "notice_id": "bc1ab010eccb4842a061b2d34a0761dc",
+  "verdict": "correct",
+  "reason": "Section K: \"Award will be made to the lowest priced, acceptable, responsible quoter\"; acceptability = \"compliance with the terms of the RFQ\", no technical rating"
+ },
+ {
+  "notice_id": "839e89b4397d46a59c6fac10aeb01fd1",
+  "verdict": "correct",
+  "reason": "\"best-value tradeoff determination for each Service Group\"; \"Award may be made to an Offeror with a higher Total Proposed Initial Order Price when... benefits... warrant the price premium\""
+ },
+ {
+  "notice_id": "0834e724c43d44f2afb5a56fb6b47e20",
+  "verdict": "correct",
+  "reason": "\"4.03 AWARD BASIS... Award Based on Price A. The Lease will be awarded to the responsible Offeror whose offer... is the lowest priced technically acceptable offer submitted\""
+ },
+ {
+  "notice_id": "c57cf9a0c8d0499fb753b3e551be2f3e",
+  "verdict": "correct",
+  "reason": "Only factor listed is \"Price. Factor I - Price\"; \"The Government will award on the basis of price unless...\" past performance concern about the low quote"
+ },
+ {
+  "notice_id": "c717d412119d44cb8ab06a1afc658ea4",
+  "verdict": "correct",
+  "reason": "\"The award will be made on the basis of the lowest evaluated price, technically acceptable (LPTA) offer. Technical acceptability is determined by conformance to the statement of work\""
+ },
+ {
+  "notice_id": "c4a20b7d4c73414dab939cd899eaa8b2",
+  "verdict": "correct",
+  "reason": "\"the Lowest Price Technically Acceptable process as defined in FAR 15.101-2 shall be used in the requirement\""
+ },
+ {
+  "notice_id": "12d0c022996942508357674b39814fbf",
+  "verdict": "correct",
+  "reason": "\"using Lowest Price, Technically Acceptable (LPTA) procedures... Award will be made without tradeoffs\"; pass/fail criteria"
+ },
+ {
+  "notice_id": "ccb80719bb4249b29ff28942ec554761",
+  "verdict": "correct",
+  "reason": "\"4.02 AWARD BASIS... The Lease will be awarded to the responsible Offeror whose offer... is the lowest priced technically acceptable offer submitted\""
+ }
+]

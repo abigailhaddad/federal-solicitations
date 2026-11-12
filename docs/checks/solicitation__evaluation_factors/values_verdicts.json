@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "6d9a41c1192d4a8c8a4cec2aae442e99",
+  "verdict": "correct",
+  "reason": "Listed in 5.3 Technical Evaluation Criteria: \"3. Manufacturing, Inspection, and Testing Capability -30 Points\"."
+ },
+ {
+  "notice_id": "e132e87c78ce45c091c05eec2bc0713f",
+  "verdict": "correct",
+  "reason": "Section L: \"Evaluation factors will be technical, price, and past performance.\""
+ },
+ {
+  "notice_id": "2aefc91ab774469d90465cef58996a1d",
+  "verdict": "correct",
+  "reason": "\"2.5 Volume V, Price (Factor 4). The Price Factor evaluation will be conducted on the Firm FixedPrice basis.\""
+ },
+ {
+  "notice_id": "f9eba27d46634abbaa87efa0e0e7b668",
+  "verdict": "correct",
+  "reason": "52.212-2(a) \"The following factors shall be used to evaluate offers: ... Price -Offerors shall submit...\"; \"Technical and Past Performance, when combined, are more important than Price.\""
+ },
+ {
+  "notice_id": "dce555fed4774042adbc77112f2218ce",
+  "verdict": "correct",
+  "reason": "\"Factor 3: Price Price Evaluation. Price analysis will be conducted in accordance with RFO FAR 15.404-1.\""
+ },
+ {
+  "notice_id": "abb19095b5ae45e5a9ec60df2d17a02e",
+  "verdict": "correct",
+  "reason": "\"The evaluation factors are Technical Capability, Experience and Price.\""
+ },
+ {
+  "notice_id": "fa5e2e3b1dad4d4598883c9ae25909fa",
+  "verdict": "correct",
+  "reason": "\"FACTOR 7 -PAST PERFORMANCE: Past performance demonstrating higher levels of success...\""
+ },
+ {
+  "notice_id": "4d4fddd349c94bf4b61fa11059995bbd",
+  "verdict": "correct",
+  "reason": "Under \"EVALUATION FACTORS\": \"FACTOR 2: CARETAKER SERVICES CONTRACT EXPERIENCE\"."
+ },
+ {
+  "notice_id": "c91fc164637d4d05b121f44418628905",
+  "verdict": "correct",
+  "reason": "\"There are two (2) evaluation factors... Price is Factor 1. Past Performance is Factor 2\"."
+ },
+ {
+  "notice_id": "bb2215b4819b483383bac794053f8461",
+  "verdict": "correct",
+  "reason": "\"The Government will evaluate quotes based on the following factors: Factor 1: Price (Lowest Price) Factor 2: Technical Acceptability (Pass/Fail)\"."
+ },
+ {
+  "notice_id": "86bcb7d4101d4ab48daa38e120ac89a0",
+  "verdict": "correct",
+  "reason": "\"FACTOR 3 -TECHNICAL APPROACH: Technical approaches that comply with applicable contract requirements...\""
+ },
+ {
+  "notice_id": "2cbff5c7dcee4e2ab1f99c877bfe0716",
+  "verdict": "correct",
+  "reason": "52.212-2 addendum: \"The following factors shall be used to evaluate the quote: TECHNICAL: ... PRICE:\"."
+ },
+ {
+  "notice_id": "bb6ee5b94c4f47d288d5328b2c5c9561",
+  "verdict": "correct",
+  "reason": "\"Factor 3-Price: The Price will be evaluated as Lowest Price Technically Acceptable...\""
+ },
+ {
+  "notice_id": "7a9a273a5e614865aa0867cfef3c58a1",
+  "verdict": "correct",
+  "reason": "Section M: \"The factors in order of importance are: technical, cost, and past performance.\""
+ },
+ {
+  "notice_id": "b77fd2a42566414d9a26fc1c0f2695f3",
+  "verdict": "unclear",
+  "reason": "The document calls it \"Technical Evaluation Factor 3 -Hazardous Material Handling\" (with its own \"Subfactor 3.1\"), but it sits inside \"VOLUME/FACTOR 1 -Technical Capability\" alongside \"VOLUME/FACTOR 2, Past Performance\" and \"VOLUME/FACTOR 3 Pricing\". Whether it is a factor or a subfactor of Factor 1 depends on which level counts; the document uses \"factor\" for both."
+ },
+ {
+  "notice_id": "4de1cb6926904edd8a7588b8cf57ff1a",
+  "verdict": "correct",
+  "reason": "\"Quotes will be evaluated in accordance with (IAW) RFO Part 13 and 36, price and past performance.\""
+ },
+ {
+  "notice_id": "0818683dcd304432af9ca18900081e2e",
+  "verdict": "correct",
+  "reason": "52.212-2(a): \"The following factors will be used to evaluate offers: (1) Technical Capability (2) Past Performance (3) Price\"."
+ },
+ {
+  "notice_id": "ebfedf446ea34a92912572363b013769",
+  "verdict": "correct",
+  "reason": "\"3 Volume II, Tab I -Factor 3 -Key Personnel: 3.1 Provide resumes...\""
+ },
+ {
+  "notice_id": "c4a20b7d4c73414dab939cd899eaa8b2",
+  "verdict": "correct",
+  "reason": "\"FACTOR 2 -CONTRACTOR COMPLIANCE (non-price) -All Sub-Factors must be considered 'Technically Acceptable' for Factor 2...\""
+ },
+ {
+  "notice_id": "86bcb7d4101d4ab48daa38e120ac89a0",
+  "verdict": "correct",
+  "reason": "\"FACTOR 5 -KEY PERSONNEL EXPERIENCE: Key Personnel experience demonstrating...\""
+ },
+ {
+  "notice_id": "cfe3c3ec736f41ef9f8e76c85f7df99e",
+  "verdict": "correct",
+  "reason": "\"6. Government Evaluation The Government anticipates evaluating quotations based on: Technical Acceptability: ... Schedule: ... Price:\". Stated as this RFQ's evaluation basis (\"anticipates\", \"Subject to the final solicitation terms\")."
+ },
+ {
+  "notice_id": "8abe7dada51b408da4b0323d3e55bad9",
+  "verdict": "wrong",
+  "reason": "\"Completeness\" is a scorecard criterion for each Qualifying Project: \"the Offeror shall complete only the Schedule and Completeness evaluation criteria on their applicable Attachment 0002 -Scorecard\", alongside \"Vacancy Rate and Time to Fill Rate\". It is a scoring element under the QP evaluation (a subfactor-level item), not a listed evaluation factor; no factor list naming it appears."
+ },
+ {
+  "notice_id": "fa27ec9202d847b5924414841fa828b2",
+  "verdict": "correct",
+  "reason": "52.212-2: \"The Government will evaluate the quotations submitted against the following evaluation criteria: 1. Technical Capability 2. Price\"."
+ },
+ {
+  "notice_id": "831c9c10c232443299ec6f70dfedf6ed",
+  "verdict": "correct",
+  "reason": "52.212-2(a): \"Factor 1 -Technical Capability ... Factor 2 -Past Performance Factor 3 -Price ... Factor 4 -Veterans Involvement (VAAR 852.215-70)\"."
+ },
+ {
+  "notice_id": "afc2845a38494cc8ad9fc5c56235f7b9",
+  "verdict": "correct",
+  "reason": "\"Factor 3 -Project Insight, Risk and Innovation The Design-Builder shall describe...\"; \"The Government will consider Factors 1 through 3 holistically.\""
+ },
+ {
+  "notice_id": "10f70c33abea45f190c9ee9f7544f2ca",
+  "verdict": "correct",
+  "reason": "\"3.1 The solicitation requires the evaluation of price and the following non-cost/price Factors: ... Factor 3 -Safety\"."
+ },
+ {
+  "notice_id": "eba22434589743d099a3ff2e9ac739c0",
+  "verdict": "correct",
+  "reason": "\"The Five (5) evaluation factors for determination of technical acceptability consist of: ... Technical Experience of Proposed Key Staffing\"."
+ },
+ {
+  "notice_id": "b8fa750a97ce42569b46991c4fb13c71",
+  "verdict": "correct",
+  "reason": "\"Price:\" is a heading in the 52.212-2(a) evaluation text (followed by \"(b) Notice of award\"), and \"The offeror's quotation will be evaluated in accordance with FAR 12.204, to determine if it is fair and reasonable.\" Value is right; the stored quote (\"Total price evaluation will be for each base period.\") is a weak naming line."
+ },
+ {
+  "notice_id": "e5e3091ec34c4db498674a765e55efe9",
+  "verdict": "correct",
+  "reason": "52.212-2: \"The following factors shall be used to evaluate quotes: Price Product Availability Product Specifications Delivery Lead Time Set-aside\"."
+ },
+ {
+  "notice_id": "0c213adb5ea745c78a9cc43989125379",
+  "verdict": "correct",
+  "reason": "\"L.2.1.2 Evaluation Factor, Price. Price will be evaluated for reasonableness, completeness, and balance.\""
+ }
+]

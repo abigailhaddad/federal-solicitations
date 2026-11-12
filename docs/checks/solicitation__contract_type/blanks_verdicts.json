@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "7fe0f357ea2645efa6800912c40182f5",
+  "verdict": "missed",
+  "reason": "firm-fixed-price. Q&A for this solicitation: \"Will this project be contracted as firm fixed price, cost plus, or some other mechanism?\" answered \"Firm Fixed Price\"."
+ },
+ {
+  "notice_id": "4d4fddd349c94bf4b61fa11059995bbd",
+  "verdict": "missed",
+  "reason": "firm-fixed-price. \"Acquisition Information ... Contract Type: Firm-Fixed-Price (FFP)\"."
+ },
+ {
+  "notice_id": "0834e724c43d44f2afb5a56fb6b47e20",
+  "verdict": "correct_blank",
+  "reason": "Lease of space (not a contract type here); the only related words are FASCSA clause boilerplate: \"For indefinite delivery contracts, the Contractor shall report to both...\"."
+ },
+ {
+  "notice_id": "5aaabb22f19c483f9915ad3fe63e48bd",
+  "verdict": "correct_blank",
+  "reason": "Only Q&A about \"labor-hour, parts-cost, or total-cost thresholds\" for minor repairs and FASCSA boilerplate \"For indefinite delivery contracts...\"; no type stated for this award."
+ },
+ {
+  "notice_id": "b051d47c659146ddafdbc9464306f11b",
+  "verdict": "correct_blank",
+  "reason": "Only FASCSA clause boilerplate \"For indefinite delivery contracts, the Contractor shall report...\"; no type stated for this award."
+ },
+ {
+  "notice_id": "c522548559af4a448d770faae1392412",
+  "verdict": "missed",
+  "reason": "firm-fixed-price. NFS clause in full text: \"1852.216-78 FIRM FIXED PRICED (DEC 2025)(DEVIATION) The total firm-fixed-price of this contract is $[Insert the appropriate amount].\" The clause body (not just a title) states this contract is FFP; amount is a blank template."
+ },
+ {
+  "notice_id": "90445e515c1344f89aa99f8c2833eb7f",
+  "verdict": "correct_blank",
+  "reason": "Lease (not a contract type here); only FASCSA boilerplate \"For indefinite delivery contracts...\"."
+ },
+ {
+  "notice_id": "6d9a41c1192d4a8c8a4cec2aae442e99",
+  "verdict": "correct_blank",
+  "reason": "Only the 52.209-7 definition text \"orders ... under indefinite-delivery, indefinite-quantity, 8(a), or requirements Contracts\"; refers to other contracts, not this subcontract/PO."
+ },
+ {
+  "notice_id": "7387226da74d4cd1bb78e490649d5ae0",
+  "verdict": "correct_blank",
+  "reason": "BAA states only a preference, not a decision: \"Type of contract/agreement proposed (e.g., Firm Fixed-Price, Cost Plus Fixed Fee, etc.). Firm Fixed-Price type awards are preferred. The FAA reserves the right to select or change the award type\"."
+ },
+ {
+  "notice_id": "8198e59fe5c3428b8e786913a655f0e8",
+  "verdict": "correct_blank",
+  "reason": "Lease of boat slips (not a contract type here); only FASCSA boilerplate \"For indefinite delivery contracts...\"."
+ }
+]

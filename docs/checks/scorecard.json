@@ -1,0 +1,161 @@
+{
+ "solicitation__evaluation_basis": {
+  "published": true,
+  "values": {
+   "correct": 30,
+   "n": 30,
+   "round": "checks2"
+  },
+  "blanks": {
+   "correct_blank": 4,
+   "missed": 5,
+   "unclear": 1,
+   "n": 10,
+   "round": "checks2"
+  }
+ },
+ "solicitation__relative_importance": {
+  "published": true,
+  "values": {
+   "correct": 30,
+   "n": 30,
+   "round": "checks2"
+  },
+  "blanks": {
+   "missed": 1,
+   "correct_blank": 9,
+   "n": 10,
+   "round": "checks2"
+  }
+ },
+ "solicitation__evaluation_factors": {
+  "published": true,
+  "values": {
+   "correct": 28,
+   "unclear": 1,
+   "wrong": 1,
+   "n": 30,
+   "round": "checks3"
+  },
+  "blanks": {
+   "correct_blank": 10,
+   "n": 10,
+   "round": "checks3"
+  }
+ },
+ "solicitation__contract_type": {
+  "published": true,
+  "values": {
+   "correct": 29,
+   "wrong": 1,
+   "n": 30,
+   "round": "checks3"
+  },
+  "blanks": {
+   "missed": 3,
+   "correct_blank": 7,
+   "n": 10,
+   "round": "checks3"
+  }
+ },
+ "solicitation__incumbent": {
+  "published": true,
+  "values": {
+   "correct": 18,
+   "n": 18,
+   "round": "checks3"
+  },
+  "blanks": {
+   "correct_blank": 10,
+   "n": 10,
+   "round": "checks3"
+  }
+ },
+ "solicitation__stated_value": {
+  "published": true,
+  "values": {
+   "correct": 27,
+   "wrong": 3,
+   "n": 30,
+   "round": "checks4"
+  },
+  "blanks": {
+   "correct_blank": 9,
+   "missed": 1,
+   "n": 10,
+   "round": "checks3"
+  }
+ },
+ "sources_sought__sole_source_intent": {
+  "published": true,
+  "values": {
+   "correct": 10,
+   "n": 10,
+   "round": "checks2"
+  },
+  "blanks": {
+   "missed": 1,
+   "correct_blank": 9,
+   "n": 10,
+   "round": "checks2"
+  }
+ },
+ "sources_sought__incumbent": {
+  "published": true,
+  "values": {
+   "correct": 21,
+   "unclear": 2,
+   "n": 23,
+   "round": "checks3"
+  },
+  "blanks": {
+   "correct_blank": 10,
+   "n": 10,
+   "round": "checks3"
+  }
+ },
+ "sources_sought__stated_value": {
+  "published": true,
+  "values": {
+   "correct": 38,
+   "n": 38,
+   "round": "checks4"
+  },
+  "blanks": {
+   "correct_blank": 10,
+   "n": 10,
+   "round": "checks3"
+  }
+ },
+ "sources_sought__set_aside_considered": {
+  "published": false,
+  "values": {
+   "wrong": 22,
+   "correct": 6,
+   "unclear": 2,
+   "n": 30,
+   "round": "checks2"
+  },
+  "blanks": {
+   "correct_blank": 10,
+   "n": 10,
+   "round": "checks2"
+  }
+ },
+ "sources_sought__planned_strategy": {
+  "published": false,
+  "values": {
+   "correct": 22,
+   "wrong": 5,
+   "unclear": 3,
+   "n": 30,
+   "round": "checks"
+  },
+  "blanks": {
+   "missed": 4,
+   "correct_blank": 6,
+   "n": 10,
+   "round": "checks"
+  }
+ }
+}

@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "909e581682c44c4dbf22ef2ec4f5de82",
+  "verdict": "correct_blank",
+  "reason": "Words are about the contractor's interior designer running FF&E vendor 'Best Value Determination (BVD)' RFQs, not the award basis for this construction contract"
+ },
+ {
+  "notice_id": "0b8a588cfa514e98b53f5ab88905977c",
+  "verdict": "correct_blank",
+  "reason": "Only 'G1.3 | Trade-Off Limits' in an ASHRAE energy-modeling table; no award basis stated"
+ },
+ {
+  "notice_id": "c59ccbd9c20f44e0a9c1fec8947e624e",
+  "verdict": "missed",
+  "reason": "lpta: Section M \"1. Lowest Priced Technically Acceptable (LPTA): The Government will award a single, Firm-Fixed-Price contract... to the responsible Offeror whose quote is technically acceptable... and represents the lowest evaluated price\""
+ },
+ {
+  "notice_id": "c4862b27e8084e809e97c4d34c87ac33",
+  "verdict": "missed",
+  "reason": "highest_technically_rated: this RFO is the task-order competition itself (\"award one Task Order\"); \"The award will be made to the Contractor determined to have the Highest Technically Ranked Offer (HTRO)... and the proposed Cost/Price is determined fair and reasonable\" (tradeoff only as a fallback)"
+ },
+ {
+  "notice_id": "04b66a236e1d4a0695fc32a58db66fd3",
+  "verdict": "correct_blank",
+  "reason": "\"optimize the design/cost tradeoff\" is from a VA A/E design manual, not an award basis"
+ },
+ {
+  "notice_id": "8314dd37f87f47698b971fe0dba87d1e",
+  "verdict": "missed",
+  "reason": "lowest_price: IFB \"most advantageous to the Government, considering only price and the price-related factors... award... will be made to the lowest responsive, responsible bidder\""
+ },
+ {
+  "notice_id": "a7c3450aaea144edb2591ec4ea2fe88c",
+  "verdict": "missed",
+  "reason": "lpta: \"evaluated in accordance with... RFO Part 15.103-2, Lowest Price Technically Acceptable Approach Source Selection Process\"; \"award based on the lowest evaluated price of proposals meeting or exceeding the acceptability standards for noncost factors\""
+ },
+ {
+  "notice_id": "c2ada4a0f915497d88ca68a4cf4a371f",
+  "verdict": "missed",
+  "reason": "tradeoff: this NOO is the task-order selection itself; \"integrated assessment and make a best-fit selection... Factor 1 and Factor 2 when combined are more important than Factor 3, Price\"; best fit \"represents the best value... considering the ESCO's approach, experience, past performance, and price\""
+ },
+ {
+  "notice_id": "a7165ba36c454492b9ad1e558879e8da",
+  "verdict": "unclear",
+  "reason": "Lease RFP says \"award a lease... to the responsible proposer whose proposal represents the best value after evaluation in accordance with the factors and subfactors\", but the context does not show the factors or whether non-price can outweigh price"
+ },
+ {
+  "notice_id": "abb93f4cdd594efda8cb04b1c21b0872",
+  "verdict": "correct_blank",
+  "reason": "\"summary of all trade-off possibilities considered\" is in the subcontracts clause (52.244-2), not an award basis"
+ }
+]

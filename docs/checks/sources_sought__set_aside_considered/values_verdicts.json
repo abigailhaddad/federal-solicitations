@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "ea42676a12d349d6b75786a13a31878e",
+  "verdict": "wrong",
+  "reason": "\"assist the Contracting Officer in determining if a Set-Aside is the acceptable strategy\" is determine-whether boilerplate, and the value names no set-aside type."
+ },
+ {
+  "notice_id": "41e1634be902450f99a90e474e823ccc",
+  "verdict": "correct",
+  "reason": "\"desires to procure 1,500 ... licenses on a small business set-aside basis, provided 2 or more qualified small businesses respond\"."
+ },
+ {
+  "notice_id": "c40206badd5645fe8ac6d9da1ae3804c",
+  "verdict": "wrong",
+  "reason": "\"BASED ON THE RESPONSES TO THIS SOURCES SOUGHT NOTICE/MARKET RESEARCH, THIS REQUIREMENT MAY BE SET-ASIDE FOR SMALL BUSINESSES OR PROCURED THROUGH FULL AND OPEN COMPETITION\": based-on-responses boilerplate."
+ },
+ {
+  "notice_id": "476e02ff60704b1f9e3d38a87064294f",
+  "verdict": "correct",
+  "reason": "\"this acquisition is currently being procured under Federal Acquisition Regulation (FAR) 19.1505 set-aside procedures for Women Owned Small Businesses\"; WOSB matches."
+ },
+ {
+  "notice_id": "4333ad19062e4a209adc987cc01b0b7d",
+  "verdict": "wrong",
+  "reason": "\"to assist in determining if this effort can be competitive and/or set aside for Small Business\": DLA standard market-research boilerplate, no plan stated."
+ },
+ {
+  "notice_id": "cbe891283bdb43f5bdb10506177114b4",
+  "verdict": "unclear",
+  "reason": "\"A primary purpose of this market research is to ascertain whether there are two or more capable small business DoD ESI BPA holders ... to support an order-level small business set-aside\": tailored to this requirement and names the set-aside, but is still a determine-whether statement; between considered and responses-based boilerplate."
+ },
+ {
+  "notice_id": "cf7299e5211f4851bcedbbc7a603e864",
+  "verdict": "correct",
+  "reason": "\"to determine the availability of service disabled veteran owned small business (SDVOSB) firms for a possible small business category type set-aside\" for this project; SDVOSB matches."
+ },
+ {
+  "notice_id": "b5e605278e544f67a652e50a7c1b6308",
+  "verdict": "wrong",
+  "reason": "\"The IHS Contracting Officer will give priority for all purchases, regardless of dollar value, by utilizing ISBEE set-aside to the maximum extent possible\": general Buy Indian Act policy paragraph."
+ },
+ {
+  "notice_id": "19a0a538822c458281e6f74643e0ffc9",
+  "verdict": "wrong",
+  "reason": "\"to assist in determining if this effort can be competitive, and/or a total Small Business Set-Aside\": boilerplate; notice also cites only-one-source authority 10 U.S.C. 2304(C)(1)."
+ },
+ {
+  "notice_id": "9a1baee2c76a4817ae09396bb9d376af",
+  "verdict": "wrong",
+  "reason": "\"Set Aside: Service-Disabled Veteran Owned Small Business\" is the SAM.gov header field."
+ },
+ {
+  "notice_id": "24e3fac6c3b34326a2691aab2f550866",
+  "verdict": "wrong",
+  "reason": "\"If the Governments pending market research establishes reasonable expectation that two or more Veteran owned businesses ... will set aside\": VA Veterans First rule-of-two cascade (VOSB, then SB) stated as standard policy, not a plan for this requirement."
+ },
+ {
+  "notice_id": "b70efa47a4434f55832629c511f14cf7",
+  "verdict": "wrong",
+  "reason": "\"to determine if this effort can be competitive or a Small Business Set-Aside\": Tinker SSS boilerplate."
+ },
+ {
+  "notice_id": "0329794b35c349f8b6c4a98374211c6c",
+  "verdict": "correct",
+  "reason": "\"desires to procure a Job Order Contract (JOC) at Yuma Proving Ground, on a small business set-aside basis, provided 2 or more qualified small businesses respond\"."
+ },
+ {
+  "notice_id": "d2ee1a07cf3d4796b4536c573c778ba4",
+  "verdict": "wrong",
+  "reason": "\"to determine if this effort can be competitive or a Small Business Set-Aside\": Tinker SSS boilerplate."
+ },
+ {
+  "notice_id": "0012548ec87346bd8bb8223d2d72f2b7",
+  "verdict": "wrong",
+  "reason": "\"assist the agency in making commerciality, NDI, and small business set-aside determinations\": generic determination language, no plan."
+ },
+ {
+  "notice_id": "a6daed9a5e21404eb0e3fa9f5ff9f415",
+  "verdict": "wrong",
+  "reason": "\"Contractor responses ... may directly influence ... whether to ... pursue a total or partial small-business set-aside ... or conduct a full and open competition\": based-on-responses boilerplate; value \"Total\" is also not what the text says."
+ },
+ {
+  "notice_id": "4ce658233fac4c0daf14eb3704bc127e",
+  "verdict": "wrong",
+  "reason": "\"if future efforts can be competitive or Set Aside for Small Business\": boilerplate; notice says \"currently being procured under FAR 6.302-1(a)(1) having only one responsible source\"."
+ },
+ {
+  "notice_id": "8c1a79a9ec614b89ac56a730fd6880e1",
+  "verdict": "correct",
+  "reason": "\"In the event Small Business contractors are not available for adequate competition for this project, it may be advertised as unrestricted\": SB set-aside is the stated plan, unrestricted the fallback."
+ },
+ {
+  "notice_id": "38d8082cd6d24001a32b9381d41fe418",
+  "verdict": "wrong",
+  "reason": "\"assist the Government in acquisition planning, including potential socioeconomic set-aside considerations\": generic, no type named."
+ },
+ {
+  "notice_id": "05ce85025a704849b02b89f87067cc23",
+  "verdict": "wrong",
+  "reason": "\"to determine if this effort can be competitive or a Small Business Set-Aside\": Tinker SSS boilerplate."
+ },
+ {
+  "notice_id": "edb8e5db232f4b9d97cf4c8aaf3b663c",
+  "verdict": "wrong",
+  "reason": "\"to determine if this effort can be competitive or a Small Business Set-Aside\": Tinker SSS boilerplate."
+ },
+ {
+  "notice_id": "cbe19b3b86a24b3c9caf45e8a8b4301b",
+  "verdict": "unclear",
+  "reason": "\"This is a Small Business Sources Sought notice\"; \"Responses will assist the Government in determining ... whether a full or partial small business set-aside is appropriate\"; \"has not made a final set-aside determination.\" SB-only notice suggests a set-aside is under consideration, but the operative sentence is responses-based."
+ },
+ {
+  "notice_id": "650b4498d76a41818e77563ca399c48d",
+  "verdict": "wrong",
+  "reason": "\"the Government will determine whether a setaside acquisition in lieu of full and open competition is in the Government's best interest\": based-on-responses boilerplate, no type."
+ },
+ {
+  "notice_id": "2c63335327a1411f84aae8f06adb5b86",
+  "verdict": "correct",
+  "reason": "\"The solicitation is intended to be released in accordance with GSAR 538.7103-3(a)(2) as a Service-Disabled Veteran Owned Small Business Set-aside.\""
+ },
+ {
+  "notice_id": "435d010d5d4b4520804453fa586127cd",
+  "verdict": "wrong",
+  "reason": "\"If the Governments pending market research establishes reasonable expectation that two or more Veteran owned businesses ... will set aside\": VA rule-of-two cascade stated as policy."
+ },
+ {
+  "notice_id": "88eef34f7d4b4dd9ae6fe474e65023ad",
+  "verdict": "wrong",
+  "reason": "\"may directly influence ... whether to ... pursue a total or partial small-business set-aside ... or conduct a full and open competition\": based-on-responses boilerplate."
+ },
+ {
+  "notice_id": "250efbef249441a19cec9e4607a05bd9",
+  "verdict": "wrong",
+  "reason": "\"After completing its analysis of market capabilities, the Government will determine whether to limit competition to small businesses\": based-on-responses boilerplate."
+ },
+ {
+  "notice_id": "032456c1dfcf49528a44cd23d4dda980",
+  "verdict": "wrong",
+  "reason": "\"The VA is mandated by Public Law 109-461 to consider a total set-aside for Service-Disabled Veteran Owned Small Business\": Veterans First stated as statutory policy; \"if response ... proves inadequate, an alternate set-aside or full and open competition may be determined.\""
+ },
+ {
+  "notice_id": "31ed25d16c1241bd9ca89f02799f03a7",
+  "verdict": "wrong",
+  "reason": "\"The amount of interest or lack thereof will determine the possibility of a small business or other socio-economic small business set-aside\": based-on-responses boilerplate; \"anticipates conducting a competitive acquisition\"."
+ },
+ {
+  "notice_id": "3ad5d522f8e04a48bdc3167f0043f061",
+  "verdict": "wrong",
+  "reason": "Quote is a response instruction citing clause title \"VAAR 852.219-73 ... VA Notice of Total Set-Aside For Certified SDVOSBs\"; operative statement is \"set-aside decisions may be made based on the information provided in response to this RFI\"."
+ }
+]

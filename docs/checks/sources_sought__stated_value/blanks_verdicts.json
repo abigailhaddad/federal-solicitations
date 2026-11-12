@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "6e32322598474887aaa575a061b8f3ce",
+  "verdict": "correct_blank",
+  "reason": "Only asks respondents for past contracts' \"dollar magnitude or range\"; no dollar amount stated for this acquisition."
+ },
+ {
+  "notice_id": "b821e6d986044ea18a91d5ef1180d504",
+  "verdict": "correct_blank",
+  "reason": "Context gives ordering periods and \"estimates for the total number of exams\"; no dollar estimate or ceiling."
+ },
+ {
+  "notice_id": "f61d77d04c134ec68b012ebd3a6c28ca",
+  "verdict": "correct_blank",
+  "reason": "Asks vendors for \"rough order of magnitude (ROM) pricing\"; no amount stated by the Government."
+ },
+ {
+  "notice_id": "19b8e3a762f24de4a08831b19cdd2d38",
+  "verdict": "correct_blank",
+  "reason": "Mentions \"magnitude of work\" only in a past-performance request; no dollar amount."
+ },
+ {
+  "notice_id": "7bdadd32ea6a4c9892066ff02a6cb81c",
+  "verdict": "correct_blank",
+  "reason": "Requests \"Rough-order-of-magnitude pricing\" from respondents; no amount stated."
+ },
+ {
+  "notice_id": "8fd3187edf3d4885b4533bb2424256bc",
+  "verdict": "correct_blank",
+  "reason": "Context is SCA labor-category definitions (\"CARPENTER, MAINTENANCE BLS 47-203, SCA 23130\"); no dollar estimate."
+ },
+ {
+  "notice_id": "df72c7edcd1b4c32852523b82d3015d5",
+  "verdict": "correct_blank",
+  "reason": "Asks vendors to \"Provide rough order-of-magnitude cost ranges if feasible\"; no amount stated."
+ },
+ {
+  "notice_id": "bbbc53dc016c45e1989a4a01af636c22",
+  "verdict": "correct_blank",
+  "reason": "\"magnitude of deviation\" refers to out-of-tolerance readings; no dollar amount."
+ },
+ {
+  "notice_id": "7a606cef6cbe4784adb4c1aa047d1f89",
+  "verdict": "correct_blank",
+  "reason": "\"Budgetary Estimate: A rough-order-of-magnitude estimate\" is requested from vendors; no Government amount stated."
+ },
+ {
+  "notice_id": "904745e4caba4f4e9ce04a3a98b7af56",
+  "verdict": "correct_blank",
+  "reason": "Asks for \"a rough order-of-magnitude lifecycle cost estimate\" from respondents; no amount stated."
+ }
+]

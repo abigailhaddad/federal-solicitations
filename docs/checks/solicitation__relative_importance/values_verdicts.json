@@ -1,0 +1,152 @@
+[
+ {
+  "notice_id": "913372def0604204ac3f13f402110269",
+  "verdict": "correct",
+  "reason": "\"Past Performance and Technical Capability when combined are more important than price\"; value matches."
+ },
+ {
+  "notice_id": "73145e76762240cfa8cabf8be879708e",
+  "verdict": "correct",
+  "reason": "\"The Technical Adequacy Characteristics table will be evaluated equally, with no single category receiving greater weight than another\"; value matches (categories equal)."
+ },
+ {
+  "notice_id": "1d03605b874b419fb7a1c93f41ede35e",
+  "verdict": "correct",
+  "reason": "\"All non-price factors are of equal importance and, when combined, are significantly more important than price.\""
+ },
+ {
+  "notice_id": "22c583a5b1144745ad8f38afb98cfc75",
+  "verdict": "correct",
+  "reason": "\"The evaluation of quotes will consider the non-cost quote significantly more important than the cost quote.\""
+ },
+ {
+  "notice_id": "bfc4c99915e94beab0922e2bd2243f4a",
+  "verdict": "correct",
+  "reason": "\"Factor I ..., Factor II ..., and Factor III ... are equal in importance. Factors I, Factor II, and Factor III when combined, are approximately equal in importance to Factor IV (Price).\" (found in context with hyphen variant)."
+ },
+ {
+  "notice_id": "26588cc4421447199018d9bbd6789cf4",
+  "verdict": "correct",
+  "reason": "\"All evaluation factors other than cost or price, when combined, are approximately equal to cost or price.\""
+ },
+ {
+  "notice_id": "839e89b4397d46a59c6fac10aeb01fd1",
+  "verdict": "correct",
+  "reason": "\"The other non-price factors ... are listed in descending order of importance and, when combined, are significantly more important than Price.\""
+ },
+ {
+  "notice_id": "1be68595d6094899877e64869230a5b7",
+  "verdict": "correct",
+  "reason": "\"Factor 1 Technical being the most important factor, Factor 2 Past Performance being the second ... Factor 3 Price is the least important\"; \"Evaluation factors other than price, when combined, are more important than price.\""
+ },
+ {
+  "notice_id": "36fa9bb531c84535b1378cd14cf8712c",
+  "verdict": "correct",
+  "reason": "\"Past Performance is significantly more important than Price.\" (Technical is acceptable/unacceptable, not traded)."
+ },
+ {
+  "notice_id": "f9eba27d46634abbaa87efa0e0e7b668",
+  "verdict": "correct",
+  "reason": "\"Technical and Past Performance, when combined, are more important than Price.\""
+ },
+ {
+  "notice_id": "0d55ead29de84c778673fcfae388eb28",
+  "verdict": "correct",
+  "reason": "\"Factor 1 is more important than Factor 2.\" \"Technical evaluation factors and past performance, when combined, are more important than price.\""
+ },
+ {
+  "notice_id": "779747fc37084ac9b5dc3ff7ad5df923",
+  "verdict": "correct",
+  "reason": "\"Written proposal evaluation criteria are listed in descending order of importance.\""
+ },
+ {
+  "notice_id": "c2ada4a0f915497d88ca68a4cf4a371f",
+  "verdict": "correct",
+  "reason": "\"Factor 1, ESCO Approach, is more important than Factor 2, Past Performance. Factor 1 and Factor 2 when combined are more important than Factor 3, Price.\""
+ },
+ {
+  "notice_id": "8d9ca3d302ef4a538fc298171804b11e",
+  "verdict": "correct",
+  "reason": "\"All technical factors are considered equal. All factors when combined are more important than the overall price.\""
+ },
+ {
+  "notice_id": "c94190c2ae7641978bd21c211a1bc344",
+  "verdict": "correct",
+  "reason": "Filled-in text after the template brackets: \"Price, Past Performance, Technical Acceptability are all weighed equally\"."
+ },
+ {
+  "notice_id": "6d9a41c1192d4a8c8a4cec2aae442e99",
+  "verdict": "correct",
+  "reason": "\"the Technical Factors, when combined, are more important than price.\""
+ },
+ {
+  "notice_id": "158934b357694b7cae8b2378673c8c4e",
+  "verdict": "correct",
+  "reason": "\"Factor 1 -Technical Solution) is of equal importance to ... (Factor 2 -Past Performance). The combined non-cost/price factors are approximately equal to price.\""
+ },
+ {
+  "notice_id": "a68cd045811c45448afbe53da58e93ab",
+  "verdict": "correct",
+  "reason": "\"Factor 1 ... and Factor 2 ... are the most important factors and together are more important than Factor 3 ... When combined, the non-price factors are more important than price.\""
+ },
+ {
+  "notice_id": "61d9bcd6545741ac9cc06e44268f7e24",
+  "verdict": "correct",
+  "reason": "\"Technical Capability (Factor 2) is significantly more important than Past Performance (Factor 3). When combined, Technical Capability and Past Performance are approximately equal to Price.\""
+ },
+ {
+  "notice_id": "9250843285fe47e39f5d4c25ea5f7932",
+  "verdict": "correct",
+  "reason": "\"Factors 1, 2,3, and 4 ... are of equal importance. Factors 1-4, when combined, are equal in importance to Factor 5 (Price).\""
+ },
+ {
+  "notice_id": "9a091a2845e0459db33d09de94d33cca",
+  "verdict": "correct",
+  "reason": "\"The Cost Factor is significantly less important than the combined importance of the Mission Suitability Factor and the Past Performance Factor. As individual Factors, the Cost Factor is less important than the Mission Suitability Factor but more important than the Past Performance Factor.\""
+ },
+ {
+  "notice_id": "b186c45b95294ce7a599f20bb542fff2",
+  "verdict": "correct",
+  "reason": "\"Non-Price Factors, when combined, are significantly more important than Total Evaluated Price.\""
+ },
+ {
+  "notice_id": "ee28cbcf39d74a948a844556006fbad5",
+  "verdict": "correct",
+  "reason": "\"Past Performance and Technical Capability when combined are more important than price\"; value matches."
+ },
+ {
+  "notice_id": "a5e6930a75bb411186e4300ebd7aef81",
+  "verdict": "correct",
+  "reason": "\"All evaluation factors, other than cost or price, are considered approximately equal to cost or price.\""
+ },
+ {
+  "notice_id": "59c7c4d693ac4933b34928c6c4407e05",
+  "verdict": "correct",
+  "reason": "\"past performance history will be evaluated on a basis significantly more important than price.\""
+ },
+ {
+  "notice_id": "ed2ab6ab289941af96e5f7e6cc69d197",
+  "verdict": "correct",
+  "reason": "\"Relative Importance of Evaluation Factors in order of importance: 1. FMV Annual Rent Proposed ... 5. Impact to the Local Economy\"; value matches."
+ },
+ {
+  "notice_id": "4c9bd11b4ce2404fbb945f4f20c02d63",
+  "verdict": "correct",
+  "reason": "\"evaluation factors, listed in descending order of importance: Factor 1 ... Factor 2 ...\""
+ },
+ {
+  "notice_id": "c91fc164637d4d05b121f44418628905",
+  "verdict": "correct",
+  "reason": "\"Past Performance is Factor 2 and is significantly more important than Price.\""
+ },
+ {
+  "notice_id": "7cf2475364cb4cb5a6c821dcfcce484c",
+  "verdict": "correct",
+  "reason": "\"The technical factors and past performance are equal, and when combined, are significantly more important than price.\""
+ },
+ {
+  "notice_id": "1511422418e848f896a0010668d90da1",
+  "verdict": "correct",
+  "reason": "\"Factors 1and 2 ... are of equal value to each other, however are weighted heavier than the remaining factors. The remaining factors (3-6) are of equal importance. All nonprice evaluation factors, when combined, are significantly more important than price.\""
+ }
+]

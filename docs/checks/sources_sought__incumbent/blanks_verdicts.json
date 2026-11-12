@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "4e30f394afe049a2b737c55bf4bdfae7",
+  "verdict": "correct_blank",
+  "reason": "Context covers response instructions ('Up to three relevant prior or current contracts' of respondents); no current contractor or contract named for this requirement."
+ },
+ {
+  "notice_id": "3b1a3968ae724d158545e0864047799e",
+  "verdict": "correct_blank",
+  "reason": "Only generic transition boilerplate ('the successor contractor shall prepare to assume full responsibility for all areas of the incumbent functions'); no contractor or contract named."
+ },
+ {
+  "notice_id": "c37106f0004e46e9937062c9f7c3f661",
+  "verdict": "correct_blank",
+  "reason": "States the opposite: 'There is no incumbent contractor for this requirement. This is a new effort'. Kenworth is a vehicle make, not a contractor."
+ },
+ {
+  "notice_id": "7e8f59b609fe4f02bd949a3b0027c318",
+  "verdict": "correct_blank",
+  "reason": "'It is incumbent upon the contractor to immediately notify the COR' - 'incumbent' used in the sense of obligation; no contractor named."
+ },
+ {
+  "notice_id": "cbe19b3b86a24b3c9caf45e8a8b4301b",
+  "verdict": "correct_blank",
+  "reason": "Respondent instructions ('including ongoing work, and identify the performing entity') and amendment text; no current contractor or contract named."
+ },
+ {
+  "notice_id": "736f8f25bf8b4a88a0fd532625f54631",
+  "verdict": "correct_blank",
+  "reason": "'It is incumbent upon the vendor to initiate any actions' - obligation sense; 'VA770-17-P-1234' is an example PO number format, not a predecessor contract."
+ },
+ {
+  "notice_id": "8fd3187edf3d4885b4533bb2424256bc",
+  "verdict": "correct_blank",
+  "reason": "'Incumbent' refers to the person filling a labor category ('Incumbent possesses a current FAA Class II Medical Certificate'); no contractor named."
+ },
+ {
+  "notice_id": "117d1d57e2734b2eaf64280dbb786c08",
+  "verdict": "correct_blank",
+  "reason": "'Describe your approach to transition-in from an incumbent' is a question to respondents; Geotab is a telematics platform example, not a contractor for this work."
+ },
+ {
+  "notice_id": "899bbb682c604e1cb0b24b5e43716e1a",
+  "verdict": "correct_blank",
+  "reason": "'The incumbent must be capable of operating the plant' refers to the operator position; no contractor named."
+ },
+ {
+  "notice_id": "d56982b0e91741e280535997bfdfdc96",
+  "verdict": "correct_blank",
+  "reason": "'Current Contractor status' is a monthly report item; no contractor or contract named."
+ }
+]

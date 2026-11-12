@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "06573dc78319428aa158abd1f1b17dd9",
+  "verdict": "missed",
+  "reason": "Undecided: 'All responses received will be considered for meeting the MDAs requirements and determination of final acquisition strategy for the follow-on contract to HQ085122D0002.'"
+ },
+ {
+  "notice_id": "79e03775b20a4dad802d337401dede17",
+  "verdict": "missed",
+  "reason": "Undecided: purpose includes 'Identify the best procurement approach based upon the information received', listing options incl. 'Total Small Business Set-Aside' and 'Full and Open Competition'."
+ },
+ {
+  "notice_id": "28bbe35293f346269b569afa69ca53a0",
+  "verdict": "correct_blank",
+  "reason": "Only says it gauges interest 'to include Small Businesses, as the Government must ensure there is adequate competition'; no set-aside, sole source, or statement that strategy is to be decided."
+ },
+ {
+  "notice_id": "7a606cef6cbe4784adb4c1aa047d1f89",
+  "verdict": "correct_blank",
+  "reason": "'determine the availability and technical capability of small and large businesses' is generic; no strategy stated."
+ },
+ {
+  "notice_id": "8a1205227e5441499d7a4bc2344d400e",
+  "verdict": "correct_blank",
+  "reason": "Gauges 'interest, capabilities, and qualifications'; anticipates an RFP; nothing on set-aside/competition strategy."
+ },
+ {
+  "notice_id": "eeb3dc9d932a4f4f866cbf3cd0f2bd8b",
+  "verdict": "correct_blank",
+  "reason": "'Conduct a full and open competitive sales process' refers to the contractor's public vehicle sales, not this acquisition's competition strategy."
+ },
+ {
+  "notice_id": "8c6245946ddb456893e82f21c8d3141c",
+  "verdict": "missed",
+  "reason": "Undecided: market research to obtain 'Recommendations on the Government's acquisition and contracting approach'. Weaker than an explicit 'no decision made'; it doesn't mention set-aside or competition specifically."
+ },
+ {
+  "notice_id": "f8f86d3cc7b04560a56ce6b719c95ae0",
+  "verdict": "correct_blank",
+  "reason": "'seeking information from any Service Disabled Veteran-owned Small Business (SDVOSB), Veteran-owned Small Business (VOSB), or Small Business (SB) vendors' is a generic SB request; the notice's SET-ASIDE field is blank."
+ },
+ {
+  "notice_id": "d168c9a2ace94efabe21990c977105c7",
+  "verdict": "correct_blank",
+  "reason": "'Any contract or order ... will be subject to applicable procurement laws, regulations, and competition requirements' is boilerplate; 'There are no anticipated tasks under this RFI'."
+ },
+ {
+  "notice_id": "e68f5d33fe094250ab347ad9f7628cf4",
+  "verdict": "missed",
+  "reason": "small_business_set_aside (SDVOSB): notice header field reads 'SET-ASIDE SDVOSBC'. Caveat: this rests only on the SAM set-aside field; no narrative sentence in this context states the plan."
+ }
+]

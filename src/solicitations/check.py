@@ -39,6 +39,34 @@ def contract_type_by_rule(doc, nd) -> list[dict]:
     return out[:3]
 
 
+_AMOUNT = re.compile(r"(?:(?:US|BZ|BZD|AUD|CAD)\s*)?\$\s?[\d,]+(?:\.\d+)?(?:\s*(?:million|billion|thousand|[MBK])\b)?", re.I)
+
+
+def as_written(value: str | None, quote: str | None) -> str | None:
+    """A value the model wrote as a bare number ("8000000") is replaced by the amount as the quote writes
+    it ("$8,000,000.00"), when exactly one amount in the quote has that number. 10 of 60 sampled values
+    on 2026-11-12 were bare numbers."""
+    v = (value or "").strip().rstrip(",;")
+    if not re.fullmatch(r"\d+(?:\.\d+)?", v):
+        # bare numbers inside a longer value ("10000000 to 15000000", "Up to 49000000"): each gets the
+        # quote's own spelling of that amount when the quote has exactly one
+        def one(m):
+            w = as_written(m.group(0), quote)
+            return w if w != m.group(0) else m.group(0)
+        return re.sub(r"(?<![\d$,.])\d{4,}(?:\.\d+)?(?![\d,])", one, v)
+    hits = []
+    for m in _AMOUNT.finditer(quote or ""):
+        n = re.sub(r"[^\d.]", "", re.sub(r"\s*(?:million|billion|thousand|[MBK])\b", "", m.group(0), flags=re.I).split("$")[-1])
+        unit = re.search(r"(million|billion|thousand|[MBK])\b", m.group(0), re.I)
+        mult = {"m": 1e6, "million": 1e6, "b": 1e9, "billion": 1e9, "k": 1e3, "thousand": 1e3}.get(unit.group(1).lower(), 1) if unit else 1
+        try:
+            if abs(float(n.rstrip(".")) * mult - float(v)) < 0.5:
+                hits.append(m.group(0).strip().rstrip(",."))  # "$10,000,000," at a clause break
+        except ValueError:
+            pass
+    return hits[0] if len(set(hits)) == 1 else value
+
+
 def check_answer(doc, answer: dict, profile: str | None = None) -> tuple[dict, list]:
     nd = doc.normalized()
     kept, dropped = {}, []
@@ -60,6 +88,14 @@ def check_answer(doc, answer: dict, profile: str | None = None) -> tuple[dict, l
             if why:
                 dropped.append({"field": name, "value": it.get("value"), "quote": it.get("quote"), "why": why})
                 continue
+            if name == "stated_value":
+                # Architect-engineer services (PSC C...): the dollar figure is almost always the cost of the
+                # construction being designed, not this contract's value (2 of 30 in the 2026-11-12 check).
+                if (doc.meta.get("psc") or "").upper().startswith("C") and re.search(r"construction", it.get("quote") or "", re.I):
+                    dropped.append({"field": name, "value": it.get("value"), "quote": it.get("quote"),
+                                    "why": "construction cost on an A-E notice"})
+                    continue
+                it = {**it, "value": as_written(it.get("value"), it.get("quote"))}
             good.append({**it, "pages": qm.pages, "match": qm.match})
         kept[name] = good if kind == "list" else (good[0] if good else None)
     if profile == "solicitation" and not kept.get("contract_type"):

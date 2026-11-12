@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "c458223f8fcb43d4ae0872765cf7aa2b",
+  "verdict": "missed",
+  "reason": "Named intended sole-source awardee: Rolls-Royce Solutions America, Inc. \"It is the Government's intention to procure these supplies utilizing Other than Full and Open Competition, from Rolls-Royce Solutions America, Inc. IAW FAR 6.302-1\"; \"Prior to issuing a sole source solicitation\"."
+ },
+ {
+  "notice_id": "df72c7edcd1b4c32852523b82d3015d5",
+  "verdict": "correct_blank",
+  "reason": "General market-research RFI; \"does not preclude participation in any future full and open competition RFP\". No named intended awardee."
+ },
+ {
+  "notice_id": "15448bdcf4fc4884b1ceeb3281d89e43",
+  "verdict": "correct_blank",
+  "reason": "Market-research RFI for sUAS dock systems; no sole-source intent or named firm."
+ },
+ {
+  "notice_id": "c7eb4af5e4e04cc0a74cf6d26e2b76b7",
+  "verdict": "correct_blank",
+  "reason": "\"to determine if this effort can be competitive or a Small Business Set-Aside\"; no sole source to a named firm."
+ },
+ {
+  "notice_id": "66e2f8dc88ae48498eff337d9c7b30dd",
+  "verdict": "correct_blank",
+  "reason": "Buy Indian Act representation form: \"may require documentation of eligibility before awarding a set-aside or sole source contracts\" is general policy, no named firm."
+ },
+ {
+  "notice_id": "cdba169a67b5422685b5176fd0a65c77",
+  "verdict": "correct_blank",
+  "reason": "\"to determine if responsible sources exist, and to assist in determining if this effort can be competitive\"; CAGE 80063 listed as part source only, no stated sole-source intent."
+ },
+ {
+  "notice_id": "cbe891283bdb43f5bdb10506177114b4",
+  "verdict": "correct_blank",
+  "reason": "Prior buy used a Limited-Sources Justification; this notice will \"determine whether ... an updated limited-sources justification is legally substantiated\". No named intended awardee in context."
+ },
+ {
+  "notice_id": "05ce85025a704849b02b89f87067cc23",
+  "verdict": "correct_blank",
+  "reason": "Tinker SSS boilerplate \"to determine if this effort can be competitive or a Small Business Set-Aside\"; no named firm."
+ },
+ {
+  "notice_id": "22b4d04dd69441188d70e20b8041fe2f",
+  "verdict": "correct_blank",
+  "reason": "Ametek named only as OEM no longer producing; \"intends to award a Small Business Set-Aside\". No sole source."
+ },
+ {
+  "notice_id": "3d8f64176703404ca736e4859d81123f",
+  "verdict": "correct_blank",
+  "reason": "\"intends to award a succeeding lease using other than full and open competition\"; no lessor/firm named."
+ }
+]

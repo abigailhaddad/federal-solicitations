@@ -1,0 +1,187 @@
+{
+ "field": "sole_source_intent",
+ "track": "sources_sought",
+ "definition": "Only when the notice says the agency intends to award, or is considering awarding, THIS requirement to one named firm without competition (a sole source, 'only one responsible source', 'intends to negotiate with X'): value = that firm's name as written. NOT a brand-name requirement that any vendor could supply, NOT a firm named only as a manufacturer or a current contractor, NOT a general description of sole-source rules.",
+ "items": [
+  {
+   "notice_id": "906d1c357bde48a3af8921cd7078d6ee",
+   "sam_link": "https://sam.gov/opp/906d1c357bde48a3af8921cd7078d6ee/view",
+   "title": "Base Maintenance for Fort Leonard Wood, Missouri",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "TSAY Professional Services, Inc",
+    "quote": "The Government intends to extend the current CPFF contract on a Sole Source basis to TSAY Professional Services, Inc for a three (3) to nine (9) month period of performance."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "This is a Sources Sought Notice ONLY. The Government intends to extend the current CPFF contract on a Sole Source basis to TSAY Professional Services, Inc for a three (3) to nine (9) month period of performance. The statutory authority for the sole source is 10 United States Code 2304(c)(1) as implemented in Federal Acquisition Regulation 6.302-1(a)(2)(iii), Only One Responsible Source and No Other Supplies or Services Will Satisfy Agency Requirements. This notice does not constitute a Request for Quote (RFQ)/Invitation for Bid (IFB)/Request for Proposal (RFP) or a promise to issue an RFQ, IFB or RFP in the future. This notice does not commit the U.S. Government to contract for any supply or service. Further, the U.S. Government is not seeking quotes, bids or proposals at this time and will not accept unsolicited proposals in response to this sources sought notice. This notice does not constitute a Request for Quote (RFQ)/Invitation for Bid (IFB)/Request for Proposal (RFP) or a promise to issue an RFQ, IFB or RFP in the future. This notice does not commit the U.S. Government to contract for any supply or service. Further, the U.S. Government is not seeking quotes, bids or proposals at this time and will not accept unsolicited proposals in response to this sources sought notice. The U.S. Government will not pay for any information or administrative costs incurred in response to this notice. Any information provided in response to the sources sought will not be returned to the responder. A determination not to compete this requirement, based upon responses to this notice, is solely within the discretion of the Government. However, if a competitive solicitation is released, it will be synopsized on the Governmentwide Point of Entry. The NAICS code is 561210, Facilities Support Services. It is the responsibility of potential offerors to monitor the Governmentwide Point of Entry for additional information pertaining to this requirement. In response to this sources sought, please provide: 1. Identify any condition or action that may be having the effect of unnecessarily restricting competition with respect to this acquisition and identify alternatives or solution solutions. Also contact the MICC Advocate for Competition, Scott Kukes, at scott.d.kukes.civ@army.mil or 520-944-7373, if you believe that this action is unreasonably restricting competition. Include the subject of the acquisition, this announcement, and the MICC POC information from the Sources Sought Synopsis. Provide the specific aspects that unreasonably restrict competition and the rationale for such conclusion. 2. Name of the firm, point of contact, phone number, email address, DUNS number, CAGE code, id"
+  },
+  {
+   "notice_id": "7dcb8672e50441129d617b4a7c0d1cc1",
+   "sam_link": "https://sam.gov/opp/7dcb8672e50441129d617b4a7c0d1cc1/view",
+   "title": "Notice of Intent to Sole Source for LP33333 Batteries",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "Eagle Picher",
+    "quote": "NASA/AFRC intends to issue a sole source contract to acquire the LP3333 Batteries from Eagle Picher"
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "NASA/AFRC has a requirement for Global Hawk six (6) LP3333 Batteries with the proprietary technologies of Eagle Picher, the sole producer of Global Hawk batteries. NASA/AFRC intends to issue a sole source contract to acquire the LP3333 Batteries from Eagle Picher, the sole manufacture of the Global Hawk batteries, containing proprietary technologies. The Government intends to acquire a commercial product or service using FAR Part 12. Interested organizations may submit their capabilities and qualifications to perform the effort electronically via email to Charles Little, charles.d.little@nasa.gov and Jamill Richter, jamill.m.richter@nasa.gov not later than 12:00pm PT November 21, 2026. Such capabilities/qualifications will be evaluated solely for the purpose of determining whether to conduct this acquisition on a competitive basis. A decision by the Government not to compete this acquisition on a full and open competition basis, based upon responses to this notice, is solely within the discretion of the Government. NASA Clause 1852.215-84, Ombudsman, is applicable. The Center Ombudsman for this acquisition can be found at : https://www.hq.nasa.gov/office/procurement/regs/Procurement-Ombuds-Comp-Advocate-Listing.pdf SPECIFICATION SHEET/ STATEMENT OF WORK LP33333 BATTERIES DATE: 11 SEPTEMBER 2026 National Aeronautics and Space Agency Armstrong Flight Research Center Edwards, California 1. Objective/Requirements Purchase of 6 EA LP33333 Battery for NASA Range Hawk Global Hawk. Q-Doc Requirement Q1-A 2. Characteristics, Scope, and Specs 1. Product part number(s): LP33333/NSN 6140-01-619-8889 2. Nomenclature: Battery, Storage 3. Quantity needed:6 4. Additional Specs: Weight Not to Exceed 17.24 kg (38 lbs) Maximum Dimensions Width: 21.1 cm (8.3 in.) Length: 32.0 cm (12.6 in.) Height: 19.1 cm (7.5 in.) Nominal Voltage 28 V Ampere-hour Capacity 55 Ah Energy Storage Capacity 1540 Wh Maximum Continuous Discharge 66 A Operating Temperature-40 to 65\u00b0C (104 to 149\u00b0F 3. Delivery Location (Return to:) NASA Armstrong Flight Research Center Attn: Global Hawk Supply Bldg 4876 Warehouse #6, Lilly Drive Edwards, CA 93524 4. Period of Performance or delivery date/need by date required Needed not later than 09/30/2027 Freight Delivery requirements, if applicable. *If FREIGHT shipment is required for returning items, it needs to be coordinated 4 business days in advance to ensure the delivery driver has proper entry into Edwards Air Force Base. An AFRC visitor request may need to be submitted."
+  },
+  {
+   "notice_id": "f9e0cb230ab04f88a2e4668bce1ffc8a",
+   "sam_link": "https://sam.gov/opp/f9e0cb230ab04f88a2e4668bce1ffc8a/view",
+   "title": "CIO Multifunction Devices 6 Month Bridge",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "Government Acquisitions LLC",
+    "quote": "The proposed sole source Firm Fixed Price contract to Government Acquisitions LLC for a 6 month bridge to be exercised for the CIO multifunction device contract."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "SOURCES SOUGHT SYNOPSIS THIS IS A Sources Sought Notice ONLY. The U.S. Government currently intends to award a 6 month bridge for the CIO Multifunction Device contract on a SOLE SOURCE basis but is seeking vendors that may be able to perform this requirement in order to support a competitive procurement. Accordingly, the U.S. Government highly encourages all interested businesses (large and small) to respond to this sources sought synopsis. In addition, small businesses, in all socioeconomic categories (including, 8(a) Business Development Program, Small Disadvantage Business, Historically Underutilized Business Zone, Service-Disabled Veteran-Owned, Women-Owned Small Business concerns), must describe their identifying capabilities in meeting the requirements at a fair market price, i.e., information which may help support a set-aside. The proposed sole source Firm Fixed Price contract to Government Acquisitions LLC for a 6 month bridge to be exercised for the CIO multifunction device contract. This is a multifunction device services only contract for proprietary devices already in place. The statutory authority for the sole source procurement is 10 United States Code 2304(c)(1) as implemented in Federal Acquisition Regulation 6.302-1(a)(2)(iii), Only One Responsible Source and No Other Supplies or Services Will Satisfy Agency Requirements). This notice does not constitute a Request for Quote (RFQ) or a promise to issue an RFQ in the future. This notice does not commit the U.S. Government to contract for any supply or service. Further, the U.S. Government is not seeking quotes, bids or proposals at this time and will not accept unsolicited proposals in response to this sources sought notice. The U.S. Government will not pay for any information or administrative costs incurred in response to this notice. Submittals will not be returned to the responder. A determination not to compete this requirement, based upon responses to this notice, is solely within the discretion of the Government. However, if a competitive solicitation is released, it will be synopsized on the Governmentwide Point of Entry. It is the responsibility of potential offerors to monitor the Governmentwide Point of Entry for additional information pertaining to this requirement. The NAICS code is: 532420 -Office Machinery and Equipment Rental and Leasing; Size Standard $35.0M; PSC code: W074 -Lease or Rental of Equipment-Office Machines, Text Processing Systems, and Visible Record Equipment. In response to this sources sought, please provide: 1. Identify any condition or action that may be having the effect of unnecessarily restricting competition with respect to this acquisition and identify alternatives or solution solutions. Also contact the MICC Advocate for Competition, Scott Kukes, at scott.d.kukes.civ@mail.mil or (520) 944-7373, if you believe that this action is unreasonably restricting competition. Include the subject of the acquisition, this announcement, and the MICC POC information from the Sources Sought Synopsis. Provide the specific aspects that unreasonably restrict competition and the rationale for such conclusion. 2. Name of the firm, point of contact, phone number, email address, DUNS number, CAGE code, identify business size (large business or a small business), and if applicable, a statement regarding small business status (including small business type(s)/certifications(s) such as SDB, 8(a), HUBZone, SDVOSB, WOSB, etc.) and the corresponding NAICS code. 3. I"
+  },
+  {
+   "notice_id": "efbb7b4cf4924c68a5a3474f90951b04",
+   "sam_link": "https://sam.gov/opp/efbb7b4cf4924c68a5a3474f90951b04/view",
+   "title": "MQ-4C Hydraulic Fluid Particle Counter",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "D-2 Incorporated",
+    "quote": "intends to solicit, negotiate, and make an award on a sole-source basis with D-2 Incorporated (CAGE: 4EKX8) for a Firm Fixed-Price contract."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "Pursuant to FAR 15.101(c)-This is a Request for Information only. There is no solicitation package available. This Sources Sought is being posted to satisfy the requirements of Defense Federal Acquisition Regulation Supplement (DFARS) Procedures, Guidance and Information (PGI) 206.103-170(d). The Naval Air Warfare Center Aircraft Division (NAWCAD) Lakehurst, NJ, intends to solicit, negotiate, and make an award on a sole-source basis with D-2 Incorporated (CAGE: 4EKX8) for a Firm Fixed-Price contract. This procurement is to acquire Hydraulic Fluid Particle Counters, Part Number (PN) 4348AS1000-1, National Stock Number (NSN): 6635-01-725-8375 in support of the United States Navy (USN) MQ-4C Program. THIS IS A REQUEST FOR INFORMATION (RFI) ONLY. This RFI is issued for information and planning purposes and is issued in conformance with DFARS PGI 206.103-170; it does not constitute an Invitation for Bid (IFB), a Request for Proposals (RFP), or a Request for Quotes (RFQ). This RFI does not commit the Government to award a contract for any supply or service whatsoever. The Government WILL NOT pay for any information received in response to this RFI, and the Government will not compensate the respondent for any cost incurred in developing the response to this RFI. Respondents are notified that a formal solicitation may be announced under a separate SAM announcement. Any requests for copies of solicitations will not be addressed since this is an RFI, not an IFB, RFP, or RFQ. Responses will be treated as information only, and not as proposals. Not responding to this RFI does not preclude participation in any future RFP. Any comments provided may or may not be included in a formal solicitation. The Government will not release any information marked with a proprietary legend received in response to this RFI to any firms, agencies or individuals outside the Government without written permission in accordance with the legend. Please be advised that all submissions become Government property and will not be returned. All interested parties should send company information and descriptive literature on currently available products that meet the Navy's requirements, as described above. With the response, include a point of contact, phone number, email address, website information, CAGE code, and Business Size Status for the North American Industrial Classification System (NAICS) code of this RFI. Any responses in reference to this RFI shall be submitted electronically to the Point of Contact associated with this RFI no later than the requested responses date."
+  },
+  {
+   "notice_id": "6166360cec4e4d6aba54a07fda2cac13",
+   "sam_link": "https://sam.gov/opp/6166360cec4e4d6aba54a07fda2cac13/view",
+   "title": "Ground Recording System (GRS)",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "Crystal Instruments Corporation",
+    "quote": "NASA/AFRC intends to issue a sole source contract to acquire the services from Crystal Instruments Corporation under the authority of 6.103-1 Only one responsible source and no other supplies or services will satisfy agency requirements."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "NASA/AFRC has a requirement to upgrade Ground Recording System (GRS) units from version 1 to version 2 to include calibration of GRS units, chassis upgrades, hardware inspection and repair. NASA/AFRC intends to issue a sole source contract to acquire the services from Crystal Instruments Corporation under the authority of 6.103-1 Only one responsible source and no other supplies or services will satisfy agency requirements. The Government intends to acquire a commercial product or commercial service using FAR Part 12. Interested organizations may submit their capabilities and qualifications to perform the effort electronically via email to Jamill Richter at jamill.m.richter@nasa.gov and Tanjanica Jackson at tanjanica.s.jackson@nasa.gov not later than 12:00PM PST on November 13, 2026. Such capabilities/qualifications will be evaluated solely for the purpose of determining whether to conduct this acquisition on a competitive basis. A decision by the Government not to compete this acquisition on a full and open competition basis, based upon responses to this notice, is solely within the discretion of the Government. NASA Clause 1852.215-84, Ombudsman, is applicable. The Center Ombudsman for this acquisition can be found at: https://www.hq.nasa.gov/office/procurement/regs/Procurement-Ombuds-Comp-Advocate-Listing.pdf"
+  },
+  {
+   "notice_id": "2a94083b466141a9ab2cdace620c31bf",
+   "sam_link": "https://sam.gov/opp/2a94083b466141a9ab2cdace620c31bf/view",
+   "title": "Cable and Internet for FSGA & HAAF",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "Comcast",
+    "quote": "The U.S. Government currently intends to award a Blanket Purchase Agreement (BPA) to Comcast on a sole source basis for commercial Cable TV, hard-wired internet, and high-speed commercial wireless (Wi-Fi) services across Fort Stewart and Hunter Army Airfield (FSGA/HAAF) to support government-controlled offices, training classrooms, solider common areas, and barracks dayrooms with performance commencing 01 December 2026."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "THIS IS A Sources Sought Notice ONLY. The U.S. Government currently intends to award a Blanket Purchase Agreement (BPA) to Comcast on a sole source basis for commercial Cable TV, hard-wired internet, and high-speed commercial wireless (Wi-Fi) services across Fort Stewart and Hunter Army Airfield (FSGA/HAAF) to support government-controlled offices, training classrooms, solider common areas, and barracks dayrooms with performance commencing 01 December 2026. The statutory authority for the sole source procurement is 41 U.S.C 1901 as implemented by FAR 12.102 utilizing simplified procedures for certain commercial products or services. This notice does not constitute a Request for Quote (RFQ)/Invitation for Bid (IFB)/Request for Proposal (RFP) or a promise to issue an RFQ, IFB or RFP in the future. This notice does not commit the U.S. Government to contract for any supply or service. Further, the U.S. Government is not seeking quotes, bids or proposals at this time and will not accept unsolicited proposals in response to the sources sought notice. The U.S. Government will not pay for any information or administrative costs incurred in response to this notice. Any information provided in response to the sources sought will not be returned to the responder. Each potential source is also requested to provide the contract number(s), dollar value(s) and brief description of work previously or currently being performed, which specifically demonstrates the contractor\u0092s ability to successfully satisfy the attached specifications. Firms shall also provide point of contact information where available for the efforts cited above. Not responding to this notice does not preclude participation in any future RFQ or IFB or RFP, if any is issued. If a solicitation is released, it will be synopsized on the Governmentwide Point of Entry. It is the responsibility of potential offerors to monitor the Governmentwide Point of Entry for additional information pertaining to this requirement. The NAICS code(s) is 517111 Wired Telecommunications Carriers. This notice does not constitute a Request for Quote (RFQ)/Invitation for Bid (IFB)/Request for Proposal (RFP) or a promise to issue an RFQ, IFB or RFP in the future. This notice does not commit the U.S. Government to contract for any supply or service. Further, the U.S. Government is not seeking quotes, bids or proposals at this time and will not accept unsolicited proposals in response to this sources sought notice. The U.S. Government will not pay for any information or administrative costs incurred in response to this notice. Submittals will not be returned to the responder. A determination not to compete this requirement, based upon responses to this notice, is solely within the discretion of the Government. However, if a competitive solicitation is released, it may be synopsized on the Governmentwide Point of Entry (or other forum for ordering). Attached is the draft Performance Wo"
+  },
+  {
+   "notice_id": "f12d2cd76eaa482da0d49ca15ec53fa1",
+   "sam_link": "https://sam.gov/opp/f12d2cd76eaa482da0d49ca15ec53fa1/view",
+   "title": "Program Level Accreditation",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "Committee on Accreditation of Educational Programs for the EMS Professions (CoEMSP)",
+    "quote": "The U.S. Army Special Operations Command, Fort Bragg, North Carolina intends to negotiate on a sole source basis with the Committee on Accreditation of Educational Programs for the EMS Professions (CoEMSP), under the authority implemented in RFO FAR Subpart 12 for the supplies and services listed in the attached Statement of Work (SOW)."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "THIS NOTICE OF INTENT IS NOT A REQUEST FOR COMPETITIVE QUOTES: no solicitation or RFQ will be forth coming. The U.S. Army Special Operations Command, Fort Bragg, North Carolina intends to negotiate on a sole source basis with the Committee on Accreditation of Educational Programs for the EMS Professions (CoEMSP), under the authority implemented in RFO FAR Subpart 12 for the supplies and services listed in the attached Statement of Work (SOW). The North American Industry Classification System (NAICS) has been determined to be 813920 Professional Organizations, with a small business size standard of $23,500,000.00. The Product Service Code for this acquisition is U010 Education / Training-Certification/accreditations for Educational Institutions. Any other responsible vendor believing they have the capability of meeting the requirement may submit their capabilities to include technical documentation to establish the potential of meeting the Governments needs. To be considered, any such documentation shall be submitted via email to debbie.harris.civ@socom.mil by Monday 09 November 2026, 10:00 AM EST with the subject line H92239-27-Q-E001. Extensions will not be granted. A determination not to compete the proposed contract based upon responses to this notice is solely within the discretion of the Government. Information received will be considered solely for the purpose of determining whether bona fide competition exists. The capability documentation should include general information and technical background describing in detail the prospective company capabilities and experience that will demonstrate the ability to support these requirements. The Government will not pay for any information submitted. Only electronic submissions will be accepted."
+  },
+  {
+   "notice_id": "1dc02b5bc2b4469fbc4e5e6abee0e12d",
+   "sam_link": "https://sam.gov/opp/1dc02b5bc2b4469fbc4e5e6abee0e12d/view",
+   "title": "MQ-4C Wire Connector Repair Set",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "DANIELS MANUFACTURING CORPORATION",
+    "quote": "NAWCAD) Lakehurst, NJ, intends to solicit, negotiate, and make an award on a sole-source basis with DANIELS MANUFACTURING CORPORATION, CAGE Code (CAGE: 11851) for a Firm Fixed-Price contract."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "Pursuant to FAR 15.101(c)-This is a Request for Information only. There is no solicitation package available. This Sources Sought is being posted to satisfy the requirements of Defense Federal Acquisition Regulation Supplement (DFARS) Procedures, Guidance and Information (PGI) 206.103-170(d). The Naval Air Warfare Center Aircraft Division (NAWCAD) Lakehurst, NJ, intends to solicit, negotiate, and make an award on a sole-source basis with DANIELS MANUFACTURING CORPORATION, CAGE Code (CAGE: 11851) for a Firm Fixed-Price contract. This procurement is to acquire Wire Connector Repair Sets, Part Number (P/N) DMC2106MOD1, NSN 5180-01-665-4456 in support of the United States Navy (USN) MQ-4C Unmanned Aircraft Systems (UAS) Program. THIS IS A REQUEST FOR INFORMATION (RFI) ONLY. This RFI is issued for information and planning purposes and is issued in conformance with DFARS PGI 206.103-170; it does not constitute an Invitation for Bid (IFB), a Request for Proposals (RFP), or a Request for Quotes (RFQ). This RFI does not commit the Government to award a contract for any supply or service whatsoever. The Government WILL NOT pay for any information received in response to this RFI, and the Government will not compensate the respondent for any cost incurred in developing the response to this RFI. Respondents are notified that a formal solicitation may be announced under a separate SAM announcement. Any requests for copies of solicitations will not be addressed since this is an RFI, not an IFB, RFP, or RFQ. Responses will be treated as information only, and not as proposals. Not responding to this RFI does not preclude participation in any future RFP. Any comments provided may or may not be included in a formal solicitation. The Government will not release any information marked with a proprietary legend received in response to this RFI to any firms, agencies or individuals outside the Government without written permission in accordance with the legend. Please be advised that all submissions become Government property and will not be returned. All interested parties should send company information and descriptive literature on currently available products that meet the Navy's requirements, as described above. With the response, include a point of contact, phone number, email address, website information, CAGE code, and Business Size Status for the North American Industrial Classification System (NAICS) code of this RFI. Any responses in reference to this RFI shall be submitted electronically to the Point of Contact associated with this RFI no later than the requested responses date."
+  },
+  {
+   "notice_id": "fb535eba923d46b5a84b7cb0c5b29f14",
+   "sam_link": "https://sam.gov/opp/fb535eba923d46b5a84b7cb0c5b29f14/view",
+   "title": "Main Rotor Spindle Pry Bars (P/N SPB-60-RS, NSN 3040-01 722-4706)",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "EAA Tools, LLC",
+    "quote": "The Naval Air Warfare Center, Aircraft Division (NAWCAD) Lakehurst, NJ intends to negotiate on a sole-source basis with EAA Tools, LLC (EEA), CAGE: 5LNR7, for the award of a contract."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "This Sources Sought notice is being posted to satisfy the requirements of Defense Federal Acquisition Regulation Supplement (DFARS) 206.302-170. The Naval Air Warfare Center, Aircraft Division (NAWCAD) Lakehurst, NJ intends to negotiate on a sole-source basis with EAA Tools, LLC (EEA), CAGE: 5LNR7, for the award of a contract. The designated contractor, EEA, shall provide to NAWCAD Lakehurst the manufacture and delivery of the Main Rotor Spindle Pry Bars (P/N SPB-60-RS, NSN 3040-01-722-4706) for the Royal Australian Navy (RAN); Danish Defense Acquisition and Logistics Organization (DALO); and the India Navy (IN) in support of the MH-60R program. The applicable North American Industry Classification System (NAICS) code for this requirement is 332216 (Saw Blade and Handtool Manufacturing). The Product Service Code (PSC) is 3040 (Miscellaneous Power Transmission Equipment). THIS SOURCES SOUGHT IS NOT A REQUEST FOR PROPOSAL. It is a market research tool being used to determine potential and eligible small and large businesses, capable of fulfilling the requirements described herein prior to determining the method of acquisition and issuance of a Request for Proposal. The Government is not obligated to and will not pay for any information received from potential sources as a result of this Notice. EAA Tools, LLC. is the OEM, sole designer, developer and manufacturer of the Main Rotor Spindle Pry Bar. The Main Rotor Spindle Pry Bar securely attaches to spindle damper mount and provides required leverage and stability to manipulate main rotor spindle assembly on aircraft for various maintenance requirements to include access to spindle mounts bolts and pitch control rod removal/re-installation. The Government intends to solicit and negotiate this requirement under the authority of 10 U.S.C. 3204(a)(1), \"Only one responsible source and no other supplies or services will satisfy agency requirements\" for this action. (THIS NOTICE IS NOT A REQUEST FOR COMPETITIVE PROPOSALS.) Responsible, interested parties, however, may identify their interest by submitting a capabilities statement. The Government will consider all information received prior to the closing date of this notice. A determination by the Government not to compete this procurement based upon responses to this notice is solely within the discretion of the Government. The Government will not pay for any responses received. There is no commitment by the Government to issue any solicitations, make an award or awards, or be responsible for any monies expended by any interested parties before award of a contract for the efforts mentioned above. Information provided herein is subject to change and in no way binds the Government to solicit for or award a contract. No telephone responses will be accepted."
+  },
+  {
+   "notice_id": "2fd941feb30343f680b0c46280f28edd",
+   "sam_link": "https://sam.gov/opp/2fd941feb30343f680b0c46280f28edd/view",
+   "title": "NCTAMS PAC CAIRS Support",
+   "notice_type": "Sources Sought",
+   "value": {
+    "value": "Unique Communications Solutions",
+    "quote": "The Defense Information Systems Agency/Defense Information Technology Contracting Organization intends to negotiate a sole source contract with Unique Communications Solutions."
+   },
+   "quote_pages": [
+    {
+     "resource_id": "description",
+     "page_number": 1,
+     "text_source": "native"
+    }
+   ],
+   "context": "The Defense Information Systems Agency/Defense Information Technology Contracting Organization intends to negotiate a sole source contract with Unique Communications Solutions. A sole source Justification & Approval document is being coordinated and, upon approval, a copy of it will be posted here on SAM.gov to comply with the public display requirements of FAR 6.301. The proposed contract action is for software access and continuous contracted maintenance support to keep Naval Computer and Telecommunications Area Master Station Pacific (NCTAMS PAC) subordinate sites Configuration Accounting Information Retrieval System (CAIRS) software packages current to meet JITC and IA security requirements in support of NCTAMS PAC regional BCO mission requirements. The current contract is in its fifth and final year. DITCO-PAC is establishing a new contract for one base year with four option periods. The consolidated contract supports Naval Computer and Telecommunications Station Far East (NCTS FE) to include Diego Garcia, NCTS Guam (NCTS GU), and NCTS San Diego (NCTS SD) and NCTS Detachment Puget Sound (NCTS PS). In Option Year One, services will include NCTAMS PAC in Wahiawa, Hawaii. The NCTAMS PAC Hawaii infrastructure is currently being installed and accredited at the estimated time of award and is not projected to need services/support until Q3/Q4 of 2027. At this time, the incumbent contractor Unique Communications Solutions is the only source capable of providing all necessary services for the NCTAMS PAC area of responsibility (AOR). Unique Communications Solutions is the sole OEM provider for the Configuration Accounting Information Retrieval System (CAIRS). The CAIRS system is unique in its functionality and features. There are no other companies that provide a system that has the exact components and abilities. CAIRS is trademarked through Unique Communications Solutions only. The Software Upgrade Kits are specific to the software they support. Unique Communications Solutions is the only company that can directly perform the following with the CAIRS programs: Upgrades, Update, Add Features, Fix Software problems, provide standard maintenance, Give training and technical support, Onsite Installation and Training. The statutory authority for other than full and open competition is 10 USC 2304 (c) (1), as implemented by FAR 6.302-1(c)(2), only one responsible source and no other supplies or services will satisfy agency requirements. Companies who believe they can provide this service must indicate their interest in writing within 5 days of this notification and include a detailed capability statement. No reimbursement for any cost co"
+  }
+ ]
+}

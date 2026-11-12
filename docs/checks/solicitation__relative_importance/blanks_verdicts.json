@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "76148f6bf818474e9a0b0d4405755ec2",
+  "verdict": "missed",
+  "reason": "States: non-price significantly more important than price; past performance more important than technical/management: \"Technical/ Management and Past Performance, when combined (Non-Price), are significantly more important than Price. In the NonPrice areas, Past Performance is more important than Technical/Management.\""
+ },
+ {
+  "notice_id": "bc091ed004e048ca98c3e839161955c1",
+  "verdict": "correct_blank",
+  "reason": "Only unfilled 52.212-2 template: \"[Insert evaluation factors in the relative order of importance...]\"; nothing filled in."
+ },
+ {
+  "notice_id": "f014449725d44414a1357303ec0ecb4f",
+  "verdict": "correct_blank",
+  "reason": "\"technical including delivery date, price, and past performance in no order of relative importance\" says the listing has no order; it does not say how the factors compare."
+ },
+ {
+  "notice_id": "061a7511daa94e3a9bafaa69d4ba327e",
+  "verdict": "correct_blank",
+  "reason": "Template brackets followed only by a factor list \"Factor 1 -Corporate Experience Factor 2 -Safety Factor 3-Past Performance ____\"; addendum text cut off before any importance statement."
+ },
+ {
+  "notice_id": "5b9bd158959d410790ab4a8ac474b3b9",
+  "verdict": "correct_blank",
+  "reason": "Unfilled template \"[Insert evaluation factors in the relative order of importance...] ____ ____\"; no statement."
+ },
+ {
+  "notice_id": "aee94c1c68df420f971df6923339ea87",
+  "verdict": "correct_blank",
+  "reason": "\"relative importance of the building in the community\" is an architectural design standard, not evaluation factors."
+ },
+ {
+  "notice_id": "7387226da74d4cd1bb78e490649d5ae0",
+  "verdict": "correct_blank",
+  "reason": "\"quality of the information ... is significantly more important than the quantity\" is proposal-writing advice, not evaluation factor weighting."
+ },
+ {
+  "notice_id": "6fc305a4664445459e63a33cd3157c64",
+  "verdict": "correct_blank",
+  "reason": "Unfilled template \"[Insert evaluation factors in the relative order of importance...] ____ ____\"; no statement."
+ },
+ {
+  "notice_id": "b5a46985ca83437d9529eb2ee5351bd9",
+  "verdict": "correct_blank",
+  "reason": "\"The order of the factors listed does not imply the relative importance of each factor\" - no comparison stated."
+ },
+ {
+  "notice_id": "ef645259f38c428988977c9488f225a9",
+  "verdict": "correct_blank",
+  "reason": "Template brackets then factor names only \"Corporate Experience Key Personnel Safety Past Performance\"; addendum cut off before any importance statement."
+ }
+]

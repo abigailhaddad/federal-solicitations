@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "99715416f82f4bacb85a18d7a6257f1a",
+  "verdict": "correct_blank",
+  "reason": "Only Buy American clause text: \"applying the evaluation factor listed in paragraph (b)(3)(i)(A)(1) of this clause\" (a 20% price factor in FAR clause text, not an evaluation factor list)."
+ },
+ {
+  "notice_id": "ccb80719bb4249b29ff28942ec554761",
+  "verdict": "correct_blank",
+  "reason": "Standard GSA RLP award text: \"Award Based on Price ... is the lowest priced technically acceptable offer submitted\"; \"price and other factors (if any) that are stated in this RLP\". This is the award method; no evaluation factors are listed by name in this text."
+ },
+ {
+  "notice_id": "6fc305a4664445459e63a33cd3157c64",
+  "verdict": "correct_blank",
+  "reason": "52.212-2 left as template: \"The following factors will be used to evaluate offers: [Insert evaluation factors in the relative order of importance...] ____\"."
+ },
+ {
+  "notice_id": "193931c0656240478151144abe626ddf",
+  "verdict": "correct_blank",
+  "reason": "\"Enclosure No. 4 identifies the Technical Evaluation Criteria.\" The criteria themselves are not in this text; only the trade-off method is described."
+ },
+ {
+  "notice_id": "5fd8dfcd8c1443feb06df11de92015d6",
+  "verdict": "correct_blank",
+  "reason": "Only Buy American clause text: \"applying the evaluation factor listed in paragraph (b)(3)(i)(A)(1) of this clause\"."
+ },
+ {
+  "notice_id": "0725fe92e6e649148df188d0eaf6165e",
+  "verdict": "correct_blank",
+  "reason": "Only Buy American clause text: \"applying the evaluation factor listed in paragraph (b)(3)(i)(B)(1) of this clause\"."
+ },
+ {
+  "notice_id": "d2fbfefe66fa444a972068e2ed0862d4",
+  "verdict": "correct_blank",
+  "reason": "Text ends at the bare heading \"Section M -Evaluation Factors for Award\" with nothing listed."
+ },
+ {
+  "notice_id": "4dae81b8a8cd499e881dfa24739546c2",
+  "verdict": "correct_blank",
+  "reason": "\"This Solicitation Contains a Price Evaluation Factor -The Government will apply a factor of 10% to the price of all offers except HUBZone...\" is the HUBZone price preference, not a listed evaluation factor."
+ },
+ {
+  "notice_id": "c1efbd8d0c7f40f4b6a1212f6b090641",
+  "verdict": "correct_blank",
+  "reason": "Only Buy American clause text: \"applying the evaluation factor listed in paragraph (b)(3)(i)(A)(1) of this clause\"."
+ },
+ {
+  "notice_id": "482dc37bebe04381b3120789d2fca198",
+  "verdict": "correct_blank",
+  "reason": "52.212-2(a) \"The following factors will be used to evaluate offers:\" is followed directly by \"(b) Options\"; no factors listed."
+ }
+]

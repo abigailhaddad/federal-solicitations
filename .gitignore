@@ -2,3 +2,5 @@ work/
 .venv/
 __pycache__/
 .env
+site/dist/
+.pytest_cache/

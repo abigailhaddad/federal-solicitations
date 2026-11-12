@@ -1,0 +1,192 @@
+[
+ {
+  "notice_id": "28bbe35293f346269b569afa69ca53a0",
+  "verdict": "correct",
+  "reason": "Construction magnitude for this IFB project: 'Magnitude of construction is between $25,000,000 and $100,000,000.' Range as written."
+ },
+ {
+  "notice_id": "205cee2bcc7449a0b870d3b5dbd79a24",
+  "verdict": "correct",
+  "reason": "A-E IDIQ contract ceiling (the A-E fee itself, not construction cost): 'The total fee for the contract term shall not exceed $95,000,000 for the life of the contract.'"
+ },
+ {
+  "notice_id": "9a1baee2c76a4817ae09396bb9d376af",
+  "verdict": "correct",
+  "reason": "'the estimated cost magnitude is between $1,000,000.00 and $2,000,000.00' for this PET/CT site prep project."
+ },
+ {
+  "notice_id": "466ce8b9213e4f6f87736c17f9d5af20",
+  "verdict": "correct",
+  "reason": "'The estimated magnitude of this construction project is between $1,000,000 and $5,000,000.'"
+ },
+ {
+  "notice_id": "05a854954f9c4ec19fcd4408e7c0e07a",
+  "verdict": "correct",
+  "reason": "Design-build ATCT project: 'The estimated project cost magnitude is approximately $85,000,000.00.' Qualifier 'approximately' kept; number reformatted without $/commas but same amount."
+ },
+ {
+  "notice_id": "8ad815a71e564c12b0e64e0012102fa6",
+  "verdict": "correct",
+  "reason": "'Total procurement baseline value corresponds to $146,913.00' for this UVIS buy; value matches document as written. (Document's own breakdown $143,376 + $2,987 = $146,363, not $146,913; value still matches the stated total.)"
+ },
+ {
+  "notice_id": "acc0c8a3def84422a3da25f0e352378d",
+  "verdict": "correct",
+  "reason": "'Estimated Construction Cost Range is $15,000,000 and $25,000,000.00.' for this construction fit-out; value copies the range as written."
+ },
+ {
+  "notice_id": "2a94083b466141a9ab2cdace620c31bf",
+  "verdict": "correct",
+  "reason": "BPA ceiling for this BPA: 'the Master BPA dollar limit shall not exceed $1,000,000.00 during the five year period'; the $150,000 per-call limit was correctly not used."
+ },
+ {
+  "notice_id": "bcc22f885c4049fdadf2333ec4237992",
+  "verdict": "correct",
+  "reason": "'The magnitude of construction for this project is between $100,000,000 and $250,000,000.' (the $35,000,000 is a past-project relevance size, not used)."
+ },
+ {
+  "notice_id": "180e94890abe41328e34e9bdc302ab86",
+  "verdict": "correct",
+  "reason": "'Total MATOC Capacity Up to $49,000,000 (shared capacity across all awarded contracts)'; 'Up to' kept; number reformatted but same amount."
+ },
+ {
+  "notice_id": "2cee017bee42460fb76dcc1519629557",
+  "verdict": "correct",
+  "reason": "'The estimated construction price range for this project is between $1,000,000.00 and $5,000,000.00.'"
+ },
+ {
+  "notice_id": "a16a2970fe284557916fce7f68b28e85",
+  "verdict": "correct",
+  "reason": "'In accordance with VAPM M836.101, the magnitude of construction is between $20,000,000 and $30,000,000.' ($17,000,000 is a past-project threshold, not used)."
+ },
+ {
+  "notice_id": "48afca3af46446a2a78f77e1d6f93782",
+  "verdict": "correct",
+  "reason": "Statement about this contract: 'The Environmental Consolidated Services Contract estimated total contract value exceeds $3 million'; 'exceeds' kept. Borderline: the $3M figure is the DFARS 204.1703 SCR threshold, so it is a lower bound tied to a threshold rather than a true estimate, but the document does state it as this contract's estimated value."
+ },
+ {
+  "notice_id": "cf9ce1007bfb4155827ad833a2ff2633",
+  "verdict": "correct",
+  "reason": "'Hawaii MATOC, anticipated value of this acquisition is $99,000,000.00'."
+ },
+ {
+  "notice_id": "891bd9ef5e094262963776917cbd638a",
+  "verdict": "correct",
+  "reason": "'All contracts awarded under the MATOC will share an aggregate ceiling of $500 Million.' (task order range $350,000-$10,000,000 not used)."
+ },
+ {
+  "notice_id": "ab6b9a4a51a94fc2be0fee597c174c6e",
+  "verdict": "correct",
+  "reason": "'Estimated magnitude of this project is between $15,000,000 and $25,000,000'."
+ },
+ {
+  "notice_id": "79e03775b20a4dad802d337401dede17",
+  "verdict": "correct",
+  "reason": "'Construction Project Magnitude: Between $1,000,000 and $2,000,000.'"
+ },
+ {
+  "notice_id": "fbb10629c64e41138b6e8e55760acb6c",
+  "verdict": "correct",
+  "reason": "'The estimated magnitude of this project lies between $1,000,000 and $5,000,000.'"
+ },
+ {
+  "notice_id": "250efbef249441a19cec9e4607a05bd9",
+  "verdict": "correct",
+  "reason": "A-E IDC shared capacity: 'have a total shared capacity of $35,000,000' (shared across the multiple contracts; task orders $12,000-$350,000 not used)."
+ },
+ {
+  "notice_id": "306bbb227dd04ea1b9e6516cc0f1ab8a",
+  "verdict": "correct",
+  "reason": "'The estimated contract value for this procurement is more than $10,000,000.00 over the full 8.5-year life of the contract.' 'more than' kept."
+ },
+ {
+  "notice_id": "650b4498d76a41818e77563ca399c48d",
+  "verdict": "correct",
+  "reason": "A-E IDIQ ceiling: 'shall not exceed the estimated maximum amount of $490 million.'"
+ },
+ {
+  "notice_id": "8a1205227e5441499d7a4bc2344d400e",
+  "verdict": "correct",
+  "reason": "'ROUGH ORDER OF MAGNITUDE: $500,000 to $1,000,000' for the S-69 weir repair."
+ },
+ {
+  "notice_id": "a5758e59cd7b4be4a87845edec87f359",
+  "verdict": "correct",
+  "reason": "'The program value is Not-to-Exceed $900,000,000 over a ten-year period.' (guaranteed minimum $2,500 and task order range not used)."
+ },
+ {
+  "notice_id": "13cf3d5dfea546418719789012d915cf",
+  "verdict": "correct",
+  "reason": "'The estimated magnitude of this project is between $5,000,000 and $15,000,000.'"
+ },
+ {
+  "notice_id": "757d4f987a464793972064f25e16232c",
+  "verdict": "correct",
+  "reason": "'The estimated magnitude of construction is between $10,000,000 and $25,000,000.'"
+ },
+ {
+  "notice_id": "c6850cd644084320a33d7cd7be68d8b3",
+  "verdict": "correct",
+  "reason": "'Estimated Magnitude of Construction: Between $25,000,000 and $50,000,000.' Stated in dollars; no other currency in quote."
+ },
+ {
+  "notice_id": "f90b8e15b4bd4a458200ef9909a0e72d",
+  "verdict": "correct",
+  "reason": "'the estimated magnitude of the project lies between $500,000 and $1,000,000.'"
+ },
+ {
+  "notice_id": "f36e0069762e4d4ea921ff72c163ab77",
+  "verdict": "correct",
+  "reason": "'The estimated annual FF&V sales for this contract is $350,000.00.' The contract length is 'one year' ('the length of the contract which is one year'), so the annual figure is this acquisition's value. Value omits the word 'annual'."
+ },
+ {
+  "notice_id": "a71c8650f2c84713ab50da1e717f1f87",
+  "verdict": "correct",
+  "reason": "'the magnitude of construction is between $20,000,000.00 and $30,000,000.00.'"
+ },
+ {
+  "notice_id": "88eef34f7d4b4dd9ae6fe474e65023ad",
+  "verdict": "correct",
+  "reason": "'Construction Project Magnitude: Between $5,000,000 and $10,000,000.'"
+ },
+ {
+  "notice_id": "4c87654ce2cb4aa9b5b2c54ad7729cc9",
+  "verdict": "correct",
+  "reason": "IDIQ total: 'It is estimated that $13.6 million in mechanical construction task orders will be issued over the course of the entire contract period to include option years.' (per-order $2,000-$1,000,000 not used)."
+ },
+ {
+  "notice_id": "ea42676a12d349d6b75786a13a31878e",
+  "verdict": "correct",
+  "reason": "'Estimated Construction Cost Range is $15,000,000 and $25,000,000.00.' for this roof construction project; range as written."
+ },
+ {
+  "notice_id": "a6daed9a5e21404eb0e3fa9f5ff9f415",
+  "verdict": "correct",
+  "reason": "'Construction Project Magnitude: Between $25,000 and $100,000.'"
+ },
+ {
+  "notice_id": "e13d87091e964351876055867e36b229",
+  "verdict": "correct",
+  "reason": "'The estimated magnitude of this project lies between $1,000,000 and $5,000,000.'"
+ },
+ {
+  "notice_id": "c8a3f3a1bd1c423fa66cae36e8e1cb2f",
+  "verdict": "correct",
+  "reason": "'The maximum annual bottled water sales for this contract is $350,000.00.' Contract is 'one year', so the annual maximum is the acquisition ceiling. Value omits 'annual'."
+ },
+ {
+  "notice_id": "d3229ae3e4544a80b2e540685b5bb791",
+  "verdict": "correct",
+  "reason": "'The approximate value of Project will be $50M to $100M.' Value omits 'approximate' but what='estimated value'; range as written."
+ },
+ {
+  "notice_id": "491d5815dc624009be52eb568e487117",
+  "verdict": "correct",
+  "reason": "'Estimated Acquisition Magnitude: $50,000,000.00 to $75,000,000.00' for the progressive design-build hangar."
+ },
+ {
+  "notice_id": "970a1d0d2ad74445af69520a1291608c",
+  "verdict": "correct",
+  "reason": "'The Government's estimated dollar range for this effort is: >$10M -$50M'; '>' kept."
+ }
+]

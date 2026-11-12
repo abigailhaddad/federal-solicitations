@@ -1,0 +1,52 @@
+[
+ {
+  "notice_id": "675abe0bd4434de3936fd69eb3a22c69",
+  "verdict": "correct_blank",
+  "reason": "Q3 answer: 'The is a brand-new contract.'"
+ },
+ {
+  "notice_id": "dff97cda8b8d4099b0f27a1d25b891ec",
+  "verdict": "correct_blank",
+  "reason": "'Please provide the incumbent security system contractor.' answered only with a product: 'P2000 access control system is installed.' No contractor named, and it is the access-control system, not this fire alarm work."
+ },
+ {
+  "notice_id": "51a0578373764ae4b670de0efb405009",
+  "verdict": "correct_blank",
+  "reason": "Only clause text ('any current Contractor and Subcontractor personnel'); no incumbent named."
+ },
+ {
+  "notice_id": "3528e82be7cc4925b99071cfbf3d32dd",
+  "verdict": "correct_blank",
+  "reason": "Only scheduling spec text ('current Contract Completion Date'); nothing about a current/previous contractor."
+ },
+ {
+  "notice_id": "1be68595d6094899877e64869230a5b7",
+  "verdict": "correct_blank",
+  "reason": "'This requirement is for a follow-on to an existing contract. For additional information related to current contracts, you may submit a request through https://www.foia.gov/' - no contractor name or contract number given."
+ },
+ {
+  "notice_id": "15aec0e92f294097a99bec4b376e757e",
+  "verdict": "correct_blank",
+  "reason": "Only ordering procedures and clause text ('logical follow-on to a prior order', 'current Contractor ... personnel'); no incumbent named."
+ },
+ {
+  "notice_id": "b77957682e094230bed2db299e6609f4",
+  "verdict": "correct_blank",
+  "reason": "C-3.2 Contract Turnover refers generically to 'current Contractor/military/Government personnel' and 'The outgoing Contractor'; no name or contract number."
+ },
+ {
+  "notice_id": "c94190c2ae7641978bd21c211a1bc344",
+  "verdict": "correct_blank",
+  "reason": "Q17: 'Is there a current incumbent contractor providing this service? ... No there is not.'"
+ },
+ {
+  "notice_id": "a103feed630a44e3a894ce6a18e06643",
+  "verdict": "correct_blank",
+  "reason": "Cancellation notice mentions 'incumbent collective bargaining agreement (CBA) information' only; no incumbent named."
+ },
+ {
+  "notice_id": "66686bee285e4a1cb4bfad93d38bcd77",
+  "verdict": "correct_blank",
+  "reason": "'During this period the Contractor will transition all activities from the incumbent' - incumbent not named; other text is a blank past performance questionnaire."
+ }
+]
