@@ -1,0 +1,86 @@
+# One week end to end, every Monday: the previous Monday–Sunday's notices, extracted and checked, added to the
+# Hugging Face dataset, the week's post built and deployed, and the email sent. See src/solicitations/weekly.py.
+#
+# Secrets: ANTHROPIC_API_KEY, ANTHROPIC_WORKSPACE_ID (optional), HF_TOKEN (write), CLOUDFLARE_API_TOKEN and
+# CLOUDFLARE_ACCOUNT_ID (Pages deploy), RFP_BUTTONDOWN_API_KEY (optional: no email without it).
+name: Weekly run
+
+on:
+  schedule:
+    - cron: "0 10 * * 1"   # Mondays 10:00 UTC (5–6 AM Eastern); the run takes about two to three hours
+  workflow_dispatch:
+    inputs:
+      week:
+        description: "Monday the week starts (blank = last full week)"
+        required: false
+      publish:
+        description: "Publish (dataset, site, email)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: weekly
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  week:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
+      HF_TOKEN: ${{ secrets.HF_TOKEN }}
+      RFP_BUTTONDOWN_API_KEY: ${{ secrets.RFP_BUTTONDOWN_API_KEY }}
+      PYTHONUNBUFFERED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - run: uv run pytest -q
+
+      - name: Run the week
+        run: |
+          ARGS=()
+          if [ -n "${{ inputs.week }}" ]; then ARGS+=(--week "${{ inputs.week }}"); fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then ARGS+=(--no-publish); fi
+          uv run python -m solicitations.weekly "${ARGS[@]}"
+
+      - name: Keep the run's log and check samples
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: weekly-${{ github.run_id }}
+          path: |
+            work/weekly_*.json
+            work/*/checks/
+            work/*/week.csv
+          retention-days: 90
+
+      - name: Build the site
+        if: github.event_name == 'schedule' || inputs.publish
+        run: uv run python -m solicitations.site --out site/dist
+
+      - name: Deploy the site
+        if: github.event_name == 'schedule' || inputs.publish
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.42.0"
+          command: pages deploy site/dist --project-name=rfp-watch --branch=main
+
+      - name: Save the post to the repository
+        if: github.event_name == 'schedule' || inputs.publish
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/posts/
+          git diff --cached --quiet || git commit -m "Weekly post: $(ls data/posts/*.json | sort | tail -1 | xargs basename .json)"
+          git push
+
+      - name: Send the email
+        if: (github.event_name == 'schedule' || inputs.publish) && env.RFP_BUTTONDOWN_API_KEY != ''
+        run: uv run python -m solicitations.email "$(ls data/posts/[0-9]*.json | grep -v replaced | sort | tail -1)"

@@ -6,6 +6,7 @@ requires-python = ">=3.12"
 dependencies = [
     # SAM.gov client, text extraction, batch model calls and quote checks from the J&A project, at a reviewed commit
     "federal-ja @ git+https://github.com/abigailhaddad/federal-ja-documents@18c7b08",
+    "playwright>=1.65.1",
 ]
 
 [dependency-groups]
