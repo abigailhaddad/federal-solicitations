@@ -35,6 +35,8 @@ TOPIC_WORDS = {
     "page_limit": r"page limit|pages? maximum|not (?:to )?exceed \d+ pages|limited to \d+ pages",
     "set_aside_stated": r"set[- ]aside|8\(a\)|SDVOSB|HUBZone|WOSB|full and open",
     "planned_strategy": r"set[- ]aside|sole source|full and open|intends? to|anticipates?",
+    "sole_source_intent": r"sole[- ]source|only one (?:responsible )?source|intends? to (?:award|negotiate|issue)|limited competiti",
+    "set_aside_considered": r"set[- ]aside|8\(a\)|SDVOSB|HUBZone|WOSB",
 }
 
 
@@ -51,6 +53,7 @@ def main(argv=None):
     ap.add_argument("--n", type=int, default=30)
     ap.add_argument("--blanks", type=int, default=10)
     ap.add_argument("--seed", type=int, default=20261111)
+    ap.add_argument("--only", default=None, help="comma-separated <track>__<field> names to sample")
     a = ap.parse_args(argv)
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
@@ -70,6 +73,8 @@ def main(argv=None):
         if kind in ("enum", "text"):
             continue
         name_out = f"{profile}__{name}"
+        if a.only and name_out not in a.only.split(","):
+            continue
         precs = [r for r in recs if r.get("profile") == profile]
         items = []
         for r in precs:

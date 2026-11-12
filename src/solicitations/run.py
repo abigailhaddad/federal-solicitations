@@ -18,7 +18,14 @@ from . import fields, prepare
 MODEL = "claude-haiku-5-5"
 EFFORT = "high"
 MAX_TOKENS = 32_000
-EST_OUTPUT_TOKENS = 9_000
+EST_OUTPUT_TOKENS = 4_500   # p90 of measured output per notice was ~4,300 (solicitations)
+
+
+# Prompt size is capped in prepare.py (130,000 characters) so every prompt stays under Haiku's
+# long-prompt price point; the estimate below assumes the densest text seen (1.4 characters a token).
+def fit(doc, instr, profile):
+    p, f = prepare.prompt(doc, instr)
+    return p, {**f, "tokens": None}
 
 
 def main(argv=None):
@@ -57,11 +64,12 @@ def main(argv=None):
             missing.append(nid)
             continue
         doc = prepare.load(text, rows[nid])
-        p, f = prepare.prompt(doc, instr)
+        p, f = fit(doc, instr, a.profile)
         prompts[nid], facts[nid] = p, f
-    est = sum(llm.cost_usd(MODEL, len(p[0] + p[1]) // 4, EST_OUTPUT_TOKENS, price_mult=llm.BATCH_PRICE_MULT)
-              for p in prompts.values())
-    big = sum(1 for p in prompts.values() if len(p[0] + p[1]) // 4 > llm.LONG_PROMPT_TOKENS)
+    def tokens(nid):   # exact when counted; else at the densest rate seen (1.4 characters a token)
+        return facts[nid]["tokens"] or int(len(prompts[nid][0] + prompts[nid][1]) / 1.4)
+    est = sum(llm.cost_usd(MODEL, tokens(n), EST_OUTPUT_TOKENS, price_mult=llm.BATCH_PRICE_MULT) for n in prompts)
+    big = sum(1 for n in prompts if tokens(n) > llm.LONG_PROMPT_TOKENS)
     print(json.dumps({"to_send": len(prompts), "already_done": len(done & set(want)), "not_fetched": len(missing),
                       "estimated_usd": round(est, 3), "prompts_over_100k_tokens": big,
                       "cut_packages": sum(f["cut"] for f in facts.values())}))

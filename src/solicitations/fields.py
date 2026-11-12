@@ -114,8 +114,10 @@ PROFILES = {
                                 "relative_importance", "incumbent", "contract_type", "stated_value"]},
     # ss2: planned_strategy (22 of 30 in its check) replaced by two narrow statements.
     "sources_sought": {"version": "2026-11-11.ss2", "accept_uncut": [],
-                       "fields": ["requirement_model_written", "sole_source_intent", "set_aside_considered",
-                                  "incumbent", "stated_value"]},
+                       # set_aside_considered was dropped after its check (6 of 30 right): nearly every
+                       # notice has "responses will determine whether ... competitive or set aside"
+                       # boilerplate, and SAM.gov's own set-aside field is published instead.
+                       "fields": ["requirement_model_written", "sole_source_intent", "incumbent", "stated_value"]},
 }
 
 

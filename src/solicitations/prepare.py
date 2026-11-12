@@ -13,8 +13,11 @@ from pathlib import Path
 
 from federal_ja.analysis.text import Document, Page
 
-WHOLE_CHARS = 240_000       # ~60k tokens: send everything
-MAX_CHARS = 240_000         # cap for excerpts
+# 130,000 characters stays under Haiku's 100,000-token price point even at the densest text seen
+# (about 1.4 characters a token, in table-heavy packages). At 240,000, 67 of 1,544 requests on 2026-11-11
+# passed 100,000 tokens and were billed at five times the rate.
+WHOLE_CHARS = 130_000       # send everything up to this
+MAX_CHARS = 130_000         # cap for excerpts
 FILE_HEAD = 6_000           # start of each file
 WINDOW = 2_500              # either side of a topic hit
 TOPICS = re.compile(
@@ -83,17 +86,17 @@ def _merge(spans: list[list[int]]) -> list[list[int]]:
     return out
 
 
-def excerpt(doc: Document) -> tuple[str, dict]:
+def excerpt(doc: Document, max_chars: int = MAX_CHARS) -> tuple[str, dict]:
     """The text the model reads, and facts about the cut. Packages over WHOLE_CHARS are cut to, in this
     order of priority until MAX_CHARS: text around evaluation-method wording in every attachment, then
     the start of each attachment, then text around the other topics. Kept spans are shown in document
     order, each attachment under its header, gaps marked [...]."""
     full = doc.model_text()
-    if len(full) <= WHOLE_CHARS:
+    if len(full) <= min(WHOLE_CHARS, max_chars):
         return full, {"cut": False, "chars_total": len(full), "chars_sent": len(full)}
     atts = [(fn, "\n\n".join(p.text for p in pages)) for fn, pages in doc.attachments()]
     keep = [[] for _ in atts]
-    budget = MAX_CHARS
+    budget = max_chars
     tiers = [lambda t: _windows(t, PRIORITY, WINDOW), lambda t: [[0, min(len(t), FILE_HEAD)]],
              lambda t: _windows(t, TOPICS, WINDOW)]
     for tier in tiers:
@@ -125,8 +128,8 @@ def excerpt(doc: Document) -> tuple[str, dict]:
     return sent, {"cut": True, "chars_total": len(full), "chars_sent": len(sent)}
 
 
-def prompt(doc: Document, instructions: str) -> tuple[tuple[str, str], dict]:
-    body, facts = excerpt(doc)
+def prompt(doc: Document, instructions: str, max_chars: int = MAX_CHARS) -> tuple[tuple[str, str], dict]:
+    body, facts = excerpt(doc, max_chars)
     return (instructions, header(doc) + "\n\nDOCUMENTS:\n\n" + (body or "(no document text)")), facts
 
 
