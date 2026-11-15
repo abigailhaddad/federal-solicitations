@@ -43,7 +43,9 @@ jobs:
 
       - name: Run the week
         run: |
-          ARGS=()
+          # PIEE values have not been spot-checked yet (agreed 2026-11-12), so scheduled runs skip PIEE.
+          # Remove --skip-piee once a sample of PIEE-sourced values passes the same check as SAM.gov ones.
+          ARGS=(--skip-piee)
           if [ -n "${{ inputs.week }}" ]; then ARGS+=(--week "${{ inputs.week }}"); fi
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.publish }}" != "true" ]; then ARGS+=(--no-publish); fi
           uv run python -m solicitations.weekly "${ARGS[@]}"
