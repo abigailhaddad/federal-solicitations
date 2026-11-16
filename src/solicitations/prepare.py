@@ -9,6 +9,7 @@ import csv
 import gzip
 import json
 import re
+from dataclasses import dataclass, field
 from pathlib import Path
 
 from federal_ja.analysis.text import Document, Page
@@ -32,7 +33,18 @@ TOPICS = re.compile(
     r"sole\s+source|small\s+business", re.I)
 
 
-def load(text_dir: Path, row: dict) -> Document:
+# what a PDF file's entry holds when it was fetched before the second reading existed (2026-11-16)
+NOT_RECORDED = {"missing": "no second reading recorded: fetch the notice again"}
+
+
+@dataclass
+class Package(Document):
+    """A notice's Document plus, for each PDF file (by resource_id), its second reading from fetch.py:
+    {"engine", "pages"}, {"error"}, {"skipped"} or NOT_RECORDED. check.py looks up the same pages in it."""
+    second: dict = field(default_factory=dict)
+
+
+def load(text_dir: Path, row: dict) -> Package:
     rec = json.load(gzip.open(text_dir / f"{row['notice_id']}.json.gz"))
     pages = []
     desc = (row.get("description") or "").strip()
@@ -46,7 +58,9 @@ def load(text_dir: Path, row: dict) -> Document:
     meta["links"] = rec["links"]
     meta["files_not_read"] = [f["name"] for f in rec["files"] if f.get("kind") in ("spreadsheet_not_read", "too_large_not_read", "error")]
     meta["pages_without_text"] = sum(1 for f in rec["files"] for t in (f.get("pages") or []) if not (t or "").strip())
-    return Document(row["notice_id"], meta, pages)
+    second = {f["resource_id"]: (f["second"] if "second" in f else NOT_RECORDED)
+              for f in rec["files"] if f.get("kind") == "pdf" and f.get("pages")}
+    return Package(row["notice_id"], meta, pages, second)
 
 
 def header(doc: Document) -> str:

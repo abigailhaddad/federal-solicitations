@@ -2,7 +2,7 @@
 
     uv run python -m solicitations.table work/week.csv work/checked.jsonl --week 2026-11-02 --out work/publish
 
-Only fields in PUBLISHED are written, each value with the sentence it came from (`*_quote`) and where
+Only fields in PUBLISHED and not held (fields.HELD) are written, each value with the sentence it came from (`*_quote`) and where
 that sentence is (`*_source`: file name and page). A field is listed there only after a sampled check
 against the documents passed (docs/checks/README.md). Values that failed their quote or rule check were
 dropped in check.py and are never here; an empty field means "not found", not "not stated".
@@ -18,6 +18,8 @@ import re
 
 import pandas as pd
 
+from . import fields
+
 TRACKS = {"solicitation": "solicitations", "sources_sought": "sources_sought"}
 
 # field -> extra keys kept from the answer besides value and quote
@@ -27,6 +29,11 @@ PUBLISHED = {
     "sources_sought": {"sole_source_intent": [], "incumbent": ["contract_number"], "stated_value": ["what"]},
 }
 LISTS = {"evaluation_factors", "contract_type"}
+
+
+def columns_out(track: str) -> dict:
+    """PUBLISHED for a track, less the fields held from publishing (fields.HELD)."""
+    return {k: v for k, v in PUBLISHED[track].items() if fields.published(track, k)}
 
 
 def cp1252(s: str | None) -> str | None:
@@ -86,7 +93,7 @@ def build(week_csv: str, checked: str, text_dir: str, week_start: str) -> dict[s
             "set_aside_sam": r["set_aside"] or None, "naics": r["naics"] or None, "psc": r["psc"] or None,
             "place_of_performance_state": r["pop_state"] or None, "week_start": week_start, "week_end": end,
         }
-        for name, extras in PUBLISHED[track].items():
+        for name, extras in columns_out(track).items():
             v = rec["kept"].get(name)
             items = v if isinstance(v, list) else ([v] if v else [])
             if name in LISTS:
@@ -150,7 +157,7 @@ def main(argv=None):
     tables = build(a.week_csv, a.checked, a.text, a.week)
     write(tables, Path(a.out))
     for t, df in tables.items():
-        print(t, len(df), {f: int(df[f if f in df else f"{f}_quote"].notna().sum()) for f in PUBLISHED[t]})
+        print(t, len(df), {f: int(df[f if f in df else f"{f}_quote"].notna().sum()) for f in columns_out(t)})
 
 
 if __name__ == "__main__":

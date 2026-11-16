@@ -23,12 +23,15 @@ import sys
 from email.utils import format_datetime
 from pathlib import Path
 
-from .digest import LABELS, MAX_PICKS, POSTS
+from . import fields
+from .digest import LABELS, MAX_PICKS, POSTS, scrub_post
 
 TITLE = "RFP Watch"
 TAGLINE = ("Federal services and construction solicitations and sources-sought notices on SAM.gov, each week: how offers will be "
-           "judged, contract types, stated values, named incumbents and planned sole-source awards, every value "
-           "with the sentence it came from")
+           "judged, contract types, stated values, named incumbents"
+           + ("" if fields.published("solicitation", "incumbent") else " (sources-sought notices)")
+           + " and planned sole-source awards, every value with the sentence it came from")
+EVAL_EMPTY = ("An empty evaluation basis means it was not found in the notice, not that the notice states none.")
 SITE_URL = "https://rfp-watch.pages.dev"
 GITHUB_REPO = "abigailhaddad/federal-solicitations"
 HF_REPO_ID = "abigailhaddad/federal-solicitations"
@@ -136,17 +139,25 @@ def amount(s: str) -> float:
     return float(m.group(1).replace(",", "")) * {"b": 1e9, "billion": 1e9, "m": 1e6, "million": 1e6}.get((m.group(2) or "").lower(), 1)
 
 
+def incumbent_count(s: dict) -> str:
+    """The sentence counting named incumbents, over the tracks whose incumbent is published."""
+    if "solicitations_with_incumbent" in s:
+        return (f'{s["solicitations_with_incumbent"] + s["sources_sought_with_incumbent"]:,} notices name a current or '
+                f'previous contractor. ')
+    return f'{s["sources_sought_with_incumbent"]:,} sources-sought notices name a current or previous contractor. '
+
+
 def post_content(p: dict) -> str:
     s = p["summary"]
     eb = s["evaluation_basis"]
     parts = [f'<p class="lede">Every services and construction solicitation and sources-sought notice with a posting on SAM.gov from '
              f'{e(week_label(p))}: {s["solicitations"]:,} solicitations and {s["sources_sought"]:,} sources-sought notices. '
              f'Values are read from each notice\'s documents and checked against them; an empty value means it wasn\'t found.</p>',
-             f'<p>How offers will be judged, where the solicitation says ({s["evaluation_basis_found"]:,} of {s["solicitations"]:,}): '
-             + ", ".join(f"{e(LABELS[k])} {v:,}" for k, v in eb.items()) + ". "
+             f'<p>How offers will be judged, where found in the solicitation ({s["evaluation_basis_found"]:,} of {s["solicitations"]:,}): '
+             + ", ".join(f"{e(LABELS[k])} {v:,}" for k, v in eb.items()) + f". {e(EVAL_EMPTY)} "
              f'{s["sole_source_intent"]:,} sources-sought notices say the agency plans to award to one named firm. '
-             f'{s["solicitations_with_incumbent"] + s["sources_sought_with_incumbent"]:,} notices name a current or previous '
-             f'contractor; {s["solicitations_with_value"] + s["sources_sought_with_value"]:,} state a dollar value.</p>']
+             + incumbent_count(s) +
+             f'{s["solicitations_with_value"] + s["sources_sought_with_value"]:,} notices state a dollar value.</p>']
     if not p["picks"]:
         parts.append("<p>Nothing picked out this week.</p>")
     parts += [pick_html(i, x) for i, x in enumerate(p["picks"], 1)]
@@ -167,8 +178,10 @@ def post_content(p: dict) -> str:
                  + "".join(item(n, n["sole_source_intent"], n.get("sole_source_intent_quote")).replace("</span>", status(n) + "</span>", 1)
                            for n in sorted(L["sole_source_intent"], key=lambda n: (n.get("response_deadline") or "")[:10] < as_of))
                  + "</ul></section>")
+    who_inc = ("Notices that name" if fields.published("solicitation", "incumbent") else
+               "Sources-sought notices that name")
     parts.append(f'<section class="all"><h2>Named incumbents ({len(L["incumbent"])})</h2>'
-                 '<p class="note">Notices that name a current or previous contractor, or contract, for this work.</p><ul>'
+                 f'<p class="note">{who_inc} a current or previous contractor, or contract, for this work.</p><ul>'
                  + "".join(item(n, " / ".join(x for x in (n.get("incumbent_firm"), n.get("incumbent_contract_number")) if x),
                                 n.get("incumbent_quote")) for n in L["incumbent"]) + "</ul></section>")
     vals = sorted(L["stated_value"], key=lambda n: -amount(n["stated_value"]))
@@ -202,6 +215,19 @@ def index_page(posts: list[dict]) -> str:
                        f'<a href="feed.xml">RSS feed</a></p>\n{lst}', home=True)
 
 
+HELD_NAMES = {"relative_importance": "how the evaluation factors compare in importance", "incumbent": "named incumbents"}
+
+
+def held_html() -> str:
+    """A note on the fields read but held back from publishing (fields.HELD), or nothing."""
+    bits = [f"{HELD_NAMES.get(f, f)} in {'solicitations' if t == 'solicitation' else 'sources-sought notices'}"
+            for t, names in fields.HELD.items() for f in sorted(names)]
+    if not bits:
+        return ""
+    return (f"<p><strong>Held back.</strong> Still read and checked each week, but not published until a new check "
+            f"passes: {e('; '.join(bits))}.</p>")
+
+
 def about_page() -> str:
     body = f"""<h1>About {e(TITLE)}</h1>
 <p>{e(TAGLINE)}.</p>
@@ -213,14 +239,18 @@ solicitations for goods, presolicitations, special notices, and award notices.</
 documents and answers a fixed set of questions, quoting the sentence each answer comes from. Code then checks every
 answer: the quote must be in the documents, and the value must pass a rule against its own quote (an "LPTA" value
 needs LPTA wording, a dollar value must be in its sentence with its qualifiers, a per-contract amount or guaranteed
-minimum is not a total, and so on). Answers that fail are dropped, not shown.</p>
+minimum is not a total, and so on). Answers that fail are dropped, not shown. From the weeks run after November 16,
+2026, a quote on a PDF page must also be in a second, independent reading of that page, and when Claude left the
+evaluation basis empty, code fills it from the notice's own sentence stating it, if every such sentence agrees.</p>
 <p><strong>What's published.</strong> Only fields that passed a sampled check: for each one, about 30 values (or all
 of them, when fewer) were judged against the documents by a separate Claude model against the field's written
 definition. A field that fell short was dropped (for example whether a sources-sought notice says a set-aside is
 being considered: 6 of 30 right). The results are in the <a href="{e(PROJECT_URL)}/tree/main/docs/checks">proof
 files</a>. Those are samples, not a census: expect occasional errors, and check the notice.</p>
 <p><strong>Empty means not found.</strong> Large packages are cut to the parts on these topics before Claude reads
-them, documents hosted elsewhere (PIEE, NECO) and spreadsheets aren't read, and scanned images have no text.</p>
+them, documents hosted elsewhere (PIEE, NECO) and spreadsheets aren't read, and scanned images have no text.
+{e(EVAL_EMPTY)}</p>
+{held_html()}
 <p><strong>The picks</strong> are chosen and written up by Claude (Opus) from the checked values. Code drops a pick
 whose quote isn't in the notice, whose dollar figure isn't the notice's stated value, or that says "sole source",
 "incumbent" or "LPTA" about a notice without that value.</p>
@@ -280,7 +310,8 @@ footer.site{margin-top:3rem;padding-top:1rem;padding-bottom:2rem;border-top:1px 
 
 
 def load_posts(d: Path = POSTS) -> list[dict]:
-    return [json.loads(p.read_text()) for p in sorted(d.glob("*.json"))]
+    """Every post, with fields held from publishing taken out (a post built before a field was held has it)."""
+    return [scrub_post(json.loads(p.read_text())) for p in sorted(d.glob("*.json"))]
 
 
 def build(posts: list[dict], out: Path) -> list[str]:

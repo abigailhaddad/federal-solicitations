@@ -6,22 +6,70 @@ One gzipped JSON per notice in --out: the files (name, kind, pages of text, whet
 layer), the links to other sites (PIEE, NECO ...) and any failures. Downloads go to a temporary folder
 and are deleted as soon as their text is read (the disk is nearly full). Spreadsheets are listed but not
 read (in J&A packages they were price sheets). A notice already done is skipped, so a run can resume.
+
+Every PDF is read twice from the same downloaded bytes: once by the reader whose text the model sees
+(`engine`, pypdf in the weekly run) and once by the other reader (`second`: pdftotext when the first was
+pypdf, pypdf when it was pdftotext). check.py keeps a quote on a PDF page only if it is in both readings
+of that page. pypdf put lines of the NONSKID notice's page 63 (week of 2026-11-09) out of order, and a quote
+spliced from two sentences passed the one-reading check. A run without pdftotext stops before any download.
 """
 import argparse
 import csv
 import gzip
 import json
 import os
+import shutil
 import sys
 import tempfile
 import time
 from pathlib import Path
 
-from federal_ja.collect.extract import extract_file
+from federal_ja.collect.extract import (ENGINE_PDFTOTEXT, ENGINE_PYPDF, extract_file, pdftotext_page_texts,
+                                        pypdf_page_texts)
 from federal_ja.collect.sam_api import SamClient
 
 SKIP_EXT = (".xlsx", ".xls", ".xlsm", ".csv")
 MAX_BYTES = 60_000_000
+
+
+def require_second_reader() -> None:
+    """Stop the run, before anything is downloaded, if pdftotext (poppler) is missing: without it there is no
+    second reading of PDF pages, and check.py would have to drop or wave through every PDF quote."""
+    if not shutil.which("pdftotext"):
+        raise SystemExit("pdftotext (poppler) is not installed; it is needed for the second reading of PDF pages "
+                         "(apt-get install poppler-utils / brew install poppler)")
+
+
+def second_reading(path: str, x) -> dict | None:
+    """The other reader's page texts of the same PDF file: {"engine", "pages"}, or {"error"} when it could not
+    read the file, or {"skipped"} for an XFA form (its text is the form's XML, not the pages). None for files
+    that are not PDFs."""
+    if x.file_kind != "pdf" or not x.page_texts:
+        return None
+    if x.xfa_form:
+        return {"skipped": "XFA form: text is the form XML, read once"}
+    if x.text_engine == ENGINE_PDFTOTEXT:
+        try:
+            return {"engine": ENGINE_PYPDF, "pages": pypdf_page_texts(path)}
+        except Exception as e:  # noqa: BLE001 - recorded; check.py drops quotes on this file
+            return {"error": f"pypdf: {type(e).__name__}: {str(e)[:200]}"}
+    require_second_reader()
+    pages = pdftotext_page_texts(path)
+    if pages is None:
+        return {"error": "pdftotext refused the file, failed or timed out"}
+    return {"engine": ENGINE_PDFTOTEXT, "pages": pages}
+
+
+def read_text(path: str, name: str) -> dict:
+    """The file entry fields from text extraction, with the second reading of a PDF."""
+    x = extract_file(path, name)
+    out = {"kind": x.file_kind, "needs_transcription": bool(x.needs_transcription),
+           "pages": x.page_texts if x.page_texts else ([x.text] if x.text else []),
+           "error": x.extract_error or None}
+    if x.file_kind == "pdf":
+        out["engine"] = x.text_engine or None
+        out["second"] = second_reading(path, x)
+    return out
 
 
 def fetch_one(cli: SamClient, notice_id: str, tmp: Path) -> dict:
@@ -47,10 +95,7 @@ def fetch_one(cli: SamClient, notice_id: str, tmp: Path) -> dict:
             dest = tmp / a["resource_id"]
             try:
                 cli.download(a["resource_id"], str(dest))
-                x = extract_file(str(dest), a["filename"])
-                f.update(kind=x.file_kind, needs_transcription=bool(x.needs_transcription),
-                         pages=x.page_texts if x.page_texts else ([x.text] if x.text else []),
-                         error=x.extract_error or None)
+                f.update(read_text(str(dest), a["filename"]))
             except Exception as e:  # noqa: BLE001
                 f["kind"] = "error"
                 rec["errors"].append({"step": "file", "name": a["filename"], "error": f"{type(e).__name__}: {str(e)[:200]}"})
@@ -69,6 +114,7 @@ def main(argv=None):
     ap.add_argument("--only", default=None, help="file of notice ids to fetch (one per line)")
     ap.add_argument("--rps", type=float, default=2.0)
     a = ap.parse_args(argv)
+    require_second_reader()
     out = Path(a.out)
     out.mkdir(parents=True, exist_ok=True)
     ids = [r["notice_id"] for r in csv.DictReader(open(a.week_csv))]

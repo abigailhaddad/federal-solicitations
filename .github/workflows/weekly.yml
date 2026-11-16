@@ -35,9 +35,16 @@ jobs:
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
       RFP_BUTTONDOWN_API_KEY: ${{ secrets.RFP_BUTTONDOWN_API_KEY }}
       PYTHONUNBUFFERED: "1"
+      # The model reads pypdf's text, as before (the runner had no poppler, so federal_ja fell back to pypdf);
+      # pdftotext (poppler) gives the second reading of each PDF page, which every quote on a PDF page must also
+      # be in (check.py). Without this setting, installing poppler would switch the text the model reads to
+      # pdftotext, and pypdf would become the second reading.
+      JA_PDF_ENGINE: pypdf
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
+      - name: Install poppler (pdftotext)
+        run: sudo apt-get update && sudo apt-get install -y poppler-utils && pdftotext -v
       - run: uv sync --frozen
       - run: uv run pytest -q
 

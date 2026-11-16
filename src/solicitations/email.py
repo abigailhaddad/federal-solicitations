@@ -17,8 +17,9 @@ from pathlib import Path
 
 import requests
 
-from .digest import LABELS
-from .site import DATASET_URL, SITE_URL, TITLE, date_label, week_label
+from . import fields
+from .digest import LABELS, scrub_post
+from .site import DATASET_URL, EVAL_EMPTY, SITE_URL, TITLE, date_label, week_label
 
 API = "https://api.buttondown.com/v1"
 API_VERSION = "2026-04-01"
@@ -65,8 +66,10 @@ def body(p: dict) -> str:
         out += [f"- **{md(n['stated_value'])}**: [{md(n['title'])}]({n['sam_link']}), {md(n.get('sub_tier') or n.get('agency'))}" for n in L["largest_values"]]
         out.append("")
     eb = ", ".join(f"{LABELS[k]} {v:,}" for k, v in s["evaluation_basis"].items())
-    out += [f"How offers will be judged, where stated ({s['evaluation_basis_found']:,} of {s['solicitations']:,}): {eb}.", "",
-            f"Named incumbents, every stated value, and each value's source sentence: [the full post]({url}) and "
+    inc = "Named incumbents" if fields.published("solicitation", "incumbent") else "Named incumbents (sources-sought notices)"
+    out += [f"How offers will be judged, where found in the solicitation ({s['evaluation_basis_found']:,} of {s['solicitations']:,}): {eb}. "
+            f"{EVAL_EMPTY}", "",
+            f"{inc}, every stated value, and each value's source sentence: [the full post]({url}) and "
             f"[the dataset]({DATASET_URL}). Picks are chosen and written up by Claude; every value is read from the "
             f"notice's documents and checked against them. Check the notice before relying on anything."]
     return "\n".join(out)
@@ -85,7 +88,7 @@ def main(argv=None) -> int:
     ap.add_argument("--draft", action="store_true", help="save a draft in Buttondown instead of sending")
     ap.add_argument("--print", action="store_true", help="print the email and exit")
     a = ap.parse_args(argv)
-    p = json.loads(a.post.read_text())
+    p = scrub_post(json.loads(a.post.read_text()))   # fields held from publishing (fields.HELD) never go out
     subject = f"{TITLE}: week of {week_label(p)}" + (f" — {p['picks'][0]['headline']}" if p["picks"] else "")
     text = body(p)
     if a.print:

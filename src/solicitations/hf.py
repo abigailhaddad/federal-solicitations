@@ -15,15 +15,16 @@ from pathlib import Path
 
 import pandas as pd
 
+from . import fields
 from .digest import LABELS
-from .site import DATASET_URL, GITHUB_REPO, HF_REPO_ID, PROJECT_URL, SITE_URL
+from .site import DATASET_URL, EVAL_EMPTY, GITHUB_REPO, HF_REPO_ID, PROJECT_URL, SITE_URL
 
 ROOT = Path(__file__).resolve().parents[2]
 LEGACY = ["data/solicitations.parquet", "data/solicitations.csv", "data/sources_sought.parquet", "data/sources_sought.csv"]
 SCORECARD = ROOT / "docs" / "checks" / "scorecard.json"
 
 DEFS = {
-    "evaluation_basis": "How offers will be judged, as the solicitation states it: `lpta` (lowest price technically acceptable), `tradeoff` (best value; non-price factors can outweigh price), `highest_technically_rated`, `lowest_price` (price alone among acceptable offers), `other`.",
+    "evaluation_basis": "How offers will be judged, as the solicitation states it: `lpta` (lowest price technically acceptable), `tradeoff` (best value; non-price factors can outweigh price), `highest_technically_rated`, `lowest_price` (price alone among acceptable offers), `other`. " + EVAL_EMPTY,
     "relative_importance": "The sentence saying how the evaluation factors compare in importance, summarized in a few words; the quote is the document's sentence.",
     "evaluation_factors": "Each evaluation factor the solicitation lists, as named, in order (list).",
     "contract_type": "Each contract type the document says this award will be (list), from a fixed set (firm-fixed-price, IDIQ, time-and-materials, cost-plus-fixed-fee, ...).",
@@ -31,6 +32,47 @@ DEFS = {
     "incumbent": "A current or previous contractor or contract for this work that the document names as such: `incumbent_firm`, `incumbent_contract_number`.",
     "sole_source_intent": "Sources-sought only: the firm the notice says the agency intends (or is considering) to award to without competition.",
 }
+
+
+TRACK_DIRS = {"solicitation": "solicitations", "sources_sought": "sources_sought"}
+CARD_FIELDS = {"solicitation": ["evaluation_basis", "relative_importance", "evaluation_factors", "contract_type", "stated_value", "incumbent"],
+               "sources_sought": ["sole_source_intent", "incumbent", "stated_value"]}
+
+
+def strip_held(publish: Path) -> list[Path]:
+    """Take the columns of fields held from publishing (fields.HELD) out of every week's files in the folder,
+    including weeks published before the field was held, and return the files changed (to be uploaded again)."""
+    changed = []
+    for track, d in TRACK_DIRS.items():
+        for f in sorted((publish / "data" / d).glob("*.parquet")):
+            df = pd.read_parquet(f)
+            cols = fields.held_columns(track, df.columns)
+            if cols:
+                tmp = f.with_name(f.name + ".part")
+                df.drop(columns=cols).to_parquet(tmp, index=False)
+                tmp.replace(f)
+                changed.append(f)
+        for f in sorted((publish / "data" / d).glob("*.csv")):
+            df = pd.read_csv(f, dtype=str, keep_default_na=False)   # as text: IDs keep their zeros
+            cols = fields.held_columns(track, df.columns)
+            if cols:
+                tmp = f.with_name(f.name + ".part")
+                df.drop(columns=cols).to_csv(tmp, index=False)
+                tmp.replace(f)
+                changed.append(f)
+    return changed
+
+
+def card_defs() -> dict:
+    """DEFS for the fields published in at least one track."""
+    out = {}
+    for k, v in DEFS.items():
+        asked = [t for t, names in CARD_FIELDS.items() if k in names]
+        tracks = [t for t in asked if fields.published(t, k)]
+        if not tracks:
+            continue
+        out[k] = v if tracks == asked else f"{v} Published for {', '.join(t.replace('_', '-') for t in tracks)} notices only."
+    return out
 
 
 def tally(row: dict | None, kind: str) -> str:
@@ -58,8 +100,7 @@ def card(publish: Path) -> str:
 
     rows = []
     for track, df in (("solicitation", sol), ("sources_sought", ss)):
-        for f in (["evaluation_basis", "relative_importance", "evaluation_factors", "contract_type", "stated_value", "incumbent"]
-                  if track == "solicitation" else ["sole_source_intent", "incumbent", "stated_value"]):
+        for f in [f for f in CARD_FIELDS[track] if fields.published(track, f)]:
             s = score.get(f"{track}__{f}")
             rows.append(f"| {track.replace('_', ' ')} | `{f}` | {filled(df, f):,} of {len(df):,} | {tally(s, 'values')} | {tally(s, 'blanks')} |")
     eb = sol.evaluation_basis.value_counts()
@@ -67,6 +108,7 @@ def card(publish: Path) -> str:
     cut = int(sol.model_read_excerpt.sum() + ss.model_read_excerpt.sum())
     dropped = [f"`{k.split('__')[1]}` ({k.split('__')[0].replace('_', ' ')}): {tally(v, 'values')}"
                for k, v in score.items() if not v["published"]]
+    held = [f"`{f}` ({t.replace('_', ' ')})" for t, names in fields.HELD.items() for f in sorted(names)]
     return f"""---
 license: other
 license_name: us-government-works-and-public-sam-gov-data
@@ -110,7 +152,7 @@ read from the documents:
 
 | Field | What it is |
 |---|---|
-""" + "\n".join(f"| `{k}` | {v} |" for k, v in DEFS.items()) + f"""
+""" + "\n".join(f"| `{k}` | {v} |" for k, v in card_defs().items()) + f"""
 
 ## How the values were read and checked
 
@@ -120,7 +162,9 @@ read from the documents:
 2. Code checked every answer: the quote must be in the documents, and the value must pass a rule against its own
    quote (for example an `lpta` value needs LPTA wording; a dollar value must appear in its sentence with its
    qualifiers and currency; a per-contract amount or a guaranteed minimum is not a total). Failing answers were
-   dropped.
+   dropped. In weeks run after 2026-11-16, a quote on a PDF page must also be in a second, independent reading of
+   that page (pdftotext as well as pypdf), and when the model left `evaluation_basis` empty, code fills it from the
+   notice's own sentence stating the basis, if every such sentence gives the same one.
 3. **Sampled checks.** For each field, a random sample of about 30 kept values (all of them when there were
    fewer) was judged against the documents by a separate Claude model, using the field's written definition.
    A field is published only if it scored about 28 of 30 or better. A second sample of 10 notices where the
@@ -132,7 +176,7 @@ read from the documents:
 """ + "\n".join(rows) + f"""
 
 These are samples judged by an AI model, not a census by a person. Read them as: most values are right, and
-empty does not mean "not stated". In particular, of {score["solicitation__evaluation_basis"]["blanks"]["n"]} sampled solicitations with no
+empty does not mean "not stated". {EVAL_EMPTY} In particular, of {score["solicitation__evaluation_basis"]["blanks"]["n"]} sampled solicitations with no
 `evaluation_basis` but with evaluation words in their documents, {score["solicitation__evaluation_basis"]["blanks"].get("missed", 0)} did state one.
 
 Check of 2026-11-12, `solicitation stated_value`: of the 3 judged wrong, one is a real error (a per-year,
@@ -143,6 +187,10 @@ The checks above were made on the week of 2026-11-02; later weeks are checked by
 (see the Changes section of the repository README).
 
 **Fields asked for and not published** (failed their check): {"; ".join(dropped)}.
+""" + (f"""
+**Fields read and checked but held back** (after the check of the week of 2026-11-09; not in any week's files):
+{"; ".join(held)}.
+""" if held else "") + f"""
 
 ## Coverage gaps
 
@@ -150,7 +198,7 @@ The checks above were made on the week of 2026-11-02; later weeks are checked by
   NECO, or scanned images): only their SAM.gov description was read. `files_read`, `files_not_read` and
   `links_to_other_sites` say what was read for each notice.
 - Spreadsheets were not read.
-- How offers will be judged, where stated ({int(eb.sum()):,} solicitations): """ + ", ".join(f"{LABELS[k]} {v:,}" for k, v in eb.items()) + f""".
+- How offers will be judged, where found ({int(eb.sum()):,} solicitations): """ + ", ".join(f"{LABELS[k]} {v:,}" for k, v in eb.items()) + f""". {EVAL_EMPTY}
 
 ## Source and license
 
@@ -168,6 +216,9 @@ def main(argv=None) -> int:
     ap.add_argument("--all", action="store_true", help="re-upload every week's files, not only new ones")
     ap.add_argument("--message", default=None)
     a = ap.parse_args(argv)
+    changed = strip_held(a.publish)
+    if changed:
+        print(f"held fields taken out of {len(changed)} files", file=sys.stderr)
     (a.publish / "README.md").write_text(card(a.publish))
     print(f"wrote {a.publish / 'README.md'}", file=sys.stderr)
     if a.cmd == "publish":
@@ -179,7 +230,7 @@ def main(argv=None) -> int:
         for f in sorted((a.publish / "data").rglob("*")):
             if f.suffix in (".parquet", ".csv"):
                 rel = f.relative_to(a.publish).as_posix()
-                if rel not in have or a.all:
+                if rel not in have or a.all or f in changed:
                     ops.append(CommitOperationAdd(path_in_repo=rel, path_or_fileobj=str(f)))
         # the first week was published as single files (2026-11-12); they move under data/<track>/
         ops += [CommitOperationDelete(path_in_repo=p) for p in LEGACY if p in have]

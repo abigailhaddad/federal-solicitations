@@ -29,7 +29,6 @@
   },
   "solicitations_with_value": 119,
   "sources_sought_with_value": 38,
-  "solicitations_with_incumbent": 18,
   "sources_sought_with_incumbent": 23,
   "sole_source_intent": 10,
   "no_document_text": 212
@@ -56,7 +55,6 @@
     "psc": "Q403",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will make a best-value tradeoff determination for each Service Group based on an integrated assessment of the evaluation factors, subject to the award eligibility requirements and the Systems and Technical Immediate Operational Readiness requirements described below.",
-    "relative_importance_quote": "The other non-price factors, Technical Approach, Relevant Experience and Veterans Preference, are listed in descending order of importance and, when combined, are significantly more important than Price.",
     "evaluation_factors": [
      "IT/ATO and Data Security Approach (PASS/FAIL)",
      "Technical Approach",
@@ -69,10 +67,7 @@
     ],
     "stated_value": "$40,000,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum value for MDE-NG is $40,000,000,000 in the aggregate across all MDE-NG IDIQ contracts and all SGs for the entire contract period, including all options.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum value for MDE-NG is $40,000,000,000 in the aggregate across all MDE-NG IDIQ contracts and all SGs for the entire contract period, including all options."
    }
   },
   {
@@ -96,17 +91,13 @@
     "psc": "Y1ED",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "indefinite-delivery/indefinite-quantity"
     ],
     "stated_value": "$15,000,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The period of performance will be a base period of 5-years and one (1) 5-year option period for a maximum possible duration of 10-years; or an aggregate maximum estimated value of $15,000,000,000 for all task orders, whichever occurs first.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The period of performance will be a base period of 5-years and one (1) 5-year option period for a maximum possible duration of 10-years; or an aggregate maximum estimated value of $15,000,000,000 for all task orders, whichever occurs first."
    }
   },
   {
@@ -130,7 +121,6 @@
     "psc": "Y1JZ",
     "evaluation_basis": "highest_technically_rated",
     "evaluation_basis_quote": "The Government will utilize the Highest technically rated with a fair and reasonable price approach.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Relevant Experience",
      "Past Performance",
@@ -143,10 +133,7 @@
     ],
     "stated_value": "$7,500,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The anticipated total capacity for all contracts within all Pools is a shared ceiling of $7,500,000,000 inclusive of the 1-year base and four 1-year options.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The anticipated total capacity for all contracts within all Pools is a shared ceiling of $7,500,000,000 inclusive of the 1-year base and four 1-year options."
    }
   },
   {
@@ -453,601 +440,6 @@
    }
   ],
   "incumbent": [
-   {
-    "track": "solicitation",
-    "notice_id": "b8bcf829df5d462ea8927aab6e94c2d2",
-    "sam_link": "https://sam.gov/opp/b8bcf829df5d462ea8927aab6e94c2d2/view",
-    "solicitation_number": "19BH2027Q0001",
-    "title": "19BH2027Q0001_Health and Life Insurance Services for Locally Employed Staff pf the U.S. Mission in Belize",
-    "notice_type": "Solicitation",
-    "agency": "STATE, DEPARTMENT OF",
-    "sub_tier": "STATE, DEPARTMENT OF",
-    "office": "U.S.EMBASSY BELMOPAN",
-    "posted": "2026-11-02 15:15:29",
-    "response_deadline": "2026-11-10T16:00:00-06:00",
-    "set_aside_sam": "No Set aside used",
-    "naics": "524114",
-    "psc": "G009",
-    "evaluation_basis": "lpta",
-    "evaluation_basis_quote": "Award will be made to the lowest priced, technically acceptable, responsible offeror.",
-    "relative_importance_quote": "Technical and past performance, when combined, more important than price.",
-    "evaluation_factors": [
-     "Compliance",
-     "Technical Acceptability",
-     "Responsibility"
-    ],
-    "contract_type": [
-     "fixed-price with economic price adjustment",
-     "indefinite-delivery/indefinite-quantity"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": null,
-    "incumbent_contract_number": "19BH2022D0001",
-    "incumbent_quote": "The Statement of Work for contract No: 19BH2022D0001 is attached"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "dce555fed4774042adbc77112f2218ce",
-    "sam_link": "https://sam.gov/opp/dce555fed4774042adbc77112f2218ce/view",
-    "solicitation_number": "N6883627R0001",
-    "title": "NDSTC Craft Operations",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE NAVY",
-    "office": "NAVSUP FLC JACKSONVILLE ERP",
-    "posted": "2026-11-03 12:11:33",
-    "response_deadline": "2026-12-03T10:00:00-05:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "488310",
-    "psc": "J019",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The Government will award a contract resulting from this solicitation to the responsible Offeror whose proposal conforming to the solicitation will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": "Technical and Past Performance are approximately equal. When combined, Technical and Past Performance are significantly more important than Price IAW RFO FAR 15.104(d)(1).",
-    "evaluation_factors": [
-     "Technical",
-     "Past Performance",
-     "Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "Metson Marine Services",
-    "incumbent_contract_number": "N68836-22-C-0006",
-    "incumbent_quote": "Incumbent: Metson Marine Services, Contract number N68836-22-C-0006"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "a68cd045811c45448afbe53da58e93ab",
-    "sam_link": "https://sam.gov/opp/a68cd045811c45448afbe53da58e93ab/view",
-    "solicitation_number": "9594CS26Q0015",
-    "title": "Psychological Assessment Services",
-    "notice_type": "Solicitation",
-    "agency": "COURT SERVICES AND OFFENDER SUPERVISION AGENCY",
-    "sub_tier": "COURT SERVICES AND OFFENDER SUPERVISION AGENCY",
-    "office": "COURT SERVICES  OFFENDER SUPV AGCY",
-    "posted": "2026-11-03 15:55:43",
-    "response_deadline": "2026-06-01T15:00:00-04:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "621330",
-    "psc": "Q519",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The basis of award will be best value to Government.",
-    "relative_importance_quote": "When combined, the non-price factors are more important than price.",
-    "evaluation_factors": [
-     "Factor 1: Qualifications of Proposed Key Personnel",
-     "Factor 2: Relevant Corporate Experience",
-     "Factor 3: Past Performance",
-     "Price"
-    ],
-    "contract_type": null,
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "MidAtlantic Children’s Services, Inc. dba Mid-Atlantic Psychological Services",
-    "incumbent_contract_number": "9594CS21P0044",
-    "incumbent_quote": "The incumbent contractor performing the work identified in this solicitation is MidAtlantic Children’s Services, Inc. dba Mid-Atlantic Psychological Services, 100N Pitt St., Suite #320 Alexandria, VA 223014-3144 under award number 9594CS21P0044."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "731762b388c14a12bd09d2435210a61c",
-    "sam_link": "https://sam.gov/opp/731762b388c14a12bd09d2435210a61c/view",
-    "solicitation_number": "W913E527RA001",
-    "title": "CRREL Generator Maintenance Services",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE ARMY",
-    "office": "W2R2 USA ENGR R & D CTR",
-    "posted": "2026-11-04 09:44:07",
-    "response_deadline": "2026-11-12T12:00:00-05:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "811310",
-    "psc": "J036",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The Government will make award to the offeror the Government determines will be able to accomplish the necessary work in the manner most advantageous to the Government and whose offers represents the best value to the Government, after considering all factors, including evaluated cost.",
-    "relative_importance_quote": "Factor I - Technical and Factor II - Past Performance are of equal importance and when combined are significantly more important to Factor III - Price.",
-    "evaluation_factors": [
-     "Technical (Operations Plan and Key Personnel)",
-     "Past Performance",
-     "Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "I-2-I Solutions",
-    "incumbent_contract_number": null,
-    "incumbent_quote": "Who was awarded the last contract for this and what was winning bid? I-2-I Solutions for $196,556.25"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "22c583a5b1144745ad8f38afb98cfc75",
-    "sam_link": "https://sam.gov/opp/22c583a5b1144745ad8f38afb98cfc75/view",
-    "solicitation_number": "N0018927RD001",
-    "title": "NETSAFA International Training Center Support",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE NAVY",
-    "office": "NAVSUP FLT LOG CTR NORFOLK",
-    "posted": "2026-11-04 14:45:46",
-    "response_deadline": "2026-11-30T16:00:00-05:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "541330",
-    "psc": "U099",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The Government intends to award a task order resulting from this solicitation to the responsible quoter whose quote represents the best value after evaluation in accordance with the factors in the solicitation.",
-    "relative_importance_quote": "The evaluation of quotes will consider the non-cost quote significantly more important than the cost quote.",
-    "evaluation_factors": [
-     "Past Performance",
-     "Cost"
-    ],
-    "contract_type": [
-     "cost-plus-fixed-fee"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": null,
-    "incumbent_contract_number": "N0018924F3006",
-    "incumbent_quote": "This is a follow-on requirement to N0018924F3006."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "180e90abc379434f8f34f75331e96967",
-    "sam_link": "https://sam.gov/opp/180e90abc379434f8f34f75331e96967/view",
-    "solicitation_number": "N0024427R3101",
-    "title": "SeaPort: CNSP PA/VI Support Services",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE NAVY",
-    "office": "NAVSUP FLT LOG CTR  SAN DIEGO",
-    "posted": "2026-11-04 18:58:30",
-    "response_deadline": "2026-11-09T10:00:00-08:00",
-    "set_aside_sam": "SBA Certified Women-Owned Small Business (WOSB) Program Set-Aside (FAR 19.15)",
-    "naics": "541330",
-    "psc": "R426",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The Source Selection process for this task order will be based on a Tradeoff source selection process with the award being made to the Offeror whose proposal represents the best value to the Government.",
-    "relative_importance_quote": "The factors are listed in descending order of importance and Offerors are advised that, when combined, \"Technical\" and \"Past Performance\" are significantly more important than \"Price\".",
-    "evaluation_factors": [
-     "Factor I - Technical",
-     "Factor II - Past Performance",
-     "Factor III - Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price",
-     "cost-reimbursement"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "STRACON SERVICES GROUP, LLC",
-    "incumbent_contract_number": "N00244-21-F-3010",
-    "incumbent_quote": "This requirement is currently being met by SeaPort task order N00244-21-F-3010, awarded to STRACON SERVICES GROUP, LLC."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "b1f786f2fa7648fb9a9934309ec48da1",
-    "sam_link": "https://sam.gov/opp/b1f786f2fa7648fb9a9934309ec48da1/view",
-    "solicitation_number": "N4008426R1026",
-    "title": "Indefinite Delivery/Indefinite Quantity (IDIQ) Custodial, Pest Control, and Grounds Maintenance Service Contract at U.S. Marine Corps Air Station (MCAS) Iwakuni, Japan",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE NAVY",
-    "office": "NAVFACSYSCOM FAR EAST",
-    "posted": "2026-11-05 01:49:37",
-    "response_deadline": "2026-11-10T14:00:00+09:00",
-    "set_aside_sam": null,
-    "naics": "561210",
-    "psc": "S216",
-    "evaluation_basis": "lpta",
-    "evaluation_basis_quote": "The Lowest Price Technically Acceptable (LPTA) source selection process is selected as appropriate for this acquisition.",
-    "relative_importance_quote": "Non-cost/price factors are not ranked by order of importance. Under LPTA source selection procedures, non-cost/price factors are evaluated only for acceptability.",
-    "evaluation_factors": [
-     "Factor 1 - Safety",
-     "Factor 2 - Experience",
-     "Factor 3 - Past Performance"
-    ],
-    "contract_type": [
-     "indefinite-delivery/indefinite-quantity",
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": null,
-    "incumbent_contract_number": "N4008421D0060",
-    "incumbent_quote": "The grounds maintenance, custodial, and pest control services at MCAS Iwakuni are currently performed under contract N4008421D0060."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "573f15afcb3e40348d2a46b90e156726",
-    "sam_link": "https://sam.gov/opp/573f15afcb3e40348d2a46b90e156726/view",
-    "solicitation_number": "70CDCR26R00000016",
-    "title": "ICE TELERADIOLOGY SERVICES",
-    "notice_type": "Solicitation",
-    "agency": "HOMELAND SECURITY, DEPARTMENT OF",
-    "sub_tier": "US IMMIGRATION AND CUSTOMS ENFORCEMENT",
-    "office": "DETENTION COMPLIANCE AND REMOVALS",
-    "posted": "2026-11-05 11:41:19",
-    "response_deadline": "2026-12-01T12:00:00-06:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "621512",
-    "psc": "Q522",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The best value trade off approach, which will be utilized for this acquisition, is a method of selecting the proposal that represents the best value to the government, based on the evaluation of each proposal.",
-    "relative_importance_quote": "The non-price trade-off factors, Technical Capability, Cybersecurity, and Past Performance and Experience, are more important than the Price factor.",
-    "evaluation_factors": [
-     "Factor 1 – Product Offering (go/no go factor)",
-     "Factor 2 – Technical Capability (non-price trade-off factor)",
-     "Factor 3 – Past Performance and Experience (non-price trade-off factor)",
-     "Factor 4 – Cybersecurity (non-price trade-off factor)",
-     "Factor 5 – Price (trade-off factor)"
-    ],
-    "contract_type": [
-     "firm-fixed-price",
-     "indefinite-delivery/indefinite-quantity"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "Valor Network, Inc.",
-    "incumbent_contract_number": "70CDCR21D00000003",
-    "incumbent_quote": "This is a recompete. Current contract number is 70CDCR21D00000003. Incumbent is Valor Network, Inc."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "fe2375f676d144a9bb1e7ab1d13dfd49",
-    "sam_link": "https://sam.gov/opp/fe2375f676d144a9bb1e7ab1d13dfd49/view",
-    "solicitation_number": "H9821026RE002",
-    "title": "Academic Skills Training (AST)",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEFENSE HUMAN RESOURCES ACTIVITY",
-    "office": "DEFENSE HUMAN RESOURCES ACTIVITY",
-    "posted": "2026-11-05 13:10:35",
-    "response_deadline": "2026-03-30T12:00:00-04:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "611699",
-    "psc": "U009",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The award of a contract as a result of this solicitation will be based on a Best Value/Trade Off assessment using the evaluation factors and their importance as indicated below.",
-    "relative_importance_quote": "Technical Capability is more important than Past Performance. Technical Capability, and Past Performance, when combined, are significantly more important than Price.",
-    "evaluation_factors": [
-     "Factor 1 - Technical Capability",
-     "Factor 2 - Past Performance",
-     "Factor 3 - Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "Petersons LLC",
-    "incumbent_contract_number": "H9821021C004",
-    "incumbent_quote": "The incumbent (Petersons LLC, H9821021C004) has operated the current AST platform on commercial (non-GovCloud) hosting."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "ee28cbcf39d74a948a844556006fbad5",
-    "sam_link": "https://sam.gov/opp/ee28cbcf39d74a948a844556006fbad5/view",
-    "solicitation_number": "1282A727Q0002",
-    "title": "Jacobs Creek JCC Medical Services",
-    "notice_type": "Solicitation",
-    "agency": "AGRICULTURE, DEPARTMENT OF",
-    "sub_tier": "FOREST SERVICE",
-    "office": "USDA FOREST SERVICE",
-    "posted": "2026-11-05 16:59:16",
-    "response_deadline": "2026-11-17T17:00:00-05:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "621111",
-    "psc": "Q201",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "Award will be made to the offeror representing the best value to the Government",
-    "relative_importance_quote": "Past Performance and Technical Capability when combined are more important than price, therefore an award may not necessarily be made to the lowest priced offeror.",
-    "evaluation_factors": [
-     "Technical Capability",
-     "Past Performance",
-     "Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": null,
-    "incumbent_contract_number": "1282A722C0014",
-    "incumbent_quote": "The current contract number is 1282A722C0014 for a total amount of $372,000.00"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "ea96dae71cbd415c97cc5b191b00ef7d",
-    "sam_link": "https://sam.gov/opp/ea96dae71cbd415c97cc5b191b00ef7d/view",
-    "solicitation_number": "W91CRB-27-B-A001",
-    "title": "Cybersecurity Engineering and DoD Risk Management Framework (RMF) Support Services",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE ARMY",
-    "office": "W6QK ACC-APG",
-    "posted": "2026-11-06 06:52:28",
-    "response_deadline": "2026-11-12T17:00:00-05:00",
-    "set_aside_sam": "8(a) Set-Aside (FAR 19.8)",
-    "naics": "541519",
-    "psc": "DJ01",
-    "evaluation_basis": "lowest_price",
-    "evaluation_basis_quote": "Award will be made to the lowest-priced, responsive, and responsible bidder.",
-    "relative_importance_quote": null,
-    "evaluation_factors": null,
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": null,
-    "incumbent_contract_number": "W91CRB-21-C-0044",
-    "incumbent_quote": "Classified material received or generated under (Preceding Contract Number) is transferred to this follow-on contract.: W91CRB-21-C-0044"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "59f5083484814169a8d65afb3c3f9948",
-    "sam_link": "https://sam.gov/opp/59f5083484814169a8d65afb3c3f9948/view",
-    "solicitation_number": "SPE603-25-R-0508",
-    "title": "NAS Jacksonville, FL",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEFENSE LOGISTICS AGENCY",
-    "office": "DLA ENERGY",
-    "posted": "2026-11-06 10:19:37",
-    "response_deadline": "2025-10-16T15:00:00-04:00",
-    "set_aside_sam": "Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)",
-    "naics": "493190",
-    "psc": "M1NA",
-    "evaluation_basis": null,
-    "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Technical/Management",
-     "Past Performance",
-     "Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "United Paradyne Corporation",
-    "incumbent_contract_number": "SPE60015C5000",
-    "incumbent_quote": "United Paradyne Corporation, contract number SPE60015C5000."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "0219242e57b54ac1bf223aaa8c9edc6c",
-    "sam_link": "https://sam.gov/opp/0219242e57b54ac1bf223aaa8c9edc6c/view",
-    "solicitation_number": "36C26127Q0067",
-    "title": "J061--Triennial Circuit Breaker and Feeder Testing",
-    "notice_type": "Solicitation",
-    "agency": "VETERANS AFFAIRS, DEPARTMENT OF",
-    "sub_tier": "VETERANS AFFAIRS, DEPARTMENT OF",
-    "office": "261-NETWORK CONTRACT OFFICE 21 (36C261)",
-    "posted": "2026-11-06 10:52:38",
-    "response_deadline": "2026-11-20T12:00:00-08:00",
-    "set_aside_sam": "Service-Disabled Veteran-Owned Small Business (SDVOSB) Set-Aside (FAR 19.14)",
-    "naics": "238210",
-    "psc": "J061",
-    "evaluation_basis": "lowest_price",
-    "evaluation_basis_quote": "The following factors will be used to evaluate offers: PRICE ONLY",
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "LND Technical Services",
-    "incumbent_contract_number": null,
-    "incumbent_quote": "Department of Veteran Affairs has retained LND Technical Services to perform Preventive Maintenance Services for Reno VA hospital."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "a7c3450aaea144edb2591ec4ea2fe88c",
-    "sam_link": "https://sam.gov/opp/a7c3450aaea144edb2591ec4ea2fe88c/view",
-    "solicitation_number": "36C25526R0186",
-    "title": "657A5-26-111, Triennial Electrical Testing",
-    "notice_type": "Solicitation",
-    "agency": "VETERANS AFFAIRS, DEPARTMENT OF",
-    "sub_tier": "VETERANS AFFAIRS, DEPARTMENT OF",
-    "office": "255-NETWORK CONTRACT OFFICE 15 (36C255)",
-    "posted": "2026-11-06 15:17:03",
-    "response_deadline": "2026-11-13T15:00:00-06:00",
-    "set_aside_sam": "Service-Disabled Veteran-Owned Small Business (SDVOSB) Sole Source (FAR 19.14)",
-    "naics": "238210",
-    "psc": "Z1NZ",
-    "evaluation_basis": null,
-    "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Relevant Past Performance of Prime Contractor",
-     "Technical Construction and Electrical Testing Experience of Prime Contractor",
-     "Technical Experience of the Electrical Subcontractor",
-     "Technical Qualifications of Proposed Key Personnel",
-     "Prime Contractor Safety Plan"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": "between $500,000.00 to $1,000,000.00",
-    "stated_value_what": "magnitude",
-    "stated_value_quote": "Estimate of the construction magnitude for this project is between $500,000.00 to $1,000,000.00.",
-    "incumbent_firm": "LND Technical Services",
-    "incumbent_contract_number": "36C25523P0165",
-    "incumbent_quote": "The Department of Veteran Affairs has retained LND Technical Services to perform testing & maintenance for the Marion VA Medical Center."
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "edd0fbc7ea2441188554cad4a09db9a6",
-    "sam_link": "https://sam.gov/opp/edd0fbc7ea2441188554cad4a09db9a6/view",
-    "solicitation_number": "SP4510-27-Q-1002",
-    "title": "DLA Disposition Services- HDIFC Cable and Internet Services Battle Creek MI",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEFENSE LOGISTICS AGENCY",
-    "office": "DLA DISPOSITION SERVICES -  EBS",
-    "posted": "2026-11-09 07:43:55",
-    "response_deadline": "2026-11-17T17:00:00-05:00",
-    "set_aside_sam": "No Set aside used",
-    "naics": "517111",
-    "psc": "DG10",
-    "evaluation_basis": "lpta",
-    "evaluation_basis_quote": "The Government will award a contract resulting from this solicitation to the responsible offeror whose offer conforming to the solicitation will be most advantageous to the Government, under the Lowest Price Technically Acceptable (LPTA) evaluation process.",
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Completed Representation and certifications",
-     "Price",
-     "Technical"
-    ],
-    "contract_type": [
-     "firm-fixed-price",
-     "time-and-materials"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "Comcast",
-    "incumbent_contract_number": null,
-    "incumbent_quote": "THIS IS A REFRESH CONTRACT ALL SERVICES ARE IN PLACE AND OPERATIONAL BY COMCAST so NO"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "ad43be18d6e044b8a092e42bd2e0302f",
-    "sam_link": "https://sam.gov/opp/ad43be18d6e044b8a092e42bd2e0302f/view",
-    "solicitation_number": "W912WJ27QA004",
-    "title": "Snow Removal and Sanding Services, Franklin Falls Dam, Franklin, NH",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE ARMY",
-    "office": "W2SD ENDIST NEW ENGLAND",
-    "posted": "2026-11-09 11:32:42",
-    "response_deadline": "2026-11-20T14:00:00-05:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "561730",
-    "psc": "S218",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The Government will award a Purchase Order resulting from this solicitation to the responsible vendor whose quotation conforms to the solicitation and is most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Technical",
-     "Price",
-     "Past Performance"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "LEBELL'S LANDWORKS LLC",
-    "incumbent_contract_number": null,
-    "incumbent_quote": "Previous contract was awarded to: LEBELL'S LANDWORKS LLC"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "f9a5ed130d254207a94e669812edad0c",
-    "sam_link": "https://sam.gov/opp/f9a5ed130d254207a94e669812edad0c/view",
-    "solicitation_number": "W912WJ27QA006",
-    "title": "Snow Removal Services, Westville Lake, Southbridge, MA",
-    "notice_type": "Solicitation",
-    "agency": "DEPT OF DEFENSE",
-    "sub_tier": "DEPT OF THE ARMY",
-    "office": "W2SD ENDIST NEW ENGLAND",
-    "posted": "2026-11-10 10:08:03",
-    "response_deadline": "2026-11-16T14:00:00-05:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "561730",
-    "psc": "S218",
-    "evaluation_basis": "tradeoff",
-    "evaluation_basis_quote": "The Government will award a Purchase Order resulting from this solicitation to the responsible vendor whose quotation conforms to the solicitation and is most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Technical",
-     "Price",
-     "Past Performance"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "Cooks Farm Orchard",
-    "incumbent_contract_number": null,
-    "incumbent_quote": "Previous contract was awarded to: Cooks Farm Orchard"
-   },
-   {
-    "track": "solicitation",
-    "notice_id": "e9a93c556b454a18b3f815da27a46fce",
-    "sam_link": "https://sam.gov/opp/e9a93c556b454a18b3f815da27a46fce/view",
-    "solicitation_number": "1305M327Q0023",
-    "title": "S--Snow Removal Services Detroit Michigan",
-    "notice_type": "Solicitation",
-    "agency": "COMMERCE, DEPARTMENT OF",
-    "sub_tier": "NATIONAL OCEANIC AND ATMOSPHERIC ADMINISTRATION",
-    "office": "DEPT OF COMMERCE NOAA",
-    "posted": "2026-11-10 14:02:17",
-    "response_deadline": "2026-11-17T17:00:00-08:00",
-    "set_aside_sam": "Small Business Set Aside - Total",
-    "naics": "561790",
-    "psc": "S218",
-    "evaluation_basis": "lpta",
-    "evaluation_basis_quote": "Quotes will be evaluated based on the factors set forth in paragraph (a) using Lowest Price, Technically Acceptable (LPTA) procedures.",
-    "relative_importance_quote": null,
-    "evaluation_factors": [
-     "Technical Approach",
-     "Experience",
-     "Price"
-    ],
-    "contract_type": [
-     "firm-fixed-price"
-    ],
-    "stated_value": null,
-    "stated_value_what": null,
-    "stated_value_quote": null,
-    "incumbent_firm": "O&R SUPPLIES AND SERVICES, LLC",
-    "incumbent_contract_number": "1305M323ANWWR0001",
-    "incumbent_quote": "Previous contract 1305M323ANWWR0001, incumbent O&R SUPPLIES AND SERVICES, LLC."
-   },
    {
     "track": "sources_sought",
     "notice_id": "f39a9cc305694ada9417c983d0ab7701",
@@ -1619,17 +1011,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The contract will be awarded to the responsive, responsible bidder with the lowest Evaluation Total Price of Project, which is defined as:",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$2,000,000 to $3,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated price is expected to fall within the price range of $2,000,000 to $3,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated price is expected to fall within the price range of $2,000,000 to $3,000,000."
    },
    {
     "track": "solicitation",
@@ -1648,7 +1036,6 @@
     "psc": "Z2BA",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "Award will be based on the offering that is lowest price technically acceptable offer (LPTA).",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Factor 1 - Relevant Experience",
      "Factor 2 - Ability To Perform Work",
@@ -1659,10 +1046,7 @@
     ],
     "stated_value": "less than $100,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The estimated magnitude of construction is less than $100,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated magnitude of construction is less than $100,000.00."
    },
    {
     "track": "solicitation",
@@ -1681,17 +1065,13 @@
     "psc": "Y1JZ",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$10M-$25M",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "the magnitude of this construction project is anticipated to be between $10M-$25M.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "the magnitude of this construction project is anticipated to be between $10M-$25M."
    },
    {
     "track": "solicitation",
@@ -1710,7 +1090,6 @@
     "psc": "Z1AA",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The Government intends to award, without discussions, to the responsible respondent submitting quotation with the lowest evaluated price determined fair and reasonable.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -1719,10 +1098,7 @@
     ],
     "stated_value": "Between $15,000 and $20,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of construction is Between $15,000 and $20,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of construction is Between $15,000 and $20,000"
    },
    {
     "track": "solicitation",
@@ -1741,17 +1117,13 @@
     "psc": "Y1DA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between $5,000,000 and $10,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Cost Range: Between $5,000,000 and $10,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Cost Range: Between $5,000,000 and $10,000,000"
    },
    {
     "track": "solicitation",
@@ -1770,7 +1142,6 @@
     "psc": "Z2EB",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The proposals will be evaluated using a Best-Value Tradeoff (BVTO) source selection process.",
-    "relative_importance_quote": "All evaluation factors, other than cost or price, are considered approximately equal to cost or price.",
     "evaluation_factors": [
      "Design Narrative",
      "Management Plan",
@@ -1782,10 +1153,7 @@
     ],
     "stated_value": "Between $10,000,000 and $25,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The estimated construction magnitude of this construction project is anticipated to be between $10,000,000 and $25,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated construction magnitude of this construction project is anticipated to be between $10,000,000 and $25,000,000."
    },
    {
     "track": "solicitation",
@@ -1804,7 +1172,6 @@
     "psc": "Y1QA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government intends to make a single award to the offeror whose proposal represents the best value to the Government, considering Technical, Past Performance, and Price.",
-    "relative_importance_quote": "The Technical factor is most important, Past Performance is second most important, and Price is least important. When combined, Technical and Past Performance are significantly more important than Price.",
     "evaluation_factors": [
      "Technical",
      "Past Performance",
@@ -1815,10 +1182,7 @@
     ],
     "stated_value": "Between $1 million and $5 million",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "PROJECT MAGNITUDE Between $1 million and $5 million",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "PROJECT MAGNITUDE Between $1 million and $5 million"
    },
    {
     "track": "solicitation",
@@ -1837,17 +1201,13 @@
     "psc": "Z1DA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $0.00 and $1,000,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of construction cost range is between $0.00 and $1,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of construction cost range is between $0.00 and $1,000,000.00."
    },
    {
     "track": "solicitation",
@@ -1866,7 +1226,6 @@
     "psc": "Y1DZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award the Contract to the responsible Offeror whose technical submittal and price proposal contain the combination of those criteria described in this document offering the best value to the Government.",
-    "relative_importance_quote": "All technical factors, when combined, are approximately equal in importance to Price.",
     "evaluation_factors": [
      "Organizational/Technical Approach & Schedule",
      "Past Performance",
@@ -1877,10 +1236,7 @@
     ],
     "stated_value": "Between $20,000,000 and $50,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "In accordance with VAAR 836.204, the estimated magnitude of construction for this project (2) Between $20,000,000 and $50,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "In accordance with VAAR 836.204, the estimated magnitude of construction for this project (2) Between $20,000,000 and $50,000,000."
    },
    {
     "track": "solicitation",
@@ -1899,7 +1255,6 @@
     "psc": "J059",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The award decision will be based on a best-value tradeoff analysis.",
-    "relative_importance_quote": "When combined, Technical Capability and Past Performance are significantly more important than Price.",
     "evaluation_factors": [
      "Technical",
      "Past Performance",
@@ -1910,10 +1265,7 @@
     ],
     "stated_value": "$15,000",
     "stated_value_what": "ceiling per period (not-to-exceed for repair CLIN)",
-    "stated_value_quote": "Repair work is priced under a separate Contract Line Item (CLIN) with a not-to-exceed amount per period $15,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Repair work is priced under a separate Contract Line Item (CLIN) with a not-to-exceed amount per period $15,000."
    },
    {
     "track": "solicitation",
@@ -1932,15 +1284,11 @@
     "psc": "Z2KF",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": null,
     "stated_value": "Between $1,000,000.00 and $5,000,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The Estimated Magnitude of construction is between $1,000,000.00 and $5,000,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Estimated Magnitude of construction is between $1,000,000.00 and $5,000,000.00"
    },
    {
     "track": "solicitation",
@@ -1959,7 +1307,6 @@
     "psc": "Z1DA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Basis of Evaluation: Past Performance will be evaluated in accordance with RFO FAR 12.203 and award will be made to the offeror presenting the best value to the Government.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Compliance Requirements (Factor 1)",
      "Past Performance Evaluation (Factor 2)",
@@ -1968,10 +1315,7 @@
     "contract_type": null,
     "stated_value": "between $100,000 and $250,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Project magnitude: between $100,000 and $250,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Project magnitude: between $100,000 and $250,000."
    },
    {
     "track": "solicitation",
@@ -1990,7 +1334,6 @@
     "psc": "Z2FC",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The proposed Task Order will be awarded to the lowest evaluated price.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -1999,10 +1342,7 @@
     ],
     "stated_value": "$1,000,000 to $2,500,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Estimate Range: $1,000,000 to $2,500,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Estimate Range: $1,000,000 to $2,500,000."
    },
    {
     "track": "solicitation",
@@ -2021,15 +1361,11 @@
     "psc": "Z2NE",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": null,
     "stated_value": "$10,000,000.00 to $15,000,000.00",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The target price range is estimated to be between $10,000,000.00 to $15,000,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The target price range is estimated to be between $10,000,000.00 to $15,000,000.00"
    },
    {
     "track": "solicitation",
@@ -2048,7 +1384,6 @@
     "psc": "Z1LZ",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The basis for award is price only.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -2057,10 +1392,7 @@
     ],
     "stated_value": "between $250,000 and $500,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "In accordance with FAR 36.204, the magnitude of the project is between $250,000 and $500,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "In accordance with FAR 36.204, the magnitude of the project is between $250,000 and $500,000."
    },
    {
     "track": "solicitation",
@@ -2079,7 +1411,6 @@
     "psc": "Z2JZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government intends to award a firm-fixed-price contract to the responsible Offeror whose proposal conforms to the Solicitation and represents the best value to the Government, price and non-price factors considered.",
-    "relative_importance_quote": "When combined, the non-price factors are significantly more important than price.",
     "evaluation_factors": [
      "Past Experience of the General Contractor (30%)",
      "Past Performance of the General Contractor (25%)",
@@ -2092,10 +1423,7 @@
     ],
     "stated_value": "Between $10 and $20 million",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Estimated Price Range: Between $10 and $20 million",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Estimated Price Range: Between $10 and $20 million"
    },
    {
     "track": "solicitation",
@@ -2114,7 +1442,6 @@
     "psc": "R499",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "This is best value solicitation wherein the government is more concerned with technical capability rather than the overall price.",
-    "relative_importance_quote": "All factors when combined are more important than the overall price.",
     "evaluation_factors": [
      "Recent Experience",
      "Past Performance",
@@ -2125,10 +1452,7 @@
     ],
     "stated_value": "$100,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "Labor Hour (LH) $0.00 TBD NTE $100,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Labor Hour (LH) $0.00 TBD NTE $100,000.00"
    },
    {
     "track": "solicitation",
@@ -2147,7 +1471,6 @@
     "psc": "Z2JZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The proposed task order will be awarded to the responsible offeror, offering the best value to the Government. For this task order, to make a determination of best value, tradeoff selection procedures are selected.",
-    "relative_importance_quote": "The relative order of importance of the non-cost/price evaluation factors is the technical factor (Factor 1 – Technical Solution) is of equal importance to the performance confidence assessment (Factor 2 – Past Performance). The combined non-cost/price factors are approximately equal to price.",
     "evaluation_factors": [
      "Factor 1 – Technical Solution",
      "Factor 2 – Past Performance",
@@ -2158,10 +1481,7 @@
     ],
     "stated_value": "between $100,000,000 and $250,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated price range for this project is between $100,000,000 and $250,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated price range for this project is between $100,000,000 and $250,000,000."
    },
    {
     "track": "solicitation",
@@ -2180,7 +1500,6 @@
     "psc": "Y1JZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will evaluate proposals using a subjective tradeoff technique, in which Past Performance is signiﬁcantly more important than Price.",
-    "relative_importance_quote": "Past Performance is Factor 2 and is signiﬁcantly more important than Price.",
     "evaluation_factors": [
      "Price",
      "Past Performance"
@@ -2190,10 +1509,7 @@
     ],
     "stated_value": "shall not exceed $400,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum amount of all Task Orders issued shall not exceed $400,000,000 over 5 yrs and 6 months, as extended through the exercise of options.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum amount of all Task Orders issued shall not exceed $400,000,000 over 5 yrs and 6 months, as extended through the exercise of options."
    },
    {
     "track": "solicitation",
@@ -2212,7 +1528,6 @@
     "psc": "Y1NE",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "This award will be made based off of the Lowest-Price Technically Acceptable (LPTA) as detailed in FAR 15.101-2.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price",
      "Past Performance",
@@ -2223,10 +1538,7 @@
     ],
     "stated_value": "$250,000 and $500,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Project Magnitude: $250,000 and $500,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Project Magnitude: $250,000 and $500,000"
    },
    {
     "track": "solicitation",
@@ -2245,7 +1557,6 @@
     "psc": "Z2DA",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "As a Request for Proposals (RFP) based on Lowest Price Technically Acceptable (LPTA) Source Selection Process, in accordance with Federal Acquisition Regulation (FAR) Part 15.101-2, the VA will make the award based on the lowest evaluated price of proposals meeting or exceeding the acceptability standards for non- cost factors.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Relevant Past Performance of Prime Contractor",
      "Technical Construction Experience of Prime Contractor",
@@ -2257,10 +1568,7 @@
     ],
     "stated_value": "$1,000,000.00 and $5,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "$1,000,000.00 and $5,000,000 (VAAR 836.204)",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "$1,000,000.00 and $5,000,000 (VAAR 836.204)"
    },
    {
     "track": "solicitation",
@@ -2279,17 +1587,13 @@
     "psc": "Y1CA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "More than $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Disclosure of the Magnitude of Construction Projects: More than $10,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Disclosure of the Magnitude of Construction Projects: More than $10,000,000."
    },
    {
     "track": "solicitation",
@@ -2308,7 +1612,6 @@
     "psc": "Z2LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "This is a price only award. There are no other evaluation factors.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -2317,10 +1620,7 @@
     ],
     "stated_value": "below $25,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of construction: below $25,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of construction: below $25,000.00"
    },
    {
     "track": "solicitation",
@@ -2339,17 +1639,13 @@
     "psc": "Y1HA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Laboratory shall make a selection for award based on the principles of best value trade-off methodology.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$4 million",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The estimated maximum ceiling for the base year is $4 million and will be populated as such in the final executed award.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated maximum ceiling for the base year is $4 million and will be populated as such in the final executed award."
    },
    {
     "track": "solicitation",
@@ -2368,7 +1664,6 @@
     "psc": "Z2EB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "This is a price only award. There are no other evaluation factors.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -2377,10 +1672,7 @@
     ],
     "stated_value": "between $25,000.00 $100,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of construction: between $25,000.00 $100,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of construction: between $25,000.00 $100,000.00"
    },
    {
     "track": "solicitation",
@@ -2399,7 +1691,6 @@
     "psc": "V212",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a contract resulting from this solicitation to the responsible offeror whose offer conforming to the solicitation will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": "Factor 1 (Experience) is significantly more important than Factor 2 (Price).",
     "evaluation_factors": [
      "Experience",
      "Price"
@@ -2409,10 +1700,7 @@
     ],
     "stated_value": "$34,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The guaranteed minimum under this contract is $25,000 for the initial fiscal year in which this contract is awarded, and the contract’s stated maximum or ceiling amount is $34,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The guaranteed minimum under this contract is $25,000 for the initial fiscal year in which this contract is awarded, and the contract’s stated maximum or ceiling amount is $34,000,000."
    },
    {
     "track": "solicitation",
@@ -2431,7 +1719,6 @@
     "psc": "R424",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a contract resulting from this solicitation to the responsible offerors whose offer is the most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price",
@@ -2439,10 +1726,7 @@
     ],
     "stated_value": "$7.5 million",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The ceiling amount for this BPA is $7.5 million.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The ceiling amount for this BPA is $7.5 million."
    },
    {
     "track": "solicitation",
@@ -2461,7 +1745,6 @@
     "psc": "AN12",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government intends to make an award(s) to that offeror whose proposal provides the best overall value to the Government.",
-    "relative_importance_quote": "All evaluation factors other than cost or price, when combined, are significantly more important than cost",
     "evaluation_factors": [
      "Technical",
      "Cost/Price",
@@ -2473,10 +1756,7 @@
     ],
     "stated_value": "$90,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The Contractor shall be reimbursed by the Government in an amount not less than a total of $2,500 (minimum) nor more than a total of $90,000,000 (maximum) for successful performance of this contract.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Contractor shall be reimbursed by the Government in an amount not less than a total of $2,500 (minimum) nor more than a total of $90,000,000 (maximum) for successful performance of this contract."
    },
    {
     "track": "solicitation",
@@ -2495,7 +1775,6 @@
     "psc": "Z2JZ",
     "evaluation_basis": "highest_technically_rated",
     "evaluation_basis_quote": "The best value basis for award will be determined by utilizing the Highest Technically Rated Offerors (HTRO) Minimum Technical Threshold Rating (MTTR) approach.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical Experience"
     ],
@@ -2504,10 +1783,7 @@
     ],
     "stated_value": "$950,000,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The total aggregate maximum contract value for all awarded contracts combined is estimated at $950,000,000.00 for the 10-year ordering period.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The total aggregate maximum contract value for all awarded contracts combined is estimated at $950,000,000.00 for the 10-year ordering period."
    },
    {
     "track": "solicitation",
@@ -2526,15 +1802,11 @@
     "psc": "Y1AZ",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": null,
     "stated_value": "between $25 million and $100 million",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "CONSTRUCTION MAGNITUDE: In accordance with DFARS 236.204, the magnitude of this construction project is anticipated to be between $25 million and $100 million.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "CONSTRUCTION MAGNITUDE: In accordance with DFARS 236.204, the magnitude of this construction project is anticipated to be between $25 million and $100 million."
    },
    {
     "track": "solicitation",
@@ -2553,7 +1825,6 @@
     "psc": "S218",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "The government intends to award this contract to the three contractors with lowest price technically acceptable.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Total evaluated price (TEP), ranked by adding the CLIN total pricing",
      "Plan describing how the offeror will meet the PWS/SON requirements, evaluated as technically acceptable or not technically acceptable"
@@ -2564,10 +1835,7 @@
     ],
     "stated_value": "$350,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "Individuals authorized to make calls, as designated by approved appointment letter in BPA, shall not exceed $350,000.00 per call & $350,000.00 throughout the life of this BPA.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Individuals authorized to make calls, as designated by approved appointment letter in BPA, shall not exceed $350,000.00 per call & $350,000.00 throughout the life of this BPA."
    },
    {
     "track": "solicitation",
@@ -2586,17 +1854,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "award of contract, if made, will be made to the lowest responsive, responsible bidder, if funds are available.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between $5,000,000 and $10,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $5,000,000 and $10,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $5,000,000 and $10,000,000."
    },
    {
     "track": "solicitation",
@@ -2615,17 +1879,13 @@
     "psc": "Y1LB",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $2,000,000 and $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -2644,17 +1904,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Selection of the successful offer is based on price.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $5,000,000 and $10,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $5,000,000 and $10,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $5,000,000 and $10,000,000."
    },
    {
     "track": "solicitation",
@@ -2673,7 +1929,6 @@
     "psc": "R418",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Award will be made to the acceptable, responsible offeror on tradeoff basis (offeror providing the greatest value to the Government).",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "qualifications",
      "degree of expertise and experience",
@@ -2685,10 +1940,7 @@
     ],
     "stated_value": "350000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The amount of all orders shall not exceed three thousand (3000) hours or U.S. dollar 350,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The amount of all orders shall not exceed three thousand (3000) hours or U.S. dollar 350,000."
    },
    {
     "track": "solicitation",
@@ -2707,7 +1959,6 @@
     "psc": "Z1AZ",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The proposed Task Order will be awarded to the lowest evaluated price.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -2716,10 +1967,7 @@
     ],
     "stated_value": "$500,000 to $1,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Estimate Range: $500,000 to $1,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Estimate Range: $500,000 to $1,000,000."
    },
    {
     "track": "solicitation",
@@ -2738,7 +1986,6 @@
     "psc": "Y1JZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Awards will be made using a best-value tradeoff source selection process.",
-    "relative_importance_quote": "Past Performance is significantly more important than Price.",
     "evaluation_factors": [
      "Factor 1 - Technical",
      "Factor 2 - Past Performance",
@@ -2750,10 +1997,7 @@
     ],
     "stated_value": "not exceed $3,000,000,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The aggregate maximum value of all contracts and task orders awarded under the MACC will not exceed $3,000,000,000.00 over the entire ordering period.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The aggregate maximum value of all contracts and task orders awarded under the MACC will not exceed $3,000,000,000.00 over the entire ordering period."
    },
    {
     "track": "solicitation",
@@ -2772,7 +2016,6 @@
     "psc": "Z2AA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Only Phase Two factor ratings will be used during the non-price/price tradeoff analysis.",
-    "relative_importance_quote": "more important than Factor 3",
     "evaluation_factors": [
      "Factor 1 - Past Performance Information of the Prime Contractor",
      "Factor 2 - Past Performance Information of the Lead Design Firm",
@@ -2783,10 +2026,7 @@
     ],
     "stated_value": "$1.9 million",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The total contract capacity is $1.9 million over the life of the contract.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The total contract capacity is $1.9 million over the life of the contract."
    },
    {
     "track": "solicitation",
@@ -2805,17 +2045,13 @@
     "psc": "Z2AZ",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "For this task order, to make a determination of best value, the Government shall evaluate each offeror on price only and the basis for award will be low price.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
     "contract_type": null,
     "stated_value": "between $1,000,000.00 and $5,000,000.00",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "the estimated price range for this project is between $1,000,000.00 and $5,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "the estimated price range for this project is between $1,000,000.00 and $5,000,000.00."
    },
    {
     "track": "solicitation",
@@ -2834,17 +2070,13 @@
     "psc": "Z2PA",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Award will be made to the lowest priced, acceptable, responsible quoter.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between PKR 80,00,000.00 and PKR 140,00,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "It is anticipated that the range in price of this contract will be between PKR 80,00,000.00 and PKR 140,00,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "It is anticipated that the range in price of this contract will be between PKR 80,00,000.00 and PKR 140,00,000.00"
    },
    {
     "track": "solicitation",
@@ -2863,7 +2095,6 @@
     "psc": "Z1KZ",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "This is a price only award. There are no other evaluation factors.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price"
     ],
@@ -2872,10 +2103,7 @@
     ],
     "stated_value": "Between $25,000.00 and $100,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of construction is between $25,000.00 and $100,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of construction is between $25,000.00 and $100,000.00"
    },
    {
     "track": "solicitation",
@@ -2894,7 +2122,6 @@
     "psc": "Y1ND",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "This acquisition will utilize Lowest Price Technically Acceptable for an award decision, therefore an offeror must receive an \"Acceptable\" rating on all evaluation factors to be considered for award and there will be no weightings assigned to the technical factors.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Factor 1 - Relevant Experience",
      "Factor 2 - Past Performance",
@@ -2907,10 +2134,7 @@
     ],
     "stated_value": "Between $10,000,000 to $20,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The Estimate Price Range: Between $10,000,000 to $20,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Estimate Price Range: Between $10,000,000 to $20,000,000"
    },
    {
     "track": "solicitation",
@@ -2929,7 +2153,6 @@
     "psc": "Z1PZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Award will be made to the offeror representing the best value to the Government.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical Approach",
      "Price"
@@ -2939,10 +2162,7 @@
     ],
     "stated_value": "Between $25,000 and $100,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Project Magnitude: Between $25,000 and $100,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Project Magnitude: Between $25,000 and $100,000"
    },
    {
     "track": "solicitation",
@@ -2961,17 +2181,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Accordingly, award of contract, if made, will be made to the lowest responsive, responsible bidder, subject to funds availability.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $2,000,000 and $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -2990,7 +2206,6 @@
     "psc": "Z2DA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "This solicitation will be evaluated using the tradeoff source selection process in accordance with FAR 15.101-1.",
-    "relative_importance_quote": "The technical factors and past performance are equal, and when combined, are significantly more important than price.",
     "evaluation_factors": [
      "Factor 1 – Schedule",
      "Factor 2 - Management Approach",
@@ -2999,10 +2214,7 @@
     "contract_type": null,
     "stated_value": "Between $5,000,000 and $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of Construction: Between $5,000,000 and $10,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of Construction: Between $5,000,000 and $10,000,000"
    },
    {
     "track": "solicitation",
@@ -3021,17 +2233,13 @@
     "psc": "Z1KF",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between $5,000,000.00 and $10,000,000.00",
     "stated_value_what": "estimated value (price target range)",
-    "stated_value_quote": "The Price Target Range is between $5,000,000.00 and $10,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Price Target Range is between $5,000,000.00 and $10,000,000.00."
    },
    {
     "track": "solicitation",
@@ -3050,17 +2258,13 @@
     "psc": "Z2NZ",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "This solicitation is an Invitation for Bids (IFB) and will follow sealed bidding procedures in accordance with FAR Part 14 Sealed Bidding.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $10,000,000 and $20,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of Construction is between $10,000,000 and $20,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of Construction is between $10,000,000 and $20,000,000"
    },
    {
     "track": "solicitation",
@@ -3079,7 +2283,6 @@
     "psc": "Y1FA",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "LPTA. The award will go to the lowest priced offer who submits a proposal that is rated “Acceptable” when reviewed against all of the evaluation factors outlined in the RFP in accordance with FAR RFO 15.103-2, as supplemented.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical",
      "Past Performance",
@@ -3090,10 +2293,7 @@
     ],
     "stated_value": "between $5,000,000 and $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of this construction project is anticipated to be between $5,000,000 and $10,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of this construction project is anticipated to be between $5,000,000 and $10,000,000."
    },
    {
     "track": "solicitation",
@@ -3112,7 +2312,6 @@
     "psc": "Y1AA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The awardee will be competitively chosen using best value tradeoff procedures in accordance with FAR Subparts 15.1 and 15.2 (GSA Class Deviation RFO-2025-15).",
-    "relative_importance_quote": "(2) Non-Price Factors, when combined, are significantly more important than Total Evaluated Price.",
     "evaluation_factors": [
      "Total Evaluated Price",
      "Experience on Similar Projects",
@@ -3125,10 +2324,7 @@
     ],
     "stated_value": "between $20,000,000 and $40,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The total magnitude of this project at award is between $20,000,000 and $40,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The total magnitude of this project at award is between $20,000,000 and $40,000,000."
    },
    {
     "track": "solicitation",
@@ -3147,7 +2343,6 @@
     "psc": "Z1AA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Basis of contract award will be a competitive best value source selection in which competing offerors past performance history will be considered significantly more important than price considerations.",
-    "relative_importance_quote": "Basis of contract award will be a competitive best value source selection in which competing offerors past performance history will be considered significantly more important than price considerations.",
     "evaluation_factors": [
      "Price",
      "Past Performance"
@@ -3158,10 +2353,7 @@
     ],
     "stated_value": "$27,500,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "IDIQ Ceiling: $5,000,000.00/year; $27,500,000.00 total",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "IDIQ Ceiling: $5,000,000.00/year; $27,500,000.00 total"
    },
    {
     "track": "solicitation",
@@ -3180,7 +2372,6 @@
     "psc": "Y1BD",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "This is a competitive best value source selection in which competing offerors past performance history will be evaluated on a basis significantly more important than cost or price considerations.",
-    "relative_importance_quote": "This is a competitive best value source selection in which competing offerors past performance history will be evaluated on a basis significantly more important than cost or price considerations.",
     "evaluation_factors": [
      "Price Evaluation (Factor 1)",
      "Past Performance/Experience (Factor II)"
@@ -3190,10 +2381,7 @@
     ],
     "stated_value": "Between $1,000,000 - $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated amount of this project is: Between $1,000,000 - $5,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated amount of this project is: Between $1,000,000 - $5,000,000"
    },
    {
     "track": "solicitation",
@@ -3212,17 +2400,13 @@
     "psc": "Y1DZ",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $10,000,000 and $20,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The VAAR Magnitude of Construction is between $10,000,000 and $20,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The VAAR Magnitude of Construction is between $10,000,000 and $20,000,000."
    },
    {
     "track": "solicitation",
@@ -3241,17 +2425,13 @@
     "psc": "Y1DA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between $250,000 to $500,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of Construction: Between $250,000 to $500,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of Construction: Between $250,000 to $500,000."
    },
    {
     "track": "solicitation",
@@ -3270,17 +2450,13 @@
     "psc": "Y1KZ",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Award will be made to the responsible offeror that is compliant with the terms of the solicitation, who presents proof of the appropriate bid guarantee, and is the lowest priced bid opened.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $10,000,000 and $25,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of this project is between $10,000,000 and $25,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of this project is between $10,000,000 and $25,000,000."
    },
    {
     "track": "solicitation",
@@ -3299,7 +2475,6 @@
     "psc": "AN12",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government intends to award a contract or contracts resulting from this solicitation to the responsible Offeror(s) whose proposal(s) represents the best value after evaluation in accordance with the factors and subfactors in the solicitation.",
-    "relative_importance_quote": "All evaluation factors other than cost or price, when combined, are significantly more important than cost or price.",
     "evaluation_factors": [
      "technical",
      "cost"
@@ -3309,10 +2484,7 @@
     ],
     "stated_value": "up to $16 million",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "For Fiscal Year (FY) 27, NIAID estimates up to $16 million for the award of up to 4 cost reimbursement completion type contracts.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "For Fiscal Year (FY) 27, NIAID estimates up to $16 million for the award of up to 4 cost reimbursement completion type contracts."
    },
    {
     "track": "solicitation",
@@ -3331,17 +2503,13 @@
     "psc": "Y1LB",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $2,000,000 and $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -3360,7 +2528,6 @@
     "psc": "R499",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Awards will be made to the responsible Offeror(s) whose proposal(s) are determined to provide the best value and be most advantageous to the Government, based on the evaluation factors described in this section.",
-    "relative_importance_quote": "Technical evaluation factors and past performance, when combined, are more important than price.",
     "evaluation_factors": [
      "Factor 1: Scientific and Technical Merit and Offeror Qualifications",
      "Factor 2: Innovation, Feasibility, and Pathway to Implementation",
@@ -3372,10 +2539,7 @@
     ],
     "stated_value": "$4,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Estimated total funding under this solicitation is $4,000,000, with approximately six to 10 awards anticipated.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Estimated total funding under this solicitation is $4,000,000, with approximately six to 10 awards anticipated."
    },
    {
     "track": "solicitation",
@@ -3394,7 +2558,6 @@
     "psc": "R499",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Awards will be made to the responsible Offeror(s) whose proposal(s) are determined to provide the best value and be most advantageous to the Government, based on the evaluation factors described in this section.",
-    "relative_importance_quote": "Technical evaluation factors and past performance, when combined, are significantly more important than price.",
     "evaluation_factors": [
      "Scientific Merit, Relevance, and Offeror Qualifications",
      "Graduate Workforce Development and Research Deliverables",
@@ -3407,10 +2570,7 @@
     ],
     "stated_value": "$10,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Estimated total funding under this solicitation is $10,000,000, with approximately 5 to 10 awards anticipated.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Estimated total funding under this solicitation is $10,000,000, with approximately 5 to 10 awards anticipated."
    },
    {
     "track": "solicitation",
@@ -3429,7 +2589,6 @@
     "psc": "R499",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Awards will be made to the responsible offeror(s) whose proposal(s) are determined to provide the best value and be most advantageous to the Government, based on the evaluation factors described in this section.",
-    "relative_importance_quote": "Offerors are advised that all evaluation factors other than cost or price, when combined are significantly more important than cost or price.",
     "evaluation_factors": [
      "Scientific and Technical Merit and Offeror Qualifications",
      "Innovation, Feasibility, and Pathway to Implementation",
@@ -3441,10 +2600,7 @@
     ],
     "stated_value": "$8,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Estimated total funding under this solicitation is $8,000,000, with two awards anticipated",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Estimated total funding under this solicitation is $8,000,000, with two awards anticipated"
    },
    {
     "track": "solicitation",
@@ -3463,7 +2619,6 @@
     "psc": "Y1JZ",
     "evaluation_basis": "highest_technically_rated",
     "evaluation_basis_quote": "The Government will utilize the Highest technically rated with a fair and reasonable price approach.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Relevant Experience",
      "Past Performance",
@@ -3476,10 +2631,7 @@
     ],
     "stated_value": "$7,500,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The anticipated total capacity for all contracts within all Pools is a shared ceiling of $7,500,000,000 inclusive of the 1-year base and four 1-year options.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The anticipated total capacity for all contracts within all Pools is a shared ceiling of $7,500,000,000 inclusive of the 1-year base and four 1-year options."
    },
    {
     "track": "solicitation",
@@ -3498,7 +2650,6 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The Government will award a single, Firm Fixed Price (FFP) contract to the lowest responsive and responsible bidder whose total aggregate price for all CLINs in Section B represents the lowest cost to the Government.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "indefinite-delivery/indefinite-quantity",
@@ -3506,10 +2657,7 @@
     ],
     "stated_value": "up to $5,000,000.00 annually",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "THE ESTIMATED MAGNITUDE IS UP TO $5,000,000.00 ANNUALLY.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "THE ESTIMATED MAGNITUDE IS UP TO $5,000,000.00 ANNUALLY."
    },
    {
     "track": "solicitation",
@@ -3528,7 +2676,6 @@
     "psc": "Z2LZ",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "Award will be made on a Lowest-Price Technically Acceptable (LPTA) basis to the responsible offeror whose quotation is determined technically acceptable and offers the lowest evaluated price to the Government (see submission requirements in Section L).",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price",
      "Technical Approach"
@@ -3538,10 +2685,7 @@
     ],
     "stated_value": "between $25,000 and $100,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated construction contract price for the project described in this request for proposal is between $25,000 and $100,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated construction contract price for the project described in this request for proposal is between $25,000 and $100,000."
    },
    {
     "track": "solicitation",
@@ -3560,7 +2704,6 @@
     "psc": "F003",
     "evaluation_basis": "other",
     "evaluation_basis_quote": "Award(s) will be made to those offeror(s) whose proposal is technically acceptable and whose prices are deemed reasonable.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Structural Integrity and Maintenance",
      "Equipment",
@@ -3575,10 +2718,7 @@
     ],
     "stated_value": "$2,500,000,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum total contract ceiling for all awards and orders under this MATOC is $2,500,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum total contract ceiling for all awards and orders under this MATOC is $2,500,000,000.00."
    },
    {
     "track": "solicitation",
@@ -3597,15 +2737,11 @@
     "psc": "Y1GA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": null,
     "stated_value": "between $6,000,000 and $8,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated construction cost of this project is between $6,000,000 and $8,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated construction cost of this project is between $6,000,000 and $8,000,000."
    },
    {
     "track": "solicitation",
@@ -3624,17 +2760,13 @@
     "psc": "Y1PZ",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between $10,000,000 and $20,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Per VAAR 836.204(h), Project Magnitude: Between $10,000,000 and $20,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Per VAAR 836.204(h), Project Magnitude: Between $10,000,000 and $20,000,000."
    },
    {
     "track": "solicitation",
@@ -3653,7 +2785,6 @@
     "psc": "Y1QA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will conduct a source selection using the Best Value Continuum Tradeoff Process defined at FAR Part 15.1.",
-    "relative_importance_quote": "For this solicitation, all evaluation factors other than cost or price when combined are approximately equal to cost or price.",
     "evaluation_factors": [
      "Factor 1 - Experience & Key Personnel",
      "Factor 2 - Technical Approach & Schedule",
@@ -3665,10 +2796,7 @@
     ],
     "stated_value": "between $1,000,000 and $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated magnitude of this requirement is between $1,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated magnitude of this requirement is between $1,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -3687,17 +2815,13 @@
     "psc": "Z1DA",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Award will be made to the responsible bidder, who submitted the lowest responsive bid.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$5,000,000 to $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "While inclusion of the project magnitude $5,000,000 to $10,000,000 is no longer a mandatory element, the Government believes inclusion of this information assists prospective bidders in understanding the overall scale",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "While inclusion of the project magnitude $5,000,000 to $10,000,000 is no longer a mandatory element, the Government believes inclusion of this information assists prospective bidders in understanding the overall scale"
    },
    {
     "track": "solicitation",
@@ -3716,17 +2840,13 @@
     "psc": "Y1DA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "Between $500,000 and $1,000,000",
     "stated_value_what": "estimated value (cost range)",
-    "stated_value_quote": "Cost Range: Between $500,000 and $1,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Cost Range: Between $500,000 and $1,000,000"
    },
    {
     "track": "solicitation",
@@ -3745,7 +2865,6 @@
     "psc": "Y1JZ",
     "evaluation_basis": "other",
     "evaluation_basis_quote": "Qualification-Based Selection: The Design-Builder will be selected based on the factors identified below, not on price.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Team and Relevant Experience",
      "PDB with OTA Execution Approach",
@@ -3757,10 +2876,7 @@
     ],
     "stated_value": "may not exceed $96,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The total program funding for this project, including all design, construction, and commissioning activities, may not exceed $96,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The total program funding for this project, including all design, construction, and commissioning activities, may not exceed $96,000,000."
    },
    {
     "track": "solicitation",
@@ -3779,7 +2895,6 @@
     "psc": "Z2EC",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The award decision will be based on a best value trade-off among the evaluation factors; therefore, the Government may not award to the lowest price or the highest technically rated proposal if it does not offer the best VALUE to the Government, all factors considered.",
-    "relative_importance_quote": "All nonprice evaluation factors, when combined, are significantly more important than price.",
     "evaluation_factors": [
      "Corporate Experience",
      "Past Performance",
@@ -3793,10 +2908,7 @@
     ],
     "stated_value": "Between $1,000,000 and $5,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of construction is Between $1,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of construction is Between $1,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -3815,7 +2927,6 @@
     "psc": "Z2DA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "This is a competitive procurement using the best value tradeoff source selection process identified in FAR Part 15.101-1.",
-    "relative_importance_quote": "All non-price factors are of equal importance and, when combined, are significantly more important than price.",
     "evaluation_factors": [
      "Company Experience",
      "Project Management",
@@ -3829,10 +2940,7 @@
     ],
     "stated_value": "$21,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "$21,000,000 is the maximum combined amount of all executed task orders and modifications.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "$21,000,000 is the maximum combined amount of all executed task orders and modifications."
    },
    {
     "track": "solicitation",
@@ -3851,7 +2959,6 @@
     "psc": "Y1NE",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Award will be made to that offeror whose proposal is the most advantageous to the Government and demonstrates that (1) it meets the technical requirements of the solicitation and (2) the proposal's technical/cost relationship represents the best value to the Government.",
-    "relative_importance_quote": "The relative importance of the factors listed in this provision is as follows: Factors 1, 2,3, and 4 (Technical Approach, Construction Schedule, Project Team Composition, and Past Performance) are of equal importance. Factors 1-4, when combined, are equal in importance to Factor 5 (Price).",
     "evaluation_factors": [
      "Technical Approach",
      "Construction Schedule",
@@ -3864,10 +2971,7 @@
     ],
     "stated_value": "between $5,000,000 and $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of this project is between $5,000,000 and $10,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of this project is between $5,000,000 and $10,000,000."
    },
    {
     "track": "solicitation",
@@ -3886,7 +2990,6 @@
     "psc": "F108",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will issue a contract to the responsible offeror whose offer conforms to the solicitation and will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical Capability",
      "Past Performance",
@@ -3897,10 +3000,7 @@
     ],
     "stated_value": "$100,000 and $250,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Cost Range: $100,000 and $250,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Cost Range: $100,000 and $250,000"
    },
    {
     "track": "solicitation",
@@ -3919,17 +3019,13 @@
     "psc": "Z2KA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $500,000 and $1,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The estimated magnitude of construction is between $500,000 and $1,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated magnitude of construction is between $500,000 and $1,000,000."
    },
    {
     "track": "solicitation",
@@ -3948,7 +3044,6 @@
     "psc": "R402",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will make award to the responsible Offeror whose eligible and acceptable proposal represents the best value to the Government, considering Technical Approach, Past Performance, and Price.",
-    "relative_importance_quote": "Factor 1 – Technical Approach is more important than Factor 2 – Past Performance. When combined, Factors 1 and 2 are more important than Factor 3 – Price.",
     "evaluation_factors": [
      "Technical Approach",
      "Past Performance",
@@ -3960,10 +3055,7 @@
     ],
     "stated_value": "$30,000,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum Contract value per awardee is $30,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum Contract value per awardee is $30,000,000.00."
    },
    {
     "track": "solicitation",
@@ -3982,7 +3074,6 @@
     "psc": "Y1NE",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will conduct a source selection using the Best Value Continuum Tradeoff Process defined at FAR Part 15.1.",
-    "relative_importance_quote": "Overall: Proposed pricing is an evaluation factor. All evaluation factors other than price, when combined are approximately equally important to price.",
     "evaluation_factors": [
      "Technical and Management",
      "Past Performance",
@@ -3993,10 +3084,7 @@
     ],
     "stated_value": "over $25 Million",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "B) Magnitude of Construction is over $25 Million.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "B) Magnitude of Construction is over $25 Million."
    },
    {
     "track": "solicitation",
@@ -4015,7 +3103,6 @@
     "psc": "Z2EB",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will conduct a comparative evaluation of all quotations to determine best value. A higher-priced quotation may be selected if it offers greater technical value.",
-    "relative_importance_quote": "All non-price evaluation factors, when combined, are approximately equal in importance to price.",
     "evaluation_factors": [
      "Technical Approach",
      "Relevant Experience / Past Performance",
@@ -4026,10 +3113,7 @@
     ],
     "stated_value": "Between $100,000 and $250,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "MAGNITUDE OF THE CONSTRUCTION PROJECT IS ESTIMATED TO BE BETWEEN $100,000 AND $250,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "MAGNITUDE OF THE CONSTRUCTION PROJECT IS ESTIMATED TO BE BETWEEN $100,000 AND $250,000."
    },
    {
     "track": "solicitation",
@@ -4048,17 +3132,13 @@
     "psc": "Z2MB",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $1 million and $5 million",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of this construction project is anticipated to be between $1 million and $5 million.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of this construction project is anticipated to be between $1 million and $5 million."
    },
    {
     "track": "solicitation",
@@ -4077,17 +3157,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "contract award will be made to the lowest responsible bidder conforming to the solicitation, provided funds are available.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $2,000,000 and $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -4106,7 +3182,6 @@
     "psc": "Q523",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a contract resulting from this solicitation to the responsible Offeror whose offer conforming to the solicitation will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": "Technical and past performance, when combined, are significantly more important than price.",
     "evaluation_factors": [
      "Technical Capability",
      "Past Performance",
@@ -4118,10 +3193,7 @@
     ],
     "stated_value": "$700,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum amount to be ordered for this contract for the base, and all option periods, if exercised by the Government, is $700,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum amount to be ordered for this contract for the base, and all option periods, if exercised by the Government, is $700,000.00."
    },
    {
     "track": "solicitation",
@@ -4140,7 +3212,6 @@
     "psc": "Y1AZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a contract resulting from this Solicitation to the responsible Offeror whose offer conforming to the Solicitation will be the best value to the Government, Total Evaluated Price and other factors considered.",
-    "relative_importance_quote": "Non-Price Factors, when combined, are significantly more important than Total Evaluated Price.",
     "evaluation_factors": [
      "Phase 1 Qualifications Evaluation",
      "Technical Approach / Construction Management Approach",
@@ -4153,10 +3224,7 @@
     ],
     "stated_value": "between $120,000,000.00 and $160,000,000.00",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated cost range for construction is between $120,000,000.00 and $160,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated cost range for construction is between $120,000,000.00 and $160,000,000.00."
    },
    {
     "track": "solicitation",
@@ -4175,7 +3243,6 @@
     "psc": "Z1LB",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "indefinite-delivery/indefinite-quantity",
@@ -4183,10 +3250,7 @@
     ],
     "stated_value": "$99,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The Government intends to award up to six (6) IDIQ construction contracts for a base period of two (2) years and three (3) one-year option periods for a maximum of five (5) years or an aggregate maximum of $99,000,000 for all contracts, whichever occurs first.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Government intends to award up to six (6) IDIQ construction contracts for a base period of two (2) years and three (3) one-year option periods for a maximum of five (5) years or an aggregate maximum of $99,000,000 for all contracts, whichever occurs first."
    },
    {
     "track": "solicitation",
@@ -4205,7 +3269,6 @@
     "psc": "Y1JB",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The tradeoff process is selected as appropriate for this acquisition. The Government considers it to be in its best interest to allow consideration of award to other than the lowest priced offeror or other than the highest technically rated offeror.",
-    "relative_importance_quote": "The relative order of importance of the non-price evaluation factors is the technical factors (Factors 1, 2, 3, and 5) are of equal importance to each other and, when combined, are equal in importance to the past performance evaluation /performance confidence assessment factor (Factor 4).",
     "evaluation_factors": [
      "Price",
      "Factor 1 - Corporate Experience",
@@ -4219,10 +3282,7 @@
     ],
     "stated_value": "between $25,000,000 to $100,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of construction for this project is between $25,000,000 to $100,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of construction for this project is between $25,000,000 to $100,000,000."
    },
    {
     "track": "solicitation",
@@ -4241,17 +3301,13 @@
     "psc": "Y1ED",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "indefinite-delivery/indefinite-quantity"
     ],
     "stated_value": "$15,000,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The period of performance will be a base period of 5-years and one (1) 5-year option period for a maximum possible duration of 10-years; or an aggregate maximum estimated value of $15,000,000,000 for all task orders, whichever occurs first.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The period of performance will be a base period of 5-years and one (1) 5-year option period for a maximum possible duration of 10-years; or an aggregate maximum estimated value of $15,000,000,000 for all task orders, whichever occurs first."
    },
    {
     "track": "solicitation",
@@ -4270,7 +3326,6 @@
     "psc": "V231",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "indefinite-delivery/indefinite-quantity",
@@ -4278,10 +3333,7 @@
     ],
     "stated_value": "IDR5,250,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The total value of all Task Orders and guaranteed-rate reservations issued to all awardees across all exercised periods shall not exceed IDR5,250,000,000 (the contract maximum ceiling).",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The total value of all Task Orders and guaranteed-rate reservations issued to all awardees across all exercised periods shall not exceed IDR5,250,000,000 (the contract maximum ceiling)."
    },
    {
     "track": "solicitation",
@@ -4300,7 +3352,6 @@
     "psc": "AC12",
     "evaluation_basis": "other",
     "evaluation_basis_quote": "DARPA will not evaluate individual submissions against each other during the scientific review process, but rather evaluate each individual submission on its own merit to determine how well the proposal meets the criteria stated in this PS.",
-    "relative_importance_quote": "OPP/oral presentation evaluation criteria are listed in descending order of importance and will remain unchanged in the formal invitation to submit a OPP.",
     "evaluation_factors": [
      "Technical Approach",
      "Relevant Qualifications",
@@ -4311,10 +3362,7 @@
     ],
     "stated_value": "between $4,000,000 and $7,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Total Funding – Multiple awards are anticipated between $4,000,000 and $7,000,000 across all Phases 1 – 3 of the program described below.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Total Funding – Multiple awards are anticipated between $4,000,000 and $7,000,000 across all Phases 1 – 3 of the program described below."
    },
    {
     "track": "solicitation",
@@ -4333,7 +3381,6 @@
     "psc": "AC13",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "This is a best value tradeoff source selection conducted in accordance with (IAW) Revolutionary FAR Overhaul (RFO) and Federal Acquisition Regulation (FAR) part 15, as supplemented by the Defense Federal Acquisition Regulation Supplement (DFARS), and the Department of Defense (DoD) Source Selection Procedures, 20 August 2022, and.",
-    "relative_importance_quote": "IAW RFO 15.104, all evaluation Factors other than Price, when combined, are significantly more important than price.",
     "evaluation_factors": [
      "Technical",
      "Management",
@@ -4347,10 +3394,7 @@
     ],
     "stated_value": "$369,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "Total Delivery/Task Orders may not exceed the IDIQ ceiling amount of $369,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Total Delivery/Task Orders may not exceed the IDIQ ceiling amount of $369,000,000."
    },
    {
     "track": "solicitation",
@@ -4369,7 +3413,6 @@
     "psc": "Y1KZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The basis of award will be of best value to the Government.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price",
      "Past Performance"
@@ -4379,10 +3422,7 @@
     ],
     "stated_value": "Between $300,000.00 and $350,000.00",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The Anticipated Construction Cost is between $300,000.00 and $350,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Anticipated Construction Cost is between $300,000.00 and $350,000.00."
    },
    {
     "track": "solicitation",
@@ -4401,7 +3441,6 @@
     "psc": "R405",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Design integration plan (technology to achieve fuel efficiency, URN limit, and economic analysis)",
      "Methodology and modeling approach",
@@ -4412,10 +3451,7 @@
     "contract_type": null,
     "stated_value": "$1.25 million",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "Total funding available is up to $1.25 million.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Total funding available is up to $1.25 million."
    },
    {
     "track": "solicitation",
@@ -4434,15 +3470,11 @@
     "psc": "Y1CZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "THIS SOLICITATION AND RESULTING CONTRACT ARE UTILIZING A BEST VALUE TRADE-OFF PROCUREMENT METHOD AS DESCRIBED IN RFO PART 15.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": null,
     "stated_value": "BETWEEN $50,000,000.00 AND $75,000,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "THE MAGNITUDE OF CONSTRUCTION IS BETWEEN $50,000,000.00 AND $75,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "THE MAGNITUDE OF CONSTRUCTION IS BETWEEN $50,000,000.00 AND $75,000,000.00."
    },
    {
     "track": "solicitation",
@@ -4461,7 +3493,6 @@
     "psc": "Y1GC",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "Lowest Price Technically Acceptable (LPTA) will be source selection method used for award.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Factor 1: Offeror's Project Experience",
      "Factor 2: Proposed Contract Duration and Summary Schedule"
@@ -4471,10 +3502,7 @@
     ],
     "stated_value": "between $1,000,000 and $5,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of this project is between $1,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of this project is between $1,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -4493,17 +3521,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The contract will be awarded to the responsive, responsible bidder with the lowest Evaluation Total Price of Project, which is defined as:",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$3,000,000 to $4,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated price is expected to fall within the price range of $3,000,000 to $4,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated price is expected to fall within the price range of $3,000,000 to $4,000,000."
    },
    {
     "track": "solicitation",
@@ -4522,7 +3546,6 @@
     "psc": "Y1PZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will conduct a source selection using the Best Value Continuum Tradeoff Process defined at FAR Part 15.1.",
-    "relative_importance_quote": "All evaluation factors other than price, when combined are significantly more important than price.",
     "evaluation_factors": [
      "Factor 1 – Project Experience",
      "Factor 2 – Management Approach & Project Team",
@@ -4537,10 +3560,7 @@
     ],
     "stated_value": "More than $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of Construction: More than $10,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of Construction: More than $10,000,000"
    },
    {
     "track": "solicitation",
@@ -4559,7 +3579,6 @@
     "psc": "Y1DA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The offeror’s proposal must conform to the solicitation requirements and be judged to represent “Best Value” to the Government.",
-    "relative_importance_quote": "Factor I (Schedule – Quality Management Technical Factor), Factor II (Professional Qualifications & Specialized Experience Technical Factor), and Factor III (Past Performance) are equal in importance. Factors I, Factor II, and Factor III when combined, are approximately equal in importance to Factor IV (Price).",
     "evaluation_factors": [
      "Schedule – Quality Management Technical Factor",
      "Professional Qualifications & Specialized Experience Technical Factor",
@@ -4571,10 +3590,7 @@
     ],
     "stated_value": "Between $500,000.00 and $1,000,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Pursuant to FAR 36.204 the magnitude of construction is between $500,000.00 and $1,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Pursuant to FAR 36.204 the magnitude of construction is between $500,000.00 and $1,000,000.00."
    },
    {
     "track": "solicitation",
@@ -4593,7 +3609,6 @@
     "psc": "Z1NZ",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Relevant Past Performance of Prime Contractor",
      "Technical Construction and Electrical Testing Experience of Prime Contractor",
@@ -4606,10 +3621,7 @@
     ],
     "stated_value": "between $500,000.00 to $1,000,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Estimate of the construction magnitude for this project is between $500,000.00 to $1,000,000.00.",
-    "incumbent_firm": "LND Technical Services",
-    "incumbent_contract_number": "36C25523P0165",
-    "incumbent_quote": "The Department of Veteran Affairs has retained LND Technical Services to perform testing & maintenance for the Marion VA Medical Center."
+    "stated_value_quote": "Estimate of the construction magnitude for this project is between $500,000.00 to $1,000,000.00."
    },
    {
     "track": "solicitation",
@@ -4628,17 +3640,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "The contract will be awarded to the responsive, responsible bidder with the lowest Evaluation Total Price of Project, which is defined as:",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$2,000,000 to $3,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The project will be split into multiple work schedules/contract options, with the cost of the entire project expected to fall within the price range of $2,000,000 to $3,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The project will be split into multiple work schedules/contract options, with the cost of the entire project expected to fall within the price range of $2,000,000 to $3,000,000."
    },
    {
     "track": "solicitation",
@@ -4657,7 +3665,6 @@
     "psc": "C1LB",
     "evaluation_basis": "other",
     "evaluation_basis_quote": "the Government will utilize a qualifications-based selection process to award an IDIQ Firm-Fixed-Price contract resulting from this solicitation.",
-    "relative_importance_quote": "The following evaluation criteria are in descending order of importance.",
     "evaluation_factors": [
      "Specialized Experience and technical competence",
      "Project Delivery process",
@@ -4672,10 +3679,7 @@
     ],
     "stated_value": "$60,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "with a shared maximum contract value not to exceed the five (5) year total of $60,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "with a shared maximum contract value not to exceed the five (5) year total of $60,000,000."
    },
    {
     "track": "solicitation",
@@ -4694,7 +3698,6 @@
     "psc": "Q702",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will issue a purchase order to the responsible quoter whose quotation conforming to the solicitation will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price",
      "Technical Capability/Experience",
@@ -4707,10 +3710,7 @@
     ],
     "stated_value": "$7,500,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The minimum guarantee is $10,000.00 and the ceiling is $7,500,000.00 for the entire duration of the contract.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The minimum guarantee is $10,000.00 and the ceiling is $7,500,000.00 for the entire duration of the contract."
    },
    {
     "track": "solicitation",
@@ -4729,7 +3729,6 @@
     "psc": "DC10",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "A tradeoff approach, as described at FAR 15.103-1, will be used in making source selection.",
-    "relative_importance_quote": "The Cost Factor is significantly less important than the combined importance of the Mission Suitability Factor and the Past Performance Factor.",
     "evaluation_factors": [
      "Mission Suitability",
      "Cost",
@@ -4742,10 +3741,7 @@
     ],
     "stated_value": "$287,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum amount of supplies or services that may be ordered during the effective period of this contract is $287,000,000..",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum amount of supplies or services that may be ordered during the effective period of this contract is $287,000,000.."
    },
    {
     "track": "solicitation",
@@ -4764,17 +3760,13 @@
     "psc": "Y1NE",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Award: Award will be made to the responsible offeror that is compliant with the terms of the solicitation, who presents proof of the appropriate bid guarantee, and is the lowest priced bid opened. Pricing will be evaluated to ensure balanced pricing and that the awarded price is fair and reasonable.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $18,000,000.00 and $23,000,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of this project is between $18,000,000.00 and $23,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of this project is between $18,000,000.00 and $23,000,000.00."
    },
    {
     "track": "solicitation",
@@ -4793,7 +3785,6 @@
     "psc": "Z2FA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The basis of award will be the best value to the Government considering technical, experience, and price (see submission requirements in Section L).",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Price",
      "Technical Understanding and Capability",
@@ -4804,10 +3795,7 @@
     ],
     "stated_value": "Less than $25,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "*Magnitude of Construction Price Range: Less than $25,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "*Magnitude of Construction Price Range: Less than $25,000."
    },
    {
     "track": "solicitation",
@@ -4826,7 +3814,6 @@
     "psc": "Z1PA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Award will be made to the offeror representing the best value to the Government.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Relevant Experience",
      "Past Performance",
@@ -4837,10 +3824,7 @@
     ],
     "stated_value": "between $1,000,000 and $5,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Project Magnitude between $1,000,000 and $5,000,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Project Magnitude between $1,000,000 and $5,000,000"
    },
    {
     "track": "solicitation",
@@ -4859,7 +3843,6 @@
     "psc": "Z1DA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government may select the offer that is most advantageous based on this comparative assessment, considering price and other factors identified in the solicitation.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "technical factor",
      "past performance factor",
@@ -4870,10 +3853,7 @@
     ],
     "stated_value": "Between $25,000 and $100,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of Construction: Between $25,000 and $100,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of Construction: Between $25,000 and $100,000"
    },
    {
     "track": "solicitation",
@@ -4892,15 +3872,11 @@
     "psc": "Y1JZ",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": null,
     "stated_value": "Between $5,000,000 and $10,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The magnitude of construction is estimated to be between $5,000,000 and $10,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The magnitude of construction is estimated to be between $5,000,000 and $10,000,000."
    },
    {
     "track": "solicitation",
@@ -4919,17 +3895,13 @@
     "psc": "Y1AA",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "$1,000,000 - $5,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Project magnitude is between $1,000,000 - $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Project magnitude is between $1,000,000 - $5,000,000."
    },
    {
     "track": "solicitation",
@@ -4948,7 +3920,6 @@
     "psc": "Y1PZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will conduct a source selection using the Best Value Continuum Tradeoff Process defined at FAR Part 15.1.",
-    "relative_importance_quote": "All evaluation factors other than price, when combined are significantly more important than price.",
     "evaluation_factors": [
      "Factor 1 - Technical Approach",
      "Factor 2 - Schedule",
@@ -4963,10 +3934,7 @@
     ],
     "stated_value": "Between $1,000,000 and $5,000,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "The Magnitude of Construction is Between $1,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The Magnitude of Construction is Between $1,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -4985,7 +3953,6 @@
     "psc": "H112",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a contract resulting from this solicitation to the responsible Offeror whose offer conforming to the solicitation will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": "Technical Capability is more important than Past Performance, which is more important than Veterans Involvement. All non-price factors, when combined, are approximately equal to Price.",
     "evaluation_factors": [
      "Technical Capability",
      "Past Performance",
@@ -4998,10 +3965,7 @@
     ],
     "stated_value": "$750,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The total value of all task orders under this contract shall not exceed $750,000.00 across all five ordering periods.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The total value of all task orders under this contract shall not exceed $750,000.00 across all five ordering periods."
    },
    {
     "track": "solicitation",
@@ -5020,7 +3984,6 @@
     "psc": "Y1QA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a Purchase Order resulting from this solicitation to the responsible vendor whose quotation conforms to the solicitation and is most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical",
      "Price",
@@ -5031,10 +3994,7 @@
     ],
     "stated_value": "between $25,000 and $100,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated cost of the work is between $25,000 and $100,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated cost of the work is between $25,000 and $100,000."
    },
    {
     "track": "solicitation",
@@ -5053,7 +4013,6 @@
     "psc": "G099",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "Award will be made to an Offeror on the basis of the best value tradeoff.",
-    "relative_importance_quote": "Evaluation factors other than price, when combined, are more important than price.",
     "evaluation_factors": [
      "Factor 1: Technical Capability",
      "Factor 2: Past Performance",
@@ -5065,10 +4024,7 @@
     ],
     "stated_value": "$20,000,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum aggregate value of orders that can be placed under this contract is $20,000,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum aggregate value of orders that can be placed under this contract is $20,000,000.00."
    },
    {
     "track": "solicitation",
@@ -5087,7 +4043,6 @@
     "psc": "Q403",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will make a best-value tradeoff determination for each Service Group based on an integrated assessment of the evaluation factors, subject to the award eligibility requirements and the Systems and Technical Immediate Operational Readiness requirements described below.",
-    "relative_importance_quote": "The other non-price factors, Technical Approach, Relevant Experience and Veterans Preference, are listed in descending order of importance and, when combined, are significantly more important than Price.",
     "evaluation_factors": [
      "IT/ATO and Data Security Approach (PASS/FAIL)",
      "Technical Approach",
@@ -5100,10 +4055,7 @@
     ],
     "stated_value": "$40,000,000,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum value for MDE-NG is $40,000,000,000 in the aggregate across all MDE-NG IDIQ contracts and all SGs for the entire contract period, including all options.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum value for MDE-NG is $40,000,000,000 in the aggregate across all MDE-NG IDIQ contracts and all SGs for the entire contract period, including all options."
    },
    {
     "track": "solicitation",
@@ -5122,7 +4074,6 @@
     "psc": "Y1AA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will award a contract resulting from this Solicitation to the responsible Offeror whose offer conforming to the Solicitation will be the best value to the Government, Total Evaluated Price and other factors considered.",
-    "relative_importance_quote": "technical factors, when combined, are significantly more important than cost or price.",
     "evaluation_factors": [
      "Factor 1 – Experience on Similar Projects (40%)",
      "Factor 2 – Past Performance on Relevant Project (15%)",
@@ -5133,10 +4084,7 @@
     ],
     "stated_value": "between $40,000,000 and $50,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The estimated price range for the Project is between $40,000,000 and $50,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The estimated price range for the Project is between $40,000,000 and $50,000,000."
    },
    {
     "track": "solicitation",
@@ -5155,7 +4103,6 @@
     "psc": "Y1AZ",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will evaluate proposals using a tradeoff process.",
-    "relative_importance_quote": "Technical Approach is more important than Past Performance. Technical Approach and Past Performance, when combined, are approximately equal in importance to Price.",
     "evaluation_factors": [
      "Technical Approach",
      "Past Performance",
@@ -5166,10 +4113,7 @@
     ],
     "stated_value": "Between $250,000 and $500,000",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "Magnitude of Construction: Between $250,000 and $500,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Magnitude of Construction: Between $250,000 and $500,000"
    },
    {
     "track": "solicitation",
@@ -5188,17 +4132,13 @@
     "psc": "Y1LB",
     "evaluation_basis": null,
     "evaluation_basis_quote": null,
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $700,000 and $2,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $700,000 and $2,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $700,000 and $2,000,000."
    },
    {
     "track": "solicitation",
@@ -5217,7 +4157,6 @@
     "psc": "V222",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The quotes will undergo a comparative evaluation to determine which vendor provides the best value to the government in terms of technical submission and past performance while also providing a competitive price.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical Submission",
      "Past Performance",
@@ -5229,10 +4168,7 @@
     ],
     "stated_value": "$8,990,000.00",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "The maximum aggregate value of orders that can be placed under this contract is $8,990,000.00.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The maximum aggregate value of orders that can be placed under this contract is $8,990,000.00."
    },
    {
     "track": "solicitation",
@@ -5251,7 +4187,6 @@
     "psc": "K063",
     "evaluation_basis": "lpta",
     "evaluation_basis_quote": "The Government will evaluate quotations using the Lowest Price Technically Acceptable (LPTA) methodology identified in this solicitation.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Factor 1 Technical Capability and Equipment Compatibility",
      "Factor 2 Personnel Qualifications and Security Requirements",
@@ -5263,10 +4198,7 @@
     ],
     "stated_value": "$200,000",
     "stated_value_what": "ceiling",
-    "stated_value_quote": "If all four option periods are exercised, the maximum potential contract ceiling is $200,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "If all four option periods are exercised, the maximum potential contract ceiling is $200,000."
    },
    {
     "track": "solicitation",
@@ -5285,17 +4217,13 @@
     "psc": "Z2QA",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "AWARD WILL BE MADE TO THE RESPONSIBLE BIDDER WHOSE BID CONFORMS TO THE INVITATION FOR BIDS AND IS MOST ADVANTAGEOUS TO THE GOVERNMENT, CONSIDERING ONLY PRICE AND PRICE-RELATED FACTORS.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $0.00 and $150,000.00",
     "stated_value_what": "magnitude",
-    "stated_value_quote": "MAGNITUDE OF CONSTRUCTION PROJECT IS BETWEEN $0.00 AND $150,000.00",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "MAGNITUDE OF CONSTRUCTION PROJECT IS BETWEEN $0.00 AND $150,000.00"
    },
    {
     "track": "solicitation",
@@ -5314,7 +4242,6 @@
     "psc": "Z2DA",
     "evaluation_basis": "tradeoff",
     "evaluation_basis_quote": "The Government will issue a contract to the responsible offeror whose offer conforms to the solicitation and will be most advantageous to the Government, price and other factors considered.",
-    "relative_importance_quote": null,
     "evaluation_factors": [
      "Technical Capability",
      "Past Performance",
@@ -5325,10 +4252,7 @@
     ],
     "stated_value": "$100,000 and $250,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "Cost Range: $100,000 and $250,000",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "Cost Range: $100,000 and $250,000"
    },
    {
     "track": "solicitation",
@@ -5347,17 +4271,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Selection of the successful offer is based on price.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $2,000,000 and $5,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $2,000,000 and $5,000,000."
    },
    {
     "track": "solicitation",
@@ -5376,17 +4296,13 @@
     "psc": "Y1LB",
     "evaluation_basis": "lowest_price",
     "evaluation_basis_quote": "Accordingly, award of contract, if made, will be made to the lowest responsive, responsible bidder, if funds are available.",
-    "relative_importance_quote": null,
     "evaluation_factors": null,
     "contract_type": [
      "firm-fixed-price"
     ],
     "stated_value": "between $700,000 and $2,000,000",
     "stated_value_what": "estimated value",
-    "stated_value_quote": "The price range of the project work is between $700,000 and $2,000,000.",
-    "incumbent_firm": null,
-    "incumbent_contract_number": null,
-    "incumbent_quote": null
+    "stated_value_quote": "The price range of the project work is between $700,000 and $2,000,000."
    },
    {
     "track": "sources_sought",

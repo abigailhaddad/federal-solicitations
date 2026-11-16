@@ -38,7 +38,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-from federal_ja.collect.extract import extract_file
+from .fetch import read_text, require_second_reader
 
 INDEX_URL = "https://piee.eb.mil/sol/xhtml/unauth/index.xhtml"
 SPREADSHEET_EXT = (".xlsx", ".xls", ".xlsm", ".csv")
@@ -299,10 +299,7 @@ def read_file(pg, name: str, a, tmp: Path, i: int, res: dict) -> dict:
         if f["bytes"] > MAX_BYTES:
             f["kind"] = "too_large_not_read"
         else:
-            x = extract_file(str(dest), f["name"])
-            f.update(kind=x.file_kind, needs_transcription=bool(x.needs_transcription),
-                     pages=x.page_texts if x.page_texts else ([x.text] if x.text else []),
-                     error=x.extract_error or None)
+            f.update(read_text(str(dest), f["name"]))
     except Exception as e:  # noqa: BLE001 - recorded, never skipped silently
         f["kind"] = "error"
         res["errors"].append({"step": "piee_file", "name": name, "error": f"{type(e).__name__}: {str(e)[:200]}"})
@@ -403,6 +400,7 @@ def main(argv=None):
     ap.add_argument("--max-minutes", type=float, default=None,
                     help="stop starting new notices after this long; the rest are counted as not reached")
     a = ap.parse_args(argv)
+    require_second_reader()
     text = Path(a.text)
     rows = list(csv.DictReader(open(a.week_csv)))
     if a.only:
