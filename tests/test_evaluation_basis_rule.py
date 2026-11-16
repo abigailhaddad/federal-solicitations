@@ -71,14 +71,15 @@ NOT_STATED = [
     "18 Bldg 586 Seed Project FOPR (LPTA) Amendment #1 19 Cancellation and Reissue of SABER V requirement",
     # only a negated tradeoff
     "Technical tradeoffs will not be made, and no additional credit will be given for exceeding acceptability.",
-    # 52.212-2 printed whole in a package whose own addendum says LPTA: the two disagree
-    "The Government will award a contract resulting from this solicitation to the responsible offeror whose offer "
-    "conforming to the solicitation will be most advantageous to the Government, price and other factors considered. "
+    # an LPTA sentence and a tradeoff sentence that names the method: they disagree
+    "The Government will award on a best-value tradeoff basis. "
     "Award will be made to the lowest priced quote which is technically acceptable.",
     # 52.212-2 printed whole in a lowest-price package
     "The Government will award a contract resulting from this solicitation to the responsible offeror whose offer "
     "conforming to the solicitation will be most advantageous to the Government, price and other factors considered. "
     "Award will be made to the lowest priced responsive bid.",
+    # a question in a Q&A (3acce4e5)
+    "Question 16: Will quotations be evaluated on a Price Only, LPTA, or Best Value basis?",
     # best value alone is not a basis
     "The Contractor shall deliver best value services to the Government without any accidents or mishaps.",
 ]
@@ -87,6 +88,22 @@ NOT_STATED = [
 @pytest.mark.parametrize("text", NOT_STATED)
 def test_no_fill(text):
     assert by_rule(text) is None
+
+
+def test_lpta_sentence_outweighs_printed_52_212_2():
+    """Offutt carpet (9f6aeb35): 52.212-2(a) printed whole, and the addendum's LPTA sentence."""
+    got = by_rule("The Government will award a contract resulting from this solicitation to the responsible offeror "
+                  "whose offer conforming to the solicitation will be most advantageous to the Government, price and "
+                  "other factors considered. " + MISSED[1][1])
+    assert got["value"] == "lpta" and got["quote"].startswith("Award will be made to the responsible Offeror")
+
+
+def test_price_only_blocks_52_212_2_tradeoff():
+    """413fe68a: 52.212-2(a) printed, but the notice says award is "based on price only"."""
+    assert by_rule("The Government intends to award a firm fixed-price (FFP) contract, as required by the procedures "
+                   "pursuant to FAR Part 12, based on price only. The Government will award a contract resulting from "
+                   "this solicitation to the responsible Offeror whose offer conforming to the solicitation will be most "
+                   "advantageous to the Government, price and other factors considered.") is None
 
 
 def test_model_value_is_not_replaced():

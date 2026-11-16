@@ -36,7 +36,13 @@ def second_check(doc, quote: str | None, qm) -> str | None:
     page are normalized as for locate_quote and compared ignoring case (as locate_quote is called here) and
     ignoring spaces and hyphens: the two readers put kerning spaces in different places ("NA VOCEANO" /
     "NAVOCEANO") and pdftotext joins words hyphenated at a line end ("non-price" / "nonprice"). Neither changes
-    the order of the letters, which is what this check is for. Both were seen in the 2026-11-09 samples."""
+    the order of the letters, which is what this check is for. Both were seen in the 2026-11-09 samples.
+
+    Measured on the 218 sampled values of that week, documents fetched again: 142 quotes are on PDF pages (2 of
+    them XFA forms, read once); 4 fail this check. One is the NONSKID splice. Three are right values on form or
+    table pages that pdftotext reads column by column (label column, then value column): eb7eba86 "Contract Type:
+    Firm-Fixed Price", 6cf3c02b "Incumbent Contractor Name: Dawson Enterprises LLC", d5e14398 DD Form 254 block 4.
+    That is the cost of the check: a quote that only one reader can assemble is dropped."""
     second = getattr(doc, "second", None) or {}
     pdf = [p for p in qm.pages if p.get("text_source") == "native" and p["resource_id"] in second]
     if not pdf:
@@ -112,7 +118,16 @@ def contract_type_by_rule(doc, nd) -> list[dict]:
 #    evaluation factors other than cost or price and cost or price."
 # A sentence counts only if it says what WILL happen in this award (will/shall/reserves the right, with award,
 # evaluate or source selection), and not if it defines a method, lists more than one, or is conditional.
-# Measured on saved text only (no model calls); see the PR for the counts and the hand-checked hits.
+# Measured 2026-11-16, no model calls, on the 161 services solicitations in that week's check samples, their
+# documents fetched again with fetch.py (pypdf first, as in the run):
+# - the 10 sampled blanks: filled 8 of the 8 the grader marked missed, each with the grader's value (X-ray lease
+#   16c3a84f was a "moderate confidence" tradeoff); the 2 correctly blank stayed blank.
+# - the 30 sampled model values: the rule gives a value for 17, the same value as the model's in all 17.
+# - the other 121 notices: 57 hits, each quote read by hand, and for the 21 that rest on 52.212-2(a) alone the
+#   package searched for other evaluation wording. 51 right; 6 not confirmed (4 with only 52.212-2(a) and nothing
+#   else on evaluation; 7cea9a6c "considered during the technical evaluation and trade-off"; f3f61661 "the
+#   Government anticipates using Best Value Tradeoff"). Two wrong hits found on the way were fixed and are tests:
+#   a Q&A question listing the methods (3acce4e5) and 52.212-2(a) next to "offers the lowest price" (49ba0cfa).
 _BASIS_TERMS = {
     "lpta": re.compile(r"lowest[\s,/-]+price[ds]?[\s,/-]+(?:and\s+)?technically[\s-]+(?:acceptable|qualified)|\bLPTA\b|"
                        r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?price[ds]?\b[^.]{0,120}?"
@@ -137,7 +152,7 @@ MAX_BASIS_SENTENCE = 700
 # value is not filled when the package also says this (a 52.212-2 printed whole in a lowest-price package)
 _LOWEST_SAYS = re.compile(r"(?<!other than )\b(?:to|on)\s+the\s+lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?"
                           r"(?:price[ds]?|bid(?:der)?|offer(?:or)?|quot\w*|cost)\b(?![\s,-]+technically)|"
-                          r"\bprice\s+(?:alone|only)\b|\bsealed[\s-]+bid", re.I)
+                          r"\bprice\s+(?:alone|only)\b|\bsealed[\s-]+bid|\boffers?\s+the\s+lowest[\s-]+(?:total[\s-]+)?price\b", re.I)
 
 
 def _sentence(nd: str, a: int, b: int) -> str | None:
@@ -163,34 +178,54 @@ def basis_sentences(nd: str) -> list[tuple[str, str]]:
                 continue
             seen.add(sent)
             kinds = {v for v, r in _BASIS_TERMS.items() if r.search(sent)}
-            if len(kinds) != 1 or not _BASIS_SAYS.search(sent) or not _BASIS_ABOUT.search(sent) or _BASIS_NOT.search(sent):
+            # a question ("Will quotations be evaluated on a Price Only, LPTA, or Best Value basis?") states nothing
+            if len(kinds) != 1 or not _BASIS_SAYS.search(sent) or not _BASIS_ABOUT.search(sent) or _BASIS_NOT.search(sent) \
+                    or sent.rstrip().endswith("?"):
                 continue
             out.append((value, sent))
     return out
 
 
+def _lowest_award(s: str) -> bool:
+    """A sentence saying award will be on lowest price ("... intends to award ... based on price only"), not a
+    clause condition ("if this contract was awarded using other than sealed bid procedures") or a caution
+    ("award may not necessarily be made to the lowest priced offer")."""
+    return bool(re.search(r"\baward", s, re.I) and re.search(r"\b(?:will|shall|intends?\s+to)\b", s, re.I)
+                and not _BASIS_NOT.search(s) and not re.search(r"\bnot\b|other\s+than", s, re.I))
+
+
+# FAR 52.212-2(a) as printed in most commercial solicitations, LPTA ones included: weaker than a sentence
+# naming the method, so it does not count against one
+_BOILERPLATE = re.compile(r"most\s+advantageous\s+to\s+the\s+Government,?\s+price\s+and\s+other\s+factors\s+considered", re.I)
+
+
 def evaluation_basis_by_rule(doc, nd) -> dict | None:
     """The evaluation basis when every stating sentence in the package gives the same one, with the first such
-    sentence (in document order) as its quote; None when there is none, or they disagree, or a tradeoff
-    package also has LPTA wording anywhere. Used only when the model left the field empty."""
+    sentence (in document order) that passes the quote checks as its quote; None when there is none, or they
+    disagree, or a tradeoff package also has LPTA wording anywhere, or a tradeoff or highest-technically-rated
+    package also says award is on lowest price. The 52.212-2(a) sentence alone ("most advantageous ..., price
+    and other factors considered") gives way to an LPTA or highest-technically-rated sentence. Used only when
+    the model left the field empty."""
     found = basis_sentences(nd)
+    if any(v != "tradeoff" for v, _ in found):
+        found = [(v, s) for v, s in found
+                 if not (v == "tradeoff" and _BOILERPLATE.search(s) and not re.search(r"trade[\s-]?off", s, re.I))]
     values = {v for v, _ in found}
     if len(values) != 1:
         return None
     value = values.pop()
     if value == "tradeoff" and fields._LPTA.search(nd.translate(fields._HYPHENS)):
         return None
-    if value != "lpta" and any(_BASIS_SAYS.search(s) and re.search(r"\baward", s, re.I)
-                               for m in _LOWEST_SAYS.finditer(nd) for s in [_sentence(nd, m.start(), m.end()) or ""]):
+    if value != "lpta" and any(_lowest_award(_sentence(nd, m.start(), m.end()) or "") for m in _LOWEST_SAYS.finditer(nd)):
         return None
-    quote = min((s for _, s in found), key=nd.find)
-    item = {"value": value, "quote": quote}
-    if fields.rule("evaluation_basis", item):
-        return None
-    qm, why = verify(quote, doc, nd)
-    if why:
-        return None
-    return {**item, "pages": qm.pages, "match": qm.match, "source": "rule"}
+    for quote in sorted((s for _, s in found), key=nd.find):
+        item = {"value": value, "quote": quote}
+        if fields.rule("evaluation_basis", item):
+            continue
+        qm, why = verify(quote, doc, nd)
+        if not why:
+            return {**item, "pages": qm.pages, "match": qm.match, "source": "rule"}
+    return None
 
 
 _AMOUNT = re.compile(r"(?:(?:US|BZ|BZD|AUD|CAD)\s*)?\$\s?[\d,]+(?:\.\d+)?(?:\s*(?:million|billion|thousand|[MBK])\b)?", re.I)
