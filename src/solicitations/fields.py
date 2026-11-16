@@ -121,6 +121,24 @@ PROFILES = {
 }
 
 
+# Fields that are still asked for, checked and sampled every week (they stay in checked.jsonl and the check
+# samples) but are not published: not in the dataset, the weekly post, the site or the email. This is the one
+# switch; table.py, hf.py, digest.py, site.py and email.py all read it. Held after the check of the week of
+# 2026-11-09: solicitation relative_importance 25 of 30 right (1 wrong: a quote spliced from two sentences),
+# 4 of 10 blanks missed; solicitation incumbent 19 of 20 right (1 wrong: a vendor of earlier design drawings).
+HELD = {"solicitation": {"relative_importance", "incumbent"}}
+
+
+def published(track: str, name: str) -> bool:
+    return name not in HELD.get(track, ())
+
+
+def held_columns(track: str, columns) -> list[str]:
+    """The table or post columns that carry a held field of this track: the field itself and its
+    `<field>_...` columns (`incumbent_firm`, `relative_importance_quote`, ...)."""
+    return [c for c in columns if any(c == f or c.startswith(f + "_") for f in HELD.get(track, ()))]
+
+
 def profile_fields(profile: str) -> dict:
     return {k: FIELDS[k] for k in PROFILES[profile]["fields"]}
 
@@ -209,12 +227,18 @@ _LPTA = re.compile(r"lowest[\s,/-]+price(?:d)?[\s,/-]+(?:and[\s]+)?technically[\
                    r"low[\s-]+priced?[\s,]+technically[\s-]+acceptable|"
                    r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?price.{0,60}?(?:technical(?:ly)?[\s-]+(?:acceptab|requirement)|technical[\s-]+acceptability)|"
                    r"technically[\s-]+acceptable.{0,100}?(?:lowest|low[\s-]+price)|"
-                   r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?price.{0,60}?non-?price[\s-]+factors?.{0,40}?acceptable", re.I | re.S)
+                   r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?price.{0,60}?non-?price[\s-]+factors?.{0,40}?acceptable|"
+                   # week of 2026-11-09: "the lowest-priced offer that receives an Acceptable rating for both Technical
+                   # Capability and Past Performance"; "the lowest total prices and who meet all of BSA's technical
+                   # qualifiers"; "the lowest-priced technically qualified offerors"
+                   r"lowest[\s-]+(?:total[\s-]+)?price[ds]?.{0,80}?(?:\bacceptable\s+rating|technical\s+qualifiers|technically[\s-]+qualified)",
+                   re.I | re.S)
 _TRADEOFF = re.compile(r"trade[\s-]?off|best[\s-]+(?:overall[\s-]+)?value|more important than (?:cost or )?price|"
                        r"price and other factors considered|other than (?:the )?lowest[\s-]+price|equally[\s-]+weighted|"
                        r"most advantageous.{0,80}?(?:non-?price|price and (?:other|non-?price)|other factors|evaluation factors)|"
                        r"(?:significantly|approximately) (?:more|less) important|equal to price|weigh(?:ed|ted)? more heavily", re.I | re.S)
-_HTRO = re.compile(r"highest[\s-]+technically[\s-]+rated|highest[\s-]+rated", re.I)
+# "Highest Technically Ranked Offer (HTRO)" is the Navy's wording (NAWCAD, week of 2026-11-09)
+_HTRO = re.compile(r"highest[\s-]+technically[\s-]+(?:rated|ranked)|highest[\s-]+rated", re.I)
 _LOWEST = re.compile(r"lowest[\s-]+(?:total[\s-]+)?(?:evaluated[\s-]+)?(?:responsive|responsible|price|priced|bid|bidder|offer|cost|evaluation total)|"
                      r"price[\s-]+alone|price[\s-]+only|(?:based|basis)\s+(?:solely\s+|only\s+)?(?:up)?on\s+(?:the\s+)?price|"
                      r"sealed[\s-]+bid|low(?:est)?[\s-]+bid|low[\s-]+price|only price and price[\s-]+related", re.I)

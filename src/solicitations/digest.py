@@ -15,11 +15,15 @@ What code does, and checks (a pick that fails is dropped and kept in the post fi
   pick's notice has that value in the data;
 * every count, list and fact line on the page is computed from the tables, never written by the model.
 
+Fields held from publishing (fields.HELD) are taken out of the tables when they are read here, so the model
+never sees them, and `scrub_post` takes them out of any post (site.py and email.py read posts through it).
+
 One post per week (the week in the tables); it refuses to overwrite one.
 """
 from __future__ import annotations
 
 import argparse
+import copy
 import datetime as dt
 import json
 import os
@@ -28,6 +32,8 @@ import sys
 from pathlib import Path
 
 import pandas as pd
+
+from . import fields
 
 ROOT = Path(__file__).resolve().parents[2]
 POSTS = ROOT / "data" / "posts"
@@ -102,13 +108,51 @@ def weeks(publish: Path) -> list[str]:
     return sorted(p.stem for p in (publish / "data" / "solicitations").glob("*.parquet"))
 
 
+def drop_held(r: dict, track: str | None) -> dict:
+    """A row or notice without the columns of fields held from publishing (fields.HELD)."""
+    held = set(fields.held_columns(track, r)) if track else set()
+    return {k: v for k, v in r.items() if k not in held}
+
+
 def load(publish: Path, week: str | None = None) -> tuple[list[dict], list[dict]]:
-    """The week's two tables (default: the latest week in the folder)."""
+    """The week's two tables (default: the latest week in the folder), without held fields: a week's file
+    written before a field was held still has its columns."""
     week = week or weeks(publish)[-1]
     sol = pd.read_parquet(publish / "data" / "solicitations" / f"{week}.parquet")
     ss = pd.read_parquet(publish / "data" / "sources_sought" / f"{week}.parquet")
-    conv = lambda df: [{k: val(v) for k, v in r.items()} for r in df.to_dict("records")]  # noqa: E731
-    return conv(sol), conv(ss)
+    conv = lambda df, t: [drop_held({k: val(v) for k, v in r.items()}, t) for r in df.to_dict("records")]  # noqa: E731
+    return conv(sol, "solicitation"), conv(ss, "sources_sought")
+
+
+def scrub_post(p: dict) -> dict:
+    """A copy of a post with every held field (fields.HELD) taken out: from each notice in the picks and
+    lists, the lists named after a held field (for that track), and the summary counts of a held field.
+    A pick is dropped (only its notice id is kept, under `dropped`) when its quote is only in a held field's
+    quote, or it says "incumbent" about a notice whose incumbent is held. Posts built before a field was held
+    still have it."""
+    p = copy.deepcopy(p)
+    picks = []
+    for x in p.get("picks") or []:
+        n = x["notice"]
+        t = n.get("track")
+        held_q = [n[c] for c in fields.held_columns(t, n) if c.endswith("_quote") and n.get(c)]
+        kept_n = drop_held(n, t)
+        q = norm(x.get("quote"))
+        only_held = any(q in norm(h) for h in held_q) and not any(q in norm(k) for k in quotes_of(kept_n))
+        says_inc = not fields.published(t, "incumbent") and re.search(r"\bincumbent\b", f"{x.get('headline')} {x.get('why')}", re.I)
+        if only_held or says_inc:
+            # only which notice: the headline, explanation and quote may carry the held value
+            p.setdefault("dropped", []).append({"notice_id": n.get("notice_id"), "track": t,
+                                                "dropped_because": "rests on a field held from publishing"})
+            continue
+        picks.append({**x, "notice": kept_n})
+    p["picks"] = picks
+    p["lists"] = {k: [drop_held(n, n.get("track")) for n in v if fields.published(n.get("track"), k)]
+                  for k, v in (p.get("lists") or {}).items()}
+    for track, names in fields.HELD.items():
+        for f in names:
+            (p.get("summary") or {}).pop(f"{'solicitations' if track == 'solicitation' else track}_with_{f}", None)
+    return p
 
 
 def quotes_of(r: dict) -> list[str]:
@@ -280,9 +324,9 @@ def build(sol: list[dict], ss: list[dict], picks: list[dict], usage: dict, cands
         "stated_value": [fact(r, "solicitation") for r in sol if r.get("stated_value")]
                         + [fact(r, "sources_sought") for r in ss if r.get("stated_value")],
     }
-    return {"week_start": week_start, "week_end": week_end, "as_of": today, "summary": summarize(sol, ss), "picks": kept,
-            "dropped": dropped, "lists": lists, "usage": usage,
-            "built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")}
+    return scrub_post({"week_start": week_start, "week_end": week_end, "as_of": today, "summary": summarize(sol, ss),
+                       "picks": kept, "dropped": dropped, "lists": lists, "usage": usage,
+                       "built_at": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds")})
 
 
 def main(argv=None, client=None) -> int:
