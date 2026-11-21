@@ -87,27 +87,32 @@ jobs:
           # This step runs after the ~2-3 hour pipeline, and the job can also sit behind another
           # run in the `weekly` concurrency group before it starts (actions/checkout fetched main
           # as of when the run was queued, not when it actually started). Either way, origin/main
-          # may have moved on by the time we get here, so re-sync onto the current tip right before
-          # committing instead of pushing on top of a possibly-stale base (retry a few times in case
-          # of a second race).
+          # may have moved on by the time we get here, so if the push is rejected, rebase our one
+          # commit onto the current tip and retry (rebase, not reset --soft + re-add: this checkout
+          # only has this run's own new file on disk, so resetting the index to origin/main's tree
+          # would stage a deletion of any file another run already committed that isn't in our
+          # working copy).
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/posts/
+          if git diff --cached --quiet; then
+            echo "Nothing new to commit."
+            exit 0
+          fi
+          git commit -m "Weekly post: $(ls data/posts/*.json | sort | tail -1 | xargs basename .json)"
           for attempt in 1 2 3 4 5; do
-            git fetch origin main
-            git reset --soft origin/main
-            git add data/posts/
-            if git diff --cached --quiet; then
-              echo "Nothing new to commit (already in sync with origin/main)."
-              exit 0
-            fi
-            git commit -m "Weekly post: $(ls data/posts/*.json | sort | tail -1 | xargs basename .json)"
             if git push origin HEAD:main; then
               exit 0
             fi
-            echo "Push rejected on attempt $attempt (origin/main moved again); retrying against the latest main..."
-            sleep 5
+            echo "Push rejected on attempt $attempt (origin/main moved); fetching and rebasing onto the latest main..."
+            git fetch origin main
+            if ! git rebase origin/main; then
+              echo "::error::Rebase onto origin/main failed; aborting." >&2
+              git rebase --abort || true
+              exit 1
+            fi
           done
-          echo "::error::Failed to push the weekly post after $attempt attempts." >&2
+          echo "::error::Failed to push the weekly post after retries." >&2
           exit 1
 
       - name: Send the email
