@@ -47,7 +47,12 @@ two sentences; incumbent 19 of 20, one vendor of earlier drawings named as incum
 6. **Publish** (`table.py`, `hf.py`): the two tables and the dataset card, every number in it computed.
 7. **Post** (`digest.py`, `site.py`): Claude Opus picks up to five notices; code drops a pick whose quote isn't in
    the notice, whose dollar figure isn't the stated value, or that says "sole source", "incumbent" or "LPTA"
-   about a notice without that value. Static site, no JavaScript.
+   about a notice without that value. Static site, no JavaScript. A second, checked call writes the opening on
+   what the week's notices are buying (`opening.py`).
+8. **Email** (`email.py`): the opening and picks, then two short lists, each cut by a stated rule: planned
+   sole-source awards whose response period is still open and that aren't already a pick (the email says how many
+   it left out), and the three largest stated values. List titles are cut at 90 characters. The web page keeps
+   every list in full, with the counts.
 
 ```sh
 uv sync
