@@ -41,6 +41,21 @@ ISSUE_URL = f"{PROJECT_URL}/issues/new"
 FEED_ITEMS = 20
 
 
+# Sign-up for the RFP Watch topic of the Federal Data Stories Buttondown list. The hidden tag subscribes people
+# to this topic only; Buttondown's own page would sign them up with no topic, and they would get nothing.
+SUBSCRIBE_FORM_URL = "https://buttondown.com/api/emails/embed-subscribe/abigailhaddad"
+SUBSCRIBE_TAG = "RFP Watch"
+
+
+def signup_form() -> str:
+    return (f'<form class="signup" id="subscribe" action="{SUBSCRIBE_FORM_URL}" method="post">'
+            '<label for="bd-email">Get it by email every Monday</label> '
+            '<input type="email" name="email" id="bd-email" required autocomplete="email" placeholder="you@example.com"> '
+            '<input type="hidden" name="embed" value="1">'
+            f'<input type="hidden" name="tag" value="{e(SUBSCRIBE_TAG)}">'
+            '<button type="submit">Subscribe</button></form>')
+
+
 def e(s) -> str:
     return html.escape("" if s is None else str(s), quote=True)
 
@@ -80,7 +95,7 @@ def page(title: str, body: str, *, root: str = "", home: bool = False) -> str:
 </head>
 <body>
 <header class="site"><a class="brand" href="{root}index.html">{e(TITLE)}</a>
-<nav>{past}<a href="{root}about.html">About</a> <a href="{root}feed.xml">RSS</a></nav>
+<nav>{past}<a href="{root}about.html">About</a> <a href="{root}feed.xml">RSS</a> <a href="{root}index.html#subscribe">Subscribe</a></nav>
 </header>
 <main>
 {body}
@@ -199,7 +214,7 @@ def post_content(p: dict) -> str:
 def post_page(p: dict, prev: str | None, nxt: str | None) -> str:
     nav = ([f'<a href="{e(prev)}.html">← Older</a>'] if prev else []) + ([f'<a href="{e(nxt)}.html">Newer →</a>'] if nxt else [])
     body = (f'<p class="dateline">Week of {e(week_label(p))}</p><h1>{e(TITLE)}: week of {e(week_label(p))}</h1>\n'
-            + post_content(p) + (f'\n<p class="pager">{" · ".join(nav)}</p>' if nav else ""))
+            + post_content(p) + (f'\n<p class="pager">{" · ".join(nav)}</p>' if nav else "") + "\n" + signup_form())
     return page(f"{TITLE}: week of {week_label(p)}", body, root="../")
 
 
@@ -212,7 +227,7 @@ def index_page(posts: list[dict]) -> str:
                     f'<span class="count">{s["solicitations"] + s["sources_sought"]:,} notices, {len(p["picks"])} picks</span></li>')
     lst = '<ul class="weeks">' + "".join(rows) + "</ul>" if rows else "<p>No posts yet.</p>"
     return page(TITLE, f'<h1>{e(TITLE)}</h1>\n<p class="lede">{e(TAGLINE)}. <a href="about.html">About</a> · '
-                       f'<a href="feed.xml">RSS feed</a></p>\n{lst}', home=True)
+                       f'<a href="feed.xml">RSS feed</a></p>\n{signup_form()}\n{lst}', home=True)
 
 
 HELD_NAMES = {"relative_importance": "how the evaluation factors compare in importance", "incumbent": "named incumbents"}
@@ -296,6 +311,10 @@ summary{cursor:pointer;margin:2rem 0 .5rem}
 .dateline{margin:1.5rem 0 0;font-size:.95rem}
 blockquote{margin:.75rem 0;padding:.5rem 1rem;background:var(--quote);border-left:3px solid var(--accent)}
 blockquote p{margin:0}
+form.signup{margin:1.25rem 0;padding:.75rem 1rem;border:1px solid var(--line);display:flex;flex-wrap:wrap;gap:.5rem;align-items:center}
+form.signup label{flex-basis:100%;font-weight:600}
+form.signup input[type=email]{flex:1;min-width:12rem;padding:.4rem .5rem;font:inherit;border:1px solid var(--line);background:var(--bg);color:var(--fg)}
+form.signup button{padding:.4rem .9rem;font:inherit;border:0;background:var(--accent);color:var(--bg);cursor:pointer}
 blockquote footer{color:var(--muted);font-size:.9rem;margin-top:.25rem}
 .pick{border-bottom:1px solid var(--line);padding-bottom:1rem}
 .all ul,.all ol,.weeks{padding-left:1.3rem}

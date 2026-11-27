@@ -50,3 +50,17 @@ def test_held_fields_never_reach_the_email(calls):
     from solicitations import fields
     for f in getattr(fields, "HELD", ()):
         assert f"\"{f}\"" not in calls[0]["body"]
+
+
+def test_site_signup_subscribes_to_rfp_watch_only(tmp_path):
+    # 2026-11-27: one Buttondown list, several topics; this site's form must tag "RFP Watch"
+    from solicitations import site
+    out = tmp_path / "dist"   # build() only wipes a directory named dist
+    site.build(site.load_posts(), out)
+    pages = [out / "index.html"] + sorted((out / "posts").glob("*.html"))
+    assert len(pages) > 1
+    for f in pages:
+        t = f.read_text()
+        assert f'action="{site.SUBSCRIBE_FORM_URL}"' in t and '<input type="hidden" name="tag" value="RFP Watch">' in t, f
+        assert 'href="https://buttondown.com/abigailhaddad"' not in t, f
+    assert 'href="index.html#subscribe"' in (out / "about.html").read_text()
