@@ -108,6 +108,7 @@ def test_each_check_drops_the_opening():
         "says LPTA": [{"text": "The Navy will judge the dry dock bids as lowest price technically acceptable.", "sources": [dock]}],
         "prose about the input": [{"text": "The input lists a dry dock at Norfolk Naval Shipyard.", "sources": [dock]}],
         "quote for": [{"text": "The embassy in Riga wants meals cooked.", "sources": [{**riga, "quote": "food services"}]}],
+        "count": [{"text": "Three notices seek a food services program and a dry dock at Norfolk Naval Shipyard.", "sources": [riga, dock]}],
     }
     for want, sentences in cases.items():
         p = run(sentences)
@@ -129,6 +130,15 @@ def test_single_digit_dates_match_zero_padded_deadlines():
     i = ids(f)
     s = [{"text": "Responses to the Army Corps of Engineers notice on the Puerto Quetzal Phase II expansion are due December 8.",
           "sources": [{"notice": i[JACOBS["title"]], "quote": "Puerto Quetzal Phase II Expansion Design-Build"}]}]
+    assert run(s) == []
+
+
+def test_dollar_units_are_not_names_and_two_notices_counts_two():
+    f, _ = opening.facts(POST, SOL, SS)
+    i = ids(f)
+    s = [{"text": "Two notices seek a food services program in Riga and a $15B dry dock at Norfolk Naval Shipyard.",
+          "sources": [{"notice": i[RIGA["title"]], "quote": "has a requirement for a food services program"},
+                      {"notice": i[DOCK["title"]], "quote": "construction of a multi-mission dry dock at Norfolk Naval Shipyard"}]}]
     assert run(s) == []
 
 

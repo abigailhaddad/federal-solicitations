@@ -20,6 +20,7 @@ A sentence is dropped, and with it the whole opening, unless:
 * every date ("December 8") is a date in a cited notice's facts or the week's dates;
 * every dollar figure is a cited notice's stated value;
 * "sole source", "incumbent" and "LPTA" are said only when a cited notice has that value;
+* a count of things ("two notices") equals the number of notices it cites;
 * no counting words (most, many, several, majority, largest), no hype words, no advice to the reader, no prose
   about the input, no exclamation marks. Counts are on the page already, computed by code.
 """
@@ -248,6 +249,12 @@ ADVICE = re.compile(r"\b(you|your|readers?|subscribers?|should|worth (?:watching
                     r"stay tuned|watch for|look out)\b", re.I)
 META = re.compile(r"\b(input|facts?|provided|example notices?|the data|in the data|listed below|below|above|"
                   r"does not (?:say|state|specify|describe)|not (?:given|specified|stated)|unclear|unspecified)\b", re.I)
+NUM_WORDS = {w: i for i, w in enumerate(["zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+                                         "nine", "ten", "eleven", "twelve"])}
+COUNT_RE = re.compile(r"\b(\d+|" + "|".join(NUM_WORDS) + r")\s+(?:(?:new|separate|more|other|related|"
+                      r"sources-sought|federal)\s+)*"
+                      r"(notices?|solicitations?|requests?|contracts?|awards?|agencies|offices?|firms?|companies|"
+                      r"vendors?|projects?|rfis?|rfqs?|rfps?)\b", re.I)
 _MONEY = re.compile(r"\$\s?([\d,]+(?:\.\d+)?)\s*(billion|million|thousand|[BMK])?\b", re.I)
 _MULT = {"b": 1e9, "billion": 1e9, "m": 1e6, "million": 1e6, "k": 1e3, "thousand": 1e3}
 
@@ -331,10 +338,14 @@ def sentence_problems(s: dict, f: dict, index: dict) -> list[str]:
         if not any(mm == mon and dd == day and (not yr or yy == int(yr)) for yy, mm, dd in dates):
             out.append(f"{label}: date not in its cited notices: {m.group(0)!r}")
     words = {w.casefold() for w in re.findall(r"[A-Za-z][A-Za-z'’]*", ctx)}
-    for w in re.findall(r"[A-Za-z][A-Za-z'’]*", text):
+    for w in re.findall(r"[A-Za-z][A-Za-z'’]*", no_money):   # "$950M" is not a name
         w2 = re.sub(r"['’]s$", "", w)
         if w2[0].isupper() and w2.casefold() not in words and w2.casefold() not in ALLOWED_CAPS:
             out.append(f"{label}: word not in its cited notices: {w2!r}")
+    for m in COUNT_RE.finditer(text):   # "two notices": the number of notices this sentence cites
+        v = m.group(1).lower()
+        if (NUM_WORDS[v] if v in NUM_WORDS else int(v)) != len(cited):
+            out.append(f"{label}: count {m.group(0)!r} is not the number of notices it cites ({len(cited)})")
     if re.search(r"sole[\s-]source", text, re.I) and not any(r.get("sole_source_intent") for _, r, _t in cited):
         out.append(f"{label}: says sole source but no cited notice has a sole-source value")
     if re.search(r"\bincumbent\b", text, re.I) and not any(
