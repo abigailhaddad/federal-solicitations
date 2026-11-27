@@ -15,6 +15,9 @@ What code does, and checks (a pick that fails is dropped and kept in the post fi
   pick's notice has that value in the data;
 * every count, list and fact line on the page is computed from the tables, never written by the model.
 
+A second call writes the short opening on what the week's notices are buying (opening.py), checked sentence by
+sentence against the notices it cites; it is left out if any check fails.
+
 Fields held from publishing (fields.HELD) are taken out of the tables when they are read here, so the model
 never sees them, and `scrub_post` takes them out of any post (site.py and email.py read posts through it).
 
@@ -147,6 +150,9 @@ def scrub_post(p: dict) -> dict:
             continue
         picks.append({**x, "notice": kept_n})
     p["picks"] = picks
+    if "opening" in p:
+        from . import opening
+        p["opening"] = opening.scrub(p["opening"])
     p["lists"] = {k: [drop_held(n, n.get("track")) for n in v if fields.published(n.get("track"), k)]
                   for k, v in (p.get("lists") or {}).items()}
     for track, names in fields.HELD.items():
@@ -356,6 +362,12 @@ def main(argv=None, client=None) -> int:
         return 1
     picks, usage = call_model(prompt, client) if cands else ([], {})
     post = build(sol, ss, picks, usage, cands, week_start, today)
+    # The written opening: a second, smaller call, checked sentence by sentence in code (opening.py). It never
+    # raises; a failed check leaves the opening out of the post and the email, and the reasons in the post file.
+    from . import opening
+    post["opening"] = opening.scrub(opening.write(post, sol, ss, client))
+    print(json.dumps({"opening": {k: post["opening"].get(k) for k in ("status", "text", "problems")}
+                      if post["opening"] else None}, indent=1, ensure_ascii=False), file=sys.stderr)
     print(json.dumps({"week": week_start, "summary": post["summary"], "picks": [p["headline"] for p in post["picks"]],
                       "dropped": [(d["headline"], d["dropped_because"]) for d in post["dropped"]], "usage": usage},
                      indent=1), file=sys.stderr)

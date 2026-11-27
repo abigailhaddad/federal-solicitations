@@ -17,8 +17,9 @@ from pathlib import Path
 from topic_mail import send
 
 from . import fields
-from .digest import LABELS, scrub_post
-from .site import DATASET_URL, EVAL_EMPTY, SITE_URL, TITLE, date_label, week_label
+from .digest import scrub_post
+from .opening import kept_text
+from .site import DATASET_URL, SITE_URL, TITLE, date_label, week_label
 
 TOPIC = "RFP Watch"
 
@@ -28,12 +29,13 @@ def md(s) -> str:
 
 
 def body(p: dict) -> str:
-    s, L = p["summary"], p["lists"]
+    L = p["lists"]
     as_of = p.get("as_of") or p["built_at"][:10]
     url = f"{SITE_URL}/posts/{p['week_start']}"
-    out = [f"Every federal services and construction solicitation and sources-sought notice posted on SAM.gov, {week_label(p)}: "
-           f"{s['solicitations']:,} solicitations and {s['sources_sought']:,} sources-sought notices. "
-           f"[Read it on the web]({url}).", ""]
+    lead = kept_text(p)   # the checked opening on what the week's notices are buying (opening.py), if it passed
+    out = ([md(lead), ""] if lead else []) + [
+        f"Federal services and construction solicitations and sources-sought notices posted on SAM.gov, {week_label(p)}. "
+        f"[Read it on the web]({url}).", ""]
     for i, x in enumerate(p["picks"], 1):
         n = x["notice"]
         out += [f"## {i}. {md(x['headline'])}", "",
@@ -51,13 +53,12 @@ def body(p: dict) -> str:
         out += ["## Largest stated values", ""]
         out += [f"- **{md(n['stated_value'])}**: [{md(n['title'])}]({n['sam_link']}), {md(n.get('sub_tier') or n.get('agency'))}" for n in L["largest_values"]]
         out.append("")
-    eb = ", ".join(f"{LABELS[k]} {v:,}" for k, v in s["evaluation_basis"].items())
-    inc = "Named incumbents" if fields.published("solicitation", "incumbent") else "Named incumbents (sources-sought notices)"
-    out += [f"How offers will be judged, where found in the solicitation ({s['evaluation_basis_found']:,} of {s['solicitations']:,}): {eb}. "
-            f"{EVAL_EMPTY}", "",
-            f"{inc}, every stated value, and each value's source sentence: [the full post]({url}) and "
-            f"[the dataset]({DATASET_URL}). Picks are chosen and written up by Claude; every value is read from the "
-            f"notice's documents and checked against them. Check the notice before relying on anything."]
+    # The counts (how offers will be judged, notices per field) are on the web page, not in the email.
+    inc = "named incumbents" if fields.published("solicitation", "incumbent") else "named incumbents (sources-sought notices)"
+    out += [f"Counts, how offers will be judged, {inc}, every stated value, and each value's source sentence: "
+            f"[the full post]({url}) and [the dataset]({DATASET_URL}). The opening and picks are written by Claude "
+            f"and checked in code against the notices; every value is read from the notice's documents and checked "
+            f"against them. Check the notice before relying on anything."]
     return "\n".join(out)
 
 

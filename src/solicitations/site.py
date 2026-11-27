@@ -25,6 +25,7 @@ from pathlib import Path
 
 from . import fields
 from .digest import LABELS, MAX_PICKS, POSTS, scrub_post
+from .opening import kept_text
 
 TITLE = "RFP Watch"
 TAGLINE = ("Federal services and construction solicitations and sources-sought notices on SAM.gov, each week: how offers will be "
@@ -165,7 +166,8 @@ def incumbent_count(s: dict) -> str:
 def post_content(p: dict) -> str:
     s = p["summary"]
     eb = s["evaluation_basis"]
-    parts = [f'<p class="lede">Every services and construction solicitation and sources-sought notice with a posting on SAM.gov from '
+    lead = kept_text(p)   # the checked opening (opening.py), if it passed
+    parts = ([f'<p class="lede opening">{e(lead)}</p>'] if lead else []) + [f'<p class="lede">Every services and construction solicitation and sources-sought notice with a posting on SAM.gov from '
              f'{e(week_label(p))}: {s["solicitations"]:,} solicitations and {s["sources_sought"]:,} sources-sought notices. '
              f'Values are read from each notice\'s documents and checked against them; an empty value means it wasn\'t found.</p>',
              f'<p>How offers will be judged, where found in the solicitation ({s["evaluation_basis_found"]:,} of {s["solicitations"]:,}): '
