@@ -188,3 +188,13 @@ def test_old_posts_without_an_opening_still_render():
     post = json.loads(open("data/posts/2026-11-16.json").read())
     p = digest.scrub_post(post)
     assert "opening" not in p and email.body(p).startswith("Federal services and construction solicitations")
+
+
+def test_prompt_carries_the_light_voice_and_announcing_oddness_is_refused():
+    assert "dry and a little wry" in opening.PROMPT.format(facts="{}", voice=opening.VOICE)
+    assert "at most one wry turn" in opening.VOICE
+    f, _ = opening.facts(POST, SOL, SS)
+    i = ids(f)
+    s = [{"text": "Oddly, the Navy wants a dry dock at Norfolk Naval Shipyard.",
+          "sources": [{"notice": i[DOCK["title"]], "quote": "construction of a multi-mission dry dock at Norfolk Naval Shipyard"}]}]
+    assert any("hype word: 'Oddly'" in x for x in run(s))

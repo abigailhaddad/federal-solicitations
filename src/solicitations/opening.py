@@ -178,6 +178,12 @@ SCHEMA = {
     "required": ["sentences"], "additionalProperties": False,
 }
 
+# The newsletter's voice (wording from usajobs-weekly's llm.VOICE), set per topic.
+VOICE = ("Voice: dry and a little wry, like a colleague who reads every notice and points out the good bits. "
+         "Short declarative sentences. Let the notice be the joke by describing it exactly; never announce that "
+         "something is funny or odd. No puns, no exclamation marks, and no mocking the people involved. Keep it light: mostly plain, with at most one wry turn.")
+
+
 PROMPT = """You write the opening paragraph of a weekly email about federal contracting notices posted on
 SAM.gov (solicitations for services, and sources-sought notices, which are market research before a
 solicitation). Readers: reporters covering federal contracting, congressional staff, government contracts
@@ -207,6 +213,8 @@ For each sentence give its text and its sources: the id of every notice the sent
 "P1"), each with a quote of at least five words copied character for character from that notice's title,
 description_opening or one of its *_quote values, that the sentence rests on.
 
+{voice}
+
 Week:
 {facts}
 """
@@ -218,7 +226,7 @@ def call_model(ftext: str, client=None) -> tuple[list[dict], dict]:
                                       if os.environ.get("ANTHROPIC_WORKSPACE_ID") else None)
     r = c.messages.create(model=MODEL, max_tokens=4000,
                           output_config={"format": {"type": "json_schema", "schema": SCHEMA}},
-                          messages=[{"role": "user", "content": PROMPT.format(facts=ftext)}])
+                          messages=[{"role": "user", "content": PROMPT.format(facts=ftext, voice=VOICE)}])
     if r.stop_reason != "end_turn":
         raise RuntimeError(f"model stop_reason={r.stop_reason}")
     out = json.loads(next(b.text for b in r.content if b.type == "text"))["sentences"]
@@ -242,7 +250,7 @@ ALLOWED_CAPS = {w.lower() for w in MONTHS + WEEKDAYS} | {
     "if", "while", "after", "before", "to", "of", "through", "via"}
 QUANTITY = re.compile(r"\b(most|many|several|numerous|majority|largest|biggest|dozens?|handful|a number of|"
                       r"half|plurality|bulk|count(?:s|ed)?|total(?:s|ed|ing)?|percent|%)\b", re.I)
-HYPE = re.compile(r"\b(significant(?:ly)?|major|notabl[ey]|key|landmark|sweeping|historic|dramatic(?:ally)?|"
+HYPE = re.compile(r"\b(funny|odd(?:ly)?|quirky|ironic(?:ally)?|curious(?:ly)?|amusing(?:ly)?|surprising(?:ly)?|believe it or not|significant(?:ly)?|major|notabl[ey]|key|landmark|sweeping|historic|dramatic(?:ally)?|"
                   r"crucial|critical|important(?:ly)?|striking(?:ly)?|unprecedented|controversial|unusual(?:ly)?|"
                   r"remarkabl[ey]|massive|huge|game-?changer|signals?|poised|interesting(?:ly)?)\b", re.I)
 ADVICE = re.compile(r"\b(you|your|readers?|subscribers?|should|worth (?:watching|noting|following)|keep an eye|"
