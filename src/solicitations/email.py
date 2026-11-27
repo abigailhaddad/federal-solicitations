@@ -1,40 +1,26 @@
-"""Send the week's post as an email through Buttondown.
+"""Send the week's post as the RFP Watch topic of the Federal Data Stories newsletter (Buttondown).
 
-    RFP_BUTTONDOWN_API_KEY=... uv run python -m solicitations.email data/posts/2026-11-09.json [--draft]
+    BUTTONDOWN_API_KEY=... uv run python -m solicitations.email data/posts/2026-11-09.json [--send] [--preview-to me@x]
 
-Uses RFP_BUTTONDOWN_API_KEY, never the J&A digest's key, so it can only reach this newsletter's subscribers.
-Before sending it lists the newsletter's recent emails and does nothing if this week's post was already
-sent (metadata.week), so a rerun never sends twice. API details as in federal_ja.digest.buttondown
-(checked there against Buttondown's OpenAPI schema).
+The list carries several topics as subscriber-editable tags; topic_mail sends only to subscribers tagged
+"RFP Watch". It always saves a draft first and checks it, and it never sends the same week twice
+(metadata topic + edition), so a rerun is safe. Without --send nothing goes out; the weekly workflow
+passes --send only when the repository variable RFP_EMAIL_SEND is "true".
 """
 from __future__ import annotations
 
 import argparse
 import json
-import os
 import sys
 from pathlib import Path
 
-import requests
+from topic_mail import send
 
 from . import fields
 from .digest import LABELS, scrub_post
 from .site import DATASET_URL, EVAL_EMPTY, SITE_URL, TITLE, date_label, week_label
 
-API = "https://api.buttondown.com/v1"
-API_VERSION = "2026-04-01"
-KIND = "rfp-watch-weekly"
-
-
-def headers(send_now: bool) -> dict:
-    key = os.environ.get("RFP_BUTTONDOWN_API_KEY")
-    if not key:
-        raise SystemExit("RFP_BUTTONDOWN_API_KEY is not set")
-    h = {"Authorization": f"Token {key}", "X-API-Version": API_VERSION, "Content-Type": "application/json",
-         "User-Agent": "federal-solicitations weekly"}
-    if send_now:
-        h["X-Buttondown-Live-Dangerously"] = "true"
-    return h
+TOPIC = "RFP Watch"
 
 
 def md(s) -> str:
@@ -75,17 +61,13 @@ def body(p: dict) -> str:
     return "\n".join(out)
 
 
-def already_sent(week: str) -> bool:
-    r = requests.get(f"{API}/emails", headers=headers(False), params={"-status": "draft", "ordering": "-creation_date"}, timeout=60)
-    r.raise_for_status()
-    return any((e.get("metadata") or {}).get("kind") == KIND and (e.get("metadata") or {}).get("week") == week
-               for e in r.json().get("results") or [])
-
-
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(prog="solicitations.email")
     ap.add_argument("post", type=Path)
-    ap.add_argument("--draft", action="store_true", help="save a draft in Buttondown instead of sending")
+    ap.add_argument("--send", action="store_true", help="send it (default: save a checked draft in Buttondown)")
+    ap.add_argument("--dry-run", action="store_true", help="check the topic and earlier sends, write nothing")
+    ap.add_argument("--preview-to", action="append", default=[], metavar="EMAIL",
+                    help="also email a test copy of the draft to this address (repeatable)")
     ap.add_argument("--print", action="store_true", help="print the email and exit")
     a = ap.parse_args(argv)
     p = scrub_post(json.loads(a.post.read_text()))   # fields held from publishing (fields.HELD) never go out
@@ -94,16 +76,9 @@ def main(argv=None) -> int:
     if a.print:
         print(subject + "\n\n" + text)
         return 0
-    if not a.draft and already_sent(p["week_start"]):
-        print(f"week {p['week_start']} was already sent; nothing done")
-        return 0
-    status = "draft" if a.draft else "about_to_send"
-    r = requests.post(f"{API}/emails", headers=headers(status == "about_to_send"), timeout=60,
-                      json={"subject": subject[:250], "body": text, "status": status,
-                            "metadata": {"kind": KIND, "week": p["week_start"]}})
-    if r.status_code != 201:
-        raise SystemExit(f"Buttondown refused the email: HTTP {r.status_code} {r.text[:300]}")
-    print(json.dumps({"id": r.json().get("id"), "status": r.json().get("status")}))
+    mode = "dry-run" if a.dry_run else ("send" if a.send else "draft")
+    r = send(TOPIC, subject[:250], text, edition=p["week_start"], mode=mode, preview_to=a.preview_to or None)
+    print(json.dumps({k: r.get(k) for k in ("action", "id", "status", "url")}))
     return 0
 
 

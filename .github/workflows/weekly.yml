@@ -2,7 +2,8 @@
 # Hugging Face dataset, the week's post built and deployed, and the email sent. See src/solicitations/weekly.py.
 #
 # Secrets: ANTHROPIC_API_KEY, ANTHROPIC_WORKSPACE_ID (optional), HF_TOKEN (write), CLOUDFLARE_API_TOKEN and
-# CLOUDFLARE_ACCOUNT_ID (Pages deploy), RFP_BUTTONDOWN_API_KEY (optional: no email without it).
+# CLOUDFLARE_ACCOUNT_ID (Pages deploy), BUTTONDOWN_API_KEY (the Federal Data Stories list; optional: no email without it).
+# Repository variable RFP_EMAIL_SEND=true makes the run send; otherwise it saves a checked draft.
 name: Weekly run
 
 on:
@@ -33,7 +34,7 @@ jobs:
       ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
       ANTHROPIC_WORKSPACE_ID: ${{ secrets.ANTHROPIC_WORKSPACE_ID }}
       HF_TOKEN: ${{ secrets.HF_TOKEN }}
-      RFP_BUTTONDOWN_API_KEY: ${{ secrets.RFP_BUTTONDOWN_API_KEY }}
+      BUTTONDOWN_API_KEY: ${{ secrets.BUTTONDOWN_API_KEY }}
       PYTHONUNBUFFERED: "1"
       # The model reads pypdf's text, as before (the runner had no poppler, so federal_ja fell back to pypdf);
       # pdftotext (poppler) gives the second reading of each PDF page, which every quote on a PDF page must also
@@ -116,5 +117,12 @@ jobs:
           exit 1
 
       - name: Send the email
-        if: (github.event_name == 'schedule' || inputs.publish) && env.RFP_BUTTONDOWN_API_KEY != ''
-        run: uv run python -m solicitations.email "$(ls data/posts/[0-9]*.json | grep -v replaced | sort | tail -1)"
+        if: (github.event_name == 'schedule' || inputs.publish) && env.BUTTONDOWN_API_KEY != ''
+        run: |
+          post="$(ls data/posts/[0-9]*.json | grep -v replaced | sort | tail -1)"
+          if [ "${{ vars.RFP_EMAIL_SEND }}" = "true" ]; then
+            uv run python -m solicitations.email "$post" --send
+          else
+            echo "RFP_EMAIL_SEND is not true: saving a checked draft in Buttondown, sending nothing."
+            uv run python -m solicitations.email "$post"
+          fi
