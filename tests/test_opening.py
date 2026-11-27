@@ -198,3 +198,11 @@ def test_prompt_carries_the_light_voice_and_announcing_oddness_is_refused():
     s = [{"text": "Oddly, the Navy wants a dry dock at Norfolk Naval Shipyard.",
           "sources": [{"notice": i[DOCK["title"]], "quote": "construction of a multi-mission dry dock at Norfolk Naval Shipyard"}]}]
     assert any("hype word: 'Oddly'" in x for x in run(s))
+
+
+def test_written_out_dates_in_a_notice_count():
+    # 2026-11-16 sample: the embassy notice says "for the period January 1, 2027, through December 31, 2027."
+    from solicitations import opening
+    text = "for the period January 1, 2027, through December 31, 2027.The requirement is the rental; due 12/08/2026."
+    assert {(2027, 1, 1), (2027, 12, 31), (2026, 12, 8)} <= opening._iso_dates(text)
+    assert (2027, 2, 1) not in opening._iso_dates(text)

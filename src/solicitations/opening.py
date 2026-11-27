@@ -293,7 +293,13 @@ def numbers(s: str) -> set[str]:
 
 
 def _iso_dates(text: str) -> set[tuple[int, int, int]]:
-    return {(int(y), int(m), int(d)) for y, m, d in re.findall(r"(\d{4})-(\d{2})-(\d{2})", text)}
+    """Dates in the notices' text, however written: 2027-01-01, 01/01/2027, or January 1, 2027 (a notice's own
+    description often writes them out: "for the period January 1, 2027, through December 31, 2027")."""
+    out = {(int(y), int(m), int(d)) for y, m, d in re.findall(r"(\d{4})-(\d{2})-(\d{2})", text)}
+    out |= {(int(y), int(m), int(d)) for m, d, y in re.findall(r"\b(\d{1,2})/(\d{1,2})/(\d{4})\b", text)}
+    for mo, d, y in re.findall(r"\b(" + "|".join(MONTHS) + r")\.?\s+(\d{1,2})(?:st|nd|rd|th)?,?\s+(\d{4})", text):
+        out.add((int(y), MONTHS.index(mo) + 1, int(d)))
+    return out
 
 
 def sentence_problems(s: dict, f: dict, index: dict) -> list[str]:
