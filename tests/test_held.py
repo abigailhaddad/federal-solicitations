@@ -67,7 +67,9 @@ def test_site_and_email_leave_out_held_values():
         assert "Acme Widget" not in s and "significantly more important" not in s
     assert "Zeta Services LLC" in page
     assert len(p["dropped"]) == 2 and not p["picks"]
-    assert site.EVAL_EMPTY in page and site.EVAL_EMPTY in mail
+    assert site.EVAL_EMPTY in page
+    # 2026-11-27: the email no longer carries the evaluation-basis counts (they stay on the page with their caveat)
+    assert "How offers will be judged, where found" not in mail
 
 
 def test_site_reads_posts_scrubbed(tmp_path):

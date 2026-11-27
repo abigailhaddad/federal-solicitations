@@ -65,6 +65,7 @@ jobs:
           name: weekly-${{ github.run_id }}
           path: |
             work/weekly_*.json
+            work/post_dry_*.json
             work/*/checks/
             work/*/week.csv
           retention-days: 90

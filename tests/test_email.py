@@ -64,3 +64,19 @@ def test_site_signup_subscribes_to_rfp_watch_only(tmp_path):
         assert f'action="{site.SUBSCRIBE_FORM_URL}"' in t and '<input type="hidden" name="tag" value="RFP Watch">' in t, f
         assert 'href="https://buttondown.com/abigailhaddad"' not in t, f
     assert 'href="index.html#subscribe"' in (out / "about.html").read_text()
+
+
+def test_email_lists_follow_their_stated_rules():
+    # 2026-11-27: the email lists only open, not-picked planned sole-source awards and the three largest values,
+    # and says how many it left out; the web page lists everything
+    p = email.scrub_post(json.loads(Path("data/posts/2026-11-16.json").read_text()))
+    listed, closed, picked = email.email_sole_source(p)
+    allss = p["lists"]["sole_source_intent"]
+    assert len(listed) + closed + picked == len(allss) and (closed, picked) == (2, 2)
+    as_of = p["as_of"]
+    assert all(not (n.get("response_deadline") or "")[:10] or n["response_deadline"][:10] >= as_of for n in listed)
+    b = email.body(p)
+    assert "Not listed here: 2 whose response period has closed and 2 picked out above" in b
+    assert "## The 3 largest stated values" in b and b.count("**$") + b.count("**approximately $") >= 3
+    assert "$950M" not in b                       # the 7th largest is on the web page only
+    assert all(len(line) < 400 for line in b.splitlines() if line.startswith("- "))
