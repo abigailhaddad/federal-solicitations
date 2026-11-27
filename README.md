@@ -1,6 +1,6 @@
 # RFP Watch: federal solicitations and sources-sought notices, checked
 
-**https://rfp-watch.pages.dev**: each week, every federal services solicitation and sources-sought notice
+**https://rfp-watch.abigailhaddad.com**: each week, every federal services solicitation and sources-sought notice
 posted on SAM.gov, with a few picked out by Claude, and lists of planned sole-source awards, named incumbents
 (sources-sought notices) and stated values.
 

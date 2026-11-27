@@ -32,7 +32,7 @@ TAGLINE = ("Federal services and construction solicitations and sources-sought n
            + ("" if fields.published("solicitation", "incumbent") else " (sources-sought notices)")
            + " and planned sole-source awards, every value with the sentence it came from")
 EVAL_EMPTY = ("An empty evaluation basis means it was not found in the notice, not that the notice states none.")
-SITE_URL = "https://rfp-watch.pages.dev"
+SITE_URL = "https://rfp-watch.abigailhaddad.com"
 GITHUB_REPO = "abigailhaddad/federal-solicitations"
 HF_REPO_ID = "abigailhaddad/federal-solicitations"
 DATASET_URL = f"https://huggingface.co/datasets/{HF_REPO_ID}"

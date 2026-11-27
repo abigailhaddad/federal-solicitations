@@ -1,0 +1,41 @@
+name: Deploy site
+
+# Why this exists separately from the deploy step in weekly.yml:
+#
+#   * This covers human pushes (a change to site.py, a hand-edited post). Cloudflare Pages direct upload
+#     does not publish on push, so without this a site change waits for the next Monday run.
+#   * weekly.yml still needs its own deploy step, because GitHub does not fire workflows for the commit it
+#     pushes with the built-in GITHUB_TOKEN.
+#
+# Deleting either one leaves a path that silently stops publishing.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/solicitations/site.py"
+      - "data/posts/**"
+      - ".github/workflows/deploy.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --frozen
+      - name: Build the site
+        run: uv run python -m solicitations.site --out site/dist
+      - name: Deploy the site
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.42.0"
+          command: pages deploy site/dist --project-name=rfp-watch --branch=main
