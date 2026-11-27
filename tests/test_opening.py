@@ -123,6 +123,15 @@ def test_names_and_numbers_must_come_from_the_notice_the_sentence_cites():
     assert any("'Norfolk'" in x for x in run(s))
 
 
+def test_single_digit_dates_match_zero_padded_deadlines():
+    # JACOBS is due 2026-12-08; "December 8" must pass the number and date checks
+    f, _ = opening.facts(POST, SOL, SS)
+    i = ids(f)
+    s = [{"text": "Responses to the Army Corps of Engineers notice on the Puerto Quetzal Phase II expansion are due December 8.",
+          "sources": [{"notice": i[JACOBS["title"]], "quote": "Puerto Quetzal Phase II Expansion Design-Build"}]}]
+    assert run(s) == []
+
+
 def test_too_long():
     f, _ = opening.facts(POST, SOL, SS)
     assert any(x.startswith("too long") for x in run(good(f) * 2))

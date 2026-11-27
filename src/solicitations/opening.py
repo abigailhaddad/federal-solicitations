@@ -268,8 +268,10 @@ def dollars(text: str) -> list[tuple[float, float]]:
     return out
 
 
-def numbers(s: str) -> set[str]:
-    return {n.replace(",", "") for n in re.findall(r"\d[\d,]*(?:\.\d+)?", s or "")}
+sentences sound like "The docket with the most comments is an Employee Benefits Security Administration
+proposal that would let group health plan administrators provide documents electronically" or "A U.S.
+Citizenship and Immigration Services interim final rule reduces the time to respond to a Notice of Intent to
+Terminate refugee status from thirty to ten days."
 
 
 def _iso_dates(text: str) -> set[tuple[int, int, int]]:
